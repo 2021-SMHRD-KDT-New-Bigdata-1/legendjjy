@@ -1,0 +1,6 @@
+# HTTrack Website Copier Cookie File
+# This file format is compatible with Netscape cookies
+www.plani.co.kr	TRUE	/	FALSE	1999999999	ci_session	rcbl6dthh8vqt7bq4cq70b9fpktp45sk
+www.plani.co.kr	TRUE	/	FALSE	1999999999	visitor	1
+www.plani.co.kr	TRUE	/	FALSE	1999999999	csrf_cookie_name	d3eb6c1feff3f9da024a76c8bffaeed3
+
