@@ -15,7 +15,7 @@ a{
 .list_wrap{
     width: 1200px;
     margin: 0 auto;
-    padding: 100px;
+    padding: 30px;
 }
 
 .list_wrap ul{
@@ -74,12 +74,12 @@ a{
 .list_wrap .item strong{
     display: block;
     margin: 0 0 10px 0;
-    font-size: 16px;
+    font-size: 24px;
     letter-spacing: -1px;
 }
 
 .list_wrap .item p{
-    font-size: 13px;
+    font-size: 20px;
     letter-spacing: -1px;
 }
 
@@ -88,7 +88,7 @@ a{
     margin-top: 20px;
     margin-bottom: 10px;
     float: right;
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: -1px;
 }
 
@@ -97,7 +97,7 @@ a{
     margin-top: 20px;
     margin-bottom: 10px;
     float: left;
-    font-size: 13px;
+    font-size: 16px;
     letter-spacing: -1px;
 }
 
