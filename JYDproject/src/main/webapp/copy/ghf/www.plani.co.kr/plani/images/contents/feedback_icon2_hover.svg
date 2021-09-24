@@ -1,9 +1,0 @@
-<svg id="ico_대관신청" xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
-  <path id="패스_13259" data-name="패스 13259" d="M0,0H64V64H0Z" fill="none"/>
-  <path id="패스_13260" data-name="패스 13260" d="M3,25,27,41,51,25,27,9,3,25" transform="translate(5 15)" fill="none" stroke="#04a6e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-  <path id="패스_13261" data-name="패스 13261" d="M3,19,27,35,51,19,27,3,3,19" transform="translate(5 5)" fill="none" stroke="#04a6e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-  <line id="선_14" data-name="선 14" y2="16" transform="translate(8 24)" fill="none" stroke="#04a6e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-  <line id="선_15" data-name="선 15" y2="16" transform="translate(56 24)" fill="none" stroke="#04a6e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-  <line id="선_16" data-name="선 16" y2="16" transform="translate(32 8)" fill="none" stroke="#04a6e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-  <line id="선_17" data-name="선 17" y2="16" transform="translate(32 40)" fill="none" stroke="#04a6e1" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
-</svg>
