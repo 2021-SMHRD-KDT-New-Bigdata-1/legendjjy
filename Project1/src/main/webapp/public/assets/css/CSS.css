@@ -1,0 +1,46 @@
+.Grid {
+    width: 480px;
+    height: 480px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 16px;
+    /*justify-content: center;
+    align-content: center;*/
+}
+
+.main_bottom{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.Grid > div {
+    border:solid 1px silver;
+    background: white;
+}
+
+.card-img-top{
+    width:300px;
+    height:300px;
+    object-fit: contain;
+    border-bottom: solid 3px silver;
+}
+
+.card-title{
+    padding-left: 20px;
+}
+
+.nick{
+    padding-left: 20px;
+}
+
+.card-text{
+    padding-left: 20px;
+}
+
+.card-footer{
+    text-align: right;
+    padding-right:10px;
+    padding-bottom: 10px;
+}
