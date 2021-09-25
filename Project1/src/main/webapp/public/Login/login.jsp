@@ -32,11 +32,18 @@
 </head>
 
 <body>
+<%
+	String errMsg = (String)session.getAttribute("errMsg");
+	if(errMsg==null){
+		errMsg = "";
+	}
+	session.invalidate();
+%>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form action="../../LoginService" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
@@ -65,13 +72,16 @@
 							</button>
 						</div>
 					</div>
+					<div class="text-center p-t-115">
+						<span class="txt1" style="color:red"><%=errMsg %></span>	
+					</div>
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
 							계정이 없으신가요?
 						</span>
 
-						<strong><a class="txt2" href="join.html">
+						<strong><a class="txt2" href="join.jsp">
 								회원가입
 							</a></strong><br>
 						<span class="txt1">

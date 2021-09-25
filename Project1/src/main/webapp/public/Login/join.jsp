@@ -73,7 +73,7 @@
 							가입된 계정이 있으신가요?
 						</span>
 
-						<strong><a class="txt2" href="login.html">
+						<strong><a class="txt2" href="login.jsp">
 								로그인
 							</a></strong><br>
 						<span class="txt1">
