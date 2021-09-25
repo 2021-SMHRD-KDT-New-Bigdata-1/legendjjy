@@ -93,4 +93,68 @@ public class usersDAO {
 		}
 		return vo;
 	}
+	
+	public int editPass(String pass2, String email) {
+		conn();
+		
+		String sql = "UPDATE USERS SET USER_PW = ? WHERE USER_EMAIL = ?";
+		
+		int cnt = 0;
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, pass2);
+			psmt.setString(2, email);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	public int editNick(String nick, String email) {
+		conn();
+		
+		String sql = "UPDATE USERS SET USER_NICK = ? WHERE USER_EMAIL = ?";
+		
+		int cnt = 0;
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, nick);
+			psmt.setString(2, email);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	public int editDelete(usersVO vo) {
+		conn();
+		
+		String sql = "DELETE FROM USERS WHERE USER_EMAIL = ?";
+		
+		int cnt = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getUser_email());
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
 }

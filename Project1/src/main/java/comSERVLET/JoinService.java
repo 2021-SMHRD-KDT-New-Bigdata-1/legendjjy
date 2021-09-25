@@ -1,6 +1,8 @@
 package comSERVLET;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +17,8 @@ public class JoinService extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("euc-kr");
+		response.setCharacterEncoding("euc-kr");
 		String user_email = request.getParameter("email");
 		String user_pw = request.getParameter("pass");
 		String user_nick = request.getParameter("nickname");
@@ -29,10 +33,17 @@ public class JoinService extends HttpServlet {
 		
 		int cnt = dao.join(user_email, user_pw, user_nick, admin_yn);
 		
+		PrintWriter out = response.getWriter();
 		if(cnt>0) {
-			response.sendRedirect("public/Login_v2/login.jsp");
+			  out.print("<script>");
+			  out.print("alert('성공적으로 회원가입이 완료되었습니다');");
+			  out.print("location.href = 'public/Login_v2/login.jsp'");
+			  out.print("</script>");
 		}else {
-			response.sendRedirect("public/Login_v2/join.jsp");
+			  out.print("<script>");
+			  out.print("alert('회원가입에 실패했습니다');");
+			  out.print("location.href = 'public/Login_v2/join.jsp'");
+			  out.print("</script>");
 		}
 	}
 

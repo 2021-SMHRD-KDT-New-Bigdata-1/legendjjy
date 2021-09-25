@@ -36,65 +36,35 @@
 
 <body>
 <%
-	String errMsg = (String)session.getAttribute("errMsg");
-	if(errMsg==null){
-		errMsg = "";
+	String errNickMsg = (String)session.getAttribute("errNickMsg");
+	if(errNickMsg==null){
+		errNickMsg = "";
 	}
-	session.removeAttribute("errMsg");
+	session.removeAttribute("errNickMsg");
 %>
 
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form action="../../LoginService" method="post" class="login100-form validate-form">
+				<form action="../../EditService?edit=nick" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
-						Welcome
-					</span>
-					<span class="login100-form-title p-b-48">
-						<img src="images\logo_small.png">
+						닉네임변경
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="이메일을 확인해주세요">
-						<input class="input100" type="text" name="email">
-						<span class="focus-input100" data-placeholder="Email"></span>
+					<div class="wrap-input100 validate-input" data-validate="닉네임은 2~10자 문자 또는 숫자이어야 합니다">
+						<input class="input100" type="text" name="nickname">
+						<span class="focus-input100" data-placeholder="Nickname"></span>
 					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="비밀번호를 입력해주세요">
-						<span class="btn-show-pass">
-							<i class="zmdi zmdi-eye"></i>
-						</span>
-						<input class="input100" type="password" name="pass">
-						<span class="focus-input100" data-placeholder="Password"></span>
-					</div>
-
+					<span class="txt1" style="color:red"><%=errNickMsg %></span>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
+							<button type="submit" class="login100-form-btn">
+								닉네임 변경하기
 							</button>
 						</div>
 					</div>
-					<div class="text-center p-t-115">
-						<span class="txt1" style="color:red"><%=errMsg %></span>	
-					</div>
 
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							계정이 없으신가요?
-						</span>
-
-						<strong><a class="txt2" href="join.jsp">
-								회원가입
-							</a></strong><br>
-						<span class="txt1">
-							비밀번호를 잃어버리셨나요?
-						</span>
-
-						<strong><a class="txt2" href="findpass.html">
-								비밀번호 찾기
-							</a></strong>
-					</div>
 				</form>
 			</div>
 		</div>
