@@ -29,9 +29,9 @@ public class LoginService extends HttpServlet {
 		HttpSession session = request.getSession();
 		if(vo!=null) {
 			session.setAttribute("vo", vo);
-			response.sendRedirect("public/index.html");
+			response.sendRedirect("public/index.jsp");
 		}else {
-			response.sendRedirect("public/Login/login.jsp");
+			response.sendRedirect("public/Login_v2/login.jsp");
 			session.setAttribute("errMsg", "로그인정보가 틀렸습니다");
 		}
 	}

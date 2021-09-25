@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,21 +39,17 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form action="../../JoinService" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						Welcome
 					</span>
-					<span class="login100-form-title p-b-48">
-						<img src="public\assets\img\gallery\logo_big.png">
-					</span>
-					
 
-					<div class="wrap-input100 validate-input" data-validate="ì´ë©”ì¼ì„ í™•ì¸í•´ì£¼ì„¸ìš”">
+					<div class="wrap-input100 validate-input" data-validate="ÀÌ¸ÞÀÏÀ» È®ÀÎÇØÁÖ¼¼¿ä">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”">
+					<div class="wrap-input100 validate-input" data-validate="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
@@ -59,29 +57,34 @@
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
+					<div class="wrap-input100 validate-input" data-validate="´Ð³×ÀÓÀº 2~10ÀÚ ¹®ÀÚ ¶Ç´Â ¼ýÀÚÀÌ¾î¾ß ÇÕ´Ï´Ù">
+						<input class="input100" type="text" name="nickname">
+						<span class="focus-input100" data-placeholder="Nickname"></span>
+					</div>
+
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
-								Login
+							<button type="submit" class="login100-form-btn">
+								Create Account
 							</button>
 						</div>
 					</div>
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							ê³„ì •ì´ ì—†ìœ¼ì‹ ê°€ìš”?
+							°¡ÀÔµÈ °èÁ¤ÀÌ ÀÖÀ¸½Å°¡¿ä?
 						</span>
 
-						<strong><a class="txt2" href="join.html">
-								íšŒì›ê°€ìž…
+						<strong><a class="txt2" href="login.jsp">
+								·Î±×ÀÎ
 							</a></strong><br>
 						<span class="txt1">
-							ë¹„ë°€ë²ˆí˜¸ë¥¼ ìžƒì–´ë²„ë¦¬ì…¨ë‚˜ìš”?
+							ºñ¹Ð¹øÈ£¸¦ ÀÒ¾î¹ö¸®¼Ì³ª¿ä?
 						</span>
 
 						<strong><a class="txt2" href="findpass.html">
-								ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°
+								ºñ¹Ð¹øÈ£ Ã£±â
 							</a></strong>
 					</div>
 				</form>

@@ -30,9 +30,9 @@ public class JoinService extends HttpServlet {
 		int cnt = dao.join(user_email, user_pw, user_nick, admin_yn);
 		
 		if(cnt>0) {
-			response.sendRedirect("public/Login/login.jsp");
+			response.sendRedirect("public/Login_v2/login.jsp");
 		}else {
-			response.sendRedirect("public/Login/join.jsp");
+			response.sendRedirect("public/Login_v2/join.jsp");
 		}
 	}
 

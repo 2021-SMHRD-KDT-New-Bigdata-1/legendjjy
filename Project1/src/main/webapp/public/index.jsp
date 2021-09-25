@@ -1,3 +1,4 @@
+<%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -41,6 +42,9 @@
 
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
+<%
+	usersVO vo = (usersVO)session.getAttribute("vo");
+%>
 
   <!-- ===============================================-->
   <!--    Main Content-->
@@ -62,7 +66,11 @@
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="#packages">구독목록</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">공지사항</a></li>
           </ul>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="Login/login.jsp">로그인</a></form>
+          <%if(vo==null){ %>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+          <%}else{ %>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">로그아웃</a></form>
+          <%} %>
         </div>
       </div>
     </nav>
