@@ -52,7 +52,7 @@
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
       data-navbar-on-scroll="data-navbar-on-scroll">
-      <div class="container"><a class="navbar-brand d-inline-flex" href="index.html"><img class="card-img"
+      <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
             src="assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
               class="text-warning">D</span></span></a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -61,7 +61,7 @@
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">일기 쓰러가기</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="#howitworks">둘러보기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="#look">둘러보기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심목록</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">구독목록</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">공지사항</a></li>
@@ -147,7 +147,7 @@
 
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12" id="look">
             <h1 class="py-5 text-center">일기 둘러보기</h1>
           </div>
         </div>
@@ -259,6 +259,16 @@
   <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
   <script src="vendors/fontawesome/all.min.js"></script>
   <script src="assets/js/theme.js"></script>
+  <script src="assets/js/jquery-3.6.0.min.js"></script>
+  <script>
+  	$(document).ready(function() {
+  		$(".nav-link fw-bold .scroll").click(function(event){            
+  			event.preventDefault();
+  			$('html,body').animate({scrollTop:$(this.hash).offset().top}, 500);
+ 		 });
+ 	 });
+  </script>
+  
 
   <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap" rel="stylesheet">
 </body>
