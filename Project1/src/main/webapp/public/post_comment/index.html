@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>게시물and댓글</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="buckymaler.com">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/댓글.css">
+  </head>
+  <body style="height: 3000px;">
+    
+    <section id="featured" style="height: 3000px; margin-top: 66px; width: 10000px; margin-left: 100px;" ><button style="background-color: white; border: white; margin-top: 0px; padding-left: 0px; padding-right: 0px; padding-bottom: 31px;"><h3>my dairy</h3></button><br>
+      <h4 style="inline-size: 30px ; margin: auto; float: left;">@legendjjy</h4> 
+      <div class="wrapper" style="margin-left: 300px;">
+        <button id="left" style="float: left;" ><img src="assets/img/left.png" height="35px" width="35px"></button><br>
+    
+        
+        <div class="featured"><img src="assets/img/featured.jpg" alt="Featured"></div>
+        <div class="blurb" style="padding-left: 40px;">
+          <h2><strong>하지 못한 말</strong></h2><br>
+          <p>2021/09/23</p>
+          <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+        </div>
+        <button id="right" ><img src="assets/img/right.png" height="35px" width="35px"></button>
+      </div>
+
+      <div style="width: 1530px;">
+        <div id="form-commentInfo"  style="margin:auto; margin-left: 400px;"> 
+          <div id="comment-count" >댓글 <span id="count">0</span></div>  
+          <input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="댓글을 달아주세요." > 
+          <button id="submit">OK</button>
+         
+        </div> 
+        <div id=comments style="margin-top: 20px; margin-left: 400px;"></div>
+      </div>
+    
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+    <script src="assets/js/functions-min.js"></script>
+    <script src="assets/js/댓글.js"></script>
+
+  </body>
+
+</html>
