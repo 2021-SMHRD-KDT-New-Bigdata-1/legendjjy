@@ -17,10 +17,10 @@
     <div class="container">
 		<div id="modal">
 			<div class="modal_header">
-			<section>
+			<section style="padding: 50px;">
 				<strong><a herf="#" style="display: inline">@legend</a></strong>
 				<div class="modal_content">
-					<div class="diaryIMG">
+					<div class="diaryIMG"  style="object-fit: cover;">
 						<img id="selectIMG" src="assets/img/camera.png">
 					</div>
 					<div class="diaryContent">
@@ -35,7 +35,7 @@
 			<div class="modal_header">
 				<section>
 					<div style="width: 100%;">
-       				<div id="form-commentInfo"> 
+       				<div id="form-commentInfo" style="padding: 50px;"> 
         				<div id="comment-count" >´ñ±Û <span id="count">0</span></div>  
          					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="´ñ±ÛÀ» ´Þ¾ÆÁÖ¼¼¿ä." > 
          					<button id="submit">OK</button>

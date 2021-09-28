@@ -1,0 +1,32 @@
+@charset "EUC-KR";
+*{
+    margin: 0;
+    padding: 0;
+}
+
+img.cont{
+    width:300px;
+    height:300px;
+    border-radius: 70%;
+    overflow:hidden;
+    box-shadow: 5px 5px 5px #000;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+h3{
+    text-align: center;
+}
+
+td{
+
+    padding: 0 50px 0 50px;
+}
+
+.line{
+    width: 300px;
+    height: 100px;
+}
