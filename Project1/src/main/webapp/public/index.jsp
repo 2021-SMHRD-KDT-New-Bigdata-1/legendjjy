@@ -40,11 +40,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 
-
 <body data-bs-spy="scroll" data-bs-target="#navbar">
-<%
-	usersVO vo = (usersVO)session.getAttribute("vo");
-%>
+	<%
+		usersVO vo = (usersVO)session.getAttribute("vo");
+	%>
 
   <!-- ===============================================-->
   <!--    Main Content-->
@@ -289,7 +288,6 @@
   </script>
   
 
-  <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&amp;display=swap" rel="stylesheet">
 </body>
 
 </html>

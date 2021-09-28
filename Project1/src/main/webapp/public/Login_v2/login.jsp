@@ -4,7 +4,7 @@
 <html lang="en">
 
 <head>
-	<title>Login V2</title>
+	<title>Login</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!--===============================================================================================-->
@@ -32,6 +32,48 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+	<!--===============================================================================================-->
+	<script>
+		function checkLoginStatus(){
+			var loginBtn = document.querySelector('#loginBtn');
+			var nameTxt = document.querySelector('#name');
+			if(gauth.isSignedIn.get()){
+				console.log('logined');
+				loginBtn.value = 'Logout';
+				var profile = gauth.currentUser.get().getBasicProfile();
+				console.log(profile.getName());
+				nameTxt.innerHTML = 'Welcome <strong>'+profile.getName()+'</strong>';
+			}else {
+				console.log('logouted');
+				loginBtn.value = 'Login';
+				nameTxt.innerHTML = '';
+			}
+		}
+		function init(){
+			console.log('init');
+			gapi.load('auth2', function() {
+				console.log('auth2');
+				window.gauth = gapi.auth2.init({
+					client_id:'287492847647-v4tckup8j6iartiq1f15sotqek7id16p.apps.googleusercontent.com'
+				})
+				gauth.then(function(){
+					console.log('googleAuth success');
+					checkLoginStatus();
+				}, function(){
+					console.log('googleAuth fail');
+				});
+			});
+		}
+	</script>
+	<style>
+		input[type=button] {
+		width: 468px;
+		height: 50px;
+		box-sizing: border-box;
+		border-radius: 50px;
+		font-size: 24px;
+		}
+	</style>
 </head>
 
 <body>
@@ -51,7 +93,7 @@
 						Welcome
 					</span>
 					<span class="login100-form-title p-b-48">
-						<img src="images\logo_small.png">
+						<a href="../index.jsp"><img src="images\logo_small.png"></a>
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate="이메일을 확인해주세요">
@@ -74,6 +116,16 @@
 								Login
 							</button>
 						</div>
+						<span id="name"></span><input type="button" id="loginBtn" value="checking...." onclick="
+						if(this.value === 'Login'){
+							gauth.signIn().then(function(){
+								checkLoginStatus();
+							});
+						} else {
+							gauth.signOut().then(function(){
+								checkLoginStatus();
+							});
+							}">
 					</div>
 					<div class="text-center p-t-115">
 						<span class="txt1" style="color:red"><%=errMsg %></span>	
@@ -88,7 +140,7 @@
 								회원가입
 							</a></strong><br>
 						<span class="txt1">
-							비밀번호를 잃어버리셨나요?
+							비밀번호를 잊으셨나요?
 						</span>
 
 						<strong><a class="txt2" href="findpass.html">
@@ -99,8 +151,6 @@
 			</div>
 		</div>
 	</div>
-
-
 	<div id="dropDownSelect1"></div>
 
 	<!--===============================================================================================-->
@@ -119,6 +169,7 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="https://apis.google.com/js/platform.js?onload=init" async defer></script>
 
 </body>
 

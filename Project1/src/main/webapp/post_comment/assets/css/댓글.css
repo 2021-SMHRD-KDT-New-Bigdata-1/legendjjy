@@ -1,5 +1,10 @@
+*{
+    margin: 0;
+}
 #form-commentInfo{ 
-    width: 1020px; 
+    width: 1020px;
+
+    margin-left: 400px;
     
 }
 #comment-count{ 
@@ -15,7 +20,8 @@
 } 
 
 #comments{
-     margin-top: 10px; 
+     margin-top: 20px; 
+     margin-left: 400px;
 } 
 .eachComment{ 
     width :1000px; margin: 5px; padding: 0.09em; border-bottom: 1px solid #c1bcba; 

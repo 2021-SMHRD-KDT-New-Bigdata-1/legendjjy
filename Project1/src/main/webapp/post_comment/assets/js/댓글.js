@@ -97,4 +97,9 @@ function numberCount(event){
                 inputBar.value =''; } }
                 
         btn.onclick = pressBtn;
+      function enterkey(){
+          if(window.event.keyCode == 13){
+              pressBtn();
+          }
+      }  
 
