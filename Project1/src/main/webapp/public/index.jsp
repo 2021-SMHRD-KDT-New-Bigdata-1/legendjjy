@@ -173,7 +173,7 @@
 
       <div class="list_wrap">
         <ul>
-          <li class="item item1">
+          <li class="item item1" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -182,7 +182,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item2">
+          <li class="item item2" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -191,7 +191,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item3">
+          <li class="item item3" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -200,7 +200,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item4">
+          <li class="item item4" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -209,7 +209,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item5">
+          <li class="item item5" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -218,7 +218,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item6">
+          <li class="item item6" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -227,7 +227,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item7">
+          <li class="item item7" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -236,7 +236,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item8">
+          <li class="item item8" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -245,7 +245,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item9">
+          <li class="item item9" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
