@@ -32,6 +32,7 @@
 				</div>
 				</section>
 			</div>
+			<div class="modal_header">
 				<section>
 					<div style="width: 100%;">
        				<div id="form-commentInfo"> 
@@ -42,6 +43,7 @@
         			<div id="comments"></div>
       			</div>
 				</section>
+				</div>
 			<div class="modal_layer">
 				<button type="button" class="btm_image" id="modal_close_btn"><img  src="assets/img/closeicon.png" alt=""></button>
 			</div>

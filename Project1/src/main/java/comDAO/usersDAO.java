@@ -16,9 +16,9 @@ public class usersDAO {
 	public void conn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
-			String dbid = "cgi_6_1";
-			String dbpw = "smhrd1";
+			String url = "jdbc:oracle:thin:@121.179.7.87:1521:xe";
+			String dbid = "hr";
+			String dbpw = "hr";
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 		} catch (Exception e) {
 			e.printStackTrace();

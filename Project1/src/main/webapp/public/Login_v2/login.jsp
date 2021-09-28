@@ -45,7 +45,7 @@
 				nameTxt.innerHTML = 'Welcome <strong>'+profile.getName()+'</strong>';
 			}else {
 				console.log('logouted');
-				loginBtn.value = 'Login';
+				loginBtn.value = 'Login with Google';
 				nameTxt.innerHTML = '';
 			}
 		}
@@ -116,8 +116,8 @@
 								Login
 							</button>
 						</div>
-						<span id="name"></span><input type="button" id="loginBtn" value="checking...." onclick="
-						if(this.value === 'Login'){
+						<span id="name"></span><input type="button" id="loginBtn" value="Login with Google" onclick="
+						if(this.value === 'Login with Google'){
 							gauth.signIn().then(function(){
 								checkLoginStatus();
 							});
