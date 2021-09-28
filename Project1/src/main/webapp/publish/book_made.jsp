@@ -19,10 +19,14 @@
   <!-- ===============================================-->
   <!--    Favicons-->
   <!-- ===============================================-->
-  <link rel="apple-touch-icon" sizes="180x180" href="../public/assets/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../public/assets/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../public/assets/img/favicons/favicon-16x16.png">
-  <link rel="shortcut icon" type="image/x-icon" href="../public/assets/img/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" 
+  	href="../public/assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" 
+  	href="../public/assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" 
+  	href="../public/assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" 
+  	href="../public/assets/img/favicons/favicon.ico">
   <link rel="manifest" href="../public/assets/img/favicons/manifest.json">
   <meta name="msapplication-TileImage" content="../public/assets/img/favicons/mstile-150x150.png">
   <meta name="theme-color" content="#ffffff">
@@ -37,9 +41,12 @@
   <link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <link 
+  	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" 
+  	rel="stylesheet">
   <link rel="stylesheet" href="book_css.css">
 </head>
+<script src="//code.jquery.com/jquery.min.js"></script>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
@@ -77,7 +84,9 @@
       </div>
       </nav>
    
-
+<section class="py-0" id="header">
+	<div class="container">
+			
     <div class="content" style="margin-top: 200px;">
         <table>
             <tr>
@@ -127,6 +136,9 @@
             </tr>
         </table>
     </div>
+    </div>
+    </section>
+    
     
     <form style="text-align: center;">
         <input type="button" value="신청하기"
