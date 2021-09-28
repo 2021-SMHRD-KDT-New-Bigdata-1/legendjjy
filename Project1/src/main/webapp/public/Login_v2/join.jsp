@@ -81,7 +81,7 @@
 								로그인
 							</a></strong><br>
 						<span class="txt1">
-							비밀번호를 잃어버리셨나요?
+							비밀번호를 잊어버리셨나요?
 						</span>
 
 						<strong><a class="txt2" href="findpass.html">
