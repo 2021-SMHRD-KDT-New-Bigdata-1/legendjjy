@@ -1,0 +1,64 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+.background{
+	background-color: rgba(var(--jb7,0,0,0),.5);
+    align-items: center;
+    position: fixed;
+	bottom: 0;
+	left: 0;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: none;
+}
+
+#modal_close_btn{
+	location: rtl;
+}
+
+.content{
+	display: flex;
+	position: relative;;
+	max-width: 935px;
+	max-height: 600px;
+	border: 1px;
+	padding: 20px;
+}
+
+.IMG{
+	flex: 1;
+  	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+}
+
+.IMG #img{
+	float: left;
+	width: 100%;
+	height: auto;
+}
+
+.diaryContent{
+	float: left;
+	flex: 1;
+  	margin: 0 auto;
+  	padding-left: 40px;
+  	padding-right: 20px;
+	max-width: 100%;
+	height : auto;
+	overflow: auto;
+}
+
+.zZYga{
+	min-width: 483px;
+	display: flex;
+    min-height: 100%;
+    overflow: auto;
+    width: auto;
+    z-index: 1;
+}
