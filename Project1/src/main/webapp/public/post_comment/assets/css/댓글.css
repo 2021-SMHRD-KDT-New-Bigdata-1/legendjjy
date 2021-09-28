@@ -13,7 +13,7 @@
     margin-bottom: 10px;
 } 
 #comment-input{ 
-    width: 90%; height: 3.3em;
+    width: 80%; height: 3.3em;
  } 
 #submit{ 
     background-color: black; width: 5.5em; height: 3.3em;; font-size: 15px; font-weight: bold; color: aliceblue; border-radius: 10px;
@@ -24,7 +24,7 @@
      margin-left: 400px;
 } 
 .eachComment{ 
-    width :1000px; margin: 5px; padding: 0.09em; border-bottom: 1px solid #c1bcba; 
+    width :1000px; margin: 5px; padding: 0.09em; border-bottom: 1px solid  aliceblue; 
     height: 85px; font-size: 10px; 
 } 
 .eachComment .name{ 
