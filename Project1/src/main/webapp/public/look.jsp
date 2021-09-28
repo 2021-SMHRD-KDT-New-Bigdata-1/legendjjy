@@ -62,11 +62,13 @@
 		width: 400px;
 		border: 1px solid #1b5ac2;
 		background: #ffffff;
+		margin-left: 20%;
 	}
 	
 	.search{
 		font-size: 16px;
 		width: 325px;
+		height: 100%;
 		padding: 10px;
 		border: 0px;
 		outline: none;
@@ -76,8 +78,8 @@
 	.search_button{
 		width: 50px;
 		height: 100%;
-		border: 0px
-		background: #1b5ac2;
+		border: 0px;
+		background-color: #1b5ac2;
 		outline: none;
 		float: right;
 		color: #ffffff
@@ -156,11 +158,10 @@
 					%>
 				</div>
 			</div>
-			<div class="main_bottom">
 
 				<div class="container">
-					<div class="row">
-						<div class="col-12" id="look">
+					<div class="row" >
+						<div class="col-12" id="look" style="padding: 0; height: 100px;">
 							<h1 class="py-5 text-center">일기 둘러보기</h1>
 						</div>
 						
