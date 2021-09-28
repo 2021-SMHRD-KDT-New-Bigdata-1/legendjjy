@@ -81,7 +81,7 @@
 
 <div class="container">
 <h2>일기 쓰기</h2>
-<form action="write.jsp" method="post">
+<form action="write.jsp" method="post" >
     <div class="form-group">
     <label for="title">제목</label>
 
