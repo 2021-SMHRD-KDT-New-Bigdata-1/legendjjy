@@ -56,7 +56,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
       data-navbar-on-scroll="data-navbar-on-scroll">
       <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
-            src="assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
+            src="assets/img/gallery/logo_small.png" alt="..." style="height: 50px;"/><span class="fs-2 fw-bold text-primary ms-2" style="margin-top: 10px;">LEGEN<span
               class="text-warning">D</span></span></a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -79,9 +79,13 @@
         </div>
       </div>
 
-<div class="container">
-<h2>일기 쓰기</h2>
-<form action="write.jsp" method="post" >
+<div class="container" style="border: solid 1px silver; margin-top: 20px;">
+	<div style="width: 500px; border-right: solid 1px gray;">
+	<div style="padding-top: 0;"><h2 style="color: gray">사진 추가</h2></div>
+ 	<input type="file" id="file" class="image_inputType_file" accept="img/*" multiple style="display: none;">
+    <button class="button" onclick="onclick=document.all.file.click()" style="margin: auto; width: 50px; height: 50px; display: block; font-size: 30px;">+</button>
+    </div>
+<form action="write.jsp" method="post" style="width: 500px;">
     <div class="form-group">
     <label for="title">제목</label>
 
@@ -103,10 +107,9 @@
     <input type="text" class="form-control" id="writer"
     placeholder="태그(2자-10자)" name="writer">
     </div>
-    <input type="file" id="file" class="image_inputType_file" accept="img/*" multiple style="display: none;">
-    <button class="button" onclick="onclick=document.all.file.click()">사진 추가</button>
+
     <br><br>
-    <button type="submit" class="btn btn-default">등록</button>
+    <button type="submit" class="btn btn-default" style="border: 1px solid gray">등록</button>
     <br><br>
         <input type="checkbox" value="" style="margin-right: 5px;">댓글 허용   
         <input type="checkbox" value="" style="margin-left: 10px; margin-right: 5px;">나만 보기
