@@ -78,8 +78,8 @@
 			<div class="all" style="position: fixed;">
 				
 			<ul class="board" style="margin-top: 190px; padding-left:0px">
-				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px;" >구독이메일</li>
-				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px;">구독취소</li>
+				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독이메일</li>
+				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독취소</li>
 				<li></li>
 			</ul>
 			</div>  
