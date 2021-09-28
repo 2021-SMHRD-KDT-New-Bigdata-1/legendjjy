@@ -34,16 +34,16 @@
 			</div>
 			<div class="modal_header">
 				<section>
-					<div style="width: 100%;">
+					<div style="width: 100%; height:450px; overflow-x: hidden;">
        				<div id="form-commentInfo"> 
         				<div id="comment-count" >댓글 <span id="count">0</span></div>  
          					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="댓글을 달아주세요." > 
          					<button id="submit">OK</button>
         			</div> 
         			<div id="comments"></div>
-      			</div>
+      				</div>
 				</section>
-				</div>
+			</div>
 			<div class="modal_layer">
 				<button type="button" class="btm_image" id="modal_close_btn"><img  src="assets/img/closeicon.png" alt=""></button>
 			</div>
