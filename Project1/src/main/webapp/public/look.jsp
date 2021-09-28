@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>일기 쓰기</title>
+<title>일기 둘러보기</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -55,6 +55,36 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
+	
+	<style>
+	.search_bar{
+		height: 40px;
+		width: 400px;
+		border: 1px solid #1b5ac2;
+		background: #ffffff;
+	}
+	
+	.search{
+		font-size: 16px;
+		width: 325px;
+		padding: 10px;
+		border: 0px;
+		outline: none;
+		float: left;
+	}
+	
+	.search_button{
+		width: 50px;
+		height: 100%;
+		border: 0px
+		background: #1b5ac2;
+		outline: none;
+		float: right;
+		color: #ffffff
+	}
+	
+	</style>
+	
 </head>
 
 <body>
@@ -65,7 +95,8 @@
 	<main class="main" id="top">
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
+			data-navbar-on-scroll="data-navbar-on-scroll"
+			style="background-color: rgb(242, 238, 233, 0.7);">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
@@ -131,12 +162,19 @@
 					<div class="row">
 						<div class="col-12" id="look">
 							<h1 class="py-5 text-center">일기 둘러보기</h1>
-							<input type="text">
 						</div>
+						
+						<div class="search_bar">
+							<input class="search" type="text" placeholder="검색어 입력">
+							<button class="search_button">검색</button>
+						</div>
+						
 					</div>
 				</div>
+				
+		</nav>
 
-				<div class="list_wrap">
+				<div class="list_wrap" style="margin-top: 300px;">
 					<ul>
 						<li class="item item1"
 							style="background-color: rgb(245, 242, 235);">
@@ -233,7 +271,6 @@
 
 			</div>
 
-		</nav>
 	</main>
 </body>
 </html>
