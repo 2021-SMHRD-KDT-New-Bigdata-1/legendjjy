@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -18,14 +18,14 @@
 		<div id="modal">
 			<div class="modal_header">
 			<section>
-				<strong><a herf="#" style="display: inline">@legend</a></strong>
+				<strong><a herf="#" style="display: inline margin: 20px">@legend</a></strong>
 				<div class="modal_content">
 					<div class="diaryIMG">
 						<img id="selectIMG" src="assets/img/camera.png">
 					</div>
 					<div class="diaryContent">
 						<h2 style="margin-bottom: 15px">title</h2>
-						<p style="direction:rtl">time</p>
+						<p style="direction:rtl">time</p><br>
 						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
 						<section class="list"></section>
 					</div>
@@ -45,7 +45,7 @@
 				</section>
 				</div>
 			<div class="modal_layer">
-				<button type="button" class="btm_image" id="modal_close_btn"><img  src="assets/img/closeicon.png" alt=""></button>
+				<button type="button" class="btm_image" id="modal_close_btn"><img src="assets/img/closeicon.png" alt=""></button>
 			</div>
 		</div>
 	</div>
@@ -55,6 +55,7 @@
 <script src="assets/js/functions-min.js"></script>
 <script src="assets/js/´ñ±Û.js"></script>
 <script>
+	$("#modal").hide();
 	$("#modal_opne_btn").click(function() {
 		$("#modal").attr("style", "display:block");
 	});
