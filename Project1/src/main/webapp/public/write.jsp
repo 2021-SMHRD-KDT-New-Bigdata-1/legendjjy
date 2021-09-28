@@ -80,10 +80,10 @@
       </div>
 
 <div class="container" style="border: solid 1px silver; margin-top: 20px;">
-	<div style="width: 500px; border-right: solid 1px gray;">
+	<div style="width: 500px;">
 	<div style="padding-top: 0;"><h2 style="color: gray">사진 추가</h2></div>
  	<input type="file" id="file" class="image_inputType_file" accept="img/*" multiple style="display: none;">
-    <button class="button" onclick="onclick=document.all.file.click()" style="margin: auto; width: 50px; height: 50px; display: block; font-size: 30px;">+</button>
+    <button class="button" onclick="onclick=document.all.file.click()" style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px;">+</button>
     </div>
 <form action="write.jsp" method="post" style="width: 500px;">
     <div class="form-group">
