@@ -1,17 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+  <meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="assets/css/modal.css"/>
-<link rel="stylesheet" href="assets/css/´ñ±Û.css"/>
+<link rel="stylesheet" href="assets/css/ëŒ“ê¸€.css"/>
 <body>
     <div id="root">
    
-        <button type="button" id="modal_opne_btn">¸ð´Þ Ã¢ ¿­±â</button>
+        <button type="button" id="modal_opne_btn">ëª¨ë‹¬ ì°½ ì—´ê¸°</button>
            
     </div>
     <div class="container">
@@ -36,8 +36,8 @@
 				<section>
 					<div style="width: 100%;">
        				<div id="form-commentInfo"> 
-        				<div id="comment-count" >´ñ±Û <span id="count">0</span></div>  
-         					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="´ñ±ÛÀ» ´Þ¾ÆÁÖ¼¼¿ä." > 
+        				<div id="comment-count" >ëŒ“ê¸€ <span id="count">0</span></div>  
+         					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="ëŒ“ê¸€ì„ ë‹¬ì•„ì£¼ì„¸ìš”." > 
          					<button id="submit">OK</button>
         			</div> 
         			<div id="comments"></div>
@@ -53,7 +53,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
-<script src="assets/js/´ñ±Û.js"></script>
+<script src="assets/js/ëŒ“ê¸€.js"></script>
 <script>
 	$("#modal_opne_btn").click(function() {
 		$("#modal").attr("style", "display:block");
