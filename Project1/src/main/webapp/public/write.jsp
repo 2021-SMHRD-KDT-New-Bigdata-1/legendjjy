@@ -78,7 +78,7 @@
           <%} %>
         </div>
       </div>
-
+	</nav>
 <div class="container" style="border: solid 1px silver; margin-top: 20px;">
 	<div style="width: 500px;">
 	<div style="padding-top: 0;"><h2 style="color: gray">사진 추가</h2></div>
@@ -115,6 +115,7 @@
         <input type="checkbox" value="" style="margin-left: 10px; margin-right: 5px;">나만 보기
 </form>
 </div>
+</main>
 </body>
 </html>
 
