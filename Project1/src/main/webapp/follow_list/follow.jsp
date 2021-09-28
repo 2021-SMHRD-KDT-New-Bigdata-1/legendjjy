@@ -5,7 +5,9 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
 </head>
+<body>
 <body>
 	<nav class="navbar navbar-expand-lg fixed-top" style=" background-image: none; background-color: white; padding-left: 160px;">
 		<div class="container">
@@ -132,5 +134,6 @@
 
 			</div>
 	</section>
+</body>
 </body>
 </html>
