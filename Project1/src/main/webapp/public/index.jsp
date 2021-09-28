@@ -230,7 +230,7 @@ input[type="text"] {
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">출판</a></li>
+							href="../publish/book_made.jsp">출판</a></li>
 						<%
 						if (vo != null && vo.getAdmin_yn().equals("n")) {
 						%><li

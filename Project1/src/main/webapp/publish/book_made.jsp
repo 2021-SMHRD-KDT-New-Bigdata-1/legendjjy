@@ -19,10 +19,14 @@
   <!-- ===============================================-->
   <!--    Favicons-->
   <!-- ===============================================-->
-  <link rel="apple-touch-icon" sizes="180x180" href="../public/assets/img/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="../public/assets/img/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="../public/assets/img/favicons/favicon-16x16.png">
-  <link rel="shortcut icon" type="image/x-icon" href="../public/assets/img/favicons/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" 
+  	href="../public/assets/img/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" 
+  	href="../public/assets/img/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" 
+  	href="../public/assets/img/favicons/favicon-16x16.png">
+  <link rel="shortcut icon" type="image/x-icon" 
+  	href="../public/assets/img/favicons/favicon.ico">
   <link rel="manifest" href="../public/assets/img/favicons/manifest.json">
   <meta name="msapplication-TileImage" content="../public/assets/img/favicons/mstile-150x150.png">
   <meta name="theme-color" content="#ffffff">
@@ -37,11 +41,12 @@
   <link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <link 
+  	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" 
+  	rel="stylesheet">
   <link rel="stylesheet" href="book_css.css">
-  <script src="//code.jquery.com/jquery.min.js"></script>
-  
 </head>
+<script src="//code.jquery.com/jquery.min.js"></script>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
@@ -52,70 +57,36 @@
   <!--    Main Content-->
   <!-- ===============================================-->
   <main class="main" id="top">
-		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
-			<div class="container">
-				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
-					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
-					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
-						class="text-warning">D</span></span></a>
-				<button class="navbar-toggler collapsed" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div
-					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
-					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
-								쓰러가기</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="look.jsp">둘러보기</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">출판</a></li>
-						<%
-						if (vo != null && vo.getAdmin_yn().equals("n")) {
-						%><li
-							class="nav-item px-2"><a class="nav-link fw-bold"
-							href="Login_v2/edit.html">개인정보수정</a></li>
-						<%
-						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
-						%><li
-							class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">유저관리</a></li>
-						<%
-						}
-						%>
-					</ul>
-					<%
-					if (vo == null) {
-					%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
-					</form>
-					<%
-					} else {
-					%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../LogoutService">로그아웃</a>
-					</form>
-					<%
-					}
-					%>
-				</div>
-			</div>
-		</nav>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
+      data-navbar-on-scroll="data-navbar-on-scroll">
+      <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
+            src="../public/assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
+              class="text-warning">D</span></span></a>
+        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="#look">둘러보기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../follow_list/follow.jsp<%}%>">팔로우</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">출판</a></li>
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="Login_v2/edit.jsp">개인정보수정</a></li><%}
+            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
+          </ul>
+          <%if(vo==null){ %>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+          <%}else{ %>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">로그아웃</a></form>
+          <%} %>
+        </div>
+      </div>
+      </nav>
    
-
+<section class="py-0" id="header">
+	<div class="container">
+			
     <div class="content" style="margin-top: 200px;">
         <table>
             <tr>
@@ -165,6 +136,9 @@
             </tr>
         </table>
     </div>
+    </div>
+    </section>
+    
     
     <form style="text-align: center;">
         <input type="button" value="신청하기"
