@@ -47,6 +47,17 @@
 	rel="stylesheet">
 <link rel="stylesheet" href="assets/css/modal.css" />
 <link rel="stylesheet" href="assets/css/댓글.css" />
+
+	<!-- 글쓰기테이블 fade up 효과 -->
+	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      $( document ).ready( function() {
+        AOS.init();
+      } );
+    </script>
+
 <style>
 table {
 	border: 1px solid grey;
@@ -344,14 +355,14 @@ input[type="text"] {
 
 			<div class="container">
 				<div class="row">
-					<div class="col-12" id="write">
+					<div class="col-12" id="write"  data-aos="fade-up" data-aos-duration="3000">
 						<h1 class="py-5 text-center">일기 쓰기</h1>
 					</div>
 				</div>
 			</div>
 
-			<div class="container">
-				<table>
+			<div class="container" style="margin-bottom: 100px;"   >
+				<table style="background-color: rgb(242, 238, 233);" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
 						<td>
 							<div id="user_upload_img"></div> <input id="file" type="file"
