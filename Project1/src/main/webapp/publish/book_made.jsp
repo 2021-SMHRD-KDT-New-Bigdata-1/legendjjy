@@ -45,7 +45,20 @@
   	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" 
   	rel="stylesheet">
   <link rel="stylesheet" href="book_css.css">
+  
+  
+  <!-- fade up 효과 -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+      $( document ).ready( function() {
+        AOS.init();
+      } );
+    </script>
+  
 </head>
+
 <script src="//code.jquery.com/jquery.min.js"></script>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
@@ -58,7 +71,7 @@
   <!-- ===============================================-->
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-      data-navbar-on-scroll="data-navbar-on-scroll">
+      data-navbar-on-scroll="data-navbar-on-scroll" style="background-color: rgb(242, 238, 233, 0.7);">
       <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
             src="../public/assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
               class="text-warning">D</span></span></a>
@@ -89,47 +102,47 @@
 			
     <div class="content" style="margin-top: 200px;">
         <table>
-            <tr>
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>일기장을 제작해 드립니다</h2></td>
                 <td><img class="cont" src="imgs/book_01.png" alt="" style="background-color: silver"></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-left" data-aos-duration="3000">
                 <td></td>
                 <td><img class="cont" src="imgs/book_02.jpeg" alt=""></td>
                 <td><h2>일기를 작성하세요</h2></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>직접 표지 디자인을 고를 수 있어요</h2></td>
                 <td><img class="cont" src="imgs/book_03.jpg" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-left" data-aos-duration="3000">
                 <td></td>
                 <td><img class="cont" src="imgs/book_04.jpg" alt=""></td>
                 <td><h2>pdf파일로 받을 수 있어요</h2></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>나만의 일기장을 간직하세요</h2></td>
                 <td><img class="cont" src="imgs/book_05.jpg" alt=""></td>
                 <td></td>
@@ -144,6 +157,7 @@
         <input type="button" value="신청하기"
         style="width:150px; height:60px; margin-top: 100px; font-size: 20px; color: cornsilk;
         background-color: rgb(69, 100, 177); border:2"
+        data-aos="fade-up" data-aos-duration="2000"
         >
     </form>
     
