@@ -56,7 +56,7 @@
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
       data-navbar-on-scroll="data-navbar-on-scroll">
       <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
-            src="assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
+            src="assets/img/gallery/logo_small.png" alt="..." style="height: 50px;"/><span class="fs-2 fw-bold text-primary ms-2" style="margin-top: 10px;">LEGEN<span
               class="text-warning">D</span></span></a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -79,9 +79,13 @@
         </div>
       </div>
 
-<div class="container">
-<h2>일기 쓰기</h2>
-<form action="write.jsp" method="post">
+<div class="container" style="border: solid 1px silver; margin-top: 20px;">
+	<div style="width: 500px;">
+	<div style="padding-top: 0;"><h2 style="color: gray">사진 추가</h2></div>
+ 	<input type="file" id="file" class="image_inputType_file" accept="img/*" multiple style="display: none;">
+    <button class="button" onclick="onclick=document.all.file.click()" style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px;">+</button>
+    </div>
+<form action="write.jsp" method="post" style="width: 500px; font-size: 20px;">
     <div class="form-group">
     <label for="title">제목</label>
 
@@ -89,28 +93,26 @@
     <input type="text" class="form-control" id="title"
     placeholder="제목 입력(2-100)" name="title"
     maxlength="100" required="required"
-    pattern=".{2,100}">
+    pattern=".{2,100}" style="font-size: 17px;">
     </div>
     <div class="form-group">
 <label for="content">내용</label>
 
 <!--  textarea 안에 있는 모든 글자는 그대로 나타난다. 공백문자, tag, enter -->
 <textarea class="form-control" rows="5" id="content"
-    name="content" placeholder="내용 작성"></textarea>
+    name="content" placeholder="내용 작성" style="font-size: 17px;"></textarea>
 </div>
     <div class="form-group">
     <label for="writer">태그</label>
     <input type="text" class="form-control" id="writer"
-    placeholder="태그(2자-10자)" name="writer">
+    placeholder="태그(2자-10자)" name="writer" style="font-size: 17px;">
     </div>
-    <input type="file" id="file" class="image_inputType_file" accept="img/*" multiple style="display: none;">
-    <button class="button" onclick="onclick=document.all.file.click()">사진 추가</button>
+
     <br><br>
     
-    <button class="button" style="margin-right: 20px;">글 삭제</button>
-
-    <button type="submit" class="btn btn-default">수정 완료</button>
+    <button class="btn btn-default" style="margin-right: 20px; border: 1px solid gray; font-size: 20px; color: black;">글 삭제</button>
     
+    <button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black;">수정완료</button>
     <br><br>
         <input type="checkbox" value="" style="margin-right: 5px;">댓글 허용   
         <input type="checkbox" value="" style="margin-left: 10px; margin-right: 5px;">나만 보기

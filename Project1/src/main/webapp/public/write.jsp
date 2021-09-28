@@ -85,7 +85,7 @@
  	<input type="file" id="file" class="image_inputType_file" accept="img/*" multiple style="display: none;">
     <button class="button" onclick="onclick=document.all.file.click()" style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px;">+</button>
     </div>
-<form action="write.jsp" method="post" style="width: 500px;">
+<form action="write.jsp" method="post" style="width: 500px; font-size: 20px;">
     <div class="form-group">
     <label for="title">제목</label>
 
@@ -93,23 +93,23 @@
     <input type="text" class="form-control" id="title"
     placeholder="제목 입력(2-100)" name="title"
     maxlength="100" required="required"
-    pattern=".{2,100}">
+    pattern=".{2,100}" style="font-size: 17px;">
     </div>
     <div class="form-group">
 <label for="content">내용</label>
 
 <!--  textarea 안에 있는 모든 글자는 그대로 나타난다. 공백문자, tag, enter -->
 <textarea class="form-control" rows="5" id="content"
-    name="content" placeholder="내용 작성"></textarea>
+    name="content" placeholder="내용 작성" style="font-size: 17px;"></textarea>
 </div>
     <div class="form-group">
     <label for="writer">태그</label>
     <input type="text" class="form-control" id="writer"
-    placeholder="태그(2자-10자)" name="writer">
+    placeholder="태그(2자-10자)" name="writer" style="font-size: 17px;">
     </div>
 
     <br><br>
-    <button type="submit" class="btn btn-default" style="border: 1px solid gray">등록</button>
+    <button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black;">등록</button>
     <br><br>
         <input type="checkbox" value="" style="margin-right: 5px;">댓글 허용   
         <input type="checkbox" value="" style="margin-left: 10px; margin-right: 5px;">나만 보기
