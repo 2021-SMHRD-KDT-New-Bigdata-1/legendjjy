@@ -102,47 +102,47 @@
 			
     <div class="content" style="margin-top: 200px;">
         <table>
-            <tr data-aos="fade-right" data-aos-duration="2000">
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>일기장을 제작해 드립니다</h2></td>
                 <td><img class="cont" src="imgs/book_01.png" alt="" style="background-color: silver"></td>
                 <td></td>
             </tr>
-            <tr data-aos="zoom-in" data-aos-duration="2000">
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr data-aos="fade-left" data-aos-duration="2000">
+            <tr data-aos="fade-left" data-aos-duration="3000">
                 <td></td>
                 <td><img class="cont" src="imgs/book_02.jpeg" alt=""></td>
                 <td><h2>일기를 작성하세요</h2></td>
             </tr>
-            <tr data-aos="zoom-in" data-aos-duration="2000">
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr data-aos="fade-right" data-aos-duration="2000">
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>직접 표지 디자인을 고를 수 있어요</h2></td>
                 <td><img class="cont" src="imgs/book_03.jpg" alt=""></td>
                 <td></td>
             </tr>
-            <tr data-aos="zoom-in data-aos-duration="2000">
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr data-aos="fade-left" data-aos-duration="2000">
+            <tr data-aos="fade-left" data-aos-duration="3000">
                 <td></td>
                 <td><img class="cont" src="imgs/book_04.jpg" alt=""></td>
                 <td><h2>pdf파일로 받을 수 있어요</h2></td>
             </tr>
-            <tr data-aos="zoom-in" data-aos-duration="2000">
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr data-aos="fade-right" data-aos-duration="2000">
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>나만의 일기장을 간직하세요</h2></td>
                 <td><img class="cont" src="imgs/book_05.jpg" alt=""></td>
                 <td></td>
