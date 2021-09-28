@@ -41,7 +41,7 @@
 				console.log('logined');
 				loginBtn.value = 'Logout';
 				var profile = gauth.currentUser.get().getBasicProfile();
-				console.log(profile.getName());
+				console.log(profile.getEmail());
 				nameTxt.innerHTML = 'Welcome <strong>'+profile.getName()+'</strong>';
 			}else {
 				console.log('logouted');
@@ -74,7 +74,7 @@
 		font-size: 24px;
 		}
 		#loginBtn:hover {
-		cursor : pointer
+		cursor: pointer
 		}
 	</style>
 </head>
@@ -119,7 +119,7 @@
 								Login
 							</button>
 						</div>
-						<span id="name"></span><input type="button" id="loginBtn" value="Login with Google" onclick="
+						<a href="../../JoinService"><input type="button" id="loginBtn" name="email" value="Login with Google" onclick="
 						if(this.value === 'Login with Google'){
 							gauth.signIn().then(function(){
 								checkLoginStatus();
@@ -129,7 +129,7 @@
 							gauth.signOut().then(function(){
 								checkLoginStatus();
 							});
-							}">
+							}"></a>
 					</div>
 					<div class="text-center p-t-115">
 						<span class="txt1" style="color:red"><%=errMsg %></span>	
