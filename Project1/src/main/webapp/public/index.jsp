@@ -85,8 +85,8 @@
               <div class="col-12">
                 <div class="swiper-container pb-4 overflow-hidden" data-pagination-target="pagination1">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-1.png"
-                        alt="products" />
+                    <div class="swiper-slide h-auto"><a href="#"><img class="w-100" src="assets/img/gallery/product-1.png"
+                        alt="products" /></a>
                     </div>
                     <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-2.png"
                         alt="products" />
@@ -122,6 +122,25 @@
           </div>
         </div>
       </div>
+      
+    <!-- modal -->
+    <div class="container">
+    	<div id="todayModal" class="Modal">
+    		<div class="nicksection">
+    			<a><p>@legend</p></a>
+    		</div>
+    		<div class="contentIMG" sytle>
+    			<span><img alt="" src=""></span>
+    		</div>
+    		<div class="content">
+    		    <span>
+    				<p>title</p>
+    				<p>yy-mm-dd</p>
+    				<p>diary content</p>
+    			</span>
+    		</div>
+    	</div>
+    </div>
 
     </section>
 
