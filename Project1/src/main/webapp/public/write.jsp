@@ -55,6 +55,17 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
+<style>
+table {
+	border: 1px solid grey;
+}
+td {
+	border: 1px solid grey;
+	padding: 30px;
+	align: center;
+	width: 500px;
+}
+</style>
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <!-- 제이쿼리 1.x 최신 버전 로드 -->
@@ -192,50 +203,56 @@
 					%>
 				</div>
 			</div>
-			<div class="container">
-				<form>
-				<table>
+			<div class="container" style="margin-bottom: 100px;"   >
+				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-						<td width="500px" height="500px" align="center">
-							<div id="user_upload_img"></div>
-							<h2 style="color: gray">사진 추가</h2>
-							<input id="file" type="file"
+						<td>
+							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
 							style="display: none;">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
-								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px;">+</button>
+								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
+								box-shadow: 3px 3px 3px gray;">+</button>
 
 						</td>
-						<td width="500px" height="500px" align="center">
+						<td>
 							<form action="write.jsp" method="post"
-								style="width: 500px; font-size: 20px;">
+								style="width: 640px; font-size: 20px;">
 								<div class="form-group">
-									<label for="title">제목</label>
-
-									<!-- pattern 속성을 이용한 정규표현식으로 데이터의 유효성 검사를 할 수 있다. -->
-									<input type="text" class="form-control" id="title"
+									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 17px;">
+										style="font-size: 20px; box-shadow: 2px 2px 2px gray;">
 								</div>
 								<div class="form-group">
-									<label for="content">내용</label>
-
-									<!--  textarea 안에 있는 모든 글자는 그대로 나타난다. 공백문자, tag, enter -->
+									<br>
 									<textarea class="form-control" rows="15" id="content"
-										name="content" placeholder="내용 작성" style="font-size: 17px;"></textarea>
+										name="content" placeholder="내용 작성" 
+										style="font-size: 17px; box-shadow: 2px 2px 2px gray;"></textarea>
 								</div>
 								<div class="form-group">
-									<label for="writer">태그</label> <input type="text"
-										class="form-control" id="writer" placeholder="태그(2자-10자)"
-										name="writer" style="font-size: 17px;">
+									<br> <input type="text" class="form-control" id="writer"
+										placeholder="태그(2자-10자)" name="writer"
+										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
 								</div>
 								<input type="checkbox" value="" style="margin-right: 5px;">댓글
 								허용 <input type="checkbox" value=""
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
+								<%
+								if (vo == null) {
+								%>
+								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
+									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
+								
+								<%
+								} else {
+								%>
 								<button type="submit" class="btn btn-default"
-									style="border: 1px solid gray; font-size: 20px; color: black;">등록</button>
+									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
+								<%
+								}
+								%>
 							</form>
 						</td>
 					</tr>

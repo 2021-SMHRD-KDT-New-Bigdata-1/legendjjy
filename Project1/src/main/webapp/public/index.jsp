@@ -361,7 +361,7 @@ input[type="text"] {
 				</div>
 			</div>
 
-			<div class="container" style="margin-bottom: 100px;"   >
+			<div class="container" style="margin-bottom: 100px;">
 				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
 						<td>
