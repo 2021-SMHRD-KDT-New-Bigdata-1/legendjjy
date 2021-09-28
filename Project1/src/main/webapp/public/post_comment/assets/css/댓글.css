@@ -7,7 +7,7 @@
 }
 #comment-count{ 
     margin-bottom: 30px; 
-    margin-top: 75px;
+    margin-top: 10px;
     margin-bottom: 10px;
 } 
 #comment-input{ 
@@ -19,10 +19,10 @@
 
 #comments{
      margin-top: 20px; 
-     margin-left: 400px;
+     margin-left: 30px;
 } 
 .eachComment{ 
-    width :1000px; margin: 5px; padding: 0.09em; border-bottom: 1px solid  aliceblue; 
+    width :800px; margin: 5px; padding: 0.09em; border-bottom: 1px solid  aliceblue; 
     height: 85px; font-size: 10px; 
 } 
 .eachComment .name{ 
@@ -37,7 +37,7 @@
     font-size: 1.48em; margin-left: 10em; 
 } 
 .eachComment .time{ 
-    font-size: 0.7em; color: #c1bcba; font-style: oblique; margin-left: 129em; margin-bottom: 0.5em; 
+    font-size: 0.7em; color: #000000; font-style: oblique; margin-left: 100em; margin-bottom: 0.5em; 
 } 
 .eachComment .voteDiv{ 
     display: flex; justify-content: flex-end; font-size: 5px; 
