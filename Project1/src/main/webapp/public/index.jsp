@@ -38,13 +38,50 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/modal.css"/>
+  <link rel="stylesheet" href="assets/css/댓글.css"/>
+  
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
 	%>
-
+    <div class="container">
+		<div id="modal">
+			<div class="modal_header">
+			<section>
+				<strong><a herf="#" style="display: inline margin: 20px">@legend</a></strong>
+				<div class="modal_content">
+					<div class="diaryIMG">
+						<img id="selectIMG" src="assets/img/camera.png">
+					</div>
+					<div class="diaryContent">
+						<h2 style="margin-bottom: 15px">title</h2>
+						<p style="direction:rtl">time</p><br>
+						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+						<section class="list"></section>
+					</div>
+				</div>
+				</section>
+			</div>
+			<div class="modal_header">
+				<section>
+					<div style="width: 100%;">
+       				<div id="form-commentInfo"> 
+        				<div id="comment-count" >댓글 <span id="count">0</span></div>  
+         					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="댓글을 달아주세요." > 
+         					<button id="submit">OK</button>
+        			</div> 
+        			<div id="comments"></div>
+      			</div>
+				</section>
+				</div>
+			<div class="modal_layer">
+				<button type="button" class="btm_image" id="modal_close_btn"><img src="assets/img/closeicon.png" alt=""></button>
+			</div>
+		</div>
+	</div>
   <!-- ===============================================-->
   <!--    Main Content-->
   <!-- ===============================================-->
@@ -64,7 +101,7 @@
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../follow_list/follow.jsp<%}%>">팔로우</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">출판</a></li>
-            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="Login_v2/edit.jsp">개인정보수정</a></li><%}
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="Login_v2/edit.html">개인정보수정</a></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
@@ -84,34 +121,34 @@
               <div class="col-12">
                 <div class="swiper-container pb-4 overflow-hidden" data-pagination-target="pagination1">
                   <div class="swiper-wrapper">
-                    <div class="swiper-slide h-auto"><a href="#"><img class="w-100" src="assets/img/gallery/product-1.png"
-                        alt="products" /></a>
-                    </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-2.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-1.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-3.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-2.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-4.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-3.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-5.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-4.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-1.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-5.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-2.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-1.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-3.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-2.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-4.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-3.png"
                         alt="products" />
                     </div>
-                    <div class="swiper-slide h-auto"><img class="w-100" src="assets/img/gallery/product-5.png"
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" id="modal_opne_btn" src="assets/img/gallery/product-4.png"
+                        alt="products" />
+                    </div>
+                    <div class="swiper-slide h-auto"><img class="w-100" id="modal_opne_btn" src="assets/img/gallery/product-5.png"
                         alt="products" />
                     </div>
                   </div>
@@ -123,23 +160,6 @@
       </div>
       
     <!-- modal -->
-    <div class="container">
-    	<div id="todayModal" class="Modal">
-    		<div class="nicksection">
-    			<a><p>@legend</p></a>
-    		</div>
-    		<div class="contentIMG" sytle>
-    			<span><img alt="" src=""></span>
-    		</div>
-    		<div class="content">
-    		    <span>
-    				<p>title</p>
-    				<p>yy-mm-dd</p>
-    				<p>diary content</p>
-    			</span>
-    		</div>
-    	</div>
-    </div>
 
     </section>
 
@@ -286,8 +306,19 @@
  		 });
  	 });
   </script>
-  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+<script src="assets/js/댓글.js"></script>
+<script>
+	$("#modal").hide();
+	$("#modal_opne_btn").click(function() {
+		$("#modal").attr("style", "display:block");
+	});
 
+	$("#modal_close_btn").click(function() {
+		$("#modal").attr("style", "display:none");
+	});
+</script>
 </body>
-
 </html>
