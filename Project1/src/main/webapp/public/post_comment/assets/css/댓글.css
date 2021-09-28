@@ -2,10 +2,8 @@
     margin: 0;
 }
 #form-commentInfo{ 
-    width: 1020px;
-
-    margin-left: 400px;
-    
+    width: 1000px;
+    margin-left: 20px;
 }
 #comment-count{ 
     margin-bottom: 30px; 
