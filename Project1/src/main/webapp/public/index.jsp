@@ -61,9 +61,9 @@
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="#look">둘러보기</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심목록</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../follow_list/follow.html<%}%>">구독목록</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">공지사항</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../follow_list/follow.jsp<%}%>">팔로우</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">출판</a></li>
             <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="Login_v2/edit.jsp">개인정보수정</a></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
           </ul>
@@ -173,7 +173,7 @@
 
       <div class="list_wrap">
         <ul>
-          <li class="item item1">
+          <li class="item item1" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -182,7 +182,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item2">
+          <li class="item item2" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -191,7 +191,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item3">
+          <li class="item item3" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -200,7 +200,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item4">
+          <li class="item item4" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -209,7 +209,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item5">
+          <li class="item item5" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -218,7 +218,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item6">
+          <li class="item item6" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -227,7 +227,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item7">
+          <li class="item item7" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -236,7 +236,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item8">
+          <li class="item item8" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
@@ -245,7 +245,7 @@
               <span class="date">날짜</span>
             </div>
           </li>
-          <li class="item item9">
+          <li class="item item9" style="background-color: rgb(245, 242, 235);">
             <div class="image">사진</div>
             <div class="cont">
               <strong>작성자</strong>
