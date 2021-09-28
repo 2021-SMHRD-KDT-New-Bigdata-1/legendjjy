@@ -73,6 +73,9 @@
 		border-radius: 50px;
 		font-size: 24px;
 		}
+		#loginBtn:hover {
+		cursor : pointer
+		}
 	</style>
 </head>
 
@@ -120,6 +123,7 @@
 						if(this.value === 'Login with Google'){
 							gauth.signIn().then(function(){
 								checkLoginStatus();
+								
 							});
 						} else {
 							gauth.signOut().then(function(){
