@@ -119,7 +119,7 @@
 								Login
 							</button>
 						</div>
-						<a href="../../JoinService"><input type="button" id="loginBtn" name="email" value="Login with Google" onclick="
+						<span id="name"></span><input type="button" id="loginBtn" name="email" value="Login with Google" onclick="
 						if(this.value === 'Login with Google'){
 							gauth.signIn().then(function(){
 								checkLoginStatus();
@@ -129,7 +129,7 @@
 							gauth.signOut().then(function(){
 								checkLoginStatus();
 							});
-							}"></a>
+							}">
 					</div>
 					<div class="text-center p-t-115">
 						<span class="txt1" style="color:red"><%=errMsg %></span>	

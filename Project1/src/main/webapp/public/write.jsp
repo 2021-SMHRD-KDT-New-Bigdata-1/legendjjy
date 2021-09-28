@@ -169,23 +169,25 @@
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">일기
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="#look">둘러보기</a></li>
+							href="look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심목록</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">구독목록</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">공지사항</a></li>
+							href="#faqs">출판</a></li>
 						<%
 						if (vo != null && vo.getAdmin_yn().equals("n")) {
-						%><li class="nav-item px-2"><a class="nav-link fw-bold"
+						%><li
+							class="nav-item px-2"><a class="nav-link fw-bold"
 							href="Login_v2/edit.html">개인정보수정</a></li>
 						<%
 						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
-						%><li class="nav-item px-2"><a class="nav-link fw-bold"
+						%><li
+							class="nav-item px-2"><a class="nav-link fw-bold"
 							href="#faqs">유저관리</a></li>
 						<%
 						}
@@ -214,8 +216,10 @@
 					<tr>
 						<td width="500px" height="500px" align="center">
 							<div id="user_upload_img"></div>
-							<h2 style="color: gray">사진 추가</h2><input id="file" type="file"
-							onchange="previewImage(this, 'user_upload_img');" style="display: none;">
+							<h2 style="color: gray">사진 추가</h2>
+							<input id="file" type="file"
+							onchange="previewImage(this, 'user_upload_img');"
+							style="display: none;">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px;">+</button>
@@ -245,11 +249,11 @@
 										class="form-control" id="writer" placeholder="태그(2자-10자)"
 										name="writer" style="font-size: 17px;">
 								</div>
-								<input type="checkbox" value=""
-									style="margin-right: 5px;">댓글 허용 <input type="checkbox"
-									value="" style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
+								<input type="checkbox" value="" style="margin-right: 5px;">댓글
+								허용 <input type="checkbox" value=""
+									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								<button type="submit" class="btn btn-default"
-									style="border: 1px solid gray; font-size: 20px; color: black;">등록</button> 
+									style="border: 1px solid gray; font-size: 20px; color: black;">등록</button>
 							</form>
 						</td>
 					</tr>

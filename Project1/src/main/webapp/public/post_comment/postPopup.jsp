@@ -1,17 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="EUC-KR"%>
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+  <meta charset="utf-8">
 <title>Insert title here</title>
 </head>
 <link rel="stylesheet" href="assets/css/modal.css"/>
-<link rel="stylesheet" href="assets/css/댓글.css"/>
+<link rel="stylesheet" href="assets/css/占쏙옙疫뀐옙.css"/>
 <body>
     <div id="root">
    
-        <button type="button" id="modal_opne_btn">모달 창 열기</button>
+        <button type="button" id="modal_opne_btn">筌뤴뫀占쏙옙 筌∽옙 占쎈떯由�</button>
            
     </div>
     <div class="container">
@@ -34,16 +35,16 @@
 			</div>
 			<div class="modal_header">
 				<section>
-					<div style="width: 100%;">
+					<div style="width: 100%; height:450px; overflow-x: hidden;">
        				<div id="form-commentInfo"> 
-        				<div id="comment-count" >댓글 <span id="count">0</span></div>  
-         					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="댓글을 달아주세요." > 
+        				<div id="comment-count" >占쏙옙疫뀐옙 <span id="count">0</span></div>  
+         					<input id="comment-input" onkeyup="enterkey();" type="text" value="" placeholder="占쏙옙疫뀐옙占쏙옙 占싼딉옙占썰틠�눘占쎈챷占쏙옙." > 
          					<button id="submit">OK</button>
         			</div> 
         			<div id="comments"></div>
-      			</div>
+      				</div>
 				</section>
-				</div>
+			</div>
 			<div class="modal_layer">
 				<button type="button" class="btm_image" id="modal_close_btn"><img src="assets/img/closeicon.png" alt=""></button>
 			</div>
@@ -53,7 +54,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 <script src="assets/js/functions-min.js"></script>
-<script src="assets/js/댓글.js"></script>
+<script src="assets/js/占쏙옙疫뀐옙.js"></script>
 <script>
 	$("#modal").hide();
 	$("#modal_opne_btn").click(function() {
