@@ -359,23 +359,23 @@ input[type="text"] {
 					</div>
 				</div>
 			</div>
-
+		<form class="upload" action="UploadService" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
 				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
+					
 						<td>
-							<div id="user_upload_img"></div> <input id="file" type="file"
+							<div id="user_upload_img"></div> <input id="file" type="file" name="file"
 							onchange="previewImage(this, 'user_upload_img');"
 							style="display: none;">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
 								box-shadow: 3px 3px 3px gray;">+</button>
-
 						</td>
 						<td>
-							<form action="write.jsp" method="post"
-								style="width: 500px; font-size: 20px;">
+							
+							<div style="width: 500px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
@@ -393,8 +393,8 @@ input[type="text"] {
 										placeholder="태그(2자-10자)" name="writer"
 										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
 								</div>
-								<input type="checkbox" value="" style="margin-right: 5px;">댓글
-								허용 <input type="checkbox" value=""
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글
+								허용 <input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								<%
 								if (vo == null) {
@@ -405,18 +405,17 @@ input[type="text"] {
 								<%
 								} else {
 								%>
-								<button type="submit" class="btn btn-default"
+								<button type="submit" class="btn btn-default" id="btn_submit"
 									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
 								<%
 								}
 								%>
-								
-							</form>
+							</div>
 						</td>
 					</tr>
 				</table>
 			</div>
-
+			</form>
 		</div>
 
 	</main>
@@ -441,6 +440,7 @@ input[type="text"] {
 	<script src="vendors/fontawesome/all.min.js"></script>
 	<script src="assets/js/theme.js"></script>
 	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<!-- '일기쓰기'메뉴 자동 스크롤 -->
 	<script>
 		$(document).ready(function() {
 			$(".nav-link fw-bold .scroll").click(function(event) {
@@ -458,6 +458,7 @@ input[type="text"] {
 				|| document
 						.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')
 	</script>
+	<!-- Modal -->
 	<script src="assets/js/functions-min.js"></script>
 	<script src="assets/js/댓글.js"></script>
 	<script>
@@ -470,5 +471,7 @@ input[type="text"] {
 			$("#modal").attr("style", "display:none");
 		});
 	</script>
+	<!-- image upload -->
+
 </body>
 </html>
