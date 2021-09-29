@@ -59,7 +59,7 @@
             <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../write.jsp<%}%>">일기 쓰러가기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="look.jsp">둘러보기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../index.jsp<%}%>">관심</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">구독</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">팔로우</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">출판</a></li>
             <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../Login_v2/edit.html">개인정보수정</a></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
@@ -73,14 +73,14 @@
       </div>
     </nav>
 	<section style="padding-top: 140px; padding-bottom: 100px;">
-			<h3>@legendjjy 님의 구독 목록</h3>
+			<h3>@legendjjy 님의 팔로우 목록</h3>
 
 			<div class="all" style="position: fixed;">
 				
 			<ul class="board" style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
 				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">닉네임</li>
 				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
-				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독 취소</li>
+				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">팔로우 취소</li>
 			</ul>
 			</div>  
 
