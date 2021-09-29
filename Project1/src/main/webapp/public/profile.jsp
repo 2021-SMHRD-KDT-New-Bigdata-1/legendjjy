@@ -85,7 +85,8 @@
 		
       <div class="col-lg-3" style="padding-left: 49px; width: 30%;">
 
-        <h4 class="my-4">@legendjjy<button id="follow">구독하기</button></h4>
+        <h4 class="my-4">@legendjjy</h4>
+        <button id="follow">구독하기</button>
         <p id="myself" style="color: gray;">자기소개adsfdfsafdasfaafsfasdf글f</p>
 		
       </div>
