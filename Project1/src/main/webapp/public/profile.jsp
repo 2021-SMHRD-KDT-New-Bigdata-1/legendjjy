@@ -13,7 +13,7 @@
   <!-- ===============================================-->
   <!--    Document Title-->
   <!-- ===============================================-->
-  <title>Legend | Diary Everyday</title>
+  <title>프로필 게시글</title>
 
 
   <!-- ===============================================-->
@@ -35,11 +35,10 @@
   <link href="assets/css/theme.css" rel="stylesheet" />
 
   <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
+  <link rel="stylesheet" href="profile/css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/modal.css"/>
   <link rel="stylesheet" href="profile/vendor/bootstrap/css/boostrap.css">
   <link rel="stylesheet" href="profile/css/shop-homepage.css">
 
@@ -52,7 +51,8 @@
 
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-      data-navbar-on-scroll="data-navbar-on-scroll">
+      data-navbar-on-scroll="data-navbar-on-scroll"
+      style="background-color: rgb(242, 238, 233, 0.7);">
       <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
             src="assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
               class="text-warning">D</span></span></a>
@@ -81,18 +81,22 @@
   <!-- Page Content -->
   <div class="container">
 
-    <div class="row">
-
+    <div class="row" style="position: relative;">
+		
       <div class="col-lg-3" style="padding-left: 49px; width: 30%;">
 
         <h4 class="my-4">@legendjjy<button id="follow">구독하기</button></h4>
         <p id="myself" style="color: gray;">자기소개adsfdfsafdasfaafsfasdf글f</p>
-
+		
+      </div>
+      		<div style="position: absolute; margin-top: 30px;"><h2>@legendjjy 님의 일기장</h2></div>
       </div>
       <!-- /.col-lg-3 -->
 
+
+
       <div class="list_wrap">
-        <ul style="padding-left: 370px; width: 1584px;">
+        <ul style="margin-left: 250px">
             <li class="item item1">
                 <div class="image">사진</div>
                 <div class="cont">
@@ -180,7 +184,7 @@
     </div>
     <!-- /.row -->
 
-  </div>
+ 
   <!-- /.container -->
 
   <!-- Footer -->
