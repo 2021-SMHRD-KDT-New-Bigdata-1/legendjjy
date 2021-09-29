@@ -50,32 +50,36 @@
 
 <style>
 .search_bar {
-	height: 60px;
-	width: 50%;
+	height: 40px;
+	width: 20%;
 	border: 1px solid #1b5ac2;
 	background: #ffffff;
 	margin-left: 20%;
+	border-radius: 20px;
+	opacity:0.85;
 }
 
 .search {
 	font-size: 20px;
-	width: 325px;
+	width: 80%;
 	height: 100%;
 	padding: 10px;
 	border: 0px;
 	outline: none;
 	float: left;
+	border-radius: 20px;
 }
 
 .search_button {
-	width: 10%;
+	width: 50px;
 	height: 100%;
-	border: 0px;
-	font-size: 20px;
+	border: none;
+	font-size: 15px;
 	background-color: #1b5ac2;
 	outline: none;
 	float: right;
 	color: #ffffff
+
 }
 .navbar-brand {
     float: left;
@@ -92,7 +96,7 @@
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
-	<main class="main" id="top">
+
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll"
@@ -156,12 +160,18 @@
 			</div>
 			
 		</nav>
+
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
 		<h1 class="py-5 text-center" id="searching">일기 둘러보기</h1>
-		<div class="mx-auto mt-6 mb-7 search_bar">
+		
+	<main class="main" id="top">
+	
+		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 80px; z-index: 1; ">
 			<input class="search" type="text" placeholder="검색어 입력">
-			<button class="search_button">검색</button>
+			<button style="	border-radius: 20px;"class="search_button">검색</button>
 		</div>
+		
+
 		<div class="list_wrap">
 			<ul>
 				<li class="item item1" style="background-color: rgb(245, 242, 235);">
@@ -238,6 +248,6 @@
 				</li>
 			</ul>
 		</div>
-	</main>
+</main>
 </body>
 </html>
