@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>관심목록</title>
+<title>스크랩 목록</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -161,7 +161,7 @@
 		</nav>
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-		<h1 class="py-5 text-center" id="searching">관심 목록</h1>
+		<h1 class="py-5 text-center" id="searching">스크랩 목록</h1>
 		
 	<main class="main" id="top">
 	
