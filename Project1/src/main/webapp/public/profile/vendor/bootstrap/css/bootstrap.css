@@ -103,7 +103,7 @@ address {
 ol,
 ul,
 dl {
-  margin-top: 0;
+  margin-top: -140px;
   margin-bottom: 1rem;
 }
 
@@ -8021,7 +8021,8 @@ button.bg-dark:focus {
 
 .mt-4,
 .my-4 {
-  margin-top: 1.5rem !important;
+  margin-top: 7.8rem !important;
+  margin-bottom: 1.8rem !important;
 }
 
 .mr-4,

@@ -3,7 +3,7 @@
 	pageEncoding="EUC-KR"%>
 
 <!DOCTYPE html>
-<html lang="en-US" dir="ltr">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>일기 쓰기</title>

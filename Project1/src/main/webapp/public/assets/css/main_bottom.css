@@ -36,9 +36,6 @@ a{
     margin-top: 0;
 }
 
-.list_wrap .item:nth-child(3n-2){
-    margin-left: 0;
-}
 
 .list_wrap .item .image{
     width: 100%;

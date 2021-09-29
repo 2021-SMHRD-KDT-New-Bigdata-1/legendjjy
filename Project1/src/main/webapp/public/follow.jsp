@@ -56,12 +56,12 @@
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>#write<%}%>">일기 쓰러가기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="look.jsp">둘러보기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">팔로우</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">출판</a></li>
-            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="Login_v2/edit.html">개인정보수정</a></li><%}
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
@@ -78,8 +78,8 @@
 			<div class="all" style="position: fixed;">
 				
 			<ul class="board" style="margin-top: 190px; padding-left:0px">
-				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px;" >구독이메일</li>
-				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px;">구독취소</li>
+				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독이메일</li>
+				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독취소</li>
 				<li></li>
 			</ul>
 			</div>  

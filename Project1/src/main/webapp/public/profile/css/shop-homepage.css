@@ -7,7 +7,7 @@ body {
   padding-top: 56px;
   background-color: rgba(249, 250, 253, 0);
   margin: 50px;
-  left: 30px;
+  left: -300px;
   position: absolute;
   
 }
@@ -20,11 +20,18 @@ div > .card{
 }
 *{
   margin: 0;
-
+  padding: 0;
 }
 
 ul, li{
   list-style: none;
+}
+
+ol,
+ul,
+dl {
+  margin-top: -120px;
+  margin-bottom: 1rem;
 }
 
 a{
@@ -34,32 +41,30 @@ a{
 
 .list_wrap{
   width: 1800px;
+  /*width: 12000px;*/
   margin: 0 auto;
 
 }
 
 
 .list_wrap ul{
-  width: 1700px;
+  width: 1500px;
   font-size: 0;
 }
 
 .list_wrap .item{
   display: inline-block;
   width: 280px;
+  /*width : 30%;*/
   margin-top: 30px;
-  margin-left: 20px;
+  margin-left: 30px;
+  /*margin-left: 5%;*/
   box-shadow: 1px 1px 1px silver;
   transition: all 0.2s ease;
   cursor: pointer;
 }
-
 .list_wrap .item:nth-child(-n+3){
-  margin-top: 0;
-}
-
-.list_wrap .item:nth-child(3n-2){
-  margin-left: 1;
+    margin-top: 0;
 }
 
 .list_wrap .item .image{
@@ -116,8 +121,26 @@ a{
   font-size: 13px;
   letter-spacing: -1px;
 }
-
 .list_wrap .item:hover{
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
 
+h4{
+	margin-top: 7.5rem !important;
+}
+#follow{
+	margin-left: 5%;
+	heigth: 50px;
+	width: 68px;
+	font-size: 19px;
+	color: white;
+	background-color: blue;
+	border: none;
+}
+#myself{
+	word-break: break-all;
+	width: 300px;
+	margin: 0;
+	padding-left: 80px;
+	line-height: 1.8rem;
+}

@@ -13,7 +13,7 @@
   <!-- ===============================================-->
   <!--    Document Title-->
   <!-- ===============================================-->
-  <title>book_made</title>
+  <title>publishing</title>
 
 
   <!-- ===============================================-->
@@ -45,7 +45,20 @@
   	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" 
   	rel="stylesheet">
   <link rel="stylesheet" href="book_css.css">
+  
+  
+  <!-- fade up 효과 -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+      $( document ).ready( function() {
+        AOS.init();
+      } );
+    </script>
+  
 </head>
+
 <script src="//code.jquery.com/jquery.min.js"></script>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
@@ -58,7 +71,7 @@
   <!-- ===============================================-->
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-      data-navbar-on-scroll="data-navbar-on-scroll">
+      data-navbar-on-scroll="data-navbar-on-scroll" style="background-color: rgb(242, 238, 233, 0.7);">
       <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
             src="../public/assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
               class="text-warning">D</span></span></a>
@@ -67,16 +80,16 @@
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="#look">둘러보기</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../follow_list/follow.jsp<%}%>">팔로우</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">출판</a></li>
-            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="Login_v2/edit.jsp">개인정보수정</a></li><%}
+            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../public/look.jsp">둘러보기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/index.jsp<%}%>">관심</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/follow.jsp<%}%>">팔로우</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a></form>
           <%}else{ %>
           <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">로그아웃</a></form>
           <%} %>
@@ -89,47 +102,47 @@
 			
     <div class="content" style="margin-top: 200px;">
         <table>
-            <tr>
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>일기장을 제작해 드립니다</h2></td>
                 <td><img class="cont" src="imgs/book_01.png" alt="" style="background-color: silver"></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-left" data-aos-duration="3000">
                 <td></td>
                 <td><img class="cont" src="imgs/book_02.jpeg" alt=""></td>
                 <td><h2>일기를 작성하세요</h2></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>직접 표지 디자인을 고를 수 있어요</h2></td>
                 <td><img class="cont" src="imgs/book_03.jpg" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-left" data-aos-duration="3000">
                 <td></td>
                 <td><img class="cont" src="imgs/book_04.jpg" alt=""></td>
                 <td><h2>pdf파일로 받을 수 있어요</h2></td>
             </tr>
-            <tr>
+            <tr data-aos="zoom-in" data-aos-duration="3000">
                 <td></td>
                 <td><img class="line" src="imgs/line_1.png" alt=""></td>
                 <td></td>
             </tr>
-            <tr>
+            <tr data-aos="fade-right" data-aos-duration="3000">
                 <td><h2>나만의 일기장을 간직하세요</h2></td>
                 <td><img class="cont" src="imgs/book_05.jpg" alt=""></td>
                 <td></td>
@@ -144,6 +157,7 @@
         <input type="button" value="신청하기"
         style="width:150px; height:60px; margin-top: 100px; font-size: 20px; color: cornsilk;
         background-color: rgb(69, 100, 177); border:2"
+        data-aos="fade-up" data-aos-duration="2000"
         >
     </form>
     
