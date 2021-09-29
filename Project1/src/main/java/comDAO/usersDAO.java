@@ -157,4 +157,26 @@ public class usersDAO {
 		}
 		return cnt;
 	}
+	
+	public int app(String email, String content, int design) {
+		conn();
+		
+		String sql = "INSERT INTO APPLICATION VALUES(APPLICATION_SEQ.NEXTVAL, ?, ?, ?, SYSDATE)";
+		
+		int cnt = 0;
+		
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+			psmt.setString(2, content);
+			psmt.setInt(3, design);
+			
+			cnt = psmt.executeUpdate();
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
 }
