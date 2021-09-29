@@ -55,17 +55,6 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
-<style>
-table {
-	border: 1px solid grey;
-}
-td {
-	border: 1px solid grey;
-	padding: 30px;
-	align: center;
-	width: 500px;
-}
-</style>
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <!-- 제이쿼리 1.x 최신 버전 로드 -->
@@ -178,13 +167,31 @@ td {
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../public/look.jsp">둘러보기</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/index.jsp<%}%>">관심</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/follow.jsp<%}%>">팔로우</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
-			            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
-			            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							aria-current="page"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
+								쓰러가기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
+							href="look.jsp">둘러보기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="#faqs">출판</a></li>
+						<%
+						if (vo != null && vo.getAdmin_yn().equals("n")) {
+						%><li
+							class="nav-item px-2"><a class="nav-link fw-bold"
+							href="Login_v2/edit.html">개인정보수정</a></li>
+						<%
+						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
+						%><li
+							class="nav-item px-2"><a class="nav-link fw-bold"
+							href="#faqs">유저관리</a></li>
+						<%
+						}
+						%>
 					</ul>
 					<%
 					if (vo == null) {
@@ -203,56 +210,50 @@ td {
 					%>
 				</div>
 			</div>
-			<div class="container" style="margin-bottom: 100px;"   >
-				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+			<div class="container">
+				<form>
+				<table>
 					<tr>
-						<td>
-							<div id="user_upload_img"></div> <input id="file" type="file"
+						<td width="500px" height="500px" align="center">
+							<div id="user_upload_img"></div>
+							<h2 style="color: gray">사진 추가</h2>
+							<input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
 							style="display: none;">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
-								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
-								box-shadow: 3px 3px 3px gray;">+</button>
+								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px;">+</button>
 
 						</td>
-						<td>
+						<td width="500px" height="500px" align="center">
 							<form action="write.jsp" method="post"
-								style="width: 640px; font-size: 20px;">
+								style="width: 500px; font-size: 20px;">
 								<div class="form-group">
-									<br> <input type="text" class="form-control" id="title"
+									<label for="title">제목</label>
+
+									<!-- pattern 속성을 이용한 정규표현식으로 데이터의 유효성 검사를 할 수 있다. -->
+									<input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 17px;">
 								</div>
 								<div class="form-group">
-									<br>
+									<label for="content">내용</label>
+
+									<!--  textarea 안에 있는 모든 글자는 그대로 나타난다. 공백문자, tag, enter -->
 									<textarea class="form-control" rows="15" id="content"
-										name="content" placeholder="내용 작성" 
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;"></textarea>
+										name="content" placeholder="내용 작성" style="font-size: 17px;"></textarea>
 								</div>
 								<div class="form-group">
-									<br> <input type="text" class="form-control" id="writer"
-										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
+									<label for="writer">태그</label> <input type="text"
+										class="form-control" id="writer" placeholder="태그(2자-10자)"
+										name="writer" style="font-size: 17px;">
 								</div>
 								<input type="checkbox" value="" style="margin-right: 5px;">댓글
 								허용 <input type="checkbox" value=""
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
-								<%
-								if (vo == null) {
-								%>
-								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
-								
-								<%
-								} else {
-								%>
 								<button type="submit" class="btn btn-default"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
-								<%
-								}
-								%>
+									style="border: 1px solid gray; font-size: 20px; color: black;">등록</button>
 							</form>
 						</td>
 					</tr>
