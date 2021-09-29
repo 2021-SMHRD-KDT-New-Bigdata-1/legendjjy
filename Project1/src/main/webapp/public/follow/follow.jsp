@@ -31,7 +31,6 @@
   <link href="../assets/css/theme.css" rel="stylesheet" />
 
   <link href="../vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
@@ -47,8 +46,9 @@
   <!-- ===============================================-->
   <main class="main" id="top">
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-      data-navbar-on-scroll="data-navbar-on-scroll">
-      <div class="container"><a class="navbar-brand d-inline-flex" href="index.jsp"><img class="card-img"
+      data-navbar-on-scroll="data-navbar-on-scroll"
+      style="background-color: rgb(242, 238, 233, 0.7);">
+      <div class="container"><a class="navbar-brand d-inline-flex" href="../index.jsp"><img class="card-img"
             src="../assets/img/gallery/logo_small.png" alt="..." /><span class="fs-2 fw-bold text-primary ms-2">LEGEN<span
               class="text-warning">D</span></span></a>
         <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
@@ -56,119 +56,128 @@
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../write.jsp<%}%>">일기 쓰러가기</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="look.jsp">둘러보기</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">관심</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">팔로우</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
-            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../index.jsp<%}%>">관심</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">팔로우</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">출판</a></li>
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../Login_v2/edit.html">개인정보수정</a></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">로그인</a></form>
           <%}else{ %>
           <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">로그아웃</a></form>
           <%} %>
         </div>
       </div>
     </nav>
-	<section style="padding-top: 162px; padding-bottom: 75px;">
-			<h3>@legendjjy 님의 구독목록</h3>
+	<section style="padding-top: 140px; padding-bottom: 100px;">
+			<h3>@legendjjy 님의 팔로우 목록</h3>
 
 			<div class="all" style="position: fixed;">
 				
-			<ul class="board" style="margin-top: 190px; padding-left:0px">
+			<ul class="board" style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
 				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">닉네임</li>
 				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
-				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독취소</li>
-				<li></li>
+				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">팔로우 취소</li>
 			</ul>
 			</div>  
 
-			<div class="all_2">
+			<div class="all_2" >
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">legendjjy123@naver.com</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				<ul class="board">
+					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">이메일</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-
 			</div>
+			
 	</section>
-</body>
+	</main>
 </body>
 </html>
