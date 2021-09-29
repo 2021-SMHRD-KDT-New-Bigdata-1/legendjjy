@@ -359,7 +359,7 @@ input[type="text"] {
 					</div>
 				</div>
 			</div>
-
+		<form class="upload" action="UploadService" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
 				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
@@ -375,8 +375,7 @@ input[type="text"] {
 
 						</td>
 						<td style=" border: 1px solid silver; border-radius: 20px;">
-							<form action="write.jsp" method="post"
-								style="width: 640px; font-size: 20px;">
+							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
@@ -415,11 +414,11 @@ input[type="text"] {
 								<%
 								}
 								%>
-							</div>
-						</td>
-					</tr>
-				</table>
-			</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
 			</form>
 		</div>
 
