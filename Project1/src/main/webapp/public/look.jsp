@@ -1,12 +1,12 @@
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>일기 쓰기</title>
+<title>일기 둘러보기</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -14,18 +14,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
-
 <!-- ===============================================-->
 <!--    Document Title-->
 <!-- ===============================================-->
 <title>Legend | Diary Everyday</title>
-
-
 <!-- ===============================================-->
 <!--    Favicons-->
 <!-- ===============================================-->
@@ -41,13 +36,10 @@
 <meta name="msapplication-TileImage"
 	content="assets/img/favicons/mstile-150x150.png">
 <meta name="theme-color" content="#ffffff">
-
-
 <!-- ===============================================-->
 <!--    Stylesheets-->
 <!-- ===============================================-->
 <link href="assets/css/theme.css" rel="stylesheet" />
-
 <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,17 +47,50 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
+
+	<style>
+	.search_bar{
+		height: 40px;
+		width: 400px;
+		border: 1px solid #1b5ac2;
+		background: #ffffff;
+		margin-left: 20%;
+	}
+	
+	.search{
+		font-size: 16px;
+		width: 325px;
+		height: 100%;
+		padding: 10px;
+		border: 0px;
+		outline: none;
+		float: left;
+	}
+	
+	.search_button{
+		width: 50px;
+		height: 100%;
+		border: 0px;
+		background-color: #1b5ac2;
+		outline: none;
+		float: right;
+		color: #ffffff
+	}
+	
+	</style>
+
 </head>
 
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
-
 	<main class="main" id="top">
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
+			data-navbar-on-scroll="data-navbar-on-scroll"
+			data-navbar-on-scroll="data-navbar-on-scroll"
+			style="background-color: rgb(242, 238, 233, 0.7);">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
@@ -82,31 +107,13 @@
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
-								쓰러가기</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="look.jsp">둘러보기</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">출판</a></li>
-						<%
-						if (vo != null && vo.getAdmin_yn().equals("n")) {
-						%><li
-							class="nav-item px-2"><a class="nav-link fw-bold"
-							href="Login_v2/edit.html">개인정보수정</a></li>
-						<%
-						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
-						%><li
-							class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">유저관리</a></li>
-						<%
-						}
-						%>
+						<li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
+        			    <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../public/look.jsp">둘러보기</a></li>
+            			<li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/index.jsp<%}%>">관심</a></li>
+            			<li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/follow.jsp<%}%>">팔로우</a></li>
+            			<li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
+			            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
+			            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
 					</ul>
 					<%
 					if (vo == null) {
@@ -125,19 +132,29 @@
 					%>
 				</div>
 			</div>
-		</nav>
 			<div class="main_bottom">
 
 				<div class="container">
 					<div class="row">
 						<div class="col-12" id="look">
+					<div class="row" >
+						<div class="col-12" id="look" style="padding: 0; height: 100px;">
 							<h1 class="py-5 text-center">일기 둘러보기</h1>
 							<input type="text">
 						</div>
+
+						<div class="search_bar">
+							<input class="search" type="text" placeholder="검색어 입력">
+							<button class="search_button">검색</button>
+						</div>
+
 					</div>
 				</div>
 
+		</nav>
+
 				<div class="list_wrap">
+				<div class="list_wrap" style="margin-top: 300px;">
 					<ul>
 						<li class="item item1"
 							style="background-color: rgb(245, 242, 235);">
@@ -238,4 +255,3 @@
 	</main>
 </body>
 </html>
-
