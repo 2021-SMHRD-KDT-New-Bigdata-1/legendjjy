@@ -77,6 +77,13 @@
 	float: right;
 	color: #ffffff
 }
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
 </style>
 
 </head>
@@ -94,8 +101,8 @@
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
-					style="height: 50px;" /><span
-					class="fs-2 fw-bold text-primary ms-2" style="margin-top: 10px;">LEGEN<span
+					style="height: 50px;"/><span
+					class="fs-2 fw-bold text-primary ms-2" style="padding-top: 12px">LEGEN<span
 						class="text-warning">D</span></span></a>
 				<button class="navbar-toggler collapsed" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -148,21 +155,10 @@
 					%>
 				</div>
 			</div>
-			<div class="main_bottom">
-				<div class="container">
-					<div class="row">
-						<div class="col-12" id="look">
-							<div class="row">
-								<div class="col-12" id="look" style="padding: 0; height: 100px;">
-									<h1 class="py-5 text-center">일기 둘러보기</h1>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
+			
 		</nav>
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
+		<h1 class="py-5 text-center">일기 둘러보기</h1>
 		<div class="search_bar">
 			<input class="search" type="text" placeholder="검색어 입력">
 			<button class="search_button">검색</button>

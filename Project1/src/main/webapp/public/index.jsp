@@ -73,6 +73,7 @@ td {
 input[type="text"] {
 	width: 100%
 }
+
 </style>
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>

@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>일기 쓰기</title>
+<title>일기 수정하기</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -203,10 +203,17 @@ td {
 					%>
 				</div>
 			</div>
-			<div class="container" style="margin-bottom: 100px;"   >
+		</nav>
+		
+					<div style="margin-top: 100px;"><h1>일기 수정하기</h1></div>
+					
+					
+		<div class="outer" style="display: flex; justify-content: center;">
+			<div class="" style="margin-bottom: 200px;">
 				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
 						<td>
+						
 							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
 							style="display: none;">
@@ -239,26 +246,21 @@ td {
 								<input type="checkbox" value="" style="margin-right: 5px;">댓글
 								허용 <input type="checkbox" value=""
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
-								<%
-								if (vo == null) {
-								%>
-								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
 								
-								<%
-								} else {
-								%>
-								<button type="submit" class="btn btn-default"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
-								<%
-								}
-								%>
+								
+								    <button class="btn btn-default" style="margin-right: 20px; border: 1px solid gray; font-size: 20px; color: black;
+								     box-shadow: 3px 3px 3px gray;">글 삭제</button>
+    
+    								<button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black;
+    								 box-shadow: 3px 3px 3px gray;">수정완료</button>
+    								 
 							</form>
 						</td>
 					</tr>
 				</table>
 			</div>
-		</nav>
+		</div>
+
 	</main>
 </body>
 </html>
