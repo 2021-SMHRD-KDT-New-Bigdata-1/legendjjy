@@ -137,17 +137,17 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-12" id="look">
-					<div class="row" >
+					<div class="row">
 						<div class="col-12" id="look" style="padding: 0; height: 100px;">
 							<h1 class="py-5 text-center">일기 둘러보기</h1>
-							<input type="text">
 						</div>
-
-						<div class="search_bar">
-							<input class="search" type="text" placeholder="검색어 입력">
-							<button class="search_button">검색</button>
+						<div class="outer" style="display: flex; justify-content: center;">
+							<div class="search_bar" style="margin-right: 20%;">
+								<input class="search" type="text" placeholder="검색어 입력">
+								<button class="search_button">검색</button>
+							</div>
 						</div>
-
+						
 					</div>
 				</div>
 
