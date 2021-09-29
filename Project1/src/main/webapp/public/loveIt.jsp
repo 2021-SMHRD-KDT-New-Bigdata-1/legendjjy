@@ -121,108 +121,101 @@
 		<section class="py-0" id="header">
 			<div class="container">
 				<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-				<h1>오늘의 일기</h1>
+				<h1>스크랩한 일기</h1>
+		<div class="list_wrap" >
+        <ul>
+            <li class="item item1">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item2">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item3">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item4">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item5">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item6">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item7">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item8">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+            <li class="item item9">
+                <div class="image">사진</div>
+                <div class="cont">
+                    <strong>작성자</strong>
+                    <p>내용이 들어갑니다.</p>
+                    <span class="hits">조회수</span>
+                    <span class="date">날짜</span>
+                </div>
+            </li>
+        </ul>
+        </div>
 				
 				</div>
 			</div>
 		</section>
-		<div class="list_wrap">
-				<div class="list_wrap" style="margin-top: 300px;">
-					<ul>
-						<li class="item item1"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item2"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item3"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item4"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item5"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item6"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item7"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item8"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
+
 
 		<!-- ============================================-->
 		<!-- <section> begin ============================-->
-		<section class="py-6">
 
-			<div class="container">
-				<div class="row"></div>
-				<div class="row"></div>
-				<hr class="mt-6" />
-			</div>
-			<!-- end of .container-->
 
 		</section>
 		<!-- <section> close ============================-->
