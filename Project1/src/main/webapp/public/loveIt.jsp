@@ -13,7 +13,7 @@
 <!-- ===============================================-->
 <!--    Document Title-->
 <!-- ===============================================-->
-<title>Legend | Diary Everyday</title>
+<title>스크랩 목록</title>
 
 
 <!-- ===============================================-->
@@ -39,7 +39,7 @@
 <link href="assets/css/theme.css" rel="stylesheet" />
 
 <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
-<link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
+<link rel="stylesheet" href="assets/css/main_bottom.css"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -118,10 +118,15 @@
 				</div>
 			</div>
 		</nav>
+			</main>
+		
 		<section class="py-0" id="header">
 			<div class="container">
 				<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
 				<h1>스크랩한 일기</h1>
+			</div>
+		</section>
+				
 		<div class="list_wrap" >
         <ul>
             <li class="item item1">
@@ -208,19 +213,18 @@
         </ul>
         </div>
 				
-				</div>
-			</div>
-		</section>
+			
+
 
 
 		<!-- ============================================-->
 		<!-- <section> begin ============================-->
 
 
-		</section>
+
 		<!-- <section> close ============================-->
 		<!-- ============================================-->
-	</main>
+
 	<!-- ===============================================-->
 	<!--    End of Main Content-->
 	<!-- ===============================================-->
