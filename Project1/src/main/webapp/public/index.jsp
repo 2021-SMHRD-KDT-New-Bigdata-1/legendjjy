@@ -240,7 +240,7 @@ input[type="text"] {
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
@@ -359,39 +359,43 @@ input[type="text"] {
 					</div>
 				</div>
 			</div>
-		<form class="upload" action="UploadService" method="post" enctype="multipart/form-data">
+
 			<div class="container" style="margin-bottom: 100px;">
-				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-					
-						<td>
-							<div id="user_upload_img"></div> <input id="file" type="file" name="file"
+						<td style=" border: 1px solid silver;">
+						
+							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
 							style="display: none;">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
-								box-shadow: 3px 3px 3px gray;">+</button>
+								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
+
 						</td>
-						<td>
-							
-							<div style="width: 500px; font-size: 20px;">
+						<td style=" border: 1px solid silver; border-radius: 20px;">
+							<form action="write.jsp" method="post"
+								style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;"></textarea>
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글
 								허용 <input type="checkbox" name="public_yn" value="y"
@@ -400,7 +404,8 @@ input[type="text"] {
 								if (vo == null) {
 								%>
 								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
+									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">등록</button>
 								
 								<%
 								} else {
