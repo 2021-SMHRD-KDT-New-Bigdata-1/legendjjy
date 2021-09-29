@@ -58,7 +58,8 @@
 	<main class="main" id="top">
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
+			data-navbar-on-scroll="data-navbar-on-scroll"
+			style="background-color: rgb(242, 238, 233, 0.7);">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
@@ -123,7 +124,7 @@
 		<section class="py-0" id="header">
 			<div class="container">
 				<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-				<h1>스크랩한 일기</h1>
+				<h2>스크랩한 일기</h2>
 			</div>
 		</section>
 				
