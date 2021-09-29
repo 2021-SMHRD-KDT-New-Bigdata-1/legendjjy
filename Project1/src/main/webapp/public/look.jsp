@@ -48,36 +48,43 @@
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
 
-	<style>
-	.search_bar{
-		height: 40px;
-		width: 400px;
-		border: 1px solid #1b5ac2;
-		background: #ffffff;
-		margin-left: 20%;
-	}
-	
-	.search{
-		font-size: 16px;
-		width: 325px;
-		height: 100%;
-		padding: 10px;
-		border: 0px;
-		outline: none;
-		float: left;
-	}
-	
-	.search_button{
-		width: 50px;
-		height: 100%;
-		border: 0px;
-		background-color: #1b5ac2;
-		outline: none;
-		float: right;
-		color: #ffffff
-	}
-	
-	</style>
+<style>
+.search_bar {
+	height: 60px;
+	width: 50%;
+	border: 1px solid #1b5ac2;
+	background: #ffffff;
+	margin-left: 20%;
+}
+
+.search {
+	font-size: 20px;
+	width: 325px;
+	height: 100%;
+	padding: 10px;
+	border: 0px;
+	outline: none;
+	float: left;
+}
+
+.search_button {
+	width: 10%;
+	height: 100%;
+	border: 0px;
+	font-size: 20px;
+	background-color: #1b5ac2;
+	outline: none;
+	float: right;
+	color: #ffffff
+}
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+</style>
 
 </head>
 
@@ -94,8 +101,8 @@
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
-					style="height: 50px;" /><span
-					class="fs-2 fw-bold text-primary ms-2" style="margin-top: 10px;">LEGEN<span
+					style="height: 50px;"/><span
+					class="fs-2 fw-bold text-primary ms-2" style="padding-top: 12px">LEGEN<span
 						class="text-warning">D</span></span></a>
 				<button class="navbar-toggler collapsed" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -107,13 +114,29 @@
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
-        			    <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../public/look.jsp">둘러보기</a></li>
-            			<li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/index.jsp<%}%>">관심</a></li>
-            			<li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/follow.jsp<%}%>">팔로우</a></li>
-            			<li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
-			            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
-			            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							aria-current="page"
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">일기
+								쓰러가기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
+							href="#searching">둘러보기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/index.jsp<%}%>">관심</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/follow.jsp<%}%>">팔로우</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="../publish/book_made.jsp">출판</a></li>
+						<%
+						if (vo != null && vo.getAdmin_yn().equals("n")) {
+						%><li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="../public/Login_v2/edit.html">개인정보수정</a></li>
+						<%
+						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
+						%><li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="#faqs">유저관리</a></li>
+						<%
+						}
+						%>
 					</ul>
 					<%
 					if (vo == null) {
@@ -132,126 +155,90 @@
 					%>
 				</div>
 			</div>
-			<div class="main_bottom">
-
-				<div class="container">
-					<div class="row">
-						<div class="col-12" id="look">
-					<div class="row">
-						<div class="col-12" id="look" style="padding: 0; height: 100px;">
-							<h1 class="py-5 text-center">일기 둘러보기</h1>
-						</div>
-						<div class="outer" style="display: flex; justify-content: center;">
-							<div class="search_bar" style="margin-right: 20%;">
-								<input class="search" type="text" placeholder="검색어 입력">
-								<button class="search_button">검색</button>
-							</div>
-						</div>
-						
+			
+		</nav>
+		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
+		<h1 class="py-5 text-center" id="searching">일기 둘러보기</h1>
+		<div class="mx-auto mt-6 mb-7 search_bar">
+			<input class="search" type="text" placeholder="검색어 입력">
+			<button class="search_button">검색</button>
+		</div>
+		<div class="list_wrap">
+			<ul>
+				<li class="item item1" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
 					</div>
-				</div>
-
-		</nav>
-
-				<div class="list_wrap">
-				<div class="list_wrap" style="margin-top: 300px;">
-					<ul>
-						<li class="item item1"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item2"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item3"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item4"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item5"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item6"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item7"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item8"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-						<li class="item item9"
-							style="background-color: rgb(245, 242, 235);">
-							<div class="image">사진</div>
-							<div class="cont">
-								<strong>작성자</strong>
-								<p>내용이 들어갑니다.</p>
-								<sapn class="hits">조회수</sapn>
-								<span class="date">날짜</span>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-			</div>
-
-		</nav>
+				</li>
+				<li class="item item2" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item3" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item4" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item5" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item6" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item7" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item8" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<li class="item item9" style="background-color: rgb(245, 242, 235);">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+			</ul>
+		</div>
 	</main>
 </body>
 </html>
