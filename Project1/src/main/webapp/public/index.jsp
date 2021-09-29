@@ -330,8 +330,6 @@ input[type="text"] {
 					</div>
 				</div>
 			</div>
-			</div>
-
 			<!-- modal -->
 
 		</section>
