@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,12 +26,35 @@
 	    <table>
 	    	<tr class="post_view">
 	    		<td id="img_view"><img src="sample01.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
-	    		<td id="writing_view">글 내용</td>
+	    		<td id="writing_view">
+	    			<table>
+	    				<tr>
+	    					<td id="content_title" style="background: burlywood;" colspan='2'>제목</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_content" style="background: wheat;" colspan='2'>내용</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_tag" style="background: pink;" colspan='2'>태그</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_hits" style="background: yellow;">조회수</td>
+	    					<td id="contnet_date" style="background: orange; text-align: right; padding-right: 20px;">날짜</td>
+	    				</tr>
+	    			</table>
+	    		</td>
 	    	</tr>
 	    	<tr>
-	    		<td>
-	    		
-	       	 	</td>
+	    		<td style="border-top: solid 1px black; border-bottom: solid 1px black; height:60px;"></td>
+	    		<td style="border-top: solid 1px black; border-bottom: solid 1px black; height:60px;">
+	    			<table>
+	    				<tr>
+	    					<td id="content_nick" style="background: aquamarine;">사용자 닉네임</td>
+	    					<td id="content_scrap" style="background: gray;">스크랩버튼</td>
+	    					<td id="content_subscribe" style="background: skyblue;">구독버튼</td>
+	    				</tr>
+	    			</table>
+	    		</td>
 	    	</tr>
 	    	
 	    </table>
@@ -39,12 +62,12 @@
 	    <div id="featured" class="blurb" style="position: relative;">
         			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
 	    		
-		    		<div id="form-commentInfo"  style="margin:auto;"> 
+		    		<div id="form-commentInfo"> 
 			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
 			          <input id="comment-input" placeholder="댓글 작성" > 
 			          <button id="submit">OK</button>
 		        	</div> 
-		        		<div id=comments style="margin-top: 20px; position:absolute; left:50%; transform: translate(-50%, 0%); padding: 0;"></div>
+		        		<div id=comments style="margin-top: 20px; "></div>
      				 </div>
 	    
     	<button onclick="closePopup()" style="position: absolute; top:50px; left: 1750px;"><img alt="" src="#">닫기</button>
@@ -53,7 +76,7 @@
 	</div>
 
     <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="popup.js"></script>
