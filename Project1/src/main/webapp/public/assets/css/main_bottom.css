@@ -11,9 +11,11 @@ a{
     text-decoration: none;
     color: inherit;
 }
-
+ol, ul {
+	padding: 0px;
+}
 .list_wrap{
-    width: 2000px;
+    width: 100%;
     margin: 0 auto;
     padding: 30px;
 }

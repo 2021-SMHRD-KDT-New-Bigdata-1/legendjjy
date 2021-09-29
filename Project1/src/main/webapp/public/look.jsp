@@ -119,7 +119,7 @@
 							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="../public/look.jsp">둘러보기</a></li>
+							href="#searching">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/index.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
@@ -158,8 +158,8 @@
 			
 		</nav>
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-		<h1 class="py-5 text-center">일기 둘러보기</h1>
-		<div class="search_bar">
+		<h1 class="py-5 text-center" id="searching">일기 둘러보기</h1>
+		<div class="mx-auto mt-6 mb-7 search_bar">
 			<input class="search" type="text" placeholder="검색어 입력">
 			<button class="search_button">검색</button>
 		</div>
