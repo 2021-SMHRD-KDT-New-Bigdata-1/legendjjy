@@ -67,4 +67,6 @@ public class diaryVO {
 		this.commet_yn = commet_yn;
 	}
 	
+	
+	
 }
