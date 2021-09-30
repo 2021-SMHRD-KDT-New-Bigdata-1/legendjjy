@@ -18,6 +18,7 @@ ol, ul {
     width: 100%;
     margin: 0 auto;
     padding: 30px;
+    padding-top: 55px;
 }
 
 .list_wrap ul{

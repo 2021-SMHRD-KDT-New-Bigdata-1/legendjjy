@@ -9113,8 +9113,8 @@ fieldset:disabled .btn {
 }
 
 .py-5 {
-  padding-top: 3rem !important;
-  padding-bottom: 3rem !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
 }
 
 .py-6 {
@@ -11621,7 +11621,7 @@ fieldset:disabled .btn {
     min-height: 25vh !important;
   }
   .min-vh-md-50 {
-    min-height: 20vh !important;
+    min-height: 18vh !important;
   }
   .min-vh-md-75 {
     min-height: 75vh !important;

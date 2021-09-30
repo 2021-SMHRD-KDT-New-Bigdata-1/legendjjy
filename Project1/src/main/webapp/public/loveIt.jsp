@@ -162,13 +162,11 @@
 
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll"
-			style="background-color: rgb(242, 238, 233, 0.7);">
+			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
-					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
-					style="height: 50px;"/><span
-					class="fs-2 fw-bold text-primary ms-2" style="padding-top: 12px">LEGEN<span
+					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
+					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
 						class="text-warning">D</span></span></a>
 				<button class="navbar-toggler collapsed" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -179,23 +177,32 @@
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">일기
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="#searching">둘러보기</a></li>
+							href="look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/index.jsp<%}%>">관심</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/follow.jsp<%}%>">팔로우</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
 						if (vo != null && vo.getAdmin_yn().equals("n")) {
-						%><li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="../public/Login_v2/edit.html">개인정보수정</a></li>
+						%>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle fw-bold" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
+						</a>
+							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+							</ul></li>
 						<%
 						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
 						%><li class="nav-item px-2"><a class="nav-link fw-bold"
@@ -210,18 +217,9 @@
 					<form class="ms-lg-5">
 						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
 					</form>
-					<%
-					} else {
-					%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../LogoutService">로그아웃</a>
-					</form>
-					<%
-					}
-					%>
+					<% } %>
 				</div>
 			</div>
-			
 		</nav>
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
