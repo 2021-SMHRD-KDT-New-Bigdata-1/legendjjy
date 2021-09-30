@@ -21,6 +21,9 @@ ul li {list-style:none;
 	font-weight: bold;
 	color: white;
 }
+.title1{
+	background: white;
+}
 .t_line {border-right: 1px solid gray;}
 .lt_line {border-bottom:solid 1px gray;}
 .list {

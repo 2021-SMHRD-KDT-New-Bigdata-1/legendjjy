@@ -87,18 +87,76 @@
 			</ul>
 			
 			</div>  
-
-			<div class="all_2" >
-				<ul class="board">
-					<li class="fl tc w200 list t_line lt_line">닉네임</li>
-					<li class="fl tc w200 list t_line lt_line">legendjjy123@naver.com</li>
-					<li class="fl tc w200 list t_line lt_line">요청사항</li>
-					<li class="fl tc w200 list t_line lt_line">l디자인</li>
-					<li class="fl tc w200 list t_line lt_line">등록일자</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
+			
+			<div class="all_1" style="position: fixed; overflow:scroll;">
+					
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
 				</ul>
-				
-			</div>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+				<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
+					<li class="fl tc w300 t_line lt_line title1">순번</li>
+					<li class="fl tc w300 t_line lt_line title1">이메일</li>
+					<li class="fl tc w300 t_line lt_line title1" >요청사항</li>
+					<li class="fl tc w300 t_line lt_line title1" >디자인</li>
+					<li class="fl tc w300 t_line lt_line title1" >등록일자</li>
+					<li class="fl tc t_line lt_line delete title1">팔로우 취소</li>
+				</ul>
+			</div> 
+
+			
 			
 	</section>
 	</main>
