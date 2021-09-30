@@ -377,9 +377,6 @@ a:hover ~ .sub-menu {
 								<input name="file" id="file" type="file"
 								onchange="previewImage(this, 'user_upload_img');"
 								style="display: none;">
-								<input name="image" id="image" type="image"
-								src="assets/img/basicIMG.png"
-								style="display: none;">
 								<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
