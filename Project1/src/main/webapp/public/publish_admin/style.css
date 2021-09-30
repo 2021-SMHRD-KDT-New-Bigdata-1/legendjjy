@@ -12,7 +12,7 @@ ul li {list-style:none;
 		padding-left:0px;
 }
 .w300 {width:300px; }
-.w200 {width:200px; }
+.w200 {width:300px; }
 .w120 {width:120px; }
 .title {
 	height: 50px;
@@ -54,4 +54,6 @@ ul li {list-style:none;
 	background-color: transparent;
 
 }
-
+.board>.w300>.list{
+	width:0;
+}

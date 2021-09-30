@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 </head>
 
-<body data-bs-spy="scroll" data-bs-target="#navbar">
+<body data-bs-spy="scroll" data-bs-target="#navbar" >
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
 	%>
@@ -72,12 +72,12 @@
         </div>
       </div>
     </nav>
-	<section style="padding-top: 140px; padding-bottom: 100px;">
+	<section style="width:100%; padding-top: 140px; padding-bottom: 100px; ">
 			<h3>출판요청 목록</h3>
 
 			<div class="all" style="position: fixed;">
 				
-			<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray; width:750px">
+			<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
 				<li class="fl tc w300 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">순번</li>
 				<li class="fl tc w300 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
 				<li class="fl tc w300 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">요청사항</li>
@@ -89,8 +89,11 @@
 
 			<div class="all_2" >
 				<ul class="board">
-					<li class="fl tc w300 list t_line lt_line">닉네임</li>
-					<li class="fl tc w300 list t_line lt_line">legendjjy123@naver.com</li>
+					<li class="fl tc w200 list t_line lt_line">닉네임</li>
+					<li class="fl tc w200 list t_line lt_line">legendjjy123@naver.com</li>
+					<li class="fl tc w200 list t_line lt_line">요청사항</li>
+					<li class="fl tc w200 list t_line lt_line">l디자인</li>
+					<li class="fl tc w200 list t_line lt_line">등록일자</li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
 				
