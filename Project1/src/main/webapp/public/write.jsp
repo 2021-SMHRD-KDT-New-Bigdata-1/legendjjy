@@ -164,9 +164,8 @@ td {
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
-					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
-					style="height: 50px;" /><span
-					class="fs-2 fw-bold text-primary ms-2" style="margin-top: 10px;">LEGEN<span
+					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
+					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
 						class="text-warning">D</span></span></a>
 				<button class="navbar-toggler collapsed" type="button"
 					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -177,14 +176,39 @@ td {
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-						<li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/write.jsp<%}%>">일기 쓰러가기</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../public/look.jsp">둘러보기</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/index.jsp<%}%>">관심</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../public/Login_v2/login.jsp<%}else{%>../public/follow.jsp<%}%>">팔로우</a></li>
-			            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../publish/book_made.jsp">출판</a></li>
-			            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li><%}
-			            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							aria-current="page"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
+								쓰러가기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
+							href="look.jsp">둘러보기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="../publish/book_made.jsp">출판</a></li>
+						<%
+						if (vo != null && vo.getAdmin_yn().equals("n")) {
+						%>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle fw-bold" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
+						</a>
+							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+							</ul></li>
+						<%
+						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
+						%><li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="#faqs">유저관리</a></li>
+						<%
+						}
+						%>
 					</ul>
 					<%
 					if (vo == null) {
@@ -192,15 +216,7 @@ td {
 					<form class="ms-lg-5">
 						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
 					</form>
-					<%
-					} else {
-					%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../LogoutService">로그아웃</a>
-					</form>
-					<%
-					}
-					%>
+					<% } %>
 				</div>
 			</div>
 		</nav>
@@ -210,9 +226,9 @@ td {
 					
 		<div class="outer" style="display: flex; justify-content: center;">
 			<div class="" style="margin-bottom: 200px;">
-				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-						<td>
+						<td style=" border: 1px solid silver;">
 						
 							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
@@ -220,41 +236,44 @@ td {
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
-								box-shadow: 3px 3px 3px gray;">+</button>
+								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 
 						</td>
-						<td>
-							<form action="write.jsp" method="post"
-								style="width: 640px; font-size: 20px;">
+							<td style=" border: 1px solid silver; border-radius: 20px;">
+							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;"></textarea>
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
-								<input type="checkbox" value="" style="margin-right: 5px;">댓글
-								허용 <input type="checkbox" value=""
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용 
+								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								
-								
-								    <button class="btn btn-default" style="margin-right: 20px; border: 1px solid gray; font-size: 20px; color: black;
-								     box-shadow: 3px 3px 3px gray;">글 삭제</button>
+								    <button class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black; 
+								    background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">글 삭제</button>
     
-    								<button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black;
-    								 box-shadow: 3px 3px 3px gray;">수정완료</button>
+    								<button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black; 
+    								background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">수정완료</button>
     								 
-							</form>
+							
 						</td>
 					</tr>
 				</table>

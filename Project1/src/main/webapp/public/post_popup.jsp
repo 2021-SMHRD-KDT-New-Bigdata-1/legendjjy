@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/comment.css">
-	<link rel="stylesheet" href="popup.css">
+	<link rel="stylesheet" href="assets/css/popup.css">
 
 </head>
 

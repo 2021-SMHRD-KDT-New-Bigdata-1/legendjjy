@@ -48,15 +48,15 @@
 <link rel="stylesheet" href="assets/css/modal.css" />
 <link rel="stylesheet" href="assets/css/댓글.css" />
 
-	<!-- 글쓰기테이블 fade up 효과 -->
-	<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      $( document ).ready( function() {
-        AOS.init();
-      } );
-    </script>
+<!-- 글쓰기테이블 fade up 효과 -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+	$(document).ready(function() {
+		AOS.init();
+	});
+</script>
 
 <style>
 table {
@@ -74,7 +74,15 @@ input[type="text"] {
 	width: 100%
 }
 
+.sub-menu {
+	display: none;
+}
+
+a:hover ~ .sub-menu {
+	display: block;
+}
 </style>
+
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <!-- 제이쿼리 1.x 최신 버전 로드 -->
@@ -230,7 +238,7 @@ input[type="text"] {
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
@@ -245,13 +253,20 @@ input[type="text"] {
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
 						if (vo != null && vo.getAdmin_yn().equals("n")) {
-						%><li
-							class="nav-item px-2"><a class="nav-link fw-bold"
-							href="Login_v2/edit.html">개인정보수정</a></li>
+						%>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle fw-bold" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
+						</a>
+							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+							</ul></li>
 						<%
 						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
-						%><li
-							class="nav-item px-2"><a class="nav-link fw-bold"
+						%><li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="#faqs">유저관리</a></li>
 						<%
 						}
@@ -263,15 +278,7 @@ input[type="text"] {
 					<form class="ms-lg-5">
 						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
 					</form>
-					<%
-					} else {
-					%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../LogoutService">로그아웃</a>
-					</form>
-					<%
-					}
-					%>
+					<% } %>
 				</div>
 			</div>
 		</nav>
@@ -354,7 +361,8 @@ input[type="text"] {
 
 			<div class="container">
 				<div class="row">
-					<div class="col-12" id="write"  data-aos="fade-up" data-aos-duration="3000">
+					<div class="col-12" id="write" data-aos="fade-up"
+						data-aos-duration="3000">
 						<h1 class="py-5 text-center">일기 쓰기</h1>
 					</div>
 				</div>
@@ -372,7 +380,6 @@ input[type="text"] {
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
-
 						</td>
 						<td style=" border: 1px solid silver; border-radius: 20px;">
 							<div style="width: 640px; font-size: 20px;">
@@ -396,8 +403,8 @@ input[type="text"] {
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
-								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글
-								허용 <input type="checkbox" name="public_yn" value="y"
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
+								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								<%
 								if (vo == null) {
@@ -405,12 +412,12 @@ input[type="text"] {
 								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
 									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">등록</button>
-								
 								<%
 								} else {
 								%>
 								<button type="submit" class="btn btn-default" id="btn_submit"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
+									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">등록</button>
 								<%
 								}
 								%>

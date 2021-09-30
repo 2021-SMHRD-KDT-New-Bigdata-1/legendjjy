@@ -1,0 +1,83 @@
+#modal {
+	border: 0;
+    width:100%;
+    height:100%;
+  }
+  
+  .container{
+  	position: relative;
+    right: 0;
+    top: 0;
+  }
+  
+  #modal h2 {
+    margin:0;   
+  }
+  
+  .modal_layer button {
+  	border: 0;
+    display: inline;
+    width: 100%;
+    max-width: 30px;
+    height: auto;
+    max-height: 30px;
+    margin-left:calc(100% - 100px - 10px);
+  }
+  
+  #modal .modal_header {
+  	border: 0;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 935px;
+    pointer-events: auto;
+    width: 100%;
+    max-height: 600px;
+    height: 100%;
+    background:#fff;
+    border:2px solid #666;
+    index: 100;
+  }
+  
+  #modal .modal_content{
+  	border:0;
+  	display: flex;
+  }
+  
+  #modal .modal_layer {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0.5);
+  }   
+  
+  #modal .modal_content .diaryIMG{
+  	flex: 1;
+  	margin: 0 auto;
+	max-width: 100%;
+	height: auto;
+	}
+	
+  .diaryIMG #selectIMG{
+  	margin: 0 auto;
+	max-width: 100%;
+	height: 100%;
+  }
+  
+  #modal .modal_content .diaryContent{
+  	flex: 1;
+  	margin: 0 auto;
+  	padding-left: 40px;
+  	padding-right: 20px;
+	max-width: 100%;
+	height : auto;
+	overflow: auto;
+  }
+  
+  .list{
+  	bottom: 0;
+    position: absolute;
+    padding-bottom: 10px;
+    padding-up: 10px;
+  }
