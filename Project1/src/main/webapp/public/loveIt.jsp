@@ -111,13 +111,13 @@ body {
 	
 	<div id="popup" class="hide">
 	<div class="content">
-	    <table>
+	    <table id="content_outer">
 	    	<tr class="post_view">
 	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
 	    				<tr>
-	    					<td id="content_nick" colspan='2'>@legendjjy</td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
 	    					<td id="content_date" colspan='2'>2021-09-30</td>
 	    				</tr>
 	    				<tr>
@@ -131,8 +131,8 @@ body {
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" colspan='2'>조회수 1321</td>
-	    					<td id="content_scrap">스크랩하기</td>
-	    					<td id="content_subscribe">구독하기</td>
+	    					<td><button id="content_scrap">스크랩하기</button></td>
+	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>
 	    			</table>
 	    		</td>
