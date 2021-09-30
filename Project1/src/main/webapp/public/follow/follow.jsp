@@ -34,6 +34,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar">
@@ -61,14 +63,21 @@
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../index.jsp<%}%>">관심</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">팔로우</a></li>
             <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">출판</a></li>
-            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../Login_v2/edit.html">개인정보수정</a></li><%}
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle fw-bold" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
+						</a>
+							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+							</ul></li><%}
             else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
           <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">로그인</a></form>
-          <%}else{ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="../index.jsp">로그아웃</a></form>
-          <%} %>
+          <%}%>
         </div>
       </div>
     </nav>
