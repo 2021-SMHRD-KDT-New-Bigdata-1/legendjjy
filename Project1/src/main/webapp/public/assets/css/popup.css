@@ -28,7 +28,7 @@ button {
 
 #popup .content {
 	width:1400px;
-	height:740px;
+	height:760px;
 	overflow: auto;
   padding: 20px;
   background: #fff;
@@ -74,6 +74,13 @@ button {
 	padding-left: 35px;
 	width: 350px;
 	height: 70px;
+	text-align: right;
+}
+
+#nick_inner{
+	border: 1px solid orange;
+	border-radius: 15px;
+	padding: 10px;
 }
 
 #content_date{
@@ -99,7 +106,8 @@ button {
 }
 
 #content_tag{
-	padding-left: 20px;
+	padding-right: 30px;
+	text-align: right;
 	width:700px;
 	height: 70px;
 }
@@ -111,43 +119,39 @@ button {
 }
 
 #content_scrap{
-	padding-right: 20px;
+	padding-right: 15px;
 	text-align: right;
-	width: 70px;
-	height: 70px;
+	width: 80px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(32, 85, 174);
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 80px;
 }
 
 #content_subscribe{
 	padding-right: 20px;
 	text-align: right;
-	width: 70px;
-	height: 70px;
+	width: 80px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(32, 85, 174);
+    font-weight: bold;
+    font-size: 13px;
 }
 
 #blank{
 	height: 70px;
-	border-top: solid 1px black;
+	border-top: solid 2px black;
 	border-bottom: solid 1px black;
 }
 
-#content_scrap{
-	width: 40px;
-	height: 40px;
-	margin-right:15px;
-	background-color: orange;
-	font-weight: bold;
-	font-size: 15px;
+#content_outer{
+	border-top: solid 2px black;
 }
-
-#content_subscribe{
-	width: 40px;
-	height: 40px;
-	background-color: orange;
-	font-weight: bold;
-	font-size: 15px;
-}
-
-
 
 
 
