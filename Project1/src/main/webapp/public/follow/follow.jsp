@@ -67,7 +67,7 @@
           <%if(vo==null){ %>
           <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">로그인</a></form>
           <%}else{ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">로그아웃</a></form>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../index.jsp">로그아웃</a></form>
           <%} %>
         </div>
       </div>

@@ -90,14 +90,14 @@
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
+							href="<%if (vo == null) {%>../Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="look.jsp">둘러보기</a></li>
+							href="../public/look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
+							href="<%if (vo == null) {%>../Login_v2/login.jsp<%} else {%>../public/loveit.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
+							href="<%if (vo == null) {%>../Login_v2/login.jsp<%} else {%>../public/follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
@@ -111,7 +111,7 @@
 							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
 								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
-								<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+								<li><a class="dropdown-item fw-bold" href="../public/index.jsp">로그아웃</a></li>
 							</ul></li>
 						<%
 						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
