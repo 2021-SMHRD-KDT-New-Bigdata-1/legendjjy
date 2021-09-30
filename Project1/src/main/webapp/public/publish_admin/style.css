@@ -37,25 +37,20 @@ ul li {list-style:none;
 
 
 }
-.all_2{
+.all_1{
 	position: fixed;
-	display: flex;
-	box-shadow: 5px 5px 5px gray;
-	margin-top: 47px;
-	margin-left: 150px;
-	margin-bottom: 200px;
-	height: 600px;
-	width: 1620px;
-	overflow-x: hidden;
-	color: black;
+	overflow: scroll;
+	width: 1638px;
+	height: 500px;
+	left: 150px;
+	top: 244px;
 	
-
 }
-#delete{
-	
-	border:none;
-	height:30px;
-	background-color: transparent;
+.all_1>ul{
+	margin-top: 10px;
+}
+.delete{
+	width: 120px;
 
 }
 .board>.w300>.list{
