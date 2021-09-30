@@ -20,7 +20,7 @@ public class Application extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
-		usersVO vo = (usersVO)session.getAttribute("vo");)
+		usersVO vo = (usersVO)session.getAttribute("vo");
 		String user_email = request.getParameter(vo.getUser_email());
 		String app_content = request.getParameter("content");
 		int pick_design = Integer.parseInt(request.getParameter("design")); 
