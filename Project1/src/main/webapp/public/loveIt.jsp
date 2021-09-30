@@ -54,6 +54,9 @@
 	<link rel="stylesheet" href="assets/css/popup.css">
 
 <style>
+body {
+  background-color: #ffe1b9;
+}
 .search_bar {
 	height: 40px;
 	width: 20%;
@@ -162,7 +165,7 @@
 
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
+			data-navbar-on-scroll="data-navbar-on-scroll" style="background-color: rgb(242, 238, 233, 0.7);">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
@@ -185,7 +188,7 @@
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
 							href="look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveit.jsp<%}%>">관심</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"

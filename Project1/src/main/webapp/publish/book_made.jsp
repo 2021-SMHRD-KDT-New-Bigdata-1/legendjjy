@@ -74,8 +74,8 @@
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll">
 			<div class="container">
-				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
-					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
+				<a class="navbar-brand d-inline-flex" href="../public/index.jsp"><img
+					class="card-img" src="../public/assets/img/gallery/logo_small.png" alt="..." /><span
 					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
 						class="text-warning">D</span></span></a>
 				<button class="navbar-toggler collapsed" type="button"
