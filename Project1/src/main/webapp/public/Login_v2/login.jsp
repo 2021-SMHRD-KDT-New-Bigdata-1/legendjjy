@@ -33,38 +33,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap" rel="stylesheet">
 	<!--===============================================================================================-->
-	<script>
-		function checkLoginStatus(){
-			var loginBtn = document.querySelector('#loginBtn');
-			var nameTxt = document.querySelector('#name');
-			if(gauth.isSignedIn.get()){
-				console.log('logined');
-				loginBtn.value = 'Logout';
-				var profile = gauth.currentUser.get().getBasicProfile();
-				console.log(profile.getEmail());
-				nameTxt.innerHTML = 'Welcome <strong>'+profile.getName()+'</strong>';
-			}else {
-				console.log('logouted');
-				loginBtn.value = 'Login with Google';
-				nameTxt.innerHTML = '';
-			}
-		}
-		function init(){
-			console.log('init');
-			gapi.load('auth2', function() {
-				console.log('auth2');
-				window.gauth = gapi.auth2.init({
-					client_id:'287492847647-v4tckup8j6iartiq1f15sotqek7id16p.apps.googleusercontent.com'
-				})
-				gauth.then(function(){
-					console.log('googleAuth success');
-					checkLoginStatus();
-				}, function(){
-					console.log('googleAuth fail');
-				});
-			});
-		}
-	</script>
+	
 	<style>
 		input[type=button] {
 		width: 468px;
@@ -119,17 +88,7 @@
 								Login
 							</button>
 						</div>
-						<span id="name"></span><input type="button" id="loginBtn" name="email" value="Login with Google" onclick="
-						if(this.value === 'Login with Google'){
-							gauth.signIn().then(function(){
-								checkLoginStatus();
-								
-							});
-						} else {
-							gauth.signOut().then(function(){
-								checkLoginStatus();
-							});
-							}">
+						
 					</div>
 					<div class="text-center p-t-115">
 						<span class="txt1" style="color:red"><%=errMsg %></span>	
