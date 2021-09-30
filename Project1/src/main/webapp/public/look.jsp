@@ -188,7 +188,7 @@
 		
 	<main class="main" id="top">
 	
-		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 80px; z-index: 1; ">
+		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 120px; z-index: 1; ">
 			<input class="search" type="text" placeholder="검색어 입력">
 			<button style="	border-radius: 20px;"class="search_button">검색</button>
 		</div>
