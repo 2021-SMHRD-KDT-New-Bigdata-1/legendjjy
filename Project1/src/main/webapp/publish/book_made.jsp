@@ -90,14 +90,14 @@
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>../Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">일기
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
 							href="../public/look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../Login_v2/login.jsp<%} else {%>../public/loveit.jsp<%}%>">관심</a></li>
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/loveit.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../Login_v2/login.jsp<%} else {%>../public/follow/follow.jsp<%}%>">팔로우</a></li>
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
@@ -125,7 +125,7 @@
 					if (vo == null) {
 					%>
 					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a>
 					</form>
 					<% } %>
 				</div>
