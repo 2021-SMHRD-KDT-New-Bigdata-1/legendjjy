@@ -1,5 +1,5 @@
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
@@ -49,6 +49,12 @@
 <link rel="stylesheet" href="profile/vendor/bootstrap/css/boostrap.css">
 <link rel="stylesheet" href="profile/css/shop-homepage.css">
 
+	<!-- 게시물 팝업, 댓글 기능 css -->
+	<link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/comment.css">
+	<link rel="stylesheet" href="assets/css/popup.css">
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar"
@@ -57,10 +63,70 @@
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
 
+	<!-- ------------------------------------------------------------- -->
+	<!-- 게시물 팝업 보기 -->
+	<!-- ------------------------------------------------------------- -->
+	
+	<div id="popup" class="hide">
+	<div class="content">
+	    <table id="content_outer">
+	    	<tr class="post_view">
+	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
+	    		<td id="writing_view">
+	    			<table>
+	    				<tr>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
+	    					<td id="content_date" colspan='2'>2021-09-30</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_title" colspan='4'>제목</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_hits" colspan='2'>조회수 1321</td>
+	    					<td><button id="content_scrap">스크랩하기</button></td>
+	    					<td><button id="content_subscribe">구독하기</button></td>
+	    				</tr>
+	    			</table>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td id="blank" ></td>
+	    		<td id="blank" ></td>
+	    	</tr>
+	    	
+	    </table>
+	    
+	    <div id="featured" class="blurb" style="position: relative;">
+        			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
+	    		
+		    		<div id="form-commentInfo"> 
+			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
+			          <input id="comment-input" placeholder="댓글 작성" > 
+			          <button id="submit">OK</button>
+		        	</div> 
+		        		<div id=comments style="margin-top: 20px; "></div>
+     				 </div>
+	    
+    	<button id="close_button" onclick="closePopup()">X</button>
+	 	</div>
+	 	
+	</div>
+	<!-- ------------------------------------------------------------- -->
+	<!-- 게시물 팝업 보기 끝 -->
+	<!-- ------------------------------------------------------------- -->
+
+
 	<main class="main" id="top">
 		<nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
+			data-navbar-on-scroll="data-navbar-on-scroll"
+			style="background-color: rgb(242, 238, 233, 0.7); z-index: 1;">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
@@ -153,7 +219,7 @@
 
 			<div class="list_wrap">
 				<ul style="margin-left: 250px">
-					<li class="item item1">
+					<li class="item item1" onclick="showPopup()">
 						<div class="image">사진</div>
 						<div class="cont">
 							<strong>작성자</strong>
@@ -247,6 +313,13 @@
 	<!-- Bootstrap core JavaScript -->
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	
+		<!-- 게시물 팝업, 댓글 기능 js -->
+    <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+    <script src="assets/js/functions-min.js"></script>
+    <script src="assets/js/comment.js"></script>
+    <script type="text/javascript" src="assets/js/popup.js"></script>
 
 
 </body>

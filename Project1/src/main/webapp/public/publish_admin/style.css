@@ -39,12 +39,25 @@ ul li {list-style:none;
 }
 .all_1{
 	position: fixed;
+<<<<<<< HEAD
 	overflow: scroll;
 	width: 1638px;
 	height: 500px;
 	left: 150px;
 	top: 244px;
 	
+=======
+	display: flex;
+	box-shadow: 5px 5px 5px gray;
+	margin-top: 47px;
+	margin-left: 150px;
+	margin-bottom: 200px;
+	height: 600px;
+	width: 1620px;
+	overflow-x: hidden;
+	color: black;
+
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 }
 .all_1>ul{
 	margin-top: 10px;

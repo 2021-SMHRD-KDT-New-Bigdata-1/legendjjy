@@ -1,5 +1,5 @@
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -46,6 +46,12 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
+	
+	<!-- 게시물 팝업, 댓글 기능 css -->
+	<link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/comment.css">
+	<link rel="stylesheet" href="assets/css/popup.css">
 
 <style>
 .search_bar {
@@ -53,7 +59,7 @@
 	width: 20%;
 	border: 1px solid #1b5ac2;
 	background: #ffffff;
-	margin-left: 20%;
+	margin-left: 20%;\
 	border-radius: 20px;
 	opacity:0.85;
 }
@@ -80,13 +86,6 @@
 	color: #ffffff
 
 }
-.navbar-brand {
-    float: left;
-    height: 50px;
-    padding: 0px;
-    font-size: 18px;
-    line-height: 20px;
-}
 
 #month_button{
 	width: 42px;
@@ -105,11 +104,12 @@
 #month_select{
 	margin-right: 10px;
 	padding-left: 20px;
-	width: 140px;
+	width: 145px;
 	height: 32px;
 }
 
 </style>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
 </head>
 
@@ -117,14 +117,75 @@
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
+	
+	<!-- ------------------------------------------------------------- -->
+	<!-- 게시물 팝업 보기 -->
+	<!-- ------------------------------------------------------------- -->
+	
+	<div id="popup" class="hide">
+	<div class="content">
+	    <table id="content_outer">
+	    	<tr class="post_view">
+	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
+	    		<td id="writing_view">
+	    			<table>
+	    				<tr>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
+	    					<td id="content_date" colspan='2'>2021-09-30</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_title" colspan='4'>제목</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_hits" colspan='2'>조회수 1321</td>
+	    					<td><button id="content_scrap">스크랩하기</button></td>
+	    					<td><button id="content_subscribe">구독하기</button></td>
+	    				</tr>
+	    			</table>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td id="blank" ></td>
+	    		<td id="blank" ></td>
+	    	</tr>
+	    	
+	    </table>
+	    
+	    <div id="featured" class="blurb" style="position: relative;">
+        			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
+	    		
+		    		<div id="form-commentInfo"> 
+			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
+			          <input id="comment-input" placeholder="댓글 작성" > 
+			          <button id="submit">OK</button>
+		        	</div> 
+		        		<div id=comments style="margin-top: 20px; "></div>
+     				 </div>
+	    
+    	<button id="close_button" onclick="closePopup()">X</button>
+	 	</div>
+	 	
+	</div>
+	<!-- ------------------------------------------------------------- -->
+	<!-- 게시물 팝업 보기 끝 -->
+	<!-- ------------------------------------------------------------- -->
 
 		<nav 
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll"
-			style="background-color: rgb(242, 238, 233, 0.7);">
-			<div class="container" style="height:88px">
+			style="background-color: rgb(242, 238, 233, 0.7); z-index: 1;
+			height: 120px;">
 
-			<div class="container">
+
+
+		<div class="container">
+
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
 					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
@@ -138,10 +199,10 @@
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
+					<ul class="navbar-nav ms-auto mb-4 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">일기
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
 							href="look.jsp">둘러보기</a></li>
@@ -176,12 +237,12 @@
 					if (vo == null) {
 					%>
 					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a>
 					</form>
 					<% } %>
 				</div>
 			</div>
-		</nav>
+	</nav>
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
 		<h1 class="py-5 text-center" id="searching" style="font-size: 38px">일기 둘러보기</h1>
@@ -206,7 +267,7 @@
 
 		<div class="list_wrap">
 			<ul>
-				<li class="item item1" style="background-color: rgb(245, 242, 235);">
+				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
 					<div class="image">사진</div>
 					<div class="cont">
 						<strong>작성자</strong>
@@ -281,5 +342,13 @@
 			</ul>
 		</div>
 </main>
+
+	<!-- 게시물 팝업, 댓글 기능 js -->
+    <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+    <script src="assets/js/functions-min.js"></script>
+    <script src="assets/js/comment.js"></script>
+    <script type="text/javascript" src="assets/js/popup.js"></script>
+
 </body>
 </html>
