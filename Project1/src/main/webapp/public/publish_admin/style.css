@@ -8,7 +8,7 @@ ul li {list-style:none;
 .tc {text-align:center; }
 
 /* 게시판 목록 */
-.board {width: 720px;
+.board {width: 1620px;
 		padding-left:0px;
 }
 .w300 {width:300px; }
@@ -36,12 +36,13 @@ ul li {list-style:none;
 }
 .all_2{
 	position: fixed;
+	display: flex;
 	box-shadow: 5px 5px 5px gray;
 	margin-top: 47px;
-	margin-left: 600px;
+	margin-left: 150px;
 	margin-bottom: 200px;
 	height: 600px;
-	width: 737px;
+	width: 1620px;
 	overflow-x: hidden;
 	color: black;
 	
