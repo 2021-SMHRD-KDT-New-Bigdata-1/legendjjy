@@ -176,7 +176,8 @@ td {
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
+					<ul class="
+					navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">일기
@@ -246,20 +247,20 @@ td {
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
 										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										border-bottom: 1px solid rgb(255, 160, 0);">
+										">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										border-bottom: 1px solid rgb(255, 160, 0);"></textarea>
+										"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										border-bottom: 1px solid rgb(255, 160, 0);">
+										">
 								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용 
 								<input type="checkbox" name="public_yn" value="y"
