@@ -73,19 +73,10 @@ td {
 input[type="text"] {
 	width: 100%
 }
-
-.sub-menu {
-	display: none;
-}
-
-a:hover ~ .sub-menu {
-	display: block;
-}
 </style>
 
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>
-<!-- 제이쿼리 1.x 최신 버전 로드 -->
 <script>
 	// input file 이미지 미리보기 함수
 	function previewImage(targetObj, previewId) {
@@ -276,7 +267,7 @@ a:hover ~ .sub-menu {
 					if (vo == null) {
 					%>
 					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a>
 					</form>
 					<% } %>
 				</div>
