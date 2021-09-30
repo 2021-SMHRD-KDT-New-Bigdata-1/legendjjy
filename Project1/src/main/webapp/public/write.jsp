@@ -210,9 +210,9 @@ td {
 					
 		<div class="outer" style="display: flex; justify-content: center;">
 			<div class="" style="margin-bottom: 200px;">
-				<table style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-						<td>
+						<td style=" border: 1px solid silver;">
 						
 							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
@@ -220,41 +220,44 @@ td {
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
-								box-shadow: 3px 3px 3px gray;">+</button>
+								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 
 						</td>
-						<td>
-							<form action="write.jsp" method="post"
-								style="width: 640px; font-size: 20px;">
+							<td style=" border: 1px solid silver; border-radius: 20px;">
+							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;"></textarea>
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
-								<input type="checkbox" value="" style="margin-right: 5px;">댓글
-								허용 <input type="checkbox" value=""
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용 
+								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								
-								
-								    <button class="btn btn-default" style="margin-right: 20px; border: 1px solid gray; font-size: 20px; color: black;
-								     box-shadow: 3px 3px 3px gray;">글 삭제</button>
+								    <button class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black; 
+								    background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">글 삭제</button>
     
-    								<button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black;
-    								 box-shadow: 3px 3px 3px gray;">수정완료</button>
+    								<button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black; 
+    								background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">수정완료</button>
     								 
-							</form>
+							
 						</td>
 					</tr>
 				</table>

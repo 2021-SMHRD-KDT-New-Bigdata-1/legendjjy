@@ -396,8 +396,8 @@ input[type="text"] {
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
-								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글
-								허용 <input type="checkbox" name="public_yn" value="y"
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
+								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								<%
 								if (vo == null) {
@@ -410,7 +410,8 @@ input[type="text"] {
 								} else {
 								%>
 								<button type="submit" class="btn btn-default" id="btn_submit"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
+									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">등록</button>
 								<%
 								}
 								%>

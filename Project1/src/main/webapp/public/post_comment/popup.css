@@ -79,9 +79,10 @@ button {
 }
 
 #content_date{
+	background: orange;
 	padding-right: 20px;
 	text-align: right;
-	width: 330px;
+	width: 700px;
 	height: 100px;
 }
 
