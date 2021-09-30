@@ -176,7 +176,8 @@ td {
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
+					<ul class="
+					navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">¿œ±‚
