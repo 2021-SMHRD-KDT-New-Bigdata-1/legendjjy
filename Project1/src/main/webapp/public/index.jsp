@@ -248,7 +248,7 @@ a:hover ~ .sub-menu {
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow.jsp<%}%>">팔로우</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
@@ -367,66 +367,66 @@ a:hover ~ .sub-menu {
 					</div>
 				</div>
 			</div>
-
+		<form class="upload" action="UploadService" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
-				<table
-					style="background-color: rgb(242, 238, 233); box-shadow: 5px 5px 5px gray;"
-					data-aos="fade-up" data-aos-duration="3000">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-						<td>
+						<td style=" border: 1px solid silver;">
+						
 							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
 							style="display: none;">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
-								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; box-shadow: 3px 3px 3px gray;">+</button>
-
+								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
+								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 						</td>
-						<td>
-							<form action="write.jsp" method="post"
-								style="width: 500px; font-size: 20px;">
+						<td style=" border: 1px solid silver; border-radius: 20px;">
+							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
-										name="content" placeholder="내용 작성"
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;"></textarea>
+										name="content" placeholder="내용 작성" 
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px; box-shadow: 2px 2px 2px gray;">
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										border-bottom: 1px solid rgb(255, 160, 0);">
 								</div>
-								<input type="checkbox" value="" style="margin-right: 5px;">댓글
-								허용 <input type="checkbox" value=""
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
+								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								<%
 								if (vo == null) {
 								%>
-								<button type="submit" class="btn btn-default"
-									onclick="alert('로그인이 필요합니다.')"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
-
+								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
+									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">등록</button>
 								<%
 								} else {
 								%>
-								<button type="submit" class="btn btn-default"
-									style="border: 1px solid gray; font-size: 20px; color: black; box-shadow: 3px 3px 3px gray;">등록</button>
+								<button type="submit" class="btn btn-default" id="btn_submit"
+									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">등록</button>
 								<%
 								}
 								%>
-
-							</form>
-						</td>
-					</tr>
-				</table>
-			</div>
-
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
 		</div>
 
 	</main>
@@ -451,6 +451,7 @@ a:hover ~ .sub-menu {
 	<script src="vendors/fontawesome/all.min.js"></script>
 	<script src="assets/js/theme.js"></script>
 	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<!-- '일기쓰기'메뉴 자동 스크롤 -->
 	<script>
 		$(document).ready(function() {
 			$(".nav-link fw-bold .scroll").click(function(event) {
@@ -468,6 +469,7 @@ a:hover ~ .sub-menu {
 				|| document
 						.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')
 	</script>
+	<!-- Modal -->
 	<script src="assets/js/functions-min.js"></script>
 	<script src="assets/js/댓글.js"></script>
 	<script>
@@ -480,5 +482,7 @@ a:hover ~ .sub-menu {
 			$("#modal").attr("style", "display:none");
 		});
 	</script>
+	<!-- image upload -->
+
 </body>
 </html>

@@ -154,13 +154,16 @@
     
     
     <form style="text-align: center;">
+
         <input type="button" value="신청하기"
         style="width:150px; height:60px; margin-top: 100px; font-size: 20px; color: cornsilk;
         background-color: rgb(69, 100, 177); border:2"
         data-aos="fade-up" data-aos-duration="2000"
         >
+
     </form>
     
+
     <div style="text-align: center; margin-top: 200px;">
         <img src="imgs/designed_01.png" alt="" style="margin-bottom: 30px; margin-right: 0;">
         <img src="imgs/logo.png" alt="">

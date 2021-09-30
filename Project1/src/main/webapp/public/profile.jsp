@@ -81,17 +81,19 @@
   <!-- Page Content -->
   <div class="container">
 
-    <div class="row" style="position: relative;">
+    <div class="row" style="position: absolute;">
 		
-      <div class="col-lg-3" style="padding-left: 49px; width: 30%;">
+      <div class="col-lg-3" style="padding: 134px; width: 108%;">
 
-        <h4 class="my-4">@legendjjy</h4>
-        <button id="follow">구독하기</button>
-        <p id="myself" style="color: gray;">자기소개adsfdfsafdasfaafsfasdf글f</p>
+        <h4 class="my-4">@legendjjy<button id="follow" style="cursor: pointer">구독하기</button></h4>
+        
+        <p id="myself" style="color: gray;">ESTP의 일상이 궁금하지?</p>
 		
       </div>
-      		<div style="position: absolute; margin-top: 30px;"><h2>@legendjjy 님의 일기장</h2></div>
-      </div>
+      
+    <div style="position: absolute; margin-top: 4px;"><h2>@legendjjy 님의 일기장</h2></div>
+      
+    </div>
       <!-- /.col-lg-3 -->
 
 

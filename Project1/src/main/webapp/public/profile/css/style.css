@@ -13,9 +13,10 @@ a{
 }
 
 .list_wrap{
-    width: 2000px;
+    width: 1750px;
     margin: 0 auto;
-    padding: 100px;
+    padding: 167px;
+    padding-left: 68px;
 }
 
 .list_wrap ul{
