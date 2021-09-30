@@ -13,7 +13,7 @@ button {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, .7);
-  z-index: 1;
+  z-index: 5;
 }
 
 #popup.hide {
@@ -99,7 +99,7 @@ button {
 }
 
 #content_content{
-	font-size: 15px;
+	font-size: 16px;
 	padding-left: 20px;
 	width: 700px;
 	height: 420px;
