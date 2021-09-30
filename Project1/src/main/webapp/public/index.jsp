@@ -367,16 +367,20 @@ a:hover ~ .sub-menu {
 					</div>
 				</div>
 			</div>
-		<form class="upload" action="UploadService" method="post" enctype="multipart/form-data">
+		<form class="upload" action="../UploadService" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
 				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
 						<td style=" border: 1px solid silver;">
 						
-							<div id="user_upload_img"></div> <input id="file" type="file"
-							onchange="previewImage(this, 'user_upload_img');"
-							style="display: none;">
-							<button class="button"
+							<div id="user_upload_img"></div> 
+								<input name="file" id="file" type="file"
+								onchange="previewImage(this, 'user_upload_img');"
+								style="display: none;">
+								<input name="image" id="image" type="image"
+								src="assets/img/basicIMG.png"
+								style="display: none;">
+								<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
