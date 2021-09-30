@@ -85,6 +85,7 @@
 				<li class="fl tc w300 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">등록일자</li>
 				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177); width: 120px;">팔로우 취소</li>
 			</ul>
+			
 			</div>  
 			
 			<div class="all_1" style="position: fixed; overflow:scroll;">
