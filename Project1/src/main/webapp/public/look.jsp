@@ -91,7 +91,7 @@
 
 </head>
 
-<body>
+<body style="width:100%">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
@@ -100,7 +100,7 @@
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll"
 			style="background-color: rgb(242, 238, 233, 0.7);">
-			<div class="container">
+			<div class="container" style="height:88px">
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..."
 					style="height: 50px;"/><span
@@ -161,7 +161,7 @@
 		</nav>
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-		<h1 class="py-5 text-center" id="searching">일기 둘러보기</h1>
+		<h1 class="py-5 text-center" id="searching" style="font-size: 38px">일기 둘러보기</h1>
 		
 	<main class="main" id="top">
 	
@@ -169,7 +169,12 @@
 			<input class="search" type="text" placeholder="검색어 입력">
 			<button style="	border-radius: 20px;"class="search_button">검색</button>
 		</div>
-		
+
+    <form style="margin-left:274px; height:17px;">
+      <p><input type="month" value="2021-09"  min="2010-09" max="2030-09" style="height:33px;"></p>
+      	<p><input type="submit" style="width: 27px; height:26px; padding-bottom:37px; align:left;" value="submit"></p>
+      
+    </form>
 
 		<div class="list_wrap">
 			<ul>
