@@ -87,7 +87,7 @@
 
         <h4 class="my-4">@legendjjy<button id="follow" style="cursor: pointer">구독하기</button></h4>
         
-        <p id="myself" style="color: gray;">자기소개adsfdfsafdasfaafsfasdf글f</p>
+        <p id="myself" style="color: gray;">ESTP의 일상이 궁금하지?</p>
 		
       </div>
       
