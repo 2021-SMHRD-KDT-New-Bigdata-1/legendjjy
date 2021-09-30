@@ -45,7 +45,7 @@ public class diaryDAO {
 	public int upload_diary(diaryVO vo, usersVO user_vo) {
 		conn();
 		
-		String sql = "INSERT INTO DIARIES (DIARY_TITLE, DIARY_DATE, DIARY_IMAGE, DIARY_CONTENT, USER_EMAIL, HASH_TAG, OPEN_YN, COMMENT_YN, HTIS, AD_SEQ VALUES(?, SYSDATE, ?, ?, ?, ?, ?, ? , 0, NULL)";
+		String sql = "INSERT INTO DIARIES VALUES(DIARIES_SEQ.NEXTVAL, ?, SYSDATE, ?, ?, ?, ?, ?, ? , 0, NULL)";
 		
 		int cnt = 0;
 		try {
@@ -58,7 +58,7 @@ public class diaryDAO {
 			psmt.setString(6, vo.getOpen_yn());
 			psmt.setString(7, vo.getCommet_yn());
 			
-			int cnt = psmt.executeUpdate();
+			cnt = psmt.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
