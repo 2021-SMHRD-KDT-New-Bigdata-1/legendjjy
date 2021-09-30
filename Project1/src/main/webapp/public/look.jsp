@@ -87,6 +87,28 @@
     font-size: 18px;
     line-height: 20px;
 }
+
+#month_button{
+	width: 42px;
+	height: 34px;
+	padding-top: 0;
+	border-radius: 12px;
+	padding-bottom: -10px;
+	margin-top: 10px;
+	background: #1b5ac2;
+	border: 0;
+	color: white;
+	opacity: 0.8;
+	font-size: ;align:left;
+}
+
+#month_select{
+	margin-right: 10px;
+	padding-left: 20px;
+	width: 140px;
+	height: 32px;
+}
+
 </style>
 
 </head>
@@ -96,16 +118,13 @@
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
 
-		<nav
+		<nav 
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-<<<<<<< HEAD
 			data-navbar-on-scroll="data-navbar-on-scroll"
 			style="background-color: rgb(242, 238, 233, 0.7);">
 			<div class="container" style="height:88px">
-=======
-			data-navbar-on-scroll="data-navbar-on-scroll">
+
 			<div class="container">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
 					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
@@ -175,9 +194,14 @@
 		</div>
 
     <form style="margin-left:274px; height:17px;">
-      <p><input type="month" value="2021-09"  min="2010-09" max="2030-09" style="height:33px;"></p>
-      	<p><input type="submit" style="width: 27px; height:26px; padding-bottom:37px; align:left;" value="submit"></p>
-      
+    <table>
+    	<tr>
+    		<td><p><input type="month" value="2021-09"  min="2010-09" max="2030-09" id="month_select"></p></td>
+    		<td><p><input type="submit" id="month_button" value="ok"></p></td>
+    	</tr>
+    </table>
+     
+
     </form>
 
 		<div class="list_wrap">
