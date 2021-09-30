@@ -104,7 +104,7 @@
 #month_select{
 	margin-right: 10px;
 	padding-left: 20px;
-	width: 140px;
+	width: 145px;
 	height: 32px;
 }
 
@@ -178,15 +178,13 @@
 		<nav 
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll"
-<<<<<<< HEAD
-			style="background-color: rgb(242, 238, 233, 0.7); z-index: 1;">
-			<div class="container" style="height:88px">
+			style="background-color: rgb(242, 238, 233, 0.7); z-index: 1;
+			height: 120px;">
 
-			<div class="container">
-=======
-			style="background-color: rgb(242, 238, 233, 0.7);">
+
+
 		<div class="container">
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
+
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
 					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
