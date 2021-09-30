@@ -106,41 +106,37 @@
 	<!-- 게시물 팝업 보기 -->
 	<!-- ------------------------------------------------------------- -->
 	
-	<button onclick="showPopup()" style="margin_top: 200px;">팝업창 보기</button>
-		
 	<div id="popup" class="hide">
-	<div class="content" style="z-index: 1;">
+	<div class="content">
 	    <table>
 	    	<tr class="post_view">
-	    		<td id="img_view"><img src="sample01.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
+	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
 	    				<tr>
-	    					<td id="content_title" style="background: burlywood;" >제목</td>
+	    					<td id="content_nick" colspan='2'>@legendjjy</td>
+	    					<td id="content_date" colspan='2'>2021-09-30</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" style="background: wheat;" >내용 Content and contents are nouns.</td>
+	    					<td id="content_title" colspan='4'>제목</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" style="background: pink;" >#태그1 #태그2 #태그3</td>
+	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_date">2021-09-30</td>
+	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_hits" colspan='2'>조회수 1321</td>
+	    					<td id="content_scrap">스크랩하기</td>
+	    					<td id="content_subscribe">구독하기</td>
 	    				</tr>
 	    			</table>
 	    		</td>
 	    	</tr>
 	    	<tr>
-	    		<td id= "content_hits" style="border-top: solid 1px black; border-bottom: solid 1px black; background: yellow;">조회수 1321</td>
-	    		<td style="border-top: solid 1px black; border-bottom: solid 1px black;">
-	    			<table>
-	    				<tr>
-	    					<td id="content_nick" style="background: aquamarine;">@legendjjy</td>
-	    					<td id="content_scrap" style="background: gray;">스크랩버튼</td>
-	    					<td id="content_subscribe" style="background: skyblue;">구독버튼</td>
-	    				</tr>
-	    			</table>
-	    		</td>
+	    		<td id="blank" ></td>
+	    		<td id="blank" ></td>
 	    	</tr>
 	    	
 	    </table>
@@ -156,7 +152,7 @@
 		        		<div id=comments style="margin-top: 20px; "></div>
      				 </div>
 	    
-    	<button onclick="closePopup()" style="position: absolute; top:50px; left: 1750px;"><img alt="" src="#">닫기</button>
+    	<button id="close_button" onclick="closePopup()">X</button>
 	 	</div>
 	 	
 	</div>

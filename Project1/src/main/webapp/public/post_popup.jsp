@@ -19,41 +19,40 @@
 <body>
 
 
+
 	<button onclick="showPopup()">팝업창 보기</button>
 		
 	<div id="popup" class="hide">
 	<div class="content">
 	    <table>
 	    	<tr class="post_view">
-	    		<td id="img_view"><img src="sample01.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
+	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
 	    				<tr>
-	    					<td id="content_title" style="background: burlywood;" >제목</td>
+	    					<td id="content_nick" style="background: aquamarine;" colspan='2'>@legendjjy</td>
+	    					<td id="content_date" style="background: orange;"colspan='2'>2021-09-30</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" style="background: wheat;" >내용 Content and contents are nouns.</td>
+	    					<td id="content_title" style="background: burlywood;" colspan='4'>제목</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" style="background: pink;" >#태그1 #태그2 #태그3</td>
+	    					<td id="content_content" style="background: wheat;" colspan='4'>내용 Content and contents are nouns.</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_date">2021-09-30</td>
+	    					<td id="content_tag" style="background: pink;" colspan='4'>#태그1 #태그2 #태그3</td>
 	    				</tr>
-	    			</table>
-	    		</td>
-	    	</tr>
-	    	<tr>
-	    		<td id= "content_hits" style="border-top: solid 1px black; border-bottom: solid 1px black; background: yellow;">조회수 1321</td>
-	    		<td style="border-top: solid 1px black; border-bottom: solid 1px black;">
-	    			<table>
 	    				<tr>
-	    					<td id="content_nick" style="background: aquamarine;">@legendjjy</td>
+	    					<td id="content_hits" style="background: yellow;" colspan='2'>조회수 1321</td>
 	    					<td id="content_scrap" style="background: gray;">스크랩버튼</td>
 	    					<td id="content_subscribe" style="background: skyblue;">구독버튼</td>
 	    				</tr>
 	    			</table>
 	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td id="blank" ></td>
+	    		<td id="blank" ></td>
 	    	</tr>
 	    	
 	    </table>
@@ -69,16 +68,18 @@
 		        		<div id=comments style="margin-top: 20px; "></div>
      				 </div>
 	    
-    	<button onclick="closePopup()" style="position: absolute; top:50px; left: 1750px;"><img alt="" src="#">닫기</button>
+    	<button id="close_button" onclick="closePopup()">X</button>
 	 	</div>
 	 	
 	</div>
 
-    <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
+    <!-- fade in -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 
 </body>
 </html>
