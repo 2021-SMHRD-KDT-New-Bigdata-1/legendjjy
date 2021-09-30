@@ -59,7 +59,7 @@
 	width: 20%;
 	border: 1px solid #1b5ac2;
 	background: #ffffff;
-	margin-left: 20%;
+	margin-left: 20%;\
 	border-radius: 20px;
 	opacity:0.85;
 }
@@ -85,13 +85,6 @@
 	float: right;
 	color: #ffffff
 
-}
-.navbar-brand {
-    float: left;
-    height: 50px;
-    padding: 0px;
-    font-size: 18px;
-    line-height: 20px;
 }
 
 #month_button{
@@ -185,10 +178,15 @@
 		<nav 
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll"
+<<<<<<< HEAD
 			style="background-color: rgb(242, 238, 233, 0.7); z-index: 1;">
 			<div class="container" style="height:88px">
 
 			<div class="container">
+=======
+			style="background-color: rgb(242, 238, 233, 0.7);">
+		<div class="container">
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
 					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
 					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
@@ -202,10 +200,10 @@
 				<div
 					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
 					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
+					<ul class="navbar-nav ms-auto mb-4 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">일기
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
 								쓰러가기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
 							href="look.jsp">둘러보기</a></li>
@@ -240,12 +238,12 @@
 					if (vo == null) {
 					%>
 					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a>
 					</form>
 					<% } %>
 				</div>
 			</div>
-		</nav>
+	</nav>
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
 		<h1 class="py-5 text-center" id="searching" style="font-size: 38px">일기 둘러보기</h1>
