@@ -91,7 +91,6 @@
 	outline: none;
 	float: right;
 	color: black;
-	font-weight: bold;
 
 }
 

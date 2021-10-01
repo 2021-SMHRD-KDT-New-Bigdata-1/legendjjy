@@ -90,7 +90,6 @@ body {
 	outline: none;
 	float: right;
 	color: black;
-	font-weight: bold;
 
 }
 .navbar-brand {
