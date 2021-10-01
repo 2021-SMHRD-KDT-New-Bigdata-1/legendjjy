@@ -54,7 +54,7 @@
 	<link rel="stylesheet" href="assets/css/popup.css">
 	
 	<!-- 새로 만든 상단바 css -->
-	<link rel="stylesheet" href="nav_bar.css"/> 
+	<link rel="stylesheet" href="assets/css/nav_bar.css"/> 
 
 <style>
 body {
