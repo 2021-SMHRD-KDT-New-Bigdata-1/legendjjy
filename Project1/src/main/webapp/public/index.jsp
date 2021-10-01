@@ -69,10 +69,183 @@ td {
 	align: center;
 	width: 40%;
 }
+h4{
+	margin-bottom: 5px;
+	text-align: inherit;
+	height: 42px;
+	margin-top: 15px;
+	color: white;
+}
 
 input[type="text"] {
 	width: 100%
 }
+.site-footer
+{
+  background-color: burlywood;
+  padding:20px 0 12px;
+  font-size:15px;
+  line-height:21px;
+  color:#737373;
+}
+.site-footer hr
+{
+  border-top-color:#bbb;
+  opacity:0.5
+}
+.site-footer hr.small
+{
+  margin:20px 0
+}
+.site-footer h6
+{
+  color:#fff;
+  font-size:16px;
+  text-transform:uppercase;
+  margin-top:5px;
+  letter-spacing:2px
+}
+.site-footer a
+{
+
+  font-size: 16px;
+}
+.site-footer a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links
+{
+  padding-left:0;
+  list-style:none
+}
+.footer-links li
+{
+  display:block
+}
+
+.footer-links a:active,.footer-links a:focus,.footer-links a:hover
+{
+  color:#3366cc;
+  text-decoration:none;
+}
+.footer-links.inline li
+{
+  display:inline-block
+}
+.site-footer .social-icons
+{
+  text-align:right
+}
+.site-footer .social-icons a
+{
+  width:40px;
+  height:40px;
+  line-height:40px;
+  margin-left:6px;
+  margin-right:0;
+  border-radius:100%;
+  background-color:#33353d
+}
+.copyright-text
+{
+  margin:0
+}
+@media (max-width:991px)
+{
+  .site-footer [class^=col-]
+  {
+    margin-bottom:30px
+  }
+}
+@media (max-width:767px)
+{
+  .site-footer
+  {
+    padding-bottom:0
+  }
+  .site-footer .copyright-text,.site-footer .social-icons
+  {
+    text-align:center
+  }
+}
+.social-icons
+{
+  padding-left:0;
+  margin-bottom:0;
+  list-style:none
+}
+.social-icons li
+{
+  display:inline-block;
+  margin-bottom:4px
+}
+.social-icons li.title
+{
+  margin-right:15px;
+  text-transform:uppercase;
+  color:#96a2b2;
+  font-weight:700;
+  font-size:13px
+}
+.social-icons a{
+  background-color:#eceeef;
+  color:#818a91;
+  font-size:16px;
+  display:inline-block;
+  line-height:44px;
+  width:44px;
+  height:44px;
+  text-align:center;
+  margin-right:8px;
+  border-radius:100%;
+  -webkit-transition:all .2s linear;
+  -o-transition:all .2s linear;
+  transition:all .2s linear
+}
+.social-icons a:active,.social-icons a:focus,.social-icons a:hover
+{
+  color:#fff;
+  background-color:#29aafe
+}
+.social-icons.size-sm a
+{
+  line-height:34px;
+  height:34px;
+  width:34px;
+  font-size:14px
+}
+.social-icons a.facebook:hover
+{
+  background-color:#3b5998
+}
+.social-icons a.twitter:hover
+{
+  background-color:#00aced
+}
+.social-icons a.linkedin:hover
+{
+  background-color:#007bb6
+}
+.social-icons a.dribbble:hover
+{
+  background-color:#ea4c89
+}
+@media (max-width:767px)
+{
+  .social-icons li.title
+  {
+    display:block;
+    margin-right:0;
+    font-weight:600
+  }
+}
+.text-justify{
+	line-height: 5px;
+}
+
+
 </style>
 
 </head>
@@ -419,6 +592,48 @@ input[type="text"] {
 					</table>
 				</div>
 			</form>
+			
+			<footer class="site-footer">
+		      <div class="container">
+		        <div class="row">
+		          <div class="col-xs-6 col-md-3" style="width:456px;">
+		            <div class="logo" style="width:100px">
+						<a><img src="../public/assets/img/white.png" style="width:149px; height:100px: padding-left: 20px; border-left-width: 49px; margin-left: 184px; "></a>
+					</div>
+		          </div>
+		          
+		           <div class="col-sm-12 col-md-6" style="color:white; width:598px; padding-left: 101px; padding-right: 46px;">
+		            <h4>Legendjjy</h4>
+		            <p class="text-justify">광주광역시 남구 송암로 60 CGI센터 2층</p>
+		            <p class="text-justify" style="word-spacing:10px;">총괄:정영동 
+		            <p class="text-justify" style="word-spacing:10px;"> DB,CSS/HTML,JSP/Servlet:박재홍,박정현,전설아</p><br>
+		            <p class="text-justify" style="word-spacing:20px;">TEL:+82)123-4567   FAX:+82)234-5678   고객센터:1522-5000</p>
+		            
+		          	
+		          </div>
+		
+		           <div class="col-xs-6 col-md-3">
+		            <h4>Quick Links</h4>
+		            <ul class="footer-links" >
+		              <li style="word-spacing:20px; line-height:35px; color:white;"><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>profile.jsp"<%}%>">내프로필</a>
+		              <a href="look.jsp">둘러보기</a>
+		              <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">관심</a>
+		              <a href="../publish/book_made.jsp">출판</a><br>
+		              <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기쓰러가기</a>
+		              <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a>
+		              
+		              </li>
+		              <p class="copyright-text" style="width:304px; color:white">Copyright &copy; 2021 All Rights Reserved by 
+		        		 <a href="#">Legendjjy</a>.
+		              </p>
+		            </ul>
+		          </div>
+		          
+		        </div>
+		        
+		      </div>
+		    
+		</footer>
 		</div>
 
 	</main>

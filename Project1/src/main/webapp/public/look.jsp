@@ -268,105 +268,22 @@
     		<td><p><input type="submit" id="month_button" value="ok"></p></td>
     	</tr>
     </table>
-     
 
     </form>
 
 		<div class="list_wrap">
 			<ul>
-				<%for(int i=1; i<=diary_list.size(); i++){%>
+				<%for(int i=0; i<diary_list.size(); i++){%>
 					<li class="item" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-						<div><img src="/Project1/upload/<%=diary_list.get(i).getDiary_title()%>+'.'+<%=diary_list.get(i).getUser_email() %>+'.png'"
-						alt="assets/img/basicIMG.png"></div>
-						<div class="cont">
+						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
+						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
+						<div class="cont"> 
 							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
 							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
 						</div>
 					</li>
 				<%}%>
-				<%for(int i =0; i<9; i++){ %>
-					<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<%} %>
-				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item2" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item3" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item4" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item5" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item6" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item7" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item8" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item9" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
 			</ul>
 		</div>
 </main>

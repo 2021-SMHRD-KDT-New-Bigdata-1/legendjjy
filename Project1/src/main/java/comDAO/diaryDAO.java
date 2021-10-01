@@ -74,7 +74,7 @@ public class diaryDAO {
 	public ArrayList<entireDiaryVO> look_diary() {
 		conn();
 		
-		String sql = "SECECT * FROM DIARIES ORDER BY DIARY_SEQ";
+		String sql = "SELECT * FROM DIARIES ORDER BY DIARY_SEQ DESC";
 		
 		ArrayList<entireDiaryVO> diary_list = new ArrayList<entireDiaryVO>();
 		try {
@@ -107,5 +107,22 @@ public class diaryDAO {
 			close();
 		}
 		return diary_list;
+	}
+	
+	public int delete_diary() {
+		conn();
+		
+		String sql = "DELETE FROM DIARIES WHERE TITLE = ?, USER_EMAIL = ?";
+		
+		int cnt = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, sql);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
 	}
 }
