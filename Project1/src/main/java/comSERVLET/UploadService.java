@@ -50,14 +50,13 @@ public class UploadService extends HttpServlet {
 		String imgName = "";
 		usersVO user_vo = null;
 
-		imgName = multi.getFilesystemName("image");
+		imgName = multi.getFilesystemName("file");
 			
-		long time = System.currentTimeMillis();
 		String ori= multi.getOriginalFileName("file");
 		HttpSession session = request.getSession();
 		user_vo = (usersVO)session.getAttribute("vo");
 		try {
-			String filename = time+"."+user_vo.getUser_email();
+			String filename = title+"."+user_vo.getUser_email();
 			File savedFile = multi.getFile("file");
 			savedFile.renameTo(new File(path+"/"+filename+".png"));
 		}catch(Exception e) {
