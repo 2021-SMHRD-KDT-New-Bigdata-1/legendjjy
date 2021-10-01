@@ -268,33 +268,23 @@
     		<td><p><input type="submit" id="month_button" value="ok"></p></td>
     	</tr>
     </table>
-     
+     ㅋㅋㅋㅋ메롱
 
     </form>
 
 		<div class="list_wrap">
 			<ul>
-				<%for(int i=1; i<=diary_list.size(); i++){%>
+				<%for(int i=0; i<diary_list.size(); i++){%>
 					<li class="item" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-						<div><img src="/Project1/upload/<%=diary_list.get(i).getDiary_title()%>+'.'+<%=diary_list.get(i).getUser_email() %>+'.png'"
-						alt="assets/img/basicIMG.png"></div>
-						<div class="cont">
+						<div class="image"><img src="/Project1/upload/<%=diary_list.get(i).getDiary_title()%>+'.'+<%=diary_list.get(i).getUser_email() %>+'.png'"
+						alt="public/assets/img/basicIMG.png"></div>
+						<div class="cont"> 
 							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
 							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
 						</div>
 					</li>
 				<%}%>
-				<%for(int i =0; i<9; i++){ %>
-					<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<%} %>
 				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
 					<div class="image">사진</div>
 					<div class="cont">
