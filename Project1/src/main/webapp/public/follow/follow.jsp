@@ -87,14 +87,14 @@
 
 			<div class="all" style="position: fixed;">
 				
-			<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray; width:750px">
+			<ul id="head" style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray; width:750px">
 				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">닉네임</li>
 				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
 				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177); width: 140px;">팔로우 취소</li>
 			</ul>
 			</div>  
 
-			<div class="all_2" >
+			<div id="head" class="all_2" >
 				<ul class="board">
 					<li class="fl tc w500 list t_line lt_line">닉네임</li>
 					<li class="fl tc w500 list t_line lt_line">legendjjy123@naver.com</li>

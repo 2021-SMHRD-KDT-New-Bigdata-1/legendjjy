@@ -56,6 +56,9 @@
 	<link rel="stylesheet" href="assets/css/popup.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
+	<!-- 새로 만든 상단바 css -->
+	<link rel="stylesheet" href="assets/css/nav_bar.css"/>
+
 </head>
 
 <body data-bs-spy="scroll" data-bs-target="#navbar"
@@ -123,75 +126,55 @@
 	<!-- ------------------------------------------------------------- -->
 
 
+	<!-- -------------------------------------------------------------------- -->
+    <!-- 새로 만든 상단바 -->
+    <!-- -------------------------------------------------------------------- -->
+    
+    <header class="nav_outer">
+    	<nav class="navi">
+    	
+		    <div class="navi_inner">
+		    	<div class="LOGO">
+			    	<a class="navbar-brand d-inline-flex" href="index.jsp"><img class="logo-img" src="assets/img/gallery/logo_small.png" alt="..." 
+			    	style="width: 70px; height: 70px;"/></a>
+				    <a><span style="color: #005DFF !important">LEGEN<span style="color: #FF6A00 !important;">D</span></span></a>
+   				</div>
+		    </div>
+			    
+   			
+	    	<ul class="navi_inner2">
+	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
+	            <li ><a href="look.jsp">둘러보기</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">스크랩 목록</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">구독 목록</a></li>
+	            <li ><a href="../publish/book_made.jsp">출판</a></li>
+	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
+								class="nav-link dropdown-toggle fw-bold" href="#"
+								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+								aria-expanded="false"> Hi, <%=vo.getUser_nick()%>
+							</a>
+								<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
+									<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
+									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+									<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+								</ul></li><%}
+	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
+	    	</ul>
+	    	
+	    	<%if(vo==null){ %>
+	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
+	        <%}%>
+
+	    </nav>
+    
+    </header>
+    
+    <!-- -------------------------------------------------------------------- -->
+    <!-- 새로 만든 상단바 끝 -->
+    <!-- -------------------------------------------------------------------- -->
+
 	<main class="main" id="top">
-		<nav
-			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll"
-			style="background-color: rgb(242, 238, 233, 0.7); z-index: 1;">
-			<div class="container">
-				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
-					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
-					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
-						class="text-warning">D</span></span></a>
-				<button class="navbar-toggler collapsed" type="button"
-					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false"
-					aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div
-					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
-					id="navbarSupportedContent">
-					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							aria-current="page"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">일기
-								쓰러가기</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="look.jsp">둘러보기</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">관심</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
-						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="../publish/book_made.jsp">출판</a></li>
-						<%
-						if (vo != null && vo.getAdmin_yn().equals("n")) {
-						%>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle fw-bold" href="#"
-							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
-						</a>
-							<ul class="dropdown-menu fw-bold"
-								aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item fw-bold" href="profile.jsp">내
-										프로필</a></li>
-								<li><a class="dropdown-item fw-bold"
-									href="Login_v2/edit.html">개인정보수정</a></li>
-								<li><a class="dropdown-item fw-bold"
-									href="../LogoutService">로그아웃</a></li>
-							</ul></li>
-						<%
-						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
-						%><li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">유저관리</a></li>
-						<%
-						}
-						%>
-					</ul>
-					<%
-					if (vo == null) {
-					%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a>
-					</form>
-					<%
-					}
-					%>
-				</div>
-			</div>
-		</nav>
+		
 
 		<!-- Page Content -->
 		<div class="container">
@@ -209,7 +192,7 @@
 
 				</div>
 
-				<div style="position: absolute; margin-top: 4px;">
+				<div style="position: absolute; margin-top: 4px;  margin: 100px 0 100px 0;">
 					<h2>@legendjjy 님의 일기장</h2>
 				</div>
 
@@ -219,7 +202,7 @@
 
 
 			<div class="list_wrap">
-				<ul style="margin-left: 250px">
+				<ul style="margin-left: 250px; margin-top: 100px;">
 					<li class="item item1" onclick="showPopup()">
 						<div class="image">사진</div>
 						<div class="cont">
