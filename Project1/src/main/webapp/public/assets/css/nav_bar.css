@@ -8,6 +8,7 @@
 
 .nav_outer{
 	position: fixed;
+	top: 0;
     width:100%; /* 화면에 꽉차게 */
     height:100px;
     background-color: rgb(242, 238, 233, 0.7);

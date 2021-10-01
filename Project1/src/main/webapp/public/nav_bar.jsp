@@ -7,7 +7,8 @@
 <meta charset="EUC-KR">
 <title>Insert title here</title>
 
-<link rel="stylesheet" href="assets/nav_bar.css"/> <!-- 새로 만든 상단바 css -->
+<!-- 새로 만든 상단바 css -->
+<link rel="stylesheet" href="assets/css/nav_bar.css"/>
 
 </head>
 <body>
