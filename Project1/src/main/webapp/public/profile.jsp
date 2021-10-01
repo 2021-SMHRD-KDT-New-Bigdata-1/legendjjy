@@ -92,7 +92,8 @@
 	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" colspan='2'>조회수 1321</td>
+	    					<td id="content_hits" >조회수 1321</td>
+	    					<td><button id="content_modify">수정하기</button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>

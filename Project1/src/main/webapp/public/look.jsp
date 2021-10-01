@@ -67,7 +67,7 @@
 	width: 20%;
 	border: 1px solid #1b5ac2;
 	background: #ffffff;
-	margin-left: 20%;\
+	margin-left: 20%;
 	border-radius: 20px;
 	opacity:0.85;
 }
@@ -87,7 +87,7 @@
 	width: 50px;
 	height: 100%;
 	border: none;
-	font-size: 15px;
+	font-size: 18px;
 	background-color: transparent;
 	outline: none;
 	float: right;
@@ -163,7 +163,8 @@
 	    					<td id="content_tag" colspan='4'><%=diary_list.get(i).getHash_tag() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" colspan='2'>diary_list.get(i).getHits()</td>
+	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
+	    					<td><button id="content_modify">수정하기</button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>

@@ -85,11 +85,11 @@ body {
 	width: 50px;
 	height: 100%;
 	border: none;
-	font-size: 15px;
-	background-color: #1b5ac2;
+	font-size: 18px;
+	background-color: transparent;
 	outline: none;
 	float: right;
-	color: #ffffff
+	color: black;
 
 }
 .navbar-brand {
@@ -134,7 +134,8 @@ body {
 	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" colspan='2'>조회수 1321</td>
+	    					<td id="content_hits" >조회수 1321</td>
+	    					<td><button id="content_modify">수정하기</button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>
@@ -219,7 +220,7 @@ body {
 		
 	<main class="main" id="top">
 	
-		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 80px; z-index: 2; ">
+		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 120px; z-index: 2; ">
 			<input class="search" type="text" placeholder="검색어 입력">
 			<button style="	border-radius: 20px;"class="search_button">검색</button>
 		</div>
