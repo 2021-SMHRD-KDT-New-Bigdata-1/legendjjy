@@ -115,6 +115,13 @@
 	width: 145px;
 	height: 32px;
 }
+.cont>p{
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width:250px;
+}
+
 
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
@@ -168,15 +175,7 @@
 	    		<td id="blank" ></td>
 	    	</tr>
 	    	<%} %>
-	    	<script>
-	    		$(function()){
-	    			$('#writing').on('click',function()){
-	    				$.ajax({
-	    					data: ''
-	    				})
-	    			}
-	    		}
-	    	</script>
+	    	
 	    </table>
 	    
 	    <div id="featured" class="blurb" style="position: relative;">
