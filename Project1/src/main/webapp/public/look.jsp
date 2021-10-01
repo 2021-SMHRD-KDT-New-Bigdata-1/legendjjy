@@ -1,3 +1,7 @@
+<%@page import="comDAO.usersDAO"%>
+<%@page import="comVO.entireDiaryVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
@@ -116,6 +120,9 @@
 <body style="width:100%">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	diaryDAO dao = new diaryDAO();
+	usersDAO userdao = new usersDAO();
+	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
 	%>
 	
 	<!-- ------------------------------------------------------------- -->
@@ -267,6 +274,27 @@
 
 		<div class="list_wrap">
 			<ul>
+				<%for(int i=1; i<=diary_list.size(); i++){%>
+					<li class="item" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
+						<div><img src="/Project1/upload/<%=diary_list.get(i).getDiary_title()%>+'.'+<%=diary_list.get(i).getUser_email() %>+'.png'"
+						alt="assets/img/basicIMG.png"></div>
+						<div class="cont">
+							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
+							<p><%=diary_list.get(i).getDiary_title() %></p>
+							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
+						</div>
+					</li>
+				<%}%>
+				<%for(int i =0; i<9; i++){ %>
+					<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
+					<div class="image">사진</div>
+					<div class="cont">
+						<strong>작성자</strong>
+						<p>내용이 들어갑니다.</p>
+						<span class="hits">조회수</span> <span class="date">날짜</span>
+					</div>
+				</li>
+				<%} %>
 				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
 					<div class="image">사진</div>
 					<div class="cont">

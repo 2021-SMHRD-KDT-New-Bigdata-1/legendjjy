@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import comVO.entireDiaryVO;
 import comVO.usersVO;
 
 public class usersDAO {
@@ -178,5 +179,31 @@ public class usersDAO {
 			close();
 		}
 		return cnt;
+	}
+	
+	public String findNick(entireDiaryVO vo) {
+		conn();
+		
+		String sql = "SELECT USER_NICK FROM USERS WHERE USER_EMAIL = ?";
+		
+		String result = "";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getUser_email());
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				result = rs.getString(1);
+			}else {
+				result = "알 수 없음";
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return result;
 	}
 }

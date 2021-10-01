@@ -48,46 +48,26 @@ public class diaryDAO {
 		conn();
 		
 		int cnt = 0;
-		if(vo.getImageURL()==null) {
-			String sql = "INSERT INTO DIARIES VALUES(DIARIES_SEQ.NEXTVAL, ?, SYSDATE, ?, ?, ?, ?, ?, ? , 0, NULL)";
+		
+		String sql = "INSERT INTO DIARIES VALUES(DIARIES_SEQ.NEXTVAL, ?, SYSDATE, ?, ?, ?, ?, ?, ? , 0, NULL)";
 
-			try {
-				psmt = conn.prepareStatement(sql);
-				psmt.setString(1, vo.getTitle());
-				psmt.setString(2, vo.getImageURL());
-				psmt.setString(3, vo.getContent());
-				psmt.setString(4, user_vo.getUser_email());
-				psmt.setString(5, vo.getHash_tag());
-				psmt.setString(6, vo.getOpen_yn());
-				psmt.setString(7, vo.getCommet_yn());
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getTitle());
+			psmt.setString(2, vo.getimageName());
+			psmt.setString(3, vo.getContent());
+			psmt.setString(4, user_vo.getUser_email());
+			psmt.setString(5, vo.getHash_tag());
+			psmt.setString(6, vo.getOpen_yn());
+			psmt.setString(7, vo.getCommet_yn());
 
-				cnt = psmt.executeUpdate();
-				
-			}catch(Exception e) {
-				e.printStackTrace();
-			}finally {
-				close();
-			}
-			}else {
-				String sql = "INSERT INTO DIARIES (DIARY_SEQ, DIARY_TITLE, DIARY_DATE, DIARY_CONTENT, USER_EMAIL, HASH_TAG, OPEN_YN, COMMENT_YN, HTIS, AD_SEQ) VALUES(DIARIES_SEQ.NEXTVAL, ?, SYSDATE, ?, ?, ?, ?, ? , 0, NULL)";
+			cnt = psmt.executeUpdate();
 
-				try {
-					psmt = conn.prepareStatement(sql);
-					psmt.setString(1, vo.getTitle());
-					psmt.setString(2, vo.getContent());
-					psmt.setString(3, user_vo.getUser_email());
-					psmt.setString(4, vo.getHash_tag());
-					psmt.setString(5, vo.getOpen_yn());
-					psmt.setString(6, vo.getCommet_yn());
-
-					cnt = psmt.executeUpdate();
-					
-				}catch(Exception e) {
-					e.printStackTrace();
-				}finally {
-					close();
-				}
-			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
 		return cnt;
 	}
 	
@@ -114,8 +94,9 @@ public class diaryDAO {
 				String open_yn = rs.getString(8);
 				String comment_yn = rs.getString(9);
 				int hits = rs.getInt(10);
+				int ad_seq = rs.getInt(11);
 				
-				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_eamil, hash_tag, open_yn, comment_yn, hits, diary_seq);
+				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_eamil, hash_tag, open_yn, comment_yn, hits, ad_seq);
 				
 				diary_list.add(vo);
 			}

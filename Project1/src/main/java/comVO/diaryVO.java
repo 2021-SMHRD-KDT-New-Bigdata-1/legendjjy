@@ -4,16 +4,16 @@ public class diaryVO {
 	
 	private String title;
 	private String content;
-	private String imageURL;
+	private String imageName;
 	private String hash_tag;
 	private String open_yn;
 	private String commet_yn;
 	
-	public diaryVO(String title, String content, String imageURL, String hash_tag, String open_yn, String commet_yn) {
+	public diaryVO(String title, String content, String imageName, String hash_tag, String open_yn, String commet_yn) {
 		super();
 		this.title = title;
 		this.content = content;
-		this.imageURL = imageURL;
+		this.imageName = imageName;
 		this.hash_tag = hash_tag;
 		this.open_yn = open_yn;
 		this.commet_yn = commet_yn;
@@ -35,12 +35,12 @@ public class diaryVO {
 		this.content = content;
 	}
 
-	public String getImageURL() {
-		return imageURL;
+	public String getimageName() {
+		return imageName;
 	}
 
-	public void setImageURL(String imageURL) {
-		this.imageURL = imageURL;
+	public void setimageName(String imageName) {
+		this.imageName = imageName;
 	}
 
 	public String getHash_tag() {
