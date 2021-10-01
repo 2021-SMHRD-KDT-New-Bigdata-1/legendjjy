@@ -110,8 +110,8 @@
 							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
 						</a>
 							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
-								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../public/profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li>
 								<li><a class="dropdown-item fw-bold" href="../public/index.jsp">로그아웃</a></li>
 							</ul></li>
 						<%
