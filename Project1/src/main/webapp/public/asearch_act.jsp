@@ -1,3 +1,7 @@
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
 <%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -270,22 +274,83 @@
     </table>
 
     </form>
+<%
+	request.setCharacterEncoding("utf-8");
 
+	try{
+		String searchk = request.getParameter("searchk");
+		String searchw = request.getParameter("searchw");
+		String img, title, email, nick, date;
+		int diary_seq, hits;
+		int datacount=0;
+		int pagecount;
+		
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524:xe";
+		String dbid = "cgi_6_1";
+		String dbpw = "smhrd1";
+		Connection conn = DriverManager.getConnection(url, dbid, dbpw);
+		
+		Statement stmt = conn.createStatement();
+		
+		ResultSet rs0 = stmt.executeQuery("select diary_seq from diaries where "+searchk+" like '%" + searchw + "%'");
+		if(rs0.next()){
+			datacount = rs0.getInt(1);
+			rs0.close();
+		}
+			int pagesize = 5;
+			 pagecount = datacount / pagesize;
+			 if(datacount % pagesize>0){
+				 pagecount++;
+			 }
+			 int mypage=1;
+			 int abpage=1;
+			 if(request.getParameter("mypage")!=null){
+				 mypage = Integer.parseInt(request.getParameter("mypage"));
+				 abpage = (mypage-1)* pagesize;
+				 if(abpage <=0) abpage=1;
+			 }
+		
+		String sql = "select * from diaries where "+searchk+" like '%"+searchw+"%' order by diary_seq desc";
+		ResultSet rs = stmt.executeQuery(sql);
+		
+		for(int k=1; k<=pagesize; k++){
+			img = rs.getString(1);
+			title = rs.getString(2);
+			email = rs.getString(3);
+			nick = rs.getString(4);
+			date = rs.getString(5);
+			hits = rs.getInt(6);
+			date= rs.getString(7);
+%>
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
 					<li class="item" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
+						<div class="image"><img src="<%=img %>/upload/<%=title%>.<%=email %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
-							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
-							<p><%=diary_list.get(i).getDiary_title() %></p>
-							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
+							<strong>@<%=nick %></strong>
+							<p><%=title %></p>
+							<span class="hits">조회수 <%=hits %></span><span class="date"><%=date %></span>
 						</div>
 					</li>
 				<%}%>
 			</ul>
-		</div>
+		</div>	
+			<% 
+		}
+		rs.close();
+		stmt.close();
+		conn.close();
+		
+	}catch(Exception e){
+		out.print(e);
+	}
+		%>
+		
+
+		
 </main>
 
 	<!-- 게시물 팝업, 댓글 기능 js -->
