@@ -1,0 +1,73 @@
+@charset "EUC-KR";
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+.nav_outer{
+	position: fixed;
+    width:100%; /* 화면에 꽉차게 */
+    height:100px;
+    background-color: rgb(242, 238, 233, 0.7);
+}
+
+.navi{
+	width:75%;
+    height:100px;
+    margin:0 auto; /* width에서 80%를 줬기 때문에 20%가 남음. 0auto로 하면 그 여백에 맞춰지게 됨*/
+    display:flex;
+    justify-content: space-between;
+    align-items: center; /* 영역의 수직방향 중앙에 위치시킨다*/
+    
+}
+
+.navi_inner{
+	font-weight: bold;
+	flex-grow: 1;
+	height: 60px;
+}
+
+.LOGO{
+	display: table;
+}
+
+.LOGO a{
+	display: table-cell;
+	vertical-align: middle;
+}
+
+.navi_inner2{
+	font-weight: bold;
+}
+
+.navi_inner2 li{
+	display: inline-block;
+	margin-left: 20px;
+}
+
+.navi_inner2 li a{
+	text-decoration: none;
+}
+
+.login_button{
+	font-weight: bold;
+	text-decoration: none;
+	margin-left: 50px;
+}
+
+.login_button a{
+	font-size: 18px;
+    margin-bottom: 10px;
+}
+
+
+
+
+
+
+
+
+
+
