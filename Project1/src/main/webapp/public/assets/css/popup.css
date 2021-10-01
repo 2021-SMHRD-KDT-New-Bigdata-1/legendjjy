@@ -118,6 +118,19 @@ button {
 	height: 70px;
 }
 
+#content_modify{
+	padding-right: 18px;
+	text-align: right;
+	width: 80px;
+    height: 40px;
+    border: none;
+    color: white;
+    background-color: rgb(32, 85, 174);
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 6px;
+}
+
 #content_scrap{
 	padding-right: 15px;
 	text-align: right;
@@ -128,7 +141,7 @@ button {
     background-color: rgb(32, 85, 174);
     font-weight: bold;
     font-size: 13px;
-    margin-left: 80px;
+    margin-left: 6px;
 }
 
 #content_subscribe{
