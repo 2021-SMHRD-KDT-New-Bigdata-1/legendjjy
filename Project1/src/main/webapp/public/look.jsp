@@ -3,6 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
+<%@page import="comVO.diaryVO" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -126,6 +127,7 @@
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
+	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
 	%>
 	
 	<!-- ------------------------------------------------------------- -->
@@ -139,21 +141,22 @@
 	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
+	    			<%for(int i=0; i<diary_list.size(); i++){%>
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
-	    					<td id="content_date" colspan='2'>2021-09-30</td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(diary_list.get(i)) %></span></td>
+	    					<td id="content_date" colspan='2'><%=diary_list.get(i).getDiary_date() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_title" colspan='4'>제목</td>
+	    					<td id="content_title" colspan='4'><%=diary_list.get(i).getDiary_title() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
+	    					<td id="content_content" colspan='4'><%=diary_list.get(i).getDiary_content() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
+	    					<td id="content_tag" colspan='4'><%=diary_list.get(i).getHash_tag() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" colspan='2'>조회수 1321</td>
+	    					<td id="content_hits" colspan='2'>diary_list.get(i).getHits()</td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>
@@ -164,7 +167,16 @@
 	    		<td id="blank" ></td>
 	    		<td id="blank" ></td>
 	    	</tr>
-	    	
+	    	<%} %>
+	    	<script>
+	    		$(function()){
+	    			$('#writing').on('click',function()){
+	    				$.ajax({
+	    					data: ''
+	    				})
+	    			}
+	    		}
+	    	</script>
 	    </table>
 	    
 	    <div id="featured" class="blurb" style="position: relative;">
@@ -182,6 +194,7 @@
 	 	</div>
 	 	
 	</div>
+	
 	<!-- ------------------------------------------------------------- -->
 	<!-- 게시물 팝업 보기 끝 -->
 	<!-- ------------------------------------------------------------- -->
