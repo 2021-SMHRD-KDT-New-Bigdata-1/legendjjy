@@ -219,6 +219,7 @@ td {
 					
 		<div class="outer" style="display: flex; justify-content: center;">
 			<div class="" style="margin-bottom: 200px;">
+				<form>
 				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
 						<td style=" border: 1px solid silver;">
@@ -258,7 +259,7 @@ td {
 								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								
-								    <button class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black; 
+								    <button type="submit" class="btn btn-default" style="border: 1px solid gray; font-size: 20px; color: black; 
 								    background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">글 삭제</button>
     
@@ -266,10 +267,11 @@ td {
     								background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">수정완료</button>
     								 
-							
+							</div>
 						</td>
 					</tr>
 				</table>
+				</form>
 			</div>
 		</div>
 
