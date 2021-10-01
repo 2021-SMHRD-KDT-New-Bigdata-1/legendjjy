@@ -37,7 +37,7 @@ public class UploadService extends HttpServlet {
 		
 		String title = multi.getParameter("title");
 		String content = multi.getParameter("content");
-		String hastag = multi.getParameter("writer");
+		String hashtag = multi.getParameter("writer");
 		String comment_yn = multi.getParameter("comment_yn");
 		if(comment_yn==null) {
 			comment_yn = "n";
@@ -49,15 +49,14 @@ public class UploadService extends HttpServlet {
 		
 		String imgName = "";
 		usersVO user_vo = null;
+
+		imgName = multi.getFilesystemName("file");
+			
+		String ori= multi.getOriginalFileName("file");
+		HttpSession session = request.getSession();
+		user_vo = (usersVO)session.getAttribute("vo");
 		try {
-			imgName = multi.getFilesystemName("image");
-			
-			long time = System.currentTimeMillis();
-			String ori= multi.getOriginalFileName("file");
-			HttpSession session = request.getSession();
-			user_vo = (usersVO)session.getAttribute("vo");
-			
-			String filename = time+"."+user_vo.getUser_email();
+			String filename = title+"."+user_vo.getUser_email();
 			File savedFile = multi.getFile("file");
 			savedFile.renameTo(new File(path+"/"+filename+".png"));
 		}catch(Exception e) {
@@ -65,7 +64,8 @@ public class UploadService extends HttpServlet {
 		}
 
 
-		diaryVO diary_vo = new diaryVO(title, content, imgName, hastag, public_yn, comment_yn);
+
+		diaryVO diary_vo = new diaryVO(title, content, imgName, hashtag, public_yn, comment_yn);
 		
 		diaryDAO dao = new diaryDAO();
 		

@@ -96,7 +96,7 @@
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
 							href="../public/look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/loveit.jsp<%}%>">관심</a></li>
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/loveIt.jsp<%}%>">관심</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/follow/follow.jsp<%}%>">팔로우</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
@@ -110,8 +110,8 @@
 							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
 						</a>
 							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
-								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../public/profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="../public/Login_v2/edit.html">개인정보수정</a></li>
 								<li><a class="dropdown-item fw-bold" href="../public/index.jsp">로그아웃</a></li>
 							</ul></li>
 						<%

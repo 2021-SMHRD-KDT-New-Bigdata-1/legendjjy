@@ -11,9 +11,10 @@ ul li {list-style:none;
 .board {width: 1620px;
 		padding-left:0px;
 }
-.w300 {width:300px; }
-.w200 {width:300px; }
-.w120 {width:120px; }
+.w380 {width:380px; }
+.w760 {width:760px; }
+.w150 {width:150px; }
+.w60 {width:60px; }
 .title {
 	height: 50px;
 	line-height: 50px;
@@ -32,31 +33,25 @@ ul li {list-style:none;
 	background: white;
 }
 .all{
-	top: 50px;
+	top: 104px;
 	padding: 0px 150px;
 
 
 }
-.all_2{
+.all_1{
 	position: fixed;
-	display: flex;
-	box-shadow: 5px 5px 5px gray;
-	margin-top: 47px;
-	margin-left: 150px;
-	margin-bottom: 200px;
-	height: 600px;
-	width: 1620px;
-	overflow-x: hidden;
-	color: black;
-
-}
-#delete{
+	overflow: scroll;
+	width: 1653px;
+	height: 602px;
+	left: 150px;
+	top: 297px;
 	
-	border:none;
-	height:30px;
-	background-color: transparent;
+}
+.all_1>ul{
+	margin-top: 10px;
+}
+.delete{
+	width: 120px;
 
 }
-.board>.w300>.list{
-	width:0;
-}
+
