@@ -66,7 +66,7 @@
 	width: 20%;
 	border: 1px solid #1b5ac2;
 	background: #ffffff;
-	margin-left: 20%;\
+	margin-left: 20%;
 	border-radius: 20px;
 	opacity:0.85;
 }
@@ -86,11 +86,12 @@
 	width: 50px;
 	height: 100%;
 	border: none;
-	font-size: 15px;
+	font-size: 18px;
 	background-color: transparent;
 	outline: none;
 	float: right;
 	color: black;
+	font-weight: bold;
 
 }
 

@@ -85,11 +85,12 @@ body {
 	width: 50px;
 	height: 100%;
 	border: none;
-	font-size: 15px;
-	background-color: #1b5ac2;
+	font-size: 18px;
+	background-color: transparent;
 	outline: none;
 	float: right;
-	color: #ffffff
+	color: black;
+	font-weight: bold;
 
 }
 .navbar-brand {
@@ -219,7 +220,7 @@ body {
 		
 	<main class="main" id="top">
 	
-		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 80px; z-index: 2; ">
+		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 120px; z-index: 2; ">
 			<input class="search" type="text" placeholder="검색어 입력">
 			<button style="	border-radius: 20px;"class="search_button">검색</button>
 		</div>
