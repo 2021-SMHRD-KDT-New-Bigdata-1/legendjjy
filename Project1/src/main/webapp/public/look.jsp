@@ -268,7 +268,6 @@
     		<td><p><input type="submit" id="month_button" value="ok"></p></td>
     	</tr>
     </table>
-     せせせせ五荊
 
     </form>
 
