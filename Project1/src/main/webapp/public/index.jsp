@@ -410,9 +410,9 @@ input[type="text"] {
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
 							href="look.jsp">둘러보기</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">관심</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">팔로우</a></li>
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">구독 목록</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							href="../publish/book_made.jsp">출판</a></li>
 						<%
