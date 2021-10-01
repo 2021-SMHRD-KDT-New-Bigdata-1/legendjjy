@@ -84,10 +84,10 @@
 	height: 100%;
 	border: none;
 	font-size: 15px;
-	background-color: #1b5ac2;
+	background-color: transparent;
 	outline: none;
 	float: right;
-	color: #ffffff
+	color: black;
 
 }
 
