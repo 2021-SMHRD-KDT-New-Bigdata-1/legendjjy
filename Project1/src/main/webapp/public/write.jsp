@@ -49,6 +49,7 @@
 <link href="assets/css/theme.css" rel="stylesheet" />
 
 <link href="vendors/swiper/swiper-bundle.min.css" rel="stylesheet">
+<link rel="stylesheet" href="../public/assets/css/main_bottom.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link
@@ -56,7 +57,7 @@
 	rel="stylesheet">
 	
 <!-- 새로 만든 상단바 css -->
-<link rel="stylesheet" href="assets/css/nav_bar.css"/>
+<link rel="stylesheet" href="assets/css/nav_bar.css"/>	
 	
 <style>
 table {
@@ -163,7 +164,8 @@ td {
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	%>
 
-	<!-- -------------------------------------------------------------------- -->
+	 
+    <!-- -------------------------------------------------------------------- -->
     <!-- 새로 만든 상단바 -->
     <!-- -------------------------------------------------------------------- -->
     
@@ -174,7 +176,7 @@ td {
 		    	<div class="LOGO">
 			    	<a class="navbar-brand d-inline-flex" href="index.jsp"><img class="logo-img" src="assets/img/gallery/logo_small.png" alt="..." 
 			    	style="width: 70px; height: 70px;"/></a>
-				    <a><span style="color: #005DFF !important">LEGEN<span style="color: #FF6A00 !important;">D</span></span></a>
+				    <a style="padding-top: 19px;"><span style="color: #005DFF !important">LEGEN<span style="color: #FF6A00 !important;">D</span></span></a>
    				</div>
 		    </div>
 			    
@@ -199,10 +201,9 @@ td {
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
 	        <%}%>
-	    <div>
-	    </div>
+
 	    </nav>
     
     </header>
@@ -210,11 +211,13 @@ td {
     <!-- -------------------------------------------------------------------- -->
     <!-- 새로 만든 상단바 끝 -->
     <!-- -------------------------------------------------------------------- -->
+    
 
 
 	<main class="main" id="top">
 		
-					<div style="margin-top: 100px;"><h1>일기 수정하기</h1></div>
+		
+					<div style="margin: 150px 0 50px 0;"><h1>일기 수정하기</h1></div>
 					
 					
 		<div class="outer" style="display: flex; justify-content: center;">

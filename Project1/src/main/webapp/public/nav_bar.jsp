@@ -10,6 +10,9 @@
 <!-- 새로 만든 상단바 css -->
 <link rel="stylesheet" href="assets/css/nav_bar.css"/>
 
+<!-- 폰트 -->
+<link href="https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap" rel="stylesheet">
+
 </head>
 <body>
     <%
@@ -52,10 +55,9 @@
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
 	        <%}%>
-	    <div>
-	    </div>
+
 	    </nav>
     
     </header>
@@ -64,14 +66,19 @@
     <!-- 새로 만든 상단바 끝 -->
     <!-- -------------------------------------------------------------------- -->
     
-    <div>content</div>
-    <div>content</div>
-    <div>content</div>
-    <div>content</div>
-    <div>content</div>
-    <div>content</div>
-    <div>content</div>
-    <div>content</div>
+    <section class="main_content">
+        <div>content</div>
+	    <div>content</div>
+	    <div>content</div>
+	    <div>content</div>
+	    <div>content</div>
+	    <div>content</div>
+	    <div>content</div>
+	    <div>content</div>
+    
+    </section>
+    
+
     
 </body>
 </html>

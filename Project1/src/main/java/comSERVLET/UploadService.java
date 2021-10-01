@@ -28,8 +28,8 @@ public class UploadService extends HttpServlet {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("EUC-KR");
-		ServletContext context = getServletContext();
-		String path = context.getRealPath("upload");
+		HttpSession session = request.getSession();
+		String path = session.getServletContext().getRealPath("upload");
 		int sizeLimit = 10 * 1024 * 1024;
 		String encType = "EUC-KR";
 		
@@ -53,7 +53,6 @@ public class UploadService extends HttpServlet {
 		imgName = multi.getFilesystemName("file");
 			
 		String ori= multi.getOriginalFileName("file");
-		HttpSession session = request.getSession();
 		user_vo = (usersVO)session.getAttribute("vo");
 		try {
 			String filename = title+"."+user_vo.getUser_email();

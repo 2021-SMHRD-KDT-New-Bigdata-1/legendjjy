@@ -54,12 +54,10 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/comment.css">
 	<link rel="stylesheet" href="assets/css/popup.css">
-		<!-- 새로 만든 상단바 css -->
-	<link rel="stylesheet" href="assets/nav_bar.css"/>
-	
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
+	<!-- 새로 만든 상단바 css -->
+	<link rel="stylesheet" href="assets/css/nav_bar.css"/>
 
 </head>
 
@@ -127,6 +125,7 @@ integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0
 	<!-- 게시물 팝업 보기 끝 -->
 	<!-- ------------------------------------------------------------- -->
 
+
 	<!-- -------------------------------------------------------------------- -->
     <!-- 새로 만든 상단바 -->
     <!-- -------------------------------------------------------------------- -->
@@ -163,10 +162,9 @@ integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
 	        <%}%>
-	    <div>
-	    </div>
+
 	    </nav>
     
     </header>
@@ -177,6 +175,7 @@ integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0
 
 	<main class="main" id="top">
 		
+
 		<!-- Page Content -->
 		<div class="container">
 
@@ -193,7 +192,7 @@ integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0
 
 				</div>
 
-				<div style="position: absolute; margin-top: 4px;">
+				<div style="position: absolute; margin-top: 4px;  margin: 100px 0 100px 0;">
 					<h2>@legendjjy 님의 일기장</h2>
 				</div>
 
@@ -203,7 +202,7 @@ integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0
 
 
 			<div class="list_wrap">
-				<ul style="margin-left: 250px">
+				<ul style="margin-left: 250px; margin-top: 100px;">
 					<li class="item item1" onclick="showPopup()">
 						<div class="image">사진</div>
 						<div class="cont">

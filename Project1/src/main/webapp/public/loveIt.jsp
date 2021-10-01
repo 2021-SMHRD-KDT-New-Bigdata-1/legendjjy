@@ -54,7 +54,7 @@
 	<link rel="stylesheet" href="assets/css/popup.css">
 	
 	<!-- 새로 만든 상단바 css -->
-	<link rel="stylesheet" href="assets/css/nav_bar.css"/> 
+	<link rel="stylesheet" href="assets/css/nav_bar.css"/>
 
 <style>
 body {
@@ -167,7 +167,6 @@ body {
 	<!-- 게시물 팝업 보기 끝 -->
 	<!-- ------------------------------------------------------------- -->
 
-
 	<!-- -------------------------------------------------------------------- -->
     <!-- 새로 만든 상단바 -->
     <!-- -------------------------------------------------------------------- -->
@@ -179,7 +178,7 @@ body {
 		    	<div class="LOGO">
 			    	<a class="navbar-brand d-inline-flex" href="index.jsp"><img class="logo-img" src="assets/img/gallery/logo_small.png" alt="..." 
 			    	style="width: 70px; height: 70px;"/></a>
-				    <a><span style="color: #005DFF !important">LEGEN<span style="color: #FF6A00 !important;">D</span></span></a>
+				    <a style="padding-top: 19px;"><span style="color: #005DFF !important">LEGEN<span style="color: #FF6A00 !important;">D</span></span></a>
    				</div>
 		    </div>
 			    
@@ -204,10 +203,9 @@ body {
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="btn btn-primary" href="Login_v2/login.jsp">로그인</a></form>
+	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
 	        <%}%>
-	    <div>
-	    </div>
+
 	    </nav>
     
     </header>
@@ -215,7 +213,6 @@ body {
     <!-- -------------------------------------------------------------------- -->
     <!-- 새로 만든 상단바 끝 -->
     <!-- -------------------------------------------------------------------- -->
-    
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
 		<h2 class="py-5 text-center" id="searching">스크랩 목록</h2>

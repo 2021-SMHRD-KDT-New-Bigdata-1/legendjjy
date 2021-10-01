@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /* 공통옵션 */
-ul li {list-style:none; 
+#head li {list-style:none; 
 	font-size: 16px;
 }
 .fl {float:left; }

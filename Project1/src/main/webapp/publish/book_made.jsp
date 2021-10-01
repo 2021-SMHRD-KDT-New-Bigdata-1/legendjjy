@@ -73,7 +73,8 @@
   <main class="main" id="top">
     <nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
-			data-navbar-on-scroll="data-navbar-on-scroll">
+			data-navbar-on-scroll="data-navbar-on-scroll"
+			style="background-color: rgb(242, 238, 233, 0.7); ">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="../public/index.jsp"><img
 					class="card-img" src="../public/assets/img/gallery/logo_small.png" alt="..." /><span
