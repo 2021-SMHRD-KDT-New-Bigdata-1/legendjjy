@@ -74,7 +74,7 @@ public class diaryDAO {
 	public ArrayList<entireDiaryVO> look_diary() {
 		conn();
 		
-		String sql = "SELECT * FROM DIARIES ORDER BY DIARY_SEQ";
+		String sql = "SELECT * FROM DIARIES ORDER BY DIARY_SEQ DESC";
 		
 		ArrayList<entireDiaryVO> diary_list = new ArrayList<entireDiaryVO>();
 		try {
