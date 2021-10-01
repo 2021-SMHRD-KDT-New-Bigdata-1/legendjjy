@@ -203,7 +203,7 @@
     <!-- 새로 만든 상단바 -->
     <!-- -------------------------------------------------------------------- -->
     
-    <header class="nav_outer">
+    <header class="nav_outer" style="height:108px;" >
     	<nav class="navi">
     	
 		    <div class="navi_inner">
@@ -215,7 +215,7 @@
 		    </div>
 			    
    			
-	    	<ul class="navi_inner2">
+	    	<ul class="navi_inner2" style="width:606px; right:-50px;">
 	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
 	            <li ><a href="look.jsp">둘러보기</a></li>
 	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">스크랩 목록</a></li>
@@ -235,7 +235,7 @@
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
+	        <form class="login_button" style="right:-80px; top:36px;"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
 	        <%}%>
 
 	    </nav>
