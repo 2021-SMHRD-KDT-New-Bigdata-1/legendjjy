@@ -73,12 +73,12 @@ public class UploadService extends HttpServlet {
       PrintWriter out = response.getWriter();
       if(cnt>0) {
          out.print("<script>");
-         out.print("alert('ì¼ê¸°ê°€ ë“±ë¡ë˜ì—ˆìŠµë‹ˆë‹¤.');");
+         out.print("alert('ÀÏ±â°¡ µî·ÏµÇ¾ú½À´Ï´Ù.');");
          out.print("location.href = 'public/index.jsp'");
          out.print("</script>");
       }else {
          out.print("<script>");
-         out.print("alert('ì¼ê¸° ë“±ë¡ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.');");
+         out.print("alert('ÀÏ±â µî·Ï¿¡ ½ÇÆĞÇß½À´Ï´Ù.');");
          out.print("location.href = 'public/index.jsp'");
          out.print("</script>");
       }
