@@ -1,3 +1,6 @@
+<%@page import="comVO.followVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -41,6 +44,8 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
+		usersDAO dao = new usersDAO();
+		ArrayList<followVO> follow_list = dao.follow_list() ;
 	%>
 
   <!-- ===============================================-->
@@ -96,95 +101,11 @@
 
 			<div id="head" class="all_2" >
 				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">legendjjy123@naver.com</li>
+					<li class="fl tc w500 list t_line lt_line"><%=userdao.findNick(diary_list.get(i) %></li>
+					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
-				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">닉네임</li>
-					<li class="fl tc w500 list t_line lt_line">이메일</li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
-				</ul>
+				
 			</div>
 			
 	</section>

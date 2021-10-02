@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import comVO.appVO;
 import comVO.entireDiaryVO;
+import comVO.followVO;
 import comVO.usersVO;
 
 public class usersDAO {
@@ -212,6 +213,37 @@ public class usersDAO {
 		}
 		return app_list;
 	}
+	
+	public ArrayList<followVO> follow_list(usersVO vo){
+		conn();
+		
+		String sql = "SELECT FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ ";
+		
+		ArrayList<followVO> follow_list = new ArrayList<followVO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1,vo.getUser_email());
+			
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				String follow_email = rs.getString(1);
+				
+				followVO vo2 = new followVO(follow_email);
+				
+				follow_list.add(vo2);
+			 	}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}finally {
+				close();
+			}
+			return follow_list;
+		
+		}
+	
 	
 	public String findNick(entireDiaryVO vo) {
 		conn();
