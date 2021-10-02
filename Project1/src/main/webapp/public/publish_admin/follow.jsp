@@ -82,7 +82,6 @@
 				<li class="fl tc w380 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
 				<li class="fl tc w760 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">요청사항</li>
 				<li class="fl tc w150 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">디자인</li>
-				<li class="fl tc w150 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">신청일자</li>
 				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">요청완료</li>
 			</ul>
 			</div>  
@@ -95,7 +94,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -103,7 +101,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -111,7 +108,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -119,7 +115,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -127,7 +122,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -135,7 +129,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -143,7 +136,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -151,7 +143,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -159,7 +150,6 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
 				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -167,42 +157,8 @@
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
 					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
 				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc w150 t_line lt_line title1" >21.09.30</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				
 				
 
 			</div> 
