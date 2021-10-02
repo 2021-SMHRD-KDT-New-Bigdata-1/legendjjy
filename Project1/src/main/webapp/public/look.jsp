@@ -131,6 +131,7 @@
 <body style="width:100%">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	entireDiaryVO select_diary = (entireDiaryVO)session.getAttribute("select_diary");
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
@@ -278,7 +279,7 @@
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
-					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
+					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup(); get_seq(clicked_id);">
 						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
@@ -303,7 +304,8 @@
     		$.ajax({
     			type: 'GET',
     			url: 'SelectDiaryService',
-    			data: {''}
+    			dataType: 'json',
+    			data: {'seq':clicked_id}
     		})
     	}
     </script>
