@@ -91,7 +91,11 @@
 			</ul>
 			</div>  
 			
-			<div class="all_1" style="position: fixed; overflow-x:hidden;">
+			<div class="all_1" style="position: fixed; overflow-x:hidden;" type="onClick">
+				<script >
+					function listDelete()
+				  
+				</script>
 					
 				<%for(int i=0; i<app_list.size(); i++){%>
 				<ul id="appli" style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
@@ -99,22 +103,9 @@
 					<li class="fl tc w380 t_line lt_line title1"><%=app_list.get(i).getUser_email() %></li>
 					<li class="fl tc w760 t_line lt_line title1" ><%=app_list.get(i).getRequire() %></li>
 					<li class="fl tc w150 t_line lt_line title1" ><%=app_list.get(i).getDesign() %></li>
-					<li class="fl tc t_line lt_line delete title1" type="button" >확인</li>
+					<li id="delete" class="fl tc t_line lt_line delete title1" type="button" >확인</li>
 				</ul>
-				<script >
-				var appli = document.getElementById('appli');
-				var clickListener = function() {
-				  alert('삭제!');
-				};
-				  appli.addEventListener('click', clickListener);
-				  
-				var appli = document.getElementById('appli');
-				appli.addEventListener('appli', function(){
-					
-				  appli.removeEventListener('click', clickListener);
-				});
 				
-				</script>
 				<%} %>
 			</div> 
 
