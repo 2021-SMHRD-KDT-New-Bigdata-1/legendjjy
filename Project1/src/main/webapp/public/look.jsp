@@ -130,10 +130,12 @@
 
 <body style="width:100%">
 	<%
+	int a = 0;
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
+	ArrayList<entireDiaryVO> select_diary_info = dao.select_diary(a);
 	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
 	%>
 	
@@ -148,19 +150,19 @@
 	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
-	    			<%for(int i=0; i<diary_list.size(); i++){%>
+	    			
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(diary_list.get(i)) %></span></td>
-	    					<td id="content_date" colspan='2'><%=diary_list.get(i).getDiary_date() %></td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(select_diary_info.get(0)) %></span></td>
+	    					<td id="content_date" colspan='2'>date</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_title" colspan='4'><%=diary_list.get(i).getDiary_title() %></td>
+	    					<td id="content_title" colspan='4'>title</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" colspan='4'><%=diary_list.get(i).getDiary_content() %></td>
+	    					<td id="content_content" colspan='4'>content</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" colspan='4'><%=diary_list.get(i).getHash_tag() %></td>
+	    					<td id="content_tag" colspan='4'>hashtag</td>
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
@@ -175,7 +177,6 @@
 	    		<td id="blank" ></td>
 	    		<td id="blank" ></td>
 	    	</tr>
-	    	<%} %>
 	    	
 	    </table>
 	    
@@ -291,10 +292,7 @@
     <script type="text/javascript" src="assets/js/popup.js"></script>
     <script>
     	function get_seq(clicked_id){
-    		$ajax({
-    			var diary_seq = clicked_id;
-    			url 
-    		})
+    		var a = clicked_id
     	}
     </script>
 
