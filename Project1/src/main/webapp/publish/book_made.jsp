@@ -74,7 +74,7 @@
     <nav
 			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
 			data-navbar-on-scroll="data-navbar-on-scroll"
-			style="background-color: rgb(242, 238, 233, 0.7); padding-left: 33px; ">
+			style="background-color: rgb(242, 238, 233, 0.7); ">
 			<div class="container">
 				<a class="navbar-brand d-inline-flex" href="../public/index.jsp"><img
 					class="card-img" src="../public/assets/img/gallery/logo_small.png" alt="..." /><span
@@ -192,11 +192,11 @@
     
     <form style="text-align: center;">
 
-        <input type="button" value="신청하기"
+        <a href="../public/appli.jsp"><input type="button" value="신청하기"
         style="width:150px; height:60px; margin-top: 100px; font-size: 20px; color: cornsilk;
         background-color: rgb(69, 100, 177); border:2"
         data-aos="fade-up" data-aos-duration="2000"
-        >
+        ></a>
 
     </form>
     
