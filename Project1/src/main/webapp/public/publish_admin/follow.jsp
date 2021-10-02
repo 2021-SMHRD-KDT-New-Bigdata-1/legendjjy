@@ -1,3 +1,6 @@
+<%@page import="comVO.appVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
@@ -39,6 +42,8 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar" >
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
+		usersDAO dao = new usersDAO();
+		ArrayList<appVO> app_list = dao.application_list();
 	%>
 
   <!-- ===============================================-->
@@ -90,11 +95,13 @@
 					
 				
 				<ul id="appli" style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
+				<%for(int i=0; i<app_list.size(); i++){ %>
+					<li class="fl tc w60 t_line lt_line title1"><%=(i+1) %></li>
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
 					<li class="fl tc t_line lt_line delete title1" type="button" >확인</li>
+				<%} %>
 				</ul>
 				<script >
 				var appli = document.getElementById('appli');
