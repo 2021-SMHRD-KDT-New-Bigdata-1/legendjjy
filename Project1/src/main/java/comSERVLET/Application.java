@@ -20,15 +20,22 @@ public class Application extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		HttpSession session = request.getSession();
+		PrintWriter out = response.getWriter();
 		usersVO vo = (usersVO)session.getAttribute("vo");
-		String user_email = request.getParameter(vo.getUser_email());
-		String app_content = request.getParameter("content");
+		String user_email = request.getParameter("email");
+		String app_require = request.getParameter("require");
 		int pick_design = Integer.parseInt(request.getParameter("design")); 
 		
-		usersDAO dao = new usersDAO();
-		int cnt = dao.app(user_email, app_content, pick_design);
+		if(user_email.equals(vo.getUser_email())) {
+			out.print("<script>");
+			out.print("alert('신청한 이메일과 로그인한 이메일이 일치하지 않습니다');");
+			out.print("location.href = 'publish/book_made.jsp'");
+			out.print("</script>");
+		}
 		
-		PrintWriter out = response.getWriter();
+		usersDAO dao = new usersDAO();
+		int cnt = dao.app(user_email, app_require, pick_design);
+		
 		if(cnt>0) {
 			out.print("<script>");
 			out.print("alert('성공적으로 신청이 되었습니다');");

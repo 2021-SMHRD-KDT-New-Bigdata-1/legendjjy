@@ -146,24 +146,20 @@
     	 				<h3>출판 신청</h3>
 						<p>양식에 맞게 기입해주세요.</p> 
 						<div class="form-group"> 
-							<input type="text" class="form-control" required> 
+							<input type="text" name="email" class="form-control" required> 
 							<span>이메일</span> 
 							<span class="border"></span> 
 						</div> 
 						<div class="form-group"> 
-							<input type="text" class="form-control" required> 
+							<input type="text" name="require" class="form-control" required> 
 							<span>요청사항</span> 
 							<span class="border"></span> 
 						</div> 
 						<div class="form-group"> 
-							<input type="text" class="form-control" required> 
 							<span>디자인 선택</span> 
-							<span class="border"></span> 
-						</div> 
-						<div class="form-group"> 
-							<input type="text" class="form-control" required> 
-							<span>등록일자</span> 
-							<span class="border"></span> 
+							<input type="radio" name="chk_design" value="1" required><img src="" alt="">
+							<input type="radio" name="chk_design" value="2"><img src="" alt="">
+							<input type="text" name="design" class="form-control" required> 
 						</div> 
 						<button type="submit">신청하기</button> 
 					</form> 
