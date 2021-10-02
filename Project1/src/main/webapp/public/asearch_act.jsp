@@ -152,22 +152,21 @@
 	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
-	    			<%for(int i=0; i<diary_list.size(); i++){%>
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(diary_list.get(i)) %></span></td>
-	    					<td id="content_date" colspan='2'><%=diary_list.get(i).getDiary_date() %></td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@</span></td>
+	    					<td id="content_date" colspan='2'>DATE</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_title" colspan='4'><%=diary_list.get(i).getDiary_title() %></td>
+	    					<td id="content_title" colspan='4'>TITLE</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" colspan='4'><%=diary_list.get(i).getDiary_content() %></td>
+	    					<td id="content_content" colspan='4'>CONTENT</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" colspan='4'><%=diary_list.get(i).getHash_tag() %></td>
+	    					<td id="content_tag" colspan='4'>HASHTAG</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
+	    					<td id="content_hits" >HITS</td>
 	    					<td><button id="content_modify">수정하기</button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
@@ -179,7 +178,6 @@
 	    		<td id="blank" ></td>
 	    		<td id="blank" ></td>
 	    	</tr>
-	    	<%} %>
 	    	
 	    </table>
 	    

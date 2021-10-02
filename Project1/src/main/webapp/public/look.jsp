@@ -251,13 +251,8 @@
 		
 	<main class="main" id="top">
 	
-		<form method="post" name="search_form" action="asearch_act.jsp" style="position: sticky; top: 120px; z-index: 1; ">
-		<select name="searchk">
-		<option value="">검색할 항목을 선택하시오</option>
-		<option value="nick">닉네임</option>
-		<option value="hashtag">해시태그</option>
-		</select>
-			<input type="text" name="searchw" value="" placeholder="검색어 입력">
+		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
+			<input type="text" name="word"placeholder="검색어 입력">
 			<input type="submit" value="검색">
 		</form>
 

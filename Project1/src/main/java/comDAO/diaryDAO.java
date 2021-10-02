@@ -109,6 +109,63 @@ public class diaryDAO {
 		return diary_list;
 	}
 	
+	public ArrayList<entireDiaryVO> search_diary(String word) {
+		conn();
+		
+		String sql = "SELECT USER_EMAIL FROM USERS WHERE USER_NICK = ?";
+		
+		String user_email = "";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, word);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				user_email = rs.getString(1);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		String sql2 = "SELECT * FROM DIARIES WHERE HASH_TAG LIKE ? OR USER_EMAIL =? ORDER BY DIARY_SEQ DESC";
+		
+		ArrayList<entireDiaryVO> diary_list = new ArrayList<entireDiaryVO>();
+		try {
+			psmt = conn.prepareStatement(sql2);
+			psmt.setString(1, "%"+word+"%");
+			psmt.setString(2, user_email);
+			
+			rs = psmt.executeQuery();
+			
+			entireDiaryVO vo = null;
+			while(rs.next()) {
+				int diary_seq = rs.getInt(1);
+				String diary_title = rs.getString(2);
+				String diary_date = rs.getString(3);
+				String diary_image = rs.getString(4);
+				String diary_content = rs.getString(5);
+				String user_eamil = rs.getString(6);
+				String hash_tag = rs.getString(7);
+				String open_yn = rs.getString(8);
+				String comment_yn = rs.getString(9);
+				int hits = rs.getInt(10);
+				int ad_seq = rs.getInt(11);
+				
+				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_eamil, hash_tag, open_yn, comment_yn, hits, ad_seq);
+				
+				diary_list.add(vo);
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return diary_list;
+	}
+	
 	public int delete_diary() {
 		conn();
 		
