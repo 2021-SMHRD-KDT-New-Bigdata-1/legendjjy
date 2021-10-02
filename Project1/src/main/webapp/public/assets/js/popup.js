@@ -1,5 +1,5 @@
 function showPopup() {
-	const popup = document.querySelector('NewFile.jsp#popup');
+	const popup = document.querySelector('#popup');
 
 	popup.classList.add('has-filter');
 

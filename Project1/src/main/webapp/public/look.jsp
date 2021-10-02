@@ -132,18 +132,16 @@
 
 <body style="width: 100%">
 	<%
-	int a = 0;
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
-	ArrayList<entireDiaryVO> select_diary_info = dao.select_diary(a);
 	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
 
 	// 본인이 쓴 글에서는 수정하기 버튼 보이게
-	/* String user_email = null;
-	if (session.getAttribute("user_email") != null) {
-		user_email = (String) session.getAttribute("user_email");
+/* 	String user_email = null;
+	if(session.getAttribute("user_email") !=null){
+		user_email = (String)session.getAttribute("user_email");
 	}
 
 	if (user_email.equals(divo.getUser_email())) {
@@ -297,11 +295,9 @@
 		둘러보기</h1>
 
 	<main class="main" id="top">
-
-		<form method="post" name="search_form" action="search_diary.jsp"
-			style="position: sticky; top: 120px; z-index: 1;">
-			<input type="text" name="word" placeholder="검색어 입력"> <input
-				type="submit" value="검색">
+		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
+			<input type="text" name="word"placeholder="검색어 입력" style="margin-left:864px;">
+			<input type="submit" value="검색">
 		</form>
 
 		<form style="margin-left: 274px; height: 17px;">
@@ -321,25 +317,16 @@
 
 		<div class="list_wrap">
 			<ul>
-				<%
-				for (int i = 0; i < diary_list.size(); i++) {
-				%>
-				<li class="item" id="<%=diary_list.get(i).getDiary_seq()%>"
-					style="background-color: rgb(245, 242, 235);"
-					onclick="showPopup(); get_seq(this.id)">
-					<div class="image">
-						<img
-							src="<%=request.getContextPath()%>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email()%>.png"
-							alt="" onerror="this.src='assets/img/basicIMG.png'"
-							style="width: 100%; height: 100%; object-fit: cover;">
-					</div>
-					<div class="cont">
-						<strong>@<%=userdao.findNick(diary_list.get(i))%></strong>
-						<p><%=diary_list.get(i).getDiary_title()%></p>
-						<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span
-							class="date"><%=diary_list.get(i).getDiary_date()%></span>
-					</div>
-				</li>
+				<%for(int i=0; i<diary_list.size(); i++){%>
+					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
+						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
+						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
+						<div class="cont"> 
+							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
+							<p><%=diary_list.get(i).getDiary_title() %></p>
+							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
+						</div>
+					</li>
 				<%}%>
 			</ul>
 		</div>
@@ -355,21 +342,21 @@
 		});
 	</script>
 	<!-- 게시물 팝업, 댓글 기능 js -->
-	<script
-		src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<script>
-		window.jQuery
-				|| document
-						.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')
-	</script>
-	<script src="assets/js/functions-min.js"></script>
-	<script src="assets/js/comment.js"></script>
-	<script type="text/javascript" src="assets/js/popup.js"></script>
-	<script>
-		function get_seq(clicked_id) {
-			var a = clicked_id
-		}
-	</script>
+    <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+    <script src="assets/js/functions-min.js"></script>
+    <script src="assets/js/comment.js"></script>
+    <script type="text/javascript" src="assets/js/popup.js"></script>
+    <script>
+    	function get_seq(clicked_id){
+    		$.ajax({
+    			type: 'GET',
+    			url: 'SelectDiaryService',
+    			data: {''}
+    		})
+    	}
+    </script>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
 </body>
 </html>
