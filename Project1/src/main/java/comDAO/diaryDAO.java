@@ -155,13 +155,15 @@ public class diaryDAO {
 		
 		int cnt = 0;
 		
-		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? WHERE DIARY_SEQ = ?";
+		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ? WHERE DIARY_SEQ = ?";
 		
 		try{
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getDiary_title());
 			psmt.setString(2, vo.getDiary_content());
-			psmt.setInt(3, vo.getDiary_seq());
+			psmt.setString(3, vo.getDiary_image());
+			psmt.setString(4, vo.getHash_tag());
+			psmt.setInt(5, vo.getDiary_seq());
 			return psmt.executeUpdate();
 		}catch (Exception e) {
 			e.printStackTrace();
