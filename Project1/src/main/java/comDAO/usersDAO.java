@@ -186,7 +186,7 @@ public class usersDAO {
 	public ArrayList<appVO> application_list(){
 		conn();
 		
-		String sql = "SELECT * FROM APPLICATION ORDER BY APP_SEQ DESC";
+		String sql = "SELECT * FROM APPLICATION ORDER BY APP_SEQ ";
 		
 		ArrayList<appVO> app_list = new ArrayList<appVO>();
 		try {
@@ -228,7 +228,7 @@ public class usersDAO {
 			if(rs.next()) {
 				result = rs.getString(1);
 			}else {
-				result = "¾Ë ¼ö ¾øÀ½";
+				result = "ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½";
 			}
 			
 		}catch(Exception e) {
