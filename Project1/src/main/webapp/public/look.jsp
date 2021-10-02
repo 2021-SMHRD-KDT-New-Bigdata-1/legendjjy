@@ -176,7 +176,7 @@
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
-	    					<td><button id="content_modify" class="modify_button">수정하기</button></td>
+	    					<td><button id="content_modify" class="modify_hide"><a href="write.jsp">수정하기</a></button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>
