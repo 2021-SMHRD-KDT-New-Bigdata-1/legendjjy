@@ -197,12 +197,12 @@ public class diaryDAO {
 		return cnt;
 	}
 	
-	public ArrayList<entireDiaryVO> select_diary(int seq){
+	public entireDiaryVO select_diary(int seq){
 		conn();
 		
 		String sql = "SELECT * FROM DIARIES WHERE DIARY_SEQ = ?";
 		
-		ArrayList<entireDiaryVO> select_diary_info = new ArrayList<entireDiaryVO>();
+		entireDiaryVO vo = null;
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, seq);
@@ -222,15 +222,14 @@ public class diaryDAO {
 				int hits = rs.getInt(10);
 				int ad_seq = rs.getInt(11);
 				
-				entireDiaryVO vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_eamil, hash_tag, open_yn, comment_yn, hits, ad_seq);
+				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_eamil, hash_tag, open_yn, comment_yn, hits, ad_seq);
 				
-				select_diary_info.add(vo);
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			close();
 		}
-		return select_diary_info;
+		return vo;
 	}
 }
