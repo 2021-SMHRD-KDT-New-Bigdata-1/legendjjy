@@ -4,7 +4,7 @@
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.diaryVO" %>
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -152,7 +152,7 @@
 	    			<table>
 	    			
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(select_diary_info.get(0)) %></span></td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@</span></td>
 	    					<td id="content_date" colspan='2'>date</td>
 	    				</tr>
 	    				<tr>
