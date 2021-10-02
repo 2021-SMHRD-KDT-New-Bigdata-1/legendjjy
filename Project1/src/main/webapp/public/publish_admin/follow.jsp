@@ -89,83 +89,60 @@
 			<div class="all_1" style="position: fixed; overflow-x:hidden;">
 					
 				
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
+				<ul id="appli" style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
 					<li class="fl tc w60 t_line lt_line title1">100</li>
 					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
 					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
 					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
+					<li class="fl tc t_line lt_line delete title1" type="button" >확인</li>
 				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
-				<ul style="padding-left:0px; box-shadow: 5px 5px 5px gray;">
-					<li class="fl tc w60 t_line lt_line title1">100</li>
-					<li class="fl tc w380 t_line lt_line title1">legendjjy@naver.com</li>
-					<li class="fl tc w760 t_line lt_line title1" >이렇게 저렇게 해주시고 기대해도 되는 거 맞죠??^^ㅎㅎㅎ</li>
-					<li class="fl tc w150 t_line lt_line title1" >디자인 1</li>
-					<li class="fl tc t_line lt_line delete title1" type="button">확인</li>
-				</ul>
+				<script >
+				var appli = document.getElementById('appli');
+				var clickListener = function() {
+				  alert('삭제!');
+				};
+				  appli.addEventListener('click', clickListener);
+				  
+				var appli = document.getElementById('appli');
+				appli.addEventListener('appli', function(){
+					
+				  appli.removeEventListener('click', clickListener);
+				});
 				
-
+				</script>
+				
 			</div> 
 
 			
 			
 	</section>
 	</main>
+	<script>
+		function delete()
+	
+	</script>
+	
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

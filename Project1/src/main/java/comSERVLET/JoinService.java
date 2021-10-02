@@ -13,38 +13,38 @@ import comDAO.usersDAO;
 
 @WebServlet("/JoinService")
 public class JoinService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   private static final long serialVersionUID = 1L;
+   
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("euc-kr");
-		response.setCharacterEncoding("euc-kr");
-		String user_email = request.getParameter("email");
-		String user_pw = request.getParameter("pass");
-		String user_nick = request.getParameter("nickname");
-		String admin_yn = "";
-		if(user_email.equals("admin@admin.com")&&user_nick.equals("admin")) {
-			admin_yn = "y";
-		}else {
-			admin_yn = "n";
-		}
-		
-		usersDAO dao = new usersDAO();
-		
-		int cnt = dao.join(user_email, user_pw, user_nick, admin_yn);
-		
-		PrintWriter out = response.getWriter();
-		if(cnt>0) {
-			  out.print("<script>");
-			  out.print("alert('¼º°øÀûÀ¸·Î È¸¿ø°¡ÀÔÀÌ ¿Ï·áµÇ¾ú½À´Ï´Ù');");
-			  out.print("location.href = 'public/Login_v2/login.jsp'");
-			  out.print("</script>");
-		}else {
-			  out.print("<script>");
-			  out.print("alert('È¸¿ø°¡ÀÔ¿¡ ½ÇÆĞÇß½À´Ï´Ù');");
-			  out.print("location.href = 'public/Login_v2/join.jsp'");
-			  out.print("</script>");
-		}
-	}
+      request.setCharacterEncoding("euc-kr");
+      response.setCharacterEncoding("euc-kr");
+      String user_email = request.getParameter("email");
+      String user_pw = request.getParameter("pass");
+      String user_nick = request.getParameter("nickname");
+      String admin_yn = "";
+      if(user_email.equals("admin@admin.com")&&user_nick.equals("admin")) {
+         admin_yn = "y";
+      }else {
+         admin_yn = "n";
+      }
+      
+      usersDAO dao = new usersDAO();
+      
+      int cnt = dao.join(user_email, user_pw, user_nick, admin_yn);
+      
+      PrintWriter out = response.getWriter();
+      if(cnt>0) {
+           out.print("<script>");
+           out.print("alert('ì„±ê³µì ìœ¼ë¡œ íšŒì›ê°€ì…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤');");
+           out.print("location.href = 'public/Login_v2/login.jsp'");
+           out.print("</script>");
+      }else {
+           out.print("<script>");
+           out.print("alert('íšŒì›ê°€ì…ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤');");
+           out.print("location.href = 'public/Login_v2/join.jsp'");
+           out.print("</script>");
+      }
+   }
 
 }

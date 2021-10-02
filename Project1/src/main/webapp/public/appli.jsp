@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <html lang="ko"> 
 <head>
  <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-   <title>ì¶œíŒì‹ ì²­íŽ˜ì´ì§€</title> 
+   <title>ÃâÆÇ½ÅÃ»ÆäÀÌÁö</title> 
    <style> 
    * { 
    		box-sizing: border-box;
@@ -142,22 +142,22 @@
     	 <body> 
     	 	<div class="wrapper"> 
     	 		<div class="form-container"> 
-    	 			<form> 
-    	 				<h3>ì¶œíŒ ì‹ ì²­</h3>
-						<p>ì–‘ì‹ì— ë§žê²Œ ê¸°ìž…í•´ì£¼ì„¸ìš”.</p> 
+    	 			<form action="../Application" method="post"> 
+    	 				<h3>ÃâÆÇ ½ÅÃ»</h3>
+						<p>¾ç½Ä¿¡ ¸Â°Ô ±âÀÔÇØÁÖ¼¼¿ä.</p> 
 						<div class="form-group"> 
-							<input type="text" class="form-control" required> 
-							<span>ì´ë©”ì¼</span> 
+							<input type="text" name="email" class="form-control" required> 
+							<span>ÀÌ¸ÞÀÏ</span> 
 							<span class="border"></span> 
 						</div> 
 						<div class="form-group"> 
-							<input type="text" class="form-control" required> 
-							<span>ìš”ì²­ì‚¬í•­</span> 
+							<input type="text" name="require" class="form-control" required> 
+							<span>¿äÃ»»çÇ×</span> 
 							<span class="border"></span> 
 						</div> 
 						<div class="form-group">
-							<span><a style="margin-right:70px;">ë””ìžì¸ ì„ íƒ</a>
-								<a>1</a><input type="radio" name="choose" value="1" style="margin-right:60px;">
+							<span><a style="margin-right:70px;">µðÀÚÀÎ ¼±ÅÃ</a>
+								<a>1</a><input type="radio" name="choose" value="1" style="margin-right:60px;" required>
 								<a>2</a><input type="radio" name="choose" value="2">
 							</span>
 							<span class="border"></span> 
@@ -165,7 +165,7 @@
 							
 						</div> <br><br><br><br>
 						
-						<button type="submit">ì‹ ì²­í•˜ê¸°</button> 
+						<button type="submit">½ÅÃ»ÇÏ±â</button> 
 					</form> 
 				</div> 
 			</div> 

@@ -14,26 +14,26 @@ import comVO.usersVO;
 
 @WebServlet("/LoginService")
 public class LoginService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		String user_email = request.getParameter("email");
-		String user_pw = request.getParameter("pass");
-		
-		usersDAO dao = new usersDAO();
-		
-		usersVO vo = dao.login(user_email, user_pw);
-		
-		
-		HttpSession session = request.getSession();
-		if(vo!=null) {
-			session.setAttribute("vo", vo);
-			response.sendRedirect("public/index.jsp");
-		}else {
-			response.sendRedirect("public/Login_v2/login.jsp");
-			session.setAttribute("errMsg", "∑Œ±◊¿Œ¡§∫∏∞° ∆≤∑»Ω¿¥œ¥Ÿ");
-		}
-	}
+      String user_email = request.getParameter("email");
+      String user_pw = request.getParameter("pass");
+      
+      usersDAO dao = new usersDAO();
+      
+      usersVO vo = dao.login(user_email, user_pw);
+      
+      
+      HttpSession session = request.getSession();
+      if(vo!=null) {
+         session.setAttribute("vo", vo);
+         response.sendRedirect("public/index.jsp");
+      }else {
+         response.sendRedirect("public/Login_v2/login.jsp");
+         session.setAttribute("errMsg", "Î°úÍ∑∏Ïù∏Ï†ïÎ≥¥Í∞Ä ÌãÄÎ†∏ÏäµÎãàÎã§");
+      }
+   }
 
 }
