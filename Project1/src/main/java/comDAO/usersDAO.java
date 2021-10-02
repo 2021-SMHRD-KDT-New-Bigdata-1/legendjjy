@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
+import comVO.appVO;
 import comVO.entireDiaryVO;
 import comVO.usersVO;
 
@@ -179,6 +181,36 @@ public class usersDAO {
 			close();
 		}
 		return cnt;
+	}
+	
+	public ArrayList<appVO> application_list(){
+		conn();
+		
+		String sql = "SELECT * FROM APPLICATION ORDER BY APP_SEQ DESC";
+		
+		ArrayList<appVO> app_list = new ArrayList<appVO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				int app_seq = rs.getInt(1);
+				String user_email = rs.getString(2);
+				String app_require = rs.getString(3);
+				int pick_design = rs.getInt(4);
+				String app_date = rs.getString(5);
+				
+				appVO vo = new appVO(app_seq, user_email, app_require, pick_design, app_date);
+				
+				app_list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return app_list;
 	}
 	
 	public String findNick(entireDiaryVO vo) {
