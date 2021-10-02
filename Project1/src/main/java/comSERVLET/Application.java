@@ -19,14 +19,16 @@ public class Application extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		request.setCharacterEncoding("EUC-KR");
+		response.setCharacterEncoding("EUC-KR");
 		HttpSession session = request.getSession();
 		PrintWriter out = response.getWriter();
 		usersVO vo = (usersVO)session.getAttribute("vo");
 		String user_email = request.getParameter("email");
 		String app_require = request.getParameter("require");
-		int pick_design = Integer.parseInt(request.getParameter("design")); 
+		int pick_design = Integer.parseInt(request.getParameter("choose")); 
 		
-		if(user_email.equals(vo.getUser_email())) {
+		if(!user_email.equals(vo.getUser_email())) {
 			out.print("<script>");
 			out.print("alert('신청한 이메일과 로그인한 이메일이 일치하지 않습니다');");
 			out.print("location.href = 'publish/book_made.jsp'");
