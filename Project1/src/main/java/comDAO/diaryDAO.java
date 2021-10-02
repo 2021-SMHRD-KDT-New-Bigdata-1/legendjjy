@@ -178,7 +178,7 @@ public class diaryDAO {
 	public int delete_diary(entireDiaryVO vo) {
 		conn();
 		
-		String sql = "DELETE FROM DIARIES WHERE  WHERE DIARY_SEQ = ?";
+		String sql = "DELETE FROM DIARIES WHERE DIARY_SEQ = ?";
 		
 		int cnt = 0;
 		try {
