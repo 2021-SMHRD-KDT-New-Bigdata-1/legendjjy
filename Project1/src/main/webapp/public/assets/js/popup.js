@@ -14,5 +14,5 @@ function closePopup() {
 function showModify(){
 	const popup = document.querySelector('#content_modify');
 	
-	popup.classList.remove('hide')
+	popup.classList.remove('modify_hide')
 }

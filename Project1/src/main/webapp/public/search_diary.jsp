@@ -252,7 +252,7 @@
 	<main class="main" id="top">
 	
 		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
-			<input type="text" name="word" value="" placeholder="검색어 입력">
+			<input type="text" name="word" value="" placeholder="검색어 입력" style="margin-left:864px;">
 			<input type="submit" value="검색">
 		</form>
 
