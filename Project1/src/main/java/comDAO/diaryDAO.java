@@ -149,15 +149,39 @@ public class diaryDAO {
 		return diary_list;
 	}
 	
-	public int delete_diary() {
+	public int upadte_diary(entireDiaryVO vo) {
+		
 		conn();
 		
-		String sql = "DELETE FROM DIARIES WHERE TITLE = ?, USER_EMAIL = ?";
+		int cnt = 0;
+		
+		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? WHERE DIARY_SEQ = ?";
+		
+		try{
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, vo.getDiary_title());
+			psmt.setString(2, vo.getDiary_content());
+			psmt.setInt(3, vo.getDiary_seq());
+			return psmt.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+		
+	}
+	
+	
+	public int delete_diary(entireDiaryVO vo) {
+		conn();
+		
+		String sql = "DELETE FROM DIARIES WHERE  WHERE DIARY_SEQ = ?";
 		
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, sql);
+			psmt.setInt(1, vo.getDiary_seq());
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
