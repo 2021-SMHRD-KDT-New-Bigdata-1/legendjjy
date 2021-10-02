@@ -15,49 +15,49 @@ import comVO.usersVO;
 
 @WebServlet("/EditService")
 public class EditService extends HttpServlet {
-	private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+   protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("euc-kr");
-		response.setCharacterEncoding("euc-kr");
-		HttpSession session = request.getSession();
-		usersVO vo = (usersVO)session.getAttribute("vo");
-		usersDAO dao = new usersDAO();
-		
-		String edit = request.getParameter("edit");
-		
-		PrintWriter out = response.getWriter();
-		if(edit.equals("pass")) {
-			String pass1 = request.getParameter("pass1");
-			String pass2 = request.getParameter("pass2");
-			String user_email = vo.getUser_email();
+      request.setCharacterEncoding("euc-kr");
+      response.setCharacterEncoding("euc-kr");
+      HttpSession session = request.getSession();
+      usersVO vo = (usersVO)session.getAttribute("vo");
+      usersDAO dao = new usersDAO();
+      
+      String edit = request.getParameter("edit");
+      
+      PrintWriter out = response.getWriter();
+      if(edit.equals("pass")) {
+         String pass1 = request.getParameter("pass1");
+         String pass2 = request.getParameter("pass2");
+         String user_email = vo.getUser_email();
 
-			if(pass1.equals(pass2)) {
-				int cnt = dao.editPass(pass2, user_email);
-				  out.print("<script>");
-				  out.print("alert('¼º°øÀûÀ¸·Î ºñ¹Ğ¹øÈ£°¡ º¯°æµÇ¾ú½À´Ï´Ù');");
-				  out.print("location.href = 'public/Login_v2/edit.html'");
-				  out.print("</script>");
-			}else {
-				response.sendRedirect("public/Login_v2/edit.html");
-				session.setAttribute("errPassMsg", "ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù");
-			}
-		}else if(edit.equals("nick")) {
-			String user_nick = request.getParameter("nickname");
-			String user_email = vo.getUser_email();
-			
-			if(user_nick.equals(vo.getUser_nick())) {
-				response.sendRedirect("public/Login_v2/editNick.jsp");
-				session.setAttribute("errNickMsg", "±âÁ¸ÀÇ ´Ğ³×ÀÓ°ú ÀÏÄ¡ÇÕ´Ï´Ù");
-			}else {
-				vo.setUser_nick(user_nick);
-				  out.print("<script>");
-				  out.print("alert('¼º°øÀûÀ¸·Î ´Ğ³×ÀÓÀÌ º¯°æµÇ¾ú½À´Ï´Ù');");
-				  out.print("location.href = 'public/Login_v2/edit.html'");
-				  out.print("</script>");
-			}
-		}
-	}
+         if(pass1.equals(pass2)) {
+            int cnt = dao.editPass(pass2, user_email);
+              out.print("<script>");
+              out.print("alert('ì„±ê³µì ìœ¼ë¡œ ë¹„ë°€ë²ˆí˜¸ê°€ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤');");
+              out.print("location.href = 'public/Login_v2/edit.html'");
+              out.print("</script>");
+         }else {
+            response.sendRedirect("public/Login_v2/edit.html");
+            session.setAttribute("errPassMsg", "ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
+         }
+      }else if(edit.equals("nick")) {
+         String user_nick = request.getParameter("nickname");
+         String user_email = vo.getUser_email();
+         
+         if(user_nick.equals(vo.getUser_nick())) {
+            response.sendRedirect("public/Login_v2/editNick.jsp");
+            session.setAttribute("errNickMsg", "ê¸°ì¡´ì˜ ë‹‰ë„¤ì„ê³¼ ì¼ì¹˜í•©ë‹ˆë‹¤");
+         }else {
+            vo.setUser_nick(user_nick);
+              out.print("<script>");
+              out.print("alert('ì„±ê³µì ìœ¼ë¡œ ë‹‰ë„¤ì„ì´ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤');");
+              out.print("location.href = 'public/Login_v2/edit.html'");
+              out.print("</script>");
+         }
+      }
+   }
 
 }
