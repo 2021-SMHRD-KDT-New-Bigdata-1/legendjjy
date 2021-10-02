@@ -130,23 +130,21 @@
 
 <body style="width:100%">
 	<%
-	int a = 0;
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
-	ArrayList<entireDiaryVO> select_diary_info = dao.select_diary(a);
 	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
 	
 	// 본인이 쓴 글에서는 수정하기 버튼 보이게
-	String user_email = null;
+/* 	String user_email = null;
 	if(session.getAttribute("user_email") !=null){
 		user_email = (String)session.getAttribute("user_email");
 	}
 	
 	if(user_email.equals(divo.getUser_email())){
 		showModify();
-	}
+	} */
 	%>
 	
 	<!-- ------------------------------------------------------------- -->
@@ -280,7 +278,7 @@
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
-					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup(); get_seq(this.id)">
+					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
 						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
@@ -302,7 +300,11 @@
     <script type="text/javascript" src="assets/js/popup.js"></script>
     <script>
     	function get_seq(clicked_id){
-    		var a = clicked_id
+    		$.ajax({
+    			type: 'GET',
+    			url: 'SelectDiaryService',
+    			data: {''}
+    		})
     	}
     </script>
 
