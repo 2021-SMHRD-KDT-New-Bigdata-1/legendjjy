@@ -1,4 +1,5 @@
 <%@page import="comVO.usersVO"%>
+<%@page import="comVO.entireDiaryVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
 
@@ -162,6 +163,20 @@ td {
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
+	
+	// 현재 세션 상태 체크
+	String user_email = null;
+	if(session.getAttribute("user_email") !=null){
+		user_email = (String)session.getAttribute("user_email");
+	}
+	
+	int diary_seq = 0;
+	if(request.getParameter("diary_seq") != null){
+		diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
+	}
+	
+
 	%>
 
 	 
@@ -229,7 +244,7 @@ td {
 						
 							<div id="user_upload_img"></div> <input id="file" type="file"
 							onchange="previewImage(this, 'user_upload_img');"
-							style="display: none;">
+							style="display: none;" value="<%=divo.getDiary_image() %>">
 							<button class="button"
 								onclick="onclick=document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
@@ -242,21 +257,21 @@ td {
 									<br> <input type="text" class="form-control" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										">
+										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none;"
+										value="<%=divo.getDiary_title() %>">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										"></textarea>
+										"><%=divo.getDiary_content() %></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										">
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; "
+										value="<%=divo.getHash_tag() %>">
 								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용 
 								<input type="checkbox" name="public_yn" value="y"

@@ -137,6 +137,16 @@
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
 	ArrayList<entireDiaryVO> select_diary_info = dao.select_diary(a);
 	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
+	
+	// 본인이 쓴 글에서는 수정하기 버튼 보이게
+	String user_email = null;
+	if(session.getAttribute("user_email") !=null){
+		user_email = (String)session.getAttribute("user_email");
+	}
+	
+	if(user_email.equals(divo.getUser_email())){
+		showModify();
+	}
 	%>
 	
 	<!-- ------------------------------------------------------------- -->
@@ -166,7 +176,7 @@
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
-	    					<td><button id="content_modify">수정하기</button></td>
+	    					<td><button id="content_modify" class="modify_button">수정하기</button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>

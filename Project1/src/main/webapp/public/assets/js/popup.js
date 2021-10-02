@@ -10,3 +10,9 @@ function closePopup() {
 	const popup = document.querySelector('#popup');
 	popup.classList.add('hide');
 }
+
+function showModify(){
+	const popup = document.querySelector('#content_modify');
+	
+	popup.classList.remove('hide')
+}
