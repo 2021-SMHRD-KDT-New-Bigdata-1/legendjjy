@@ -112,30 +112,13 @@ public class diaryDAO {
 	public ArrayList<entireDiaryVO> search_diary(String word) {
 		conn();
 		
-		String sql = "SELECT USER_EMAIL FROM USERS WHERE USER_NICK = ?";
-		
-		String user_email = "";
-		try {
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, word);
-			
-			rs = psmt.executeQuery();
-			
-			if(rs.next()) {
-				user_email = rs.getString(1);
-			}
-			
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
-		String sql2 = "SELECT * FROM DIARIES WHERE HASH_TAG LIKE ? OR USER_EMAIL =? ORDER BY DIARY_SEQ DESC";
+		String sql = "SELECT * FROM DIARIES D INNER JOIN USERS U ON D.USER_EMAIL = U.USER_EMAIL WHERE HASH_TAG LIKE ? OR U.USER_NICK = ?";
 		
 		ArrayList<entireDiaryVO> diary_list = new ArrayList<entireDiaryVO>();
 		try {
-			psmt = conn.prepareStatement(sql2);
+			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "%"+word+"%");
-			psmt.setString(2, user_email);
+			psmt.setString(2, word);
 			
 			rs = psmt.executeQuery();
 			
