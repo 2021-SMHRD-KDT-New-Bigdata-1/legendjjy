@@ -238,7 +238,7 @@
 						쓰러가기</a></li>
 				<li><a href="look.jsp">둘러보기</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveit.jsp<%}%>">스크랩
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩
 						목록</a></li>
 				<li><a
 					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">구독
@@ -341,17 +341,6 @@
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
-    <script>
-    	function get_seq(clicked_id){
-    		$.ajax({
-    			type: 'GET',
-    			url: 'SelectDiaryService',
-    			dataType: 'json',
-    			data: {'seq':clicked_id}
-    		})
-    	}
-    </script>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
 </body>
 </html>

@@ -313,4 +313,20 @@ public class usersDAO {
 		}
 		return cnt;
 	}
+	
+	public int add_follow(usersVO vo, String follow_email) {
+		conn();
+		
+		String sql = "INSERT INTO FOLLOWINGS VALUES( FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
+		
+		int cnt = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, sql);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+	}
 }
