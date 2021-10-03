@@ -22,64 +22,71 @@
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
-	entireDiaryVO enVO = new entireDiaryVO().select_diary(diary_seq);
-	String user_email = null;
-	if(session.getAttribute("user_email") != null){
-		user_email = vo.getUser_email();
-	}
+	int diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
+	diaryDAO dao = new diaryDAO();
+	entireDiaryVO enVO = dao.select_diary(diary_seq);
 	%>
-	<div class="content">
-	    <table class="post_table">
-	    <tbody class="post_tbody">
-	    	<tr class="post_view">
-	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
-	    		<td id="writing_view">
-	    			<table>
-	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
-	    					<td id="content_date" colspan='2'>2021-09-30</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_title" colspan='4'>제목</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_hits" >조회수 1321</td>
-	    					<% if(user_email != null && user_email.equals(vo.getUser_email())){ %>
-	    					<td><a href="write.jsp"><button id="content_modify">수정하기</button></a></td>
-	    					<%} %>
-	    					<td><button id="content_scrap">스크랩하기</button></td>
-	    					<td><button id="content_subscribe">구독하기</button></td>
-	    				</tr>
-	    			</table>
-	    		</td>
-	    	</tr>
-	    	<tr>
-	    		<td id="blank" ></td>
-	    		<td id="blank" ></td>
-	    	</tr>
-	    </tbody>
-	    </table>
-	    
-	    <div id="featured" class="blurb" style="position: relative;">
-        			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
-	    		
-		    		<div id="form-commentInfo"> 
-			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
-			          <input id="comment-input" placeholder="댓글 작성" > 
-			          <button id="submit">OK</button>
-		        	</div> 
-		        		<div id="comments" style="margin-top: 20px; "></div>
-     				 </div>
-	    
-    	<a href="look.jsp"><button id="close_button" onclick="#">X</button></a>
-    	
-	 	</div>
+		<div class="main_bottom">
+
+			<div class="container">
+				<div class="row">
+					<div class="col-12" id="write" data-aos="fade-up"
+						data-aos-duration="3000">
+						<h1 class="py-5 text-center">일기 쓰기</h1>
+					</div>
+				</div>
+			</div>
+		<form class="upload" action="../UploadService" method="post" enctype="multipart/form-data">
+			<div class="container" style="margin-bottom: 100px;">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+					<tr>
+						<td style=" border: 1px solid silver;">
+						
+							<div id="user_upload_img"></div> 
+								<input name="file" id="file" type="file"
+								onchange="previewImage(this, 'user_upload_img');"
+								style="display: none;">
+								<button class="button"
+								onclick="onclick=document.all.file.click()"
+								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
+								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
+						</td>
+						<td style=" border: 1px solid silver; border-radius: 20px;">
+							<div style="width: 640px; font-size: 20px;">
+								<div class="form-group">
+									<br> <input type="text" class="form-control" id="title"
+										placeholder="제목 입력(2-100)" name="title" maxlength="100"
+										required="required" pattern=".{2,100}"
+										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										">
+								</div>
+								<div class="form-group">
+									<br>
+									<textarea class="form-control" rows="15" id="content"
+										name="content" placeholder="내용 작성" 
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										"></textarea>
+								</div>
+								<div class="form-group">
+									<br> <input type="text" class="form-control" id="writer"
+										placeholder="태그(2자-10자)" name="writer"
+										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										">
+								</div>
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
+								<input type="checkbox" name="public_yn" value="y"
+									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
+								
+								<button type="submit" class="btn btn-default" id="btn_submit"
+									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									border: none;">등록</button>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</form>
+		</div>
 	 	
 	 	<script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
