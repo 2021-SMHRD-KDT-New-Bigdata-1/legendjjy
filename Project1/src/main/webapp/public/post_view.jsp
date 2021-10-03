@@ -1,3 +1,5 @@
+<%@page import="comVO.entireDiaryVO"%>
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -21,9 +23,10 @@
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	usersDAO userdao = new usersDAO();
 	diaryDAO dao = new diaryDAO();
 	int post_seq = Integer.parseInt(request.getParameter("post_seq"));
-	entireDiaryVO postvo = dao.
+	entireDiaryVO enVO = dao.select_diary(post_seq);
 	%>
 	<div class="content">
 	    <table class="post_table">
@@ -33,25 +36,26 @@
 	    		<td id="writing_view">
 	    			<table>
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
-	    					<td id="content_date" colspan='2'>2021-09-30</td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(enVO) %></span></td>
+	    					<td id="content_date" colspan='2'><%=enVO.getDiary_date() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_title" colspan='4'>제목</td>
+	    					<td id="content_title" colspan='4'><%=enVO.getDiary_title() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
+	    					<td id="content_content" colspan='4'><%=enVO.getDiary_content() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
+	    					<td id="content_tag" colspan='4'><%=enVO.getHash_tag() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" >조회수 1321</td>
-	    					<% if(vo.getUser_email()!=null && ){ %>
-	    					<td><a href="write_update_delete.jsp?diary_seq=<%=%>"><button id="content_modify">수정하기</button></a></td>
-	    					<%} %>
+	    					<td id="content_hits" >조회수 <%=enVO.getHits() %></td>
+	    					<% if(vo.getUser_email()!=null && vo.getUser_email().equals(enVO.getUser_email())){ %>
+	    					<td><a href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq() %>"><button id="content_modify">수정하기</button></a></td>
+	    					<%}else{ %>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
+	    					<%} %>
 	    				</tr>
 	    			</table>
 	    		</td>
@@ -62,7 +66,7 @@
 	    	</tr>
 	    </tbody>
 	    </table>
-	    
+	    <%if(enVO.getComment_yn().equals("y")){ %>
 	    <div id="featured" class="blurb" style="position: relative;">
         			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
 	    		
@@ -73,11 +77,9 @@
 		        	</div> 
 		        		<div id="comments" style="margin-top: 20px; "></div>
      				 </div>
-	    
-    	<a href="look.jsp"><button id="close_button" onclick="#">X</button></a>
-    	
 	 	</div>
-	 	
+	 	<%} %>
+	 	<a href="look.jsp"><button id="close_button" onclick="#">X</button></a>
 	 	<script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 	    <script src="assets/js/functions-min.js"></script>
