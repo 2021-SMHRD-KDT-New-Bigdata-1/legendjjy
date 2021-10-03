@@ -45,6 +45,7 @@
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
 		usersDAO dao = new usersDAO();
+		followVO vo2 = (followVO)session.getAttribute("vo2");
 		ArrayList<followVO> follow_list = dao.follow_list(vo) ;
 	%>
 
@@ -88,7 +89,7 @@
     </nav>
     
 	<section style="padding-top: 140px; padding-bottom: 100px;">
-			<h3>@legendjjy 님의 팔로우 목록</h3>
+			<h3>@legendjjy 님의 구독 목록</h3>
 
 			<div class="all" style="position: fixed;">
 			
@@ -101,9 +102,9 @@
 			</div>  
 
 			<div id="head" class="all_2" >
-				<%for(int i=0; i<diary_list.size(); i++){%>
+				<%for(int i=0; i<follow_list.size(); i++){%>
 				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">@<%=userdao.findNick(diary_list.get(i)) %></li>
+					<li class="fl tc w500 list t_line lt_line">@<%=vo.getUser_nick() %></li>
 					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>
