@@ -89,13 +89,13 @@
 	 		function scrap(clicked_id){
 	 			var seq = clicked_id;
 	 			$.ajax({
-	 				type: "POST",
+	 				type: "GET",
 	 				url: "../ScrapService",
 	 				data: {"post_seq" : seq},
 	 				async: false,
 	 				success: function(data){
 	 					alert('스크랩되었습니다');
-	 				}
+	 				},
 	 				error:function(jqXHR, textStatus, errorThrown){
 	 		            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
 	 				}

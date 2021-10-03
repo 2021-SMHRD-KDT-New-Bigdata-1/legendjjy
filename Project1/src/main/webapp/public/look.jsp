@@ -341,16 +341,6 @@
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
-    <script>
-    	function get_seq(clicked_id){
-    		$.ajax({
-    			type: 'GET',
-    			url: 'SelectDiaryService',
-    			dataType: 'json',
-    			data: {'seq':clicked_id}
-    		})
-    	}
-    </script>
 
 </body>
 </html>
