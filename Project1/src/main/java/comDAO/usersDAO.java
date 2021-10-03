@@ -243,6 +243,28 @@ public class usersDAO {
 			return follow_list;
 		
 		}
+	public int delete_Applist(int app_seq) {
+		
+		conn();
+		
+		String sql = "DELETE FROM APPLICATION WHERE APP_SEQ = ?";
+
+		int cnt = 0;
+		
+		try {
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, app_seq);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	  }
 	
 	
 	public String findNick(entireDiaryVO vo) {
