@@ -133,11 +133,9 @@
 <body style="width: 100%">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
-	entireDiaryVO select_diary = (entireDiaryVO)session.getAttribute("select_diary");
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
-	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
 
 	// 본인이 쓴 글에서는 수정하기 버튼 보이게
 /* 	String user_email = null;
@@ -155,58 +153,6 @@
 	<!-- ------------------------------------------------------------- -->
 
 	<div id="popup" class="hide">
-<<<<<<< HEAD
-	<div class="content">
-	    <table id="content_outer">
-	    	<tr class="post_view">
-	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
-	    		<td id="writing_view">
-	    			<table>
-	    			
-	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@</span></td>
-	    					<td id="content_date" colspan='2'>date</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_title" colspan='4'>title</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_content" colspan='4'>content</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_tag" colspan='4'>hashtag</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
-	    					<td><button id="content_modify" class="modify_hide"><a href="write.jsp">수정하기</a></button></td>
-	    					<td><button id="content_scrap">스크랩하기</button></td>
-	    					<td><button id="content_subscribe">구독하기</button></td>
-	    				</tr>
-	    			</table>
-	    		</td>
-	    	</tr>
-	    	<tr>
-	    		<td id="blank" ></td>
-	    		<td id="blank" ></td>
-	    	</tr>
-	    	
-	    </table>
-	    
-	    <div id="featured" class="blurb" style="position: relative;">
-        			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
-	    		
-		    		<div id="form-commentInfo"> 
-			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
-			          <input id="comment-input" placeholder="댓글 작성" > 
-			          <button id="submit">OK</button>
-		        	</div> 
-		        		<div id=comments style="margin-top: 20px; "></div>
-     				 </div>
-	    
-    	<button id="close_button" onclick="closePopup()">X</button>
-	 	</div>
-	 	
-=======
 		<div class="content">
 			<table id="content_outer">
 				<tr class="post_view">
@@ -265,8 +211,6 @@
 
 			<button id="close_button" onclick="closePopup()">X</button>
 		</div>
-
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 	</div>
 
 	<!-- ------------------------------------------------------------- -->
@@ -345,8 +289,7 @@
 	<!-- -------------------------------------------------------------------- -->
 
 	<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-	<h1 class="py-5 text-center" id="searching" style="font-size: 38px">일기
-		둘러보기</h1>
+	<h1 class="py-5 text-center" id="searching" style="font-size: 38px">일기 둘러보기</h1>
 
 	<main class="main" id="top">
 		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
@@ -372,7 +315,7 @@
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
-					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup(); get_seq(clicked_id);">
+					<li class="item" style="background-color: rgb(245, 242, 235);"  onclick="location.href='post_view.jsp?post_seq=<%=diary_list.get(i).getDiary_seq() %>">
 						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
@@ -385,33 +328,12 @@
 			</ul>
 		</div>
 	</main>
-	<!-- 조회수기능 -->
-	<script>
-		var hits_count = 0;
-		$(document).ready(function() {
-			$('#more').click(function() {
-				hits_count = hits_count + 1;
-				$('.hits span').text(hits_count);
-			});
-		});
-	</script>
 	<!-- 게시물 팝업, 댓글 기능 js -->
     <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
-    <script>
-    	function get_seq(clicked_id){
-    		$.ajax({
-    			type: 'GET',
-    			url: 'SelectDiaryService',
-    			dataType: 'json',
-    			data: {'seq':clicked_id}
-    		})
-    	}
-    </script>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
 </body>
 </html>

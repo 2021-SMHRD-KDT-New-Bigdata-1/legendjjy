@@ -1,3 +1,9 @@
+<%@page import="comVO.usersVO"%>
+<%@page import="comDAO.usersDAO"%>
+<%@page import="comVO.entireDiaryVO"%>
+<%@page import="comDAO.diaryDAO"%>
+<%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
+<%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,6 +23,15 @@
 
 </head>
 <body>
+<%
+	usersVO uservo = (usersVO)session.getAttribute("vo");
+	int post_seq = Integer.parseInt(request.getParameter("post_seq")); 
+
+	diaryDAO dao = new diaryDAO();
+	usersDAO userdao = new usersDAO();
+	
+	entireDiaryVO vo = dao.select_diary(post_seq);
+%>
 
 	<div class="content">
 	    <table class="post_table">
@@ -26,23 +41,26 @@
 	    		<td id="writing_view">
 	    			<table>
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
-	    					<td id="content_date" colspan='2'>2021-09-30</td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@<%= userdao.findNick(vo.getUser_email())%></span></td>
+	    					<td id="content_date" colspan='2'><%=vo.getDiary_date() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_title" colspan='4'>제목</td>
+	    					<td id="content_title" colspan='4'><%=vo.getDiary_title() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
+	    					<td id="content_content" colspan='4'><%=vo.getDiary_content() %>.</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
+	    					<td id="content_tag" colspan='4'><%=vo.getHash_tag() %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_hits" >조회수 1321</td>
+	    					<td id="content_hits" >조회수 <%=vo.getHits() %></td>
+	    				<%if(vo.getUser_email().equals(uservo.getUser_email())){ %>	
 	    					<td><button id="content_modify">수정하기</button></td>
+	    				<%}else{ %>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
+	    				<%} %>
 	    				</tr>
 	    			</table>
 	    		</td>
@@ -53,7 +71,7 @@
 	    	</tr>
 	    </tbody>
 	    </table>
-	    
+	    <%if(vo.getComment_yn().equals("y")){ %>
 	    <div id="featured" class="blurb" style="position: relative;">
         			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
 	    		
@@ -64,10 +82,10 @@
 		        	</div> 
 		        		<div id=comments style="margin-top: 20px; "></div>
      				 </div>
-	    
-    	<button id="close_button" onclick="#">X</button>
-    	
 	 	</div>
+	 	<%} %>
+	 	
+	 	<button id="close_button" onclick="location.href='look.jsp'">X</button>
 	 	
 	 	<script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
