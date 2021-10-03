@@ -1,5 +1,5 @@
+<%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
-<%@page import="comVO.entireDiaryVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -21,11 +21,10 @@
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
-	entireDiaryVO enVO = new entireDiaryVO().select_diary(diary_seq);
-	String user_email = null;
-	if(session.getAttribute("user_email") != null){
-		user_email = vo.getUser_email();
-	}
+
+	diaryDAO dao = new diaryDAO();
+	int post_seq = Integer.parseInt(request.getParameter("post_seq"));
+	entireDiaryVO postvo = dao.
 	%>
 	<div class="content">
 	    <table class="post_table">
@@ -49,8 +48,8 @@
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >조회수 1321</td>
-	    					<% if(user_email != null && user_email.equals(vo.getUser_email())){ %>
-	    					<td><a href="write.jsp"><button id="content_modify">수정하기</button></a></td>
+	    					<% if(vo.getUser_email()!=null && ){ %>
+	    					<td><a href="write_update_delete.jsp?diary_seq=<%=%>"><button id="content_modify">수정하기</button></a></td>
 	    					<%} %>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
