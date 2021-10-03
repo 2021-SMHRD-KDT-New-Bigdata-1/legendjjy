@@ -158,7 +158,7 @@
 
 	<div id="popup" class="hide">
 	<div class="content">
-	    <table id="content_outer">
+	    <%-- <table id="content_outer">
 	    	<tr class="post_view">
 	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
@@ -199,7 +199,7 @@
 	    		<td id="blank" ></td>
 	    	</tr>
 	    	
-	    </table>
+	    </table> --%>
 	    
 	    <div id="featured" class="blurb" style="position: relative;">
         			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>

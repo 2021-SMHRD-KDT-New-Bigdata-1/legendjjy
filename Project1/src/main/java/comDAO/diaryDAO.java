@@ -156,17 +156,10 @@ public class diaryDAO {
 		conn();
 
 		int cnt = 0;
-<<<<<<< HEAD
 		
 		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ?, OPEN_YN = ?, COMMENT_YN = ? WHERE DIARY_SEQ = ?";
 		
 		try{
-=======
-
-		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ? OPEN_YN = ?, COMMENT_YN = ? WHERE DIARY_SEQ = ?";
-
-		try {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, vo.getDiary_title());
 			psmt.setString(2, vo.getDiary_content());
