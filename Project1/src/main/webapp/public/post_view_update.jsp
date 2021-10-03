@@ -1,7 +1,7 @@
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="comDAO.diaryDAO"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
