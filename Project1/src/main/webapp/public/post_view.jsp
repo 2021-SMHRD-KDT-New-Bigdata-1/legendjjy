@@ -1,3 +1,4 @@
+<%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
@@ -20,10 +21,9 @@
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
-	String user_email = null;
-	if(session.getAttribute("user_email") != null){
-		user_email = (String) session.getAttribute("user_email");
-	}
+	diaryDAO dao = new diaryDAO();
+	int post_seq = Integer.parseInt(request.getParameter("post_seq"));
+	entireDiaryVO postvo = dao.
 	%>
 	<div class="content">
 	    <table class="post_table">
