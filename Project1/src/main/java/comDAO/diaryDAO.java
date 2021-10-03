@@ -258,6 +258,6 @@ public class diaryDAO {
 
 	}
 	
-
+	public String loveitVO()
 	
 }

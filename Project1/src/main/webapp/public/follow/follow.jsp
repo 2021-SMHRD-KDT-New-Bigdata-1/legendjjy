@@ -45,7 +45,6 @@
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
 		usersDAO dao = new usersDAO();
-		followVO vo2 = (followVO)session.getAttribute("vo2");
 		ArrayList<followVO> follow_list = dao.follow_list(vo) ;
 	%>
 
