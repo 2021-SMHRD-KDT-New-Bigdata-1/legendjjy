@@ -292,4 +292,25 @@ public class usersDAO {
 		}
 		return result;
 	}
+	
+	public int add_scrap(int post_seq, String email) {
+		conn();
+		
+		String sql = "INSERT INTO MYSCRAPS VALUES(MYSCRAPS_SEQ.NEXTVAL, ?, SYSDATE, ?)";
+		
+		int cnt = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, post_seq);
+			psmt.setString(2, email);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
 }

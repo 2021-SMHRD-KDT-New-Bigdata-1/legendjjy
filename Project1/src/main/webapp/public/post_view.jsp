@@ -51,8 +51,6 @@
 	    				<tr>
 	    					<td id="content_hits" >조회수 <%=enVO.getHits() %></td>
 	    					<%if(vo==null){ %>
-	    					<td><button id="content_scrap">스크랩하기</button></td>
-	    					<td><button id="content_subscribe">구독하기</button></td>
 	    					<%}else if(vo.getUser_email().equals(enVO.getUser_email())){ %>
 	    					<td><a href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq() %>"><button id="content_modify">수정하기</button></a></td>
 	    					<%}else{ %>
@@ -94,14 +92,30 @@
 	 				type: "POST",
 	 				url: "ScrapService",
 	 				data: {"post_seq": <%= enVO.getDiary_seq()%>},
-	 				asycn: false
+	 				async: false,
 	 				dataType: "text",
 	 				success: function(data){
 	 					alert("스크랩되었습니다.");
-	 					scrap_yn = data
+	 					scrap_yn = data;
 	 				}
 	 			})
 	 			return scrap_yn;
+	 		}
+	 		
+	 		function subscribe(){
+	 			var sub_yn;
+	 			$.ajax({
+	 				type: "POST",
+	 				url: "SubscribeService",
+	 				data: {"post_user_email": <%=enVO.getUser_email()%>},
+	 				async: false,
+	 				dataType: "text",
+	 				sucess: function(data){
+	 					alert("구독되었습니다.");
+	 					sub_yn = data;
+	 				}
+	 			})
+	 			return sub_yn;
 	 		}
 	 	</script>
 </body>
