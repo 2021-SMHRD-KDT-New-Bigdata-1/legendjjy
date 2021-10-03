@@ -155,7 +155,7 @@ public class diaryDAO {
 		
 		int cnt = 0;
 		
-		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ? OPEN_YN = ?, COMMENT_YN = ? WHERE DIARY_SEQ = ?";
+		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ?, OPEN_YN = ?, COMMENT_YN = ? WHERE DIARY_SEQ = ?";
 		
 		try{
 			psmt = conn.prepareStatement(sql);
@@ -232,4 +232,7 @@ public class diaryDAO {
 		}
 		return vo;
 	}
+	
+
+	
 }
