@@ -1,7 +1,9 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
-
+<%@page import="comVO.entireDiaryVO" %>
+<%@page import="comDAO.diaryDAO" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,6 +63,25 @@
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	
+	if(vo.getUser_email() == null) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('로그인을 하세요.')");
+		script.println("location.href = 'login.jsp'");
+		script.println("</script>");
+	}
+	int diary_seq = 0;
+	if(request.getParameter("diary_seq") != null) {
+		diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
+	}
+	if(diary_seq == 0) {
+		PrintWriter script = response.getWriter();
+		script.println("<script>");
+		script.println("alert('유효하지 않은 글입니다.')");
+		script.println("location.href = 'look.jsp'");
+		script.println("</script>");
+	}
 	%>
 
 	<main class="main" id="top">
