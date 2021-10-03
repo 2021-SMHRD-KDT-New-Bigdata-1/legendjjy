@@ -276,5 +276,20 @@ public class diaryDAO {
 		return cnt;
 		
 	}
+
+	}
 	
-}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
