@@ -51,13 +51,11 @@
 	    				<tr>
 	    					<td id="content_hits" >조회수 <%=enVO.getHits() %></td>
 	    					<%if(vo==null){ %>
-	    					<td><button id="content_scrap">스크랩하기</button></td>
-	    					<td><button id="content_subscribe">구독하기</button></td>
 	    					<%}else if(vo.getUser_email().equals(enVO.getUser_email())){ %>
 	    					<td><a href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq() %>"><button id="content_modify">수정하기</button></a></td>
 	    					<%}else{ %>
-	    					<td><button id="content_scrap">스크랩하기</button></td>
-	    					<td><button id="content_subscribe">구독하기</button></td>
+	    					<td><button id="content_scrap" onclick="scrap()">스크랩하기</button></td>
+	    					<td><button id="content_subscribe" onclick="subscribe()">구독하기</button></td>
 	    					<%} %>			
 	    				</tr>
 	    			</table>
@@ -82,11 +80,43 @@
      				 </div>
 	 	</div>
 	 	<%} %>
-	 	<a href="look.jsp"><button id="close_button" onclick="#">X</button></a>
+	 	<button id="close_button" onclick="history.back()">X</button>
 	 	<script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
 	    <script src="assets/js/functions-min.js"></script>
 	    <script src="assets/js/comment.js"></script>
-	 	
+	 	<script>
+	 		function scarp(){
+	 			var scrap_yn;
+	 			$.ajax({
+	 				type: "POST",
+	 				url: "ScrapService",
+	 				data: {"post_seq": <%= enVO.getDiary_seq()%>},
+	 				async: false,
+	 				dataType: "text",
+	 				success: function(data){
+	 					alert("스크랩되었습니다.");
+	 					scrap_yn = data;
+	 				}
+	 			})
+	 			return scrap_yn;
+	 		}
+	 		
+	 		function subscribe(){
+	 			var sub_yn;
+	 			$.ajax({
+	 				type: "POST",
+	 				url: "SubscribeService",
+	 				data: {"post_user_email": <%=enVO.getUser_email()%>},
+	 				async: false,
+	 				dataType: "text",
+	 				sucess: function(data){
+	 					alert("구독되었습니다.");
+	 					sub_yn = data;
+	 				}
+	 			})
+	 			return sub_yn;
+	 		}
+	 	</script>
 </body>
 </html>

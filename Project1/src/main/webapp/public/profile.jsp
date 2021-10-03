@@ -1,3 +1,4 @@
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -72,7 +73,8 @@
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
-	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
+	ArrayList<entireDiaryVO> diary_list = dao.personal_diary(vo.getUser_email());
+	usersDAO userdao = new usersDAO();
 	%>
 
 	<!-- ------------------------------------------------------------- -->
@@ -162,7 +164,6 @@
 				</div>
 			</div>
 
-
 			<ul class="navi_inner2">
 				<li><a
 					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">일기
@@ -197,17 +198,6 @@
 				}
 				%>
 			</ul>
-
-			<%
-			if (vo == null) {
-			%>
-			<form class="login_button">
-				<a class="log_button" href="Login_v2/login.jsp">로그인</a>
-			</form>
-			<%
-			}
-			%>
-
 		</nav>
 
 	</header>
