@@ -1,5 +1,5 @@
-<%@page import="comVO.commentVO"%>
-<%@page import="comDAO.commentDAO"%>
+<%@page import="comVO.Comment"%>
+<%@page import="comDAO.CommentDAO"%>
 <%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -15,29 +15,78 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="container">
 
-<% usersVO uvo = new usersVO();
-	commentVO cvo = new commentVO();
-%>
+			<div class="container">
+				<div class="row">
+					<table class="table table-striped"
+						style="text-align: center; border: 1px solid #dddddd">
+						<tbody>
+							<tr>
+								<td align="left" bgcolor="skyblue">댓글</td>
+							</tr>
+							<tr>
+								<%
+									CommentDAO commentDAO = new CommentDAO();
+									ArrayList<Comment> list = commentDAO.getList(bbsID);
+									for (int i = 0; i < list.size(); i++) {
+								%>
+								<div class="container">
+									<div class="row">
+										<table class="table table-striped"
+											style="text-align: center; border: 1px solid #dddddd">
+											<tbody>
+												<tr>
+													<td align="left"><%=list.get(i).getUserID()%></td>
 
+													<td align="right"><%=list.get(i).getCommentDate().substring(0, 11) + list.get(i).getCommentDate().substring(11, 13)
+						+ "시" + list.get(i).getCommentDate().substring(14, 16) + "분"%></td>
+												</tr>
 
-	<div class="container">
-		<div class="form-group">
-			<form method="post" encType = "multipart/form-data" action="commentAction.jsp?diary_seq=<%= diary_seq %>">
-				<table class="table table-striped" style="text-align: center; border: 1px solid #dddddd">
-					<tr>
-						<td style="border-bottom:none;" valign="middle"><br><br><%= user_email %></td>
-						<td><input type="text" style="height:100px;" class="form-control" placeholder="상대방을 존중하는 댓글을 남깁시다." name = "commentText"></td>
-						<td><br><br><input type="submit" class="btn-primary pull" value="댓글 작성"></td>
-					</tr>
-					<tr>
-						<td colspan="3"><input type="file" name="fileName"></td>
-					</tr>
-				</table>
-			</form>
+												<tr>
+													<td align="left"><%=list.get(i).getCommentContent()%></td>
+													<td align="right"><a
+														href="commentUpdate.jsp?bbsID=<%=bbsID%>&commentID=<%=list.get(i).getCommentID()%>"
+														class="btn btn-warning">수정</a> <a
+														onclick="return confirm('정말로 삭제하시겠습니까?')"
+														href="commentDeleteAction.jsp?bbsID=<%=bbsID%>&commentID=<%=list.get(i).getCommentID()%>"
+														class="btn btn-danger">삭제</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<%
+									}
+								%>
+							</tr>
+					</table>
+				</div>
+			</div>
+			<br>
+			<div class="container">
+				<div class="row">
+					<form method="post" action="submitAction.jsp?bbsID=<%=bbsID%>">
+						<table class="table table-bordered"
+							style="text-align: center; border: 1px solid #dddddd">
+							<tbody>
+								<tr>
+									<td align="left"><%=userID%></td>
+								</tr>
+								<tr>
+									<td><input type="text" class="form-control"
+										placeholder="댓글 쓰기" name="commentContent" maxlength="300"></td>
+								</tr>
+							</tbody>
+						</table>
+						<input type="submit" class="btn btn-success pull-right"
+							value="댓글 쓰기">
+					</form>
+				</div>
+			</div>
 		</div>
 	</div>
-
-
+	
 </body>
+
 </html>
