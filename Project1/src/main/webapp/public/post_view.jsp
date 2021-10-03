@@ -54,8 +54,8 @@
 	    					<%}else if(vo.getUser_email().equals(enVO.getUser_email())){ %>
 	    					<td><a href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq() %>"><button id="content_modify">수정하기</button></a></td>
 	    					<%}else{ %>
-	    					<td><button id="content_scrap" onclick="scrap()">스크랩하기</button></td>
-	    					<td><button id="content_subscribe" onclick="subscribe()">구독하기</button></td>
+	    					<td id="<%=enVO.getDiary_seq() %>" onclick="scrap(this.id)"><button id="content_scrap" >스크랩하기</button></td>
+	    					<td id="<%=enVO.getUser_email() %>" onclick="subscribe(this.id)"><button id="content_subscribe" >구독하기</button></td>
 	    					<%} %>			
 	    				</tr>
 	    			</table>
@@ -86,37 +86,38 @@
 	    <script src="assets/js/functions-min.js"></script>
 	    <script src="assets/js/comment.js"></script>
 	 	<script>
-	 		function scarp(){
-	 			var scrap_yn;
+	 		function scrap(clicked_id){
+	 			var seq = clicked_id;
 	 			$.ajax({
 	 				type: "POST",
-	 				url: "ScrapService",
-	 				data: {"post_seq": <%= enVO.getDiary_seq()%>},
+	 				url: "../ScrapService",
+	 				data: {"post_seq" : seq},
 	 				async: false,
-	 				dataType: "text",
 	 				success: function(data){
-	 					alert("스크랩되었습니다.");
-	 					scrap_yn = data;
+	 					alert('스크랩되었습니다');
+	 				}
+	 				error:function(jqXHR, textStatus, errorThrown){
+	 		            alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
 	 				}
 	 			})
-	 			return scrap_yn;
 	 		}
-	 		
-	 		function subscribe(){
-	 			var sub_yn;
-	 			$.ajax({
-	 				type: "POST",
-	 				url: "SubscribeService",
-	 				data: {"post_user_email": <%=enVO.getUser_email()%>},
-	 				async: false,
-	 				dataType: "text",
-	 				sucess: function(data){
-	 					alert("구독되었습니다.");
-	 					sub_yn = data;
-	 				}
-	 			})
-	 			return sub_yn;
-	 		}
+	 	</script>
+ 		<script>
+  	 		function subscribe(){
+ 			var sub_yn;
+ 			$.ajax({
+ 				type: "POST",
+ 				url: "SubscribeService",
+ 				data: {"post_user_email": <%=enVO.getUser_email()%>},
+ 				async: false,
+ 				dataType: "text",
+ 				sucess: function(data){
+ 					alert("구독되었습니다.");
+ 					sub_yn = data;
+ 				}
+ 			})
+ 			return sub_yn;
+ 		}
 	 	</script>
 </body>
 </html>

@@ -28,6 +28,12 @@ public class ScrapService extends HttpServlet {
 		
 		int cnt = dao.add_scrap(post_seq, vo.getUser_email());
 		
+		if(cnt>0) {
+			out.print("y");
+		}else {
+			out.print("n");
+		}
+		
 	}
 
 }
