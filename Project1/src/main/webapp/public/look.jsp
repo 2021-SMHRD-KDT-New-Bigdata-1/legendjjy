@@ -163,29 +163,21 @@
 	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
 	    		<td id="writing_view">
 	    			<table>
-	    			<%int diary_seq = 0; 
 	    			
-	    			try{if(diary_seq == divo.getDiary_seq()){
-	    				diary_seq = divo.getDiary_seq();}
-	    			}catch(Exception e) {
-	    				e.printStackTrace();
-	    			}
-	    			
-	    			%>
 	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner"><%=dao.select_diary(diary_seq).getUser_email() %></span></td>
-	    					<td id="content_date" colspan='2'><%=dao.select_diary(diary_seq).getDiary_date() %></td>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@</span></td>
+	    					<td id="content_date" colspan='2'>날짜 %></td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_title" colspan='4'><%=dao.select_diary(diary_seq).getDiary_title() %></td>
+	    					<td id="content_title" colspan='4'>제목</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_content" colspan='4'><%=dao.select_diary(diary_seq).getDiary_content() %></td>
+	    					<td id="content_content" colspan='4'>내용</td>
 	    				</tr>
 	    				<tr>
-	    					<td id="content_tag" colspan='4'><%=dao.select_diary(diary_seq).getHash_tag() %></td>
+	    					<td id="content_tag" colspan='4'>태그1 태그2 태그3</td>
 	    				</tr>
-	    				<tr>
+	    				<tr> 
 	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
 	    					<td><button id="content_modify" class="modify_hide"><a href="write.jsp">수정하기</a></button></td>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
