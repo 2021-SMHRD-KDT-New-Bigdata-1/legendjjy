@@ -47,8 +47,8 @@
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >조회수 1321</td>
-	    					<% if(user_email != null && user_email.equals(vo.getUser_email())){ %>
-	    					<td><a href="write_update_delete.jsp"><button id="content_modify">수정하기</button></a></td>
+	    					<% if(vo.getUser_email()!=null && ){ %>
+	    					<td><a href="write_update_delete.jsp?diary_seq=<%=%>"><button id="content_modify">수정하기</button></a></td>
 	    					<%} %>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
