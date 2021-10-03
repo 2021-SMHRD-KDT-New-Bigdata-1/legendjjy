@@ -1,4 +1,4 @@
-<%@page import="comDAO.commentDAO"%>
+<%@page import="comDAO.CommentDAO"%>
 <%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -24,9 +24,9 @@
 				</tr>
 				<tr>
 				<%
-					commentDAO commentDAO = new commentDAO();
-					ArrayList<Comment> list = commentDAO.getList(boardID, diary_seq);
-					for(int i=0; i<list.size(); i++){
+				CommentDAO commentDAO = new CommentDAO();
+							ArrayList<Comment> list = commentDAO.getList(boardID, diary_seq);
+							for(int i=0; i<list.size(); i++){
 				%>
 						<div class="container">		//댓글하나당 container만들어서 보여줌
 							<div class="row">

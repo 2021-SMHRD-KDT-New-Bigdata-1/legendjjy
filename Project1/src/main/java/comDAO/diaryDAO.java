@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import comVO.UpdateDiaryVO;
 import comVO.diaryVO;
 import comVO.entireDiaryVO;
 import comVO.usersVO;
@@ -151,36 +152,6 @@ public class diaryDAO {
 		return diary_list;
 	}
 
-	public int update_diary(entireDiaryVO vo) {
-
-		conn();
-
-		int cnt = 0;
-
-		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ? OPEN_YN = ?, COMMENT_YN = ? WHERE DIARY_SEQ = ?";
-
-		try {
-
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getDiary_title());
-			psmt.setString(2, vo.getDiary_content());
-			psmt.setString(3, vo.getDiary_image());
-			psmt.setString(4, vo.getHash_tag());
-			psmt.setString(5, vo.getOpen_yn());
-			psmt.setString(6, vo.getComment_yn());
-			psmt.setInt(7, vo.getDiary_seq());
-
-			cnt = psmt.executeUpdate();
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return cnt;
-
-	}
-
 	public int delete_diary(entireDiaryVO vo) {
 		conn();
 
@@ -275,27 +246,35 @@ public class diaryDAO {
 		}
 		return diary_list;
 	}
-	public int update_hits(int diary_seq) {
+
+	public int update_diary(UpdateDiaryVO diary_vo) {
 
 		conn();
-		
+
 		int cnt = 0;
-		
-		String sql = "UPDATE DIARIES SET hits = hits+1 WHERE DIARY_SEQ = ?";
-		
-		try{
+
+		String sql = "UPDATE DIARIES SET DIARY_TITLE = ?, DIARY_CONTENT = ? , DIARY_IMAGE = ? , HASH_TAG = ?, OPEN_YN = ?, COMMENT_YN = ? WHERE DIARY_SEQ = ?";
+
+		try {
+
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, diary_seq);
-			
+			psmt.setString(1, diary_vo.getDiary_title());
+			psmt.setString(2, diary_vo.getDiary_content());
+			psmt.setString(3, diary_vo.getDiary_image());
+			psmt.setString(4, diary_vo.getHash_tag());
+			psmt.setString(5, diary_vo.getOpen_yn());
+			psmt.setString(6, diary_vo.getComment_yn());
+			psmt.setInt(7, diary_vo.getDiary_seq());
+
 			cnt = psmt.executeUpdate();
-			
-		}catch (Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			close();
 		}
 		return cnt;
-
+		
 	}
 
 	}

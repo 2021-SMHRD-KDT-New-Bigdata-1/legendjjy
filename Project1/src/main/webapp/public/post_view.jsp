@@ -103,11 +103,11 @@
 	 		}
 	 	</script>
  		<script>
-  	 		function subscribe(){
- 			var sub_yn;
+  	 		function subscribe(clicked_id){
+ 			var user_email = clicked_id;
  			$.ajax({
- 				type: "POST",
- 				url: "SubscribeService",
+ 				type: "GET",
+ 				url: "../SubscribeService",
  				data: {"post_user_email": <%=enVO.getUser_email()%>},
  				async: false,
  				dataType: "text",
