@@ -152,16 +152,18 @@ public class diaryDAO {
 		return diary_list;
 	}
 
-	public int delete_diary(entireDiaryVO vo) {
+	public int delete_diary(int seq) {
 		conn();
 
 		String sql = "DELETE FROM DIARIES WHERE DIARY_SEQ = ?";
 
 		int cnt = 0;
+		
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, vo.getDiary_seq());
+			psmt.setInt(1, seq);
 			cnt = psmt.executeUpdate();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -169,7 +171,7 @@ public class diaryDAO {
 		}
 		return cnt;
 	}
-	
+
 	public entireDiaryVO select_diary(int seq) {
 		conn();
 
@@ -182,7 +184,7 @@ public class diaryDAO {
 			psmt.setInt(1, seq);
 
 			rs = psmt.executeQuery();
-			
+
 			if (rs.next()) {
 				int diary_seq = rs.getInt(1);
 				String diary_title = rs.getString(2);
@@ -195,7 +197,8 @@ public class diaryDAO {
 				String comment_yn = rs.getString(9);
 				int hits = rs.getInt(10);
 				int ad_seq = rs.getInt(11);
-				enVO = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_email, hash_tag, open_yn, comment_yn, hits, ad_seq);
+				enVO = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_email,
+						hash_tag, open_yn, comment_yn, hits, ad_seq);
 
 			}
 		} catch (Exception e) {
@@ -236,7 +239,7 @@ public class diaryDAO {
 						hash_tag, open_yn, comment_yn, hits, ad_seq);
 
 				diary_list.add(vo);
-				
+
 			}
 
 		} catch (Exception e) {
@@ -274,22 +277,5 @@ public class diaryDAO {
 			close();
 		}
 		return cnt;
-		
 	}
-
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
+}

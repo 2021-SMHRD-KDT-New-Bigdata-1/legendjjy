@@ -16,9 +16,11 @@ import comVO.usersVO;
 
 @WebServlet("/DeleteApplication")
 public class DeleteApplication extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		  request.setCharacterEncoding("UTF-8");
+		  request.setCharacterEncoding("EUC-KR");
 	      response.setCharacterEncoding("EUC-KR");
 		  PrintWriter out = response.getWriter() ; 
 		  int app_seq =  Integer.parseInt(request.getParameter("app_seq"));
@@ -28,7 +30,7 @@ public class DeleteApplication extends HttpServlet {
 	      
 	      if(cnt>0) {
 	    	  out.print("<script>");
-	    	  out.print("alert('í™•ì¸ëìŠµë‹ˆê¹Œ?');");
+	    	  out.print("alert('»èÁ¦µÇ¾ú½À´Ï´Ù.')");
 	    	  out.print("location.href='public/publish_admin/follow.jsp'");
 	    	  out.print("</script>");
 	      };
