@@ -1,3 +1,4 @@
+<%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -17,7 +18,13 @@
 
 </head>
 <body>
-
+	<%
+	usersVO vo = (usersVO) session.getAttribute("vo");
+	String user_email = null;
+	if(session.getAttribute("user_email") != null){
+		user_email = (String) session.getAttribute("user_email");
+	}
+	%>
 	<div class="content">
 	    <table class="post_table">
 	    <tbody class="post_tbody">
@@ -40,7 +47,9 @@
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >조회수 1321</td>
-	    					<td><button id="content_modify">수정하기</button></td>
+	    					<% if(user_email != null && user_email.equals(vo.getUser_email())){ %>
+	    					<td><a href="write_update_delete.jsp"><button id="content_modify">수정하기</button></a></td>
+	    					<%} %>
 	    					<td><button id="content_scrap">스크랩하기</button></td>
 	    					<td><button id="content_subscribe">구독하기</button></td>
 	    				</tr>
@@ -62,10 +71,10 @@
 			          <input id="comment-input" placeholder="댓글 작성" > 
 			          <button id="submit">OK</button>
 		        	</div> 
-		        		<div id=comments style="margin-top: 20px; "></div>
+		        		<div id="comments" style="margin-top: 20px; "></div>
      				 </div>
 	    
-    	<button id="close_button" onclick="#">X</button>
+    	<a href="look.jsp"><button id="close_button" onclick="#">X</button></a>
     	
 	 	</div>
 	 	
