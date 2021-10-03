@@ -1,3 +1,4 @@
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="java.util.ArrayList"%>
@@ -73,6 +74,7 @@
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
+	usersDAO userdao = new usersDAO();
 	%>
 
 	<!-- ------------------------------------------------------------- -->
