@@ -133,6 +133,7 @@
 <body style="width: 100%">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	entireDiaryVO select_diary = (entireDiaryVO)session.getAttribute("select_diary");
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
@@ -156,65 +157,56 @@
 	<!-- ------------------------------------------------------------- -->
 
 	<div id="popup" class="hide">
-		<div class="content">
-			<table id="content_outer">
-				<tr class="post_view">
-					<td id="img_view"><img src="assets/img/2.jpg" alt=""
-						style="width: 700px; height: 700px; object-fit: cover;"></td>
-					<td id="writing_view">
-						<table>
-
-							<tr>
-								<td id="content_nick" colspan='2'><span id="nick_inner">@</span></td>
-								<td id="content_date" colspan='2'>date</td>
-							</tr>
-							<tr>
-								<td id="content_title" colspan='4'>title</td>
-							</tr>
-							<tr>
-								<td id="content_content" colspan='4'>content</td>
-							</tr>
-							<tr>
-								<td id="content_tag" colspan='4'>hashtag</td>
-							</tr>
-							<tr>
-								<td id="content_hits">diary_list.get(i).getHits()</td>
-								<td><button id="content_modify" class="modify_button">수정하기</button></td>
-								<td><button id="content_scrap">스크랩하기</button></td>
-								<td><button id="content_subscribe">구독하기</button></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-				<tr>
-					<td id="blank"></td>
-					<td id="blank"></td>
-				</tr>
-
-			</table>
-
-			<div id="featured" class="blurb" style="position: relative;">
-				<div style="text-align: right; margin-right: 10%;">
-					<button
-						style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;">
-						<img src="letters/write_icon2.png" alt=""
-							style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-					</button>
-				</div>
-
-				<div id="form-commentInfo">
-					<div id="comment-count">
-						댓글 <span id="count">0</span>
-					</div>
-					<input id="comment-input" placeholder="댓글 작성">
-					<button id="submit">OK</button>
-				</div>
-				<div id=comments style="margin-top: 20px;"></div>
-			</div>
-
-			<button id="close_button" onclick="closePopup()">X</button>
-		</div>
-
+	<div class="content">
+	    <table id="content_outer">
+	    	<tr class="post_view">
+	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
+	    		<td id="writing_view">
+	    			<table>
+	    			
+	    				<tr>
+	    					<td id="content_nick" colspan='2'><span id="nick_inner">@</span></td>
+	    					<td id="content_date" colspan='2'>date</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_title" colspan='4'>title</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_content" colspan='4'>content</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_tag" colspan='4'>hashtag</td>
+	    				</tr>
+	    				<tr>
+	    					<td id="content_hits" >diary_list.get(i).getHits()</td>
+	    					<td><button id="content_modify" class="modify_hide"><a href="write.jsp">수정하기</a></button></td>
+	    					<td><button id="content_scrap">스크랩하기</button></td>
+	    					<td><button id="content_subscribe">구독하기</button></td>
+	    				</tr>
+	    			</table>
+	    		</td>
+	    	</tr>
+	    	<tr>
+	    		<td id="blank" ></td>
+	    		<td id="blank" ></td>
+	    	</tr>
+	    	
+	    </table>
+	    
+	    <div id="featured" class="blurb" style="position: relative;">
+        			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
+	    		
+		    		<div id="form-commentInfo"> 
+			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
+			          <input id="comment-input" placeholder="댓글 작성" > 
+			          <button id="submit">OK</button>
+		        	</div> 
+		        		<div id=comments style="margin-top: 20px; "></div>
+     				 </div>
+	    
+    	<button id="close_button" onclick="closePopup()">X</button>
+	 	</div>
+	 	
 	</div>
 
 	<!-- ------------------------------------------------------------- -->
@@ -320,14 +312,14 @@
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
-					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-						<div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
+					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);">
+						<a href="post_view.jsp"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
 							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
 							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
-						</div>
+						</div></a>
 					</li>
 				<%}%>
 			</ul>
@@ -354,7 +346,8 @@
     		$.ajax({
     			type: 'GET',
     			url: 'SelectDiaryService',
-    			data: {''}
+    			dataType: 'json',
+    			data: {'seq':clicked_id}
     		})
     	}
     </script>
