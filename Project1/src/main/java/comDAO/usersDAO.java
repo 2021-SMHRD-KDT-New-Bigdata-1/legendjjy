@@ -317,16 +317,20 @@ public class usersDAO {
 	public int add_follow(usersVO vo, String follow_email) {
 		conn();
 		
-		String sql = "INSERT INTO FOLLOWINGS VALUES( FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
+		String sql = "INSERT INTO FOLLOWINGS VALUES (FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
 		
 		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, sql);
+			psmt.setString(1, vo.getUser_email());
+			psmt.setString(2, follow_email);
+			
+			cnt = psmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			close();
 		}
+		return cnt;
 	}
 }

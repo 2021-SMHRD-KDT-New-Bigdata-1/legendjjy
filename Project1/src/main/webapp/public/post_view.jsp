@@ -124,7 +124,7 @@
 		function scrap(clicked_id) {
 			var seq = clicked_id;
 			$.ajax({
-				type : "GET",
+				type : "POST",
 				url : "../ScrapService",
 				data : {
 					"post_seq" : seq
@@ -141,24 +141,23 @@
 	</script>
 	<script>
 		function subscribe(clicked_id) {
-			var user_email = clicked_id;
+			var post_email = clicked_id;
 			$.ajax({
-				type : "GET",
-				url : "../SubscribeService",
-				data : {
-					"post_user_email" :
-	<%=enVO.getUser_email()%>
-		},
+				type : "POST",
+				url : "../FollowService",
+				data : {"follow_email" : post_email},
 				async : false,
-				dataType : "text",
-				sucess : function(data) {
+				success : function(data) {
 					alert("구독되었습니다.");
-					sub_yn = data;
+					
+				},
+				error : function(jqXHR, textStatus, errorThrown) {
+					alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
 				}
 			})
-			return sub_yn;
 		}
-
+	</script>
+	<script>
 		function del() {
 			const del = confirm("해당 게시글을 삭제하시겠습니까?");
 			if (del) {
