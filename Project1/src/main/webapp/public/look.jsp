@@ -238,7 +238,7 @@
 						쓰러가기</a></li>
 				<li><a href="look.jsp">둘러보기</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">스크랩
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveit.jsp<%}%>">스크랩
 						목록</a></li>
 				<li><a
 					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">구독
