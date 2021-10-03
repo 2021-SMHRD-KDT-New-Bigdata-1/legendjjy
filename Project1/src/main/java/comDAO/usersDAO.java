@@ -217,7 +217,7 @@ public class usersDAO {
 	public ArrayList<followVO> follow_list(usersVO vo){
 		conn();
 		
-		String sql = "SELECT FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ ";
+		String sql = "SELECT FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ DESC";
 		
 		ArrayList<followVO> follow_list = new ArrayList<followVO>();
 		try {
@@ -282,7 +282,7 @@ public class usersDAO {
 			if(rs.next()) {
 				result = rs.getString(1);
 			}else {
-				result = "�� �� ����";
+				result = "";
 			}
 			
 		}catch(Exception e) {
