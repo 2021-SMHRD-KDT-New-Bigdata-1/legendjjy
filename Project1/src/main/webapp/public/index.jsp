@@ -464,10 +464,9 @@ input[type="text"] {
 			</div>
 		<form class="upload" action="../UploadService" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
-				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray; width: 100%;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-						<td style=" border: 1px solid silver;">
-						
+						<td style="width: 30%">
 							<div id="user_upload_img"></div> 
 								<input name="file" id="file" type="file"
 								onchange="previewImage(this, 'user_upload_img');"
@@ -477,28 +476,21 @@ input[type="text"] {
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 30px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 						</td>
-						<td style=" border: 1px solid silver; border-radius: 20px;">
-							<div style="width: 640px; font-size: 32px;">
-								<div class="form-group">
-									<br> <input type="text" class="`" id="title"
+						<td>
+							<div style="width: 100%; font-size: 24px;">
+									<input type="text" class="`" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 32px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 28px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; margin-top: 30px;
 										">
-								</div>
-								<div class="form-group">
-									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
-										style="font-size: 28px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 28px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; height: 500px;
 										"></textarea>
-								</div>
-								<div class="form-group">
-									<br> <input type="text" class="form-control" id="writer"
+									<input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
 										style="font-size: 24px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
-								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
 								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
