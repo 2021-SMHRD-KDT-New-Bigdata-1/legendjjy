@@ -284,12 +284,10 @@ public class diaryDAO {
 		
 		String sql = "UPDATE DIARIES SET HITS = HITS + 1 WHERE DIARY_SEQ = ?";
 		
-		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, diary_seq);
 			
-			cnt = psmt.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
@@ -319,5 +317,43 @@ public class diaryDAO {
 			close();
 		}
 		return seq_list;
+	}
+	
+	public ArrayList<entireDiaryVO> today_diary() {
+		conn();
+		
+		String sql = "SELECT * FROM DIARIES ORDER BY HITS DESC";
+		
+		ArrayList<entireDiaryVO> today_list = new ArrayList<entireDiaryVO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				for(int i=0; i<10; i++) {
+					int diary_seq = rs.getInt(1);
+					String diary_title = rs.getString(2);
+					String diary_date = rs.getString(3);
+					String diary_image = rs.getString(4);
+					String diary_content = rs.getString(5);
+					String user_email = rs.getString(6);
+					String hash_tag = rs.getString(7);
+					String open_yn = rs.getString(8);
+					String comment_yn = rs.getString(9);
+					int hits = rs.getInt(10);
+					int ad_seq = rs.getInt(11);
+
+					entireDiaryVO vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_email, hash_tag, open_yn, comment_yn, hits, ad_seq);
+
+					today_list.add(vo);
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return today_list;
 	}
 }

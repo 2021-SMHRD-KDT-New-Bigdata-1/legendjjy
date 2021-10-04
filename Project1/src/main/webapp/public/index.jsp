@@ -1,3 +1,6 @@
+<%@page import="comVO.entireDiaryVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -336,51 +339,10 @@ input[type="text"] {
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	diaryDAO dao = new diaryDAO();
+	ArrayList<entireDiaryVO> today_list = dao.today_diary();
 	%>
-	<div class="container">
-		<div id="modal">
-			<div class="modal_header">
-				<section>
-					<strong><a href="#" style="display: inline margin: 20px">@legend</a></strong>
-					<div class="modal_content">
-						<div class="diaryIMG">
-							<img id="selectIMG" src="assets/img/camera.png">
-						</div>
-						<div class="diaryContent">
-							<h2 style="margin-bottom: 15px">title</h2>
-							<p style="direction: rtl">time</p>
-							<br>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit
-								esse cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit
-								aut fugit, sed quia consequuntur magni dolores eos qui ratione
-								voluptatem sequi nesciunt.</p>
-							<section class="list"></section>
-						</div>
-					</div>
-				</section>
-			</div>
-			<div class="modal_header">
-				<section>
-					<div style="width: 100%;">
-						<div id="form-commentInfo">
-							<div id="comment-count">
-								댓글 <span id="count">0</span>
-							</div>
-							<input id="comment-input" onkeyup="enterkey();" type="text"
-								value="" placeholder="댓글을 달아주세요.">
-							<button id="submit">OK</button>
-						</div>
-						<div id="comments"></div>
-					</div>
-				</section>
-			</div>
-			<div class="modal_layer">
-				<button type="button" class="btm_image" id="modal_close_btn">
-					<img src="assets/img/closeicon.png" alt="">
-				</button>
-			</div>
-		</div>
-	</div>
+
 	<!-- ===============================================-->
 	<!--    Main Content-->
 	<!-- ===============================================-->
@@ -456,46 +418,15 @@ input[type="text"] {
 							<div class="swiper-container pb-4 overflow-hidden"
 								data-pagination-target="pagination1">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide h-auto">
+								<%for(int i=0; i<today_list.size(); i++){ %>
+									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)">
+									<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
 										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-1.png" alt="products" />
+											src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
+											onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
+											</a>
 									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-2.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-3.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-4.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-5.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-1.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-2.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-3.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn" id="modal_opne_btn"
-											src="assets/img/gallery/product-4.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-5.png" alt="products" />
-									</div>
+								<%} %>
 								</div>
 							</div>
 						</div>
@@ -681,7 +612,18 @@ input[type="text"] {
 			$("#modal").attr("style", "display:none");
 		});
 	</script>
-	<!-- image upload -->
+    <!-- 조회수기능 -->
+	<script>
+		function hitsup(clicked_id){
+			var seq = clicked_id;
+			$.ajax({
+				type: "POST",
+				url: "../HitsCheckService",
+				data: {"post_seq":seq},
+				async: false
+			})
+		}
+	</script>
 
 </body>
 </html>
