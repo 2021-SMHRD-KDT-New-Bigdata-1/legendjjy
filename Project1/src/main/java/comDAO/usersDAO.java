@@ -269,7 +269,7 @@ public class usersDAO {
 	  }
 	
 	
-	public String findNick(entireDiaryVO vo) {
+	public String findNick(String email) {
 		conn();
 		
 		String sql = "SELECT USER_NICK FROM USERS WHERE USER_EMAIL = ?";
@@ -277,7 +277,7 @@ public class usersDAO {
 		String result = "";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getUser_email());
+			psmt.setString(1, email);
 			
 			rs = psmt.executeQuery();
 			
@@ -339,7 +339,7 @@ public class usersDAO {
 	public ArrayList<loveitVO> loveit_list(String users_email ){
 		conn();
 		
-		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.SCRAP_SEQ WHERE USER_EMAIL = ?";
+		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.DAIRY_SEQ WHERE USER_EMAIL = ?";
 			
 		ArrayList<loveitVO> loveit_list = new ArrayList<loveitVO>();
 		try {

@@ -29,6 +29,7 @@
 	diaryDAO dao = new diaryDAO();
 	int post_seq = Integer.parseInt(request.getParameter("post_seq"));
 	entireDiaryVO enVO = dao.select_diary(post_seq);
+	String hashtag = "";
 	%>
 	<div class="content">
 		<table class="post_table">
@@ -49,7 +50,8 @@
 								<td id="content_content" colspan='4'><%=enVO.getDiary_content()%></td>
 							</tr>
 							<tr>
-								<td id="content_tag" colspan='4'><%=enVO.getHash_tag()%></td>
+							<%if(enVO.getHash_tag()!=null){hashtag=enVO.getHash_tag();}%>
+								<td id="content_tag" colspan='4'><%=hashtag%></td>
 							</tr>
 							<tr>
 								<td id="content_hits">조회수 <%=enVO.getHits()%></td>
@@ -63,7 +65,7 @@
 									href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq()%>"><button
 											id="content_modify">수정하기</button></a></td>
 								<td><a onclick="return confirm('정말로 삭제하시겠습니까?')"
-									href="/Project1/src/main/java/comSERVLET/DeleteDiaryService.java?diary_seq=<%=enVO.getDiary_seq()%>"><button
+									href="../DeleteDiaryService?diary_seq=<%=enVO.getDiary_seq()%>"><button
 											id="content_modify">삭제하기</button></a></td>
 								<%
 								} else {
@@ -98,7 +100,7 @@
 		
 		<div id="disqus_thread"></div>
 		<script>
-		    /**
+		    /** 
 		    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
 		    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
 		    /*
@@ -145,7 +147,7 @@
 					alert('스크랩되었습니다');
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
-					alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+					alert("존재하지 않는 게시물입니다.");
 				}
 			})
 		}
@@ -163,20 +165,9 @@
 					
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
-					alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+					alert("존재하지 않는 게시물입니다.");
 				}
 			})
-		}
-	</script>
-	<script>
-		function del() {
-			const del = confirm("해당 게시글을 삭제하시겠습니까?");
-			if (del) {
-				location.href = 'DeleteDiaryService?diary_seq='
-						+
-	<%=enVO.getDiary_seq()%>
-		;
-			}
 		}
 	</script>
 </body>
