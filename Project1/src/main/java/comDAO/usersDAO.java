@@ -219,7 +219,7 @@ public class usersDAO {
 	public ArrayList<followVO> follow_list(usersVO vo){
 		conn();
 		
-		String sql = "SELECT FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ DESC";
+		String sql = "SELECT FOLLOW_SEQ, FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ DESC";
 		
 		ArrayList<followVO> follow_list = new ArrayList<followVO>();
 		try {
@@ -231,9 +231,10 @@ public class usersDAO {
 			
 			while(rs.next()) {
 				
-				String follow_email = rs.getString(1);
-				
-				followVO vo2 = new followVO(follow_email);
+				int follow_seq = rs.getInt(1);
+				String follow_email = rs.getString(2);
+
+				followVO vo2 = new followVO(follow_seq, follow_email);
 				
 				follow_list.add(vo2);
 			 	}
@@ -268,6 +269,29 @@ public class usersDAO {
 		return cnt;
 	  }
 	
+	public int delete_follow(int follow_seq) {
+		
+		conn();
+		
+		String sql = "DELETE FROM FOLLOWINGS WHERE FOLLOW_SEQ = ?";
+		
+		int cnt = 0;
+		
+		try {
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, follow_seq);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
 	
 	public String findNick(String email) {
 		conn();
@@ -298,16 +322,33 @@ public class usersDAO {
 	public int add_scrap(int post_seq, String email) {
 		conn();
 		
-		String sql = "INSERT INTO MYSCRAPS VALUES(MYSCRAPS_SEQ.NEXTVAL, ?, SYSDATE, ?)";
+		String sql = "SELECT * FROM MYSCRAPS WHERE DIARY_SEQ = ? AND USER_EMAIL = ?";
 		
 		int cnt = 0;
+		
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, post_seq);
 			psmt.setString(2, email);
 			
-			cnt = psmt.executeUpdate();
+			rs = psmt.executeQuery();
 			
+			if(rs.next()) {
+				cnt = 0;
+			}else {
+				String sql2 = "INSERT INTO MYSCRAPS VALUES(MYSCRAPS_SEQ.NEXTVAL, ?, SYSDATE, ?)";
+				
+				try {
+					psmt = conn.prepareStatement(sql2);
+					psmt.setInt(1, post_seq);
+					psmt.setString(2, email);
+					
+					cnt = psmt.executeUpdate();
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -319,7 +360,7 @@ public class usersDAO {
 	public int add_follow(usersVO vo, String follow_email) {
 		conn();
 		
-		String sql = "INSERT INTO FOLLOWINGS VALUES (FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
+		String sql = "SELECT * FROM FOLLOWINGS WHERE USER_EMAIL = ? AND FOLLOW_EMAIL = ?";
 		
 		int cnt = 0;
 		try {
@@ -327,37 +368,62 @@ public class usersDAO {
 			psmt.setString(1, vo.getUser_email());
 			psmt.setString(2, follow_email);
 			
-			cnt = psmt.executeUpdate();
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				cnt = 0;
+			}else {
+				String sql2 = "INSERT INTO FOLLOWINGS VALUES (FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
+				
+				try {
+					psmt = conn.prepareStatement(sql2);
+					psmt.setString(1, vo.getUser_email());
+					psmt.setString(2, follow_email);
+					
+					cnt = psmt.executeUpdate();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
-		}finally {
+		}finally{
 			close();
 		}
 		return cnt;
 	}
 	
-	public ArrayList<loveitVO> loveit_list(String users_email ){
+	public ArrayList<entireDiaryVO> loveit_list(int seq ){
 		conn();
 		
-		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.DAIRY_SEQ WHERE USER_EMAIL = ?";
+		String sql = "SELECT D.DIARY_SEQ, D.DIARY_TITLE, D.DIATY_IMAGE, D.DIARY_CONTENT, D.USER_EMAIL, D.HASH_TAG, D.OPEN_YN, D.NOMMENT_YN, D.HITS, D.AD_SEQ FROM DIARIES INNER JOIN MYSCAPS ON D.DIARY_SEQ = M.SCRAP_SEQ WHERE USER_EMAIL;" ;
 			
-		ArrayList<loveitVO> loveit_list = new ArrayList<loveitVO>();
+		ArrayList<entireDiaryVO> loveit_list = new ArrayList<entireDiaryVO>();
 		try {
 			
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, users_email);
+			psmt.setInt(1, seq);
 			
 			rs = psmt.executeQuery();
 			
-			loveitVO vo = null;
+			entireDiaryVO vo = null;
+			
 			while (rs.next()){
-				String diary_image = rs.getString(1);
-				String user_email = rs.getString(2);;
-				String diary_content = rs.getString(3);
-				int hits = rs.getInt(4);
-				String diary_date = rs.getString(5);
+				int diary_seq = rs.getInt(1);
+				String diary_title = rs.getString(2);
+				String diary_date = rs.getString(3);
+				String diary_image = rs.getString(4);
+				String diary_content = rs.getString(5);
+				String user_email = rs.getString(6);
+				String hash_tag = rs.getString(7);		
+				String open_yn = rs.getString(8);
+				String comment_yn = rs.getString(9);
+				int hits = rs.getInt(10);
+				int ad_seq = rs.getInt(11);
 				
-				vo = new loveitVO(diary_image, users_email, diary_content, hits, diary_date);
+				
+				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, 
+						user_email, hash_tag, open_yn, comment_yn, hits, ad_seq);
 				
 				loveit_list.add(vo);
 			}

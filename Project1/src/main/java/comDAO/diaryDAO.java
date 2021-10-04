@@ -75,7 +75,7 @@ public class diaryDAO {
 	public ArrayList<entireDiaryVO> look_diary() {
 		conn();
 
-		String sql = "SELECT * FROM DIARIES ORDER BY DIARY_SEQ DESC";
+		String sql = "SELECT * FROM DIARIES WHERE OPEN_YN = 'y' ORDER BY DIARY_SEQ DESC";
 
 		ArrayList<entireDiaryVO> diary_list = new ArrayList<entireDiaryVO>();
 		try {
@@ -249,6 +249,47 @@ public class diaryDAO {
 		}
 		return diary_list;
 	}
+	
+	public ArrayList<entireDiaryVO> other_personal_diary(String email) {
+		conn();
+
+		String sql = "SELECT * FROM DIARIES WHERE USER_EMAIL = ? AND OPEN_YN = 'y' ORDER BY DIARY_SEQ DESC";
+
+		ArrayList<entireDiaryVO> diary_list = new ArrayList<entireDiaryVO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+
+			rs = psmt.executeQuery();
+
+			entireDiaryVO vo = null;
+			while (rs.next()) {
+				int diary_seq = rs.getInt(1);
+				String diary_title = rs.getString(2);
+				String diary_date = rs.getString(3);
+				String diary_image = rs.getString(4);
+				String diary_content = rs.getString(5);
+				String user_email = rs.getString(6);
+				String hash_tag = rs.getString(7);
+				String open_yn = rs.getString(8);
+				String comment_yn = rs.getString(9);
+				int hits = rs.getInt(10);
+				int ad_seq = rs.getInt(11);
+
+				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_email,
+						hash_tag, open_yn, comment_yn, hits, ad_seq);
+
+				diary_list.add(vo);
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return diary_list;
+	}
 
 	public int update_diary(UpdateDiaryVO diary_vo) {
 
@@ -284,17 +325,76 @@ public class diaryDAO {
 		
 		String sql = "UPDATE DIARIES SET HITS = HITS + 1 WHERE DIARY_SEQ = ?";
 		
-		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, diary_seq);
 			
-			cnt = psmt.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			close();
 		}
+	}
+	
+	public ArrayList<Integer> find_diary_seq(String email) {
+		conn();
+		
+		String sql = "SELECT DIARY_SEQ FROM MYSCRAPS WHERE USER_EMAIL = ?";
+		
+		ArrayList<Integer> seq_list = new ArrayList<Integer>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				seq_list.add(rs.getInt(1)); 
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return seq_list;
+	}
+	
+	public ArrayList<entireDiaryVO> today_diary() {
+		conn();
+		
+		String sql = "SELECT * FROM DIARIES WHERE OPEN_YN = 'y' ORDER BY HITS DESC";
+		
+		ArrayList<entireDiaryVO> today_list = new ArrayList<entireDiaryVO>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				int diary_seq = rs.getInt(1);
+				String diary_title = rs.getString(2);
+				String diary_date = rs.getString(3);
+				String diary_image = rs.getString(4);
+				String diary_content = rs.getString(5);
+				String user_email = rs.getString(6);
+				String hash_tag = rs.getString(7);
+				String open_yn = rs.getString(8);
+				String comment_yn = rs.getString(9);
+				int hits = rs.getInt(10);
+				int ad_seq = rs.getInt(11);
+
+				entireDiaryVO vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, user_email, hash_tag, open_yn, comment_yn, hits, ad_seq);
+
+				today_list.add(vo);
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return today_list;
 	}
 }

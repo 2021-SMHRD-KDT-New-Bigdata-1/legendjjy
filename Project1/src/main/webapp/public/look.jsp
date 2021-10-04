@@ -112,8 +112,8 @@
 #month_select {
 	margin-right: 10px;
 	padding-left: 20px;
-	width: 145px;
-	height: 32px;
+	width: 225px;
+	height: 35px;
 }
 
 .cont>p {
@@ -277,8 +277,8 @@
 
 	<main class="main" id="top">
 		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
-			<input type="text" name="word"placeholder="검색어 입력" style="margin-left:864px;">
-			<input type="submit" value="검색">
+			<input type="text" name="word"placeholder="검색어 입력" style="margin-left:710px; border-radius: 26px; height: 46px; width: 482px; font-size: 20px;">
+			<input type="submit" value="검색" style="width:80px; margin-left: -92px; border-radius: 23px; border:none; background-color: white; font-size:20px;">
 		</form>
 
 		<form style="margin-left: 274px; height: 17px;">

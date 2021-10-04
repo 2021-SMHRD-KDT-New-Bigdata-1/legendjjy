@@ -40,7 +40,7 @@
 					<td id="writing_view">
 						<table>
 							<tr>
-								<td id="content_nick" colspan='2'><span id="nick_inner">@<%=enVO.getUser_email() %></span></td>
+								<td id="content_nick" colspan='2'><a href="userprofile.jsp?user_email=<%=enVO.getUser_email()%>"><button id="nick_inner">@<%=userdao.findNick(enVO.getUser_email()) %></button></a></td>
 								<td id="content_date" colspan='2'><%=enVO.getDiary_date()%></td>
 							</tr>
 							<tr>
@@ -144,10 +144,7 @@
 				},
 				async : false,
 				success : function(data) {
-					alert('스크랩되었습니다');
-				},
-				error : function(jqXHR, textStatus, errorThrown) {
-					alert("존재하지 않는 게시물입니다.");
+					alert(data);
 				}
 			})
 		}
@@ -160,12 +157,8 @@
 				url : "../FollowService",
 				data : {"follow_email" : post_email},
 				async : false,
-				success : function(data) {
-					alert("구독되었습니다.");
-					
-				},
-				error : function(jqXHR, textStatus, errorThrown) {
-					alert("존재하지 않는 게시물입니다.");
+				success: function(data){
+					alert(data);
 				}
 			})
 		}

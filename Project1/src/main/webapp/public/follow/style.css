@@ -35,12 +35,11 @@
 }
 .all_2{
 	position: fixed;
-	box-shadow: 5px 5px 5px gray;
 	margin-top: 47px;
 	margin-left: 600px;
 	margin-bottom: 200px;
 	height: 600px;
-	width: 737px;
+	width: 757px;
 	overflow-x: hidden;
 	color: black;
 	

@@ -25,7 +25,9 @@ public class HitsCheckService extends HttpServlet {
 		diaryDAO dao = new diaryDAO();
 		entireDiaryVO diary_info = dao.select_diary(diary_seq);
 		
-		if(!diary_info.getUser_email().equals(vo.getUser_email())) {
+		if(vo.getUser_email()==null) {
+			dao.hits_up(diary_seq);
+		}else if(!diary_info.getUser_email().equals(vo.getUser_email())) {
 			dao.hits_up(diary_seq);
 		}
 	}

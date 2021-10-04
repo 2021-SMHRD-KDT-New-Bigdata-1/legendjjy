@@ -19,6 +19,7 @@ public class ScrapService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		response.setCharacterEncoding("UTF-8");
 		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
 		
 		PrintWriter out = response.getWriter();
@@ -29,9 +30,9 @@ public class ScrapService extends HttpServlet {
 		int cnt = dao.add_scrap(post_seq, vo.getUser_email());
 		
 		if(cnt>0) {
-			out.print("y");
+			out.print("스크랩되었습니다.");
 		}else {
-			out.print("n");
+			out.print("이미 스크랩되어있습니다.");
 		}
 		
 	}
