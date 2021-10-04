@@ -44,7 +44,7 @@ public class UploadService extends HttpServlet {
       }
       String public_yn = multi.getParameter("public_yn");
       if(public_yn==null) {
-         public_yn = "n";
+         public_yn = "y";
       }
       
       String imgName = "";
