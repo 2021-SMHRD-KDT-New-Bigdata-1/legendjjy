@@ -343,15 +343,7 @@ input[type="text"] {
    diaryDAO dao = new diaryDAO();
    ArrayList<entireDiaryVO> today_list = dao.today_diary();
    %>
-=======
-	<%
-	usersVO vo = (usersVO) session.getAttribute("vo");
-	diaryDAO dao = new diaryDAO();
-	ArrayList<entireDiaryVO> today_list = dao.today_diary();
-	%>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
-<<<<<<< HEAD
    <!-- ===============================================-->
    <!--    Main Content-->
    <!-- ===============================================-->
@@ -417,39 +409,7 @@ input[type="text"] {
             </div>
          </div>
       </nav>
-      <section class="py-0" id="header">
-         <div class="container">
-            <div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-            <h1 style="padding-bottom: 70px">오늘의 일기</h1>
-            <div class="container-fluid" style="height: 500px;">
-               <div class="row gx-2" style="height: 500px;">
-                  <div class="col-12" style="height: 500px;">
-                     <div class="swiper-container pb-4 overflow-hidden"
-                        data-pagination-target="pagination1" style="height: 500px;">
-                        <div class="swiper-wrapper" style="height: 310px;">
-                        
-                        <%for(int i=0; i<10; i++){ %>
-                        
-                           <div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)" style="height: 310px;">
-                              <a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
-                                 <img class="w-100" id="modal_opne_btn"
-                                 src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
-                                 onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
-                              </a>
-                              <span>작성자 닉네임</span><br>
-                              <span>글 제목</span>
-                           </div>
-            
-                           
-                        <%} %>
-                           
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-=======
+
 	<!-- ===============================================-->
 	<!--    Main Content-->
 	<!-- ===============================================-->
@@ -547,7 +507,6 @@ input[type="text"] {
 					</div>
 				</div>
 			</div>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
       </section>
 
