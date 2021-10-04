@@ -156,10 +156,6 @@ body {
 								</ul></li><%}
 	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
 	    	</ul>
-	    	
-	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
-	        <%}%>
 
 	    </nav>
     
