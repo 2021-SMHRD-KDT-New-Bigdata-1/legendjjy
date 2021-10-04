@@ -340,7 +340,7 @@ input[type="text"] {
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
-	ArrayList<entireDiaryVO> today_list = dao.today_diary();
+/* 	ArrayList<entireDiaryVO> today_list = dao.today_diary(); */
 	%>
 
 	<!-- ===============================================-->
@@ -418,7 +418,7 @@ input[type="text"] {
 							<div class="swiper-container pb-4 overflow-hidden"
 								data-pagination-target="pagination1" style="height: 500px;">
 								<div class="swiper-wrapper" style="height: 500px;">
-								<%for(int i=0; i<10; i++){ %>
+<%-- 								<%for(int i=0; i<10; i++){ %>
 									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)" style="height: 310px;">
 										<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
 											<img class="w-100" id="modal_opne_btn"
@@ -428,7 +428,7 @@ input[type="text"] {
 									</div>
 									<div style="width:100%; height: 60px;">작성자 닉네임</div>
 									<div style="width:100%; height: 60px;">글 제목</div>
-								<%} %>
+								<%} %> --%>
 								</div>
 							</div>
 						</div>
