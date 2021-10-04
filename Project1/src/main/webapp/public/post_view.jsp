@@ -40,7 +40,7 @@
 					<td id="writing_view">
 						<table>
 							<tr>
-								<td id="content_nick" colspan='2'><span id="nick_inner">@<%=userdao.findNick(enVO)%></span></td>
+								<td id="content_nick" colspan='2'><span id="nick_inner">@<%=enVO.getUser_email() %></span></td>
 								<td id="content_date" colspan='2'><%=enVO.getDiary_date()%></td>
 							</tr>
 							<tr>
