@@ -103,20 +103,14 @@
 						쓰러가기</a></li>
 				<li><a href="look.jsp">둘러보기</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">스크랩
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩
 						목록</a></li>
 				<li><a
 					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">구독
 						목록</a></li>
 				<li><a href="../publish/book_made.jsp">출판</a></li>
 				<%
-				if (vo == null) {
-				%>
-					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a>
-					</form>
-				<% 
-				}else if (vo != null && vo.getAdmin_yn().equals("n")) {
+				if (vo != null && vo.getAdmin_yn().equals("n")) {
 				%><li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle fw-bold" href="#"
 					id="navbarDropdown" role="button" data-bs-toggle="dropdown"
@@ -162,15 +156,10 @@
 					
 						<div id="<%=user_email%>" onclick="subscribe(this.id)"><button id="content_subscribe">구독하기</button>
 						</div>
-					
 						<%} %>
-					
-
-
 				</div>
 
-				<div
-					style="position: absolute; margin-top: 4px; margin: 100px 0 100px 0;">
+				<div style="position: absolute; margin-top: 4px; margin: 100px 0 100px 0;">
 					<h2>
 						@<%=userdao.findNick(user_email)%>
 						님의 일기장
@@ -178,14 +167,14 @@
 				</div>
 
 			</div>
-			<!-- /.col-lg-3 -->
+			<!-- 다른 사용자 일기 리스트(공개여부 고려) -->
 			<div class="list_wrap">
 				<ul>
 					<%
 					for (int i = 0; i < diary_list.size(); i++) {
 					%>
 					<li class="item" id="<%=diary_list.get(i).getDiary_seq()%>"
-						style="background-color: rgb(245, 242, 235);"><a
+						style="background-color: rgb(245, 242, 235);" onclick="hitsup(this.id)"><a
 						href="post_view.jsp?post_seq=<%=diary_list.get(i).getDiary_seq()%>"><div class="image">
 								<img
 									src="<%=request.getContextPath()%>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email()%>.png"
@@ -205,25 +194,9 @@
 			</div>
 		</div>
 	</main>
-
-	<!-- /.row -->
-
-
-	<!-- /.container -->
-
-	<!-- Footer -->
-	<!--<footer class="py-5 bg-dark">
-    <div class="container">
-      <p class="m-0 text-center text-white">Copyright &copy; Your Website 2019</p>
-    </div>-->
-	<!--/.container -->
-	<!--</footer>-->
-
-	<!-- Bootstrap core JavaScript -->
+	
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<!-- 게시물 팝업, 댓글 기능 js -->
 	<script
 		src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script>
@@ -234,6 +207,7 @@
 	<script src="assets/js/functions-min.js"></script>
 	<script src="assets/js/comment.js"></script>
 	<script type="text/javascript" src="assets/js/popup.js"></script>
+	<!-- 조회수 증가 기능 -->
 	<script>
 		function subscribe(clicked_id) {
 			var post_email = clicked_id;

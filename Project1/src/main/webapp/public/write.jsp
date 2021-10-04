@@ -1,6 +1,6 @@
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.entireDiaryVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
+<%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
@@ -199,7 +199,7 @@ td {
 	    	<ul class="navi_inner2" style="top: 21px; right: -36px; width: 591px;">
 	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
 	            <li ><a href="look.jsp">둘러보기</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">스크랩 목록</a></li>
+	            <li ><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>
 	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">구독 목록</a></li>
 	            <li ><a href="../publish/book_made.jsp">출판</a></li>
 	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
@@ -278,7 +278,7 @@ td {
 										">
 								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
-								<input type="checkbox" name="public_yn" value="y"
+								<input type="checkbox" name="public_yn" value="n"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								<%
 								if (vo == null) {

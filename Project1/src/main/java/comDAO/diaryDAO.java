@@ -320,21 +320,24 @@ public class diaryDAO {
 		return cnt;
 	}
 	
-	public void hits_up(int diary_seq) {
+	public int hits_up(int diary_seq) {
 		conn();
 		
 		String sql = "UPDATE DIARIES SET HITS = HITS + 1 WHERE DIARY_SEQ = ?";
 		
+		int cnt = 0;
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, diary_seq);
 			
+			cnt = psmt.executeUpdate();
 			
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
 			close();
 		}
+		return cnt;
 	}
 	
 	public ArrayList<Integer> find_diary_seq(String email) {

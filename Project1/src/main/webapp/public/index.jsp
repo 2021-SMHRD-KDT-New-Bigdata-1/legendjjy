@@ -1,3 +1,4 @@
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.diaryDAO"%>
@@ -248,6 +249,12 @@ input[type="text"] {
    line-height: 5px;
 }
 
+.cont>p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 250px;
+}
 
 </style>
 
@@ -340,6 +347,7 @@ input[type="text"] {
 
    <%
    usersVO vo = (usersVO) session.getAttribute("vo");
+   usersDAO userdao = new usersDAO();
    diaryDAO dao = new diaryDAO();
    ArrayList<entireDiaryVO> today_list = dao.today_diary();
    %>
@@ -428,8 +436,8 @@ input[type="text"] {
                                  src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
                                  onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
                               </a>
-                              <div style="color: black; margin-bottom: -30px;"><span><%=today_list.get(i).getDiary_title()%></span></div>
-                              <div style="color: black;"><span><%=today_list.get(i).getUser_email() %></span></div>
+                              <div class="cont" style="color: black; margin-bottom: -30px;"><p><%=today_list.get(i).getDiary_title()%></p></div>
+                              <div style="color: black;"><span>@<%=userdao.findNick(today_list.get(i).getUser_email())  %></span></div>
                            </div>
             
                            
@@ -499,7 +507,7 @@ input[type="text"] {
                               style="font-size: 24px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
                               ">
                         <input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
-                        <input type="checkbox" name="public_yn" value="y"
+                        <input type="checkbox" name="public_yn" value="n"
                            style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
                         <%
                         if (vo == null) {

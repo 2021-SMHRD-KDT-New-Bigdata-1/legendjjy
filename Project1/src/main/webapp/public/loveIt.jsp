@@ -148,7 +148,7 @@ body {
 	    	<ul class="navi_inner2" style="right:-60px; width:591px;">
 	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
 	            <li ><a href="look.jsp">둘러보기</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">스크랩 목록</a></li>
+	            <li ><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>
 	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">구독 목록</a></li>
 	            <li ><a href="../publish/book_made.jsp">출판</a></li>
 	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
@@ -187,7 +187,7 @@ body {
 			
 			<ul>
 				<%for (int i=0; i<list.size(); i++){ %>
-				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="hitsup(this.id)">
+				<li class="item item1" id="<%=list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);"  onclick="hitsup(this.id)">
 					<a href="post_view.jsp?post_seq=<%=list.get(i).getDiary_seq() %>"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=list.get(i).getDiary_title()%>.<%=list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div></a>
 					<div class="cont">

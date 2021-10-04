@@ -1,6 +1,8 @@
 package comSERVLET;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,15 +22,23 @@ public class HitsCheckService extends HttpServlet {
 
 		int diary_seq = Integer.parseInt(request.getParameter("post_seq"));
 		
+		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession();
 		usersVO vo = (usersVO)session.getAttribute("vo");
 		diaryDAO dao = new diaryDAO();
 		entireDiaryVO diary_info = dao.select_diary(diary_seq);
 		
+		int cnt = 0;
 		if(vo.getUser_email()==null) {
-			dao.hits_up(diary_seq);
+			cnt = dao.hits_up(diary_seq);
 		}else if(!diary_info.getUser_email().equals(vo.getUser_email())) {
-			dao.hits_up(diary_seq);
+			cnt = dao.hits_up(diary_seq);
+		}
+		
+		if(cnt>0) {
+			out.print(1);
+		}else {
+			out.print(0);
 		}
 	}
 
