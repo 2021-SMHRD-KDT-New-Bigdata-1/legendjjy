@@ -32,7 +32,7 @@ public class LoginService extends HttpServlet {
          response.sendRedirect("public/index.jsp");
       }else {
          response.sendRedirect("public/Login_v2/login.jsp");
-         session.setAttribute("errMsg", "ë¡œê·¸ì¸ì •ë³´ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤");
+         session.setAttribute("errMsg", "·Î±×ÀÎ Á¤º¸°¡ ÀÏÄ¡ÇÏÁö¾Ê½À´Ï´Ù.");
       }
    }
 

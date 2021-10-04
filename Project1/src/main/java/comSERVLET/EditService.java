@@ -36,12 +36,12 @@ public class EditService extends HttpServlet {
          if(pass1.equals(pass2)) {
             int cnt = dao.editPass(pass2, user_email);
               out.print("<script>");
-              out.print("alert('ì„±ê³µì ìœ¼ë¡œ ë¹„ë°€ë²ˆí˜¸ê°€ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤');");
+              out.print("alert('ºñ¹Ğ¹øÈ£°¡ º¯°æµÇ¾ú½À´Ï´Ù.');");
               out.print("location.href = 'public/Login_v2/edit.html'");
               out.print("</script>");
          }else {
             response.sendRedirect("public/Login_v2/edit.html");
-            session.setAttribute("errPassMsg", "ë¹„ë°€ë²ˆí˜¸ê°€ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤");
+            session.setAttribute("errPassMsg", "ºñ¹Ğ¹øÈ£°¡ ÀÏÄ¡ÇÏÁö¾Ê½À´Ï´Ù.");
          }
       }else if(edit.equals("nick")) {
          String user_nick = request.getParameter("nickname");
@@ -49,11 +49,11 @@ public class EditService extends HttpServlet {
          
          if(user_nick.equals(vo.getUser_nick())) {
             response.sendRedirect("public/Login_v2/editNick.jsp");
-            session.setAttribute("errNickMsg", "ê¸°ì¡´ì˜ ë‹‰ë„¤ì„ê³¼ ì¼ì¹˜í•©ë‹ˆë‹¤");
+            session.setAttribute("errNickMsg", "ÀÌÀü ´Ğ³×ÀÓ°ú °°½À´Ï´Ù.");
          }else {
             vo.setUser_nick(user_nick);
               out.print("<script>");
-              out.print("alert('ì„±ê³µì ìœ¼ë¡œ ë‹‰ë„¤ì„ì´ ë³€ê²½ë˜ì—ˆìŠµë‹ˆë‹¤');");
+              out.print("alert('´Ğ³×ÀÓÀÌ º¯°æµÇ¾ú½À´Ï´Ù.');");
               out.print("location.href = 'public/Login_v2/edit.html'");
               out.print("</script>");
          }

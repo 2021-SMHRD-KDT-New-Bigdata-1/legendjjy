@@ -87,18 +87,35 @@
 				</tr>
 			</tbody>
 		</table>
+		<!-- ´ñ±Û È°¼ºÈ­ Ã¢ -->
 		<%
 		if (enVO.getComment_yn().equals("y")) {
 		%>
-		
+		<div id="featured" class="blurb" style="position: relative;">
+			<div style="text-align: right; margin-right: 10%;">
+				<button
+					style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;">
+					<img src="letters/write_icon2.png" alt=""
+						style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
+				</button>
+			</div>
+
+			<div id="form-commentInfo">
+				<div id="comment-count">
+					´ñ±Û <span id="count">0</span>
+				</div>
+				<input id="comment-input" placeholder="´ñ±Û ÀÛ¼º">
+				<button id="submit">OK</button>
+			</div>
+			<div id="comments" style="margin-top: 20px;"></div>
+		</div>
 	</div>
 	<%
 	}
 	%>
-	
-	
-		
-		<div id="disqus_thread"></div>
+	<!-- ´ñ±Û È°¼ºÈ­ Ã¢ -->
+
+<!-- 		<div id="disqus_thread"></div>
 		<script>
 		    /** 
 		    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
@@ -116,7 +133,7 @@
 		    (d.head || d.body).appendChild(s);
 		    })();
 		</script>
-		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> -->
 		
 		
 		

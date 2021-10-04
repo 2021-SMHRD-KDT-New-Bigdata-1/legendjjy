@@ -104,6 +104,13 @@ body {
     font-size: 18px;
     line-height: 20px;
 }
+
+.cont>p {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	width: 250px;
+}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
@@ -156,10 +163,6 @@ body {
 								</ul></li><%}
 	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">유저관리</a></li><%} %>
 	    	</ul>
-	    	
-	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">로그인</a></form>
-	        <%}%>
 
 	    </nav>
     
@@ -184,8 +187,9 @@ body {
 			
 			<ul>
 				<%for (int i=0; i<list.size(); i++){ %>
-				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image"><%=list.get(i).getDiary_image() %></div>
+				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="hitsup(this.id)">
+					<a href="post_view.jsp?post_seq=<%=list.get(i).getDiary_seq() %>"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=list.get(i).getDiary_title()%>.<%=list.get(i).getUser_email() %>.png"
+						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div></a>
 					<div class="cont">
 						<strong>@<%=userdao.findNick(list.get(i).getUser_email()) %></strong>
 						<p><%=list.get(i).getDiary_title() %></p>
@@ -198,12 +202,23 @@ body {
 		</div>
 </main>
 
-	<!-- 게시물 팝업, 댓글 기능 js -->
     <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
+        <!-- 조회수기능 -->
+	<script>
+		function hitsup(clicked_id){
+			var seq = clicked_id;
+			$.ajax({
+				type: "POST",
+				url: "../HitsCheckService",
+				data: {"post_seq":seq},
+				async: false
+			})
+		}
+	</script>
 
 </body>
 </html>

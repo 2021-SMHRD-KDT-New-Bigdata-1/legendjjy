@@ -107,7 +107,7 @@
 			<div id="head" class="all_2" >
 				<%for(int i=0; i<follow_list.size(); i++){%>
 				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">@<%=userdao.findNick(follow_list.get(i).getFollow_email()) %></li>
+					<li class="fl tc w500 list t_line lt_line"><a href="../userprofile.jsp?user_email=<%=follow_list.get(i).getFollow_email()%>">@<%=userdao.findNick(follow_list.get(i).getFollow_email()) %></a></li>
 					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
 					<li class="fl tc w120 list t_line lt_line"><a href="../../DeleteFollow?follow_seq=<%=follow_list.get(i).getFollow_seq() %>">√Îº“</a></li>
 					
