@@ -359,51 +359,5 @@ public class usersDAO {
 		}
 		return cnt;
 	}
-	
-	public ArrayList<entireDiaryVO> loveit_list(int seq ){
-		conn();
-		
-<<<<<<< HEAD
-		String sql = "SELECT D.DIARY_SEQ, D.DIARY_TITLE, D.DIATY_IMAGE, D.DIARY_CONTENT, D.USER_EMAIL, D.HASH_TAG, D.OPEN_YN, D.NOMMENT_YN, D.HITS, D.AD_SEQ FROM DIARIES INNER JOIN MYSCAPS ON D.DIARY_SEQ = M.SCRAP_SEQ WHERE USER_EMAIL;" ;
-=======
-		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.DAIRY_SEQ WHERE USER_EMAIL = ?";
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
-			
-		ArrayList<entireDiaryVO> loveit_list = new ArrayList<entireDiaryVO>();
-		try {
-			
-			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1, seq);
-			
-			rs = psmt.executeQuery();
-			
-			entireDiaryVO vo = null;
-			
-			while (rs.next()){
-				int diary_seq = rs.getInt(1);
-				String diary_title = rs.getString(2);
-				String diary_date = rs.getString(3);
-				String diary_image = rs.getString(4);
-				String diary_content = rs.getString(5);
-				String user_email = rs.getString(6);
-				String hash_tag = rs.getString(7);		
-				String open_yn = rs.getString(8);
-				String comment_yn = rs.getString(9);
-				int hits = rs.getInt(10);
-				int ad_seq = rs.getInt(11);
-				
-				
-				vo = new entireDiaryVO(diary_seq, diary_title, diary_date, diary_image, diary_content, 
-						user_email, hash_tag, open_yn, comment_yn, hits, ad_seq);
-				
-				loveit_list.add(vo);
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		return loveit_list;		
-			
-		}
+
 }
