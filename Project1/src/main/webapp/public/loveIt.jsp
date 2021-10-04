@@ -1,3 +1,6 @@
+<%@page import="comVO.loveitVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
@@ -107,6 +110,8 @@ body {
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	usersDAO dao = new usersDAO();
+	ArrayList<loveitVO> loveit_list = dao.loveit_list(vo.getUser_email());
 	%>
 
 
@@ -169,80 +174,18 @@ body {
 		
 
 		<div class="list_wrap">
+			<%for (int i=0; i<loveit_list.size(); i++){ %>
 			<ul>
 				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image">사진</div>
+					<div class="image"><%=loveit_list.get(i).getDiary_image() %></div>
 					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item2" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item3" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item4" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item5" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item6" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item7" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item8" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item9" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
+						<strong><%=loveit_list.get(i).getUser_email() %></strong>
+						<p><%=loveit_list.get(i).getDiary_content() %></p>
+						<span class="hits"><%=loveit_list.get(i).getHits() %></span> <span class="date"><%=loveit_list.get(i).getDiary_date() %></span>
 					</div>
 				</li>
 			</ul>
+			<%} %>
 		</div>
 </main>
 
