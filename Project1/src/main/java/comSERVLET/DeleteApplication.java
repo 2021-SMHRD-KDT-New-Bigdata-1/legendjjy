@@ -8,11 +8,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import comDAO.usersDAO;
-import comVO.appVO;
-import comVO.usersVO;
 
 @WebServlet("/DeleteApplication")
 public class DeleteApplication extends HttpServlet {

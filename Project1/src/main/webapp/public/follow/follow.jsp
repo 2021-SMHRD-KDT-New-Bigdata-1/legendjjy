@@ -1,3 +1,5 @@
+<%@page import="comDAO.diaryDAO"%>
+<%@page import="comVO.entireDiaryVO"%>
 <%@page import="comVO.followVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.usersDAO"%>
@@ -44,8 +46,10 @@
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
 		usersVO vo = (usersVO)session.getAttribute("vo");
-		usersDAO dao = new usersDAO();
-		ArrayList<followVO> follow_list = dao.follow_list(vo) ;
+		usersDAO userdao = new usersDAO();
+		diaryDAO dao = new diaryDAO();
+		ArrayList<followVO> follow_list = userdao.follow_list(vo);
+		ArrayList<entireDiaryVO> diary_list = dao.look_diary();
 	%>
 
   <!-- ===============================================-->
@@ -88,14 +92,14 @@
     </nav>
     
 	<section style="padding-top: 140px; padding-bottom: 100px;">
-			<h3>@legendjjy 님의 구독 목록</h3>
+			<h3>@<%=vo.getUser_nick() %> 님의 구독 목록</h3>
 
 			<div class="all" style="position: fixed;">
 			
 			<ul id="head" style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray; width:750px">
 				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">닉네임</li>
 				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
-				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177); width: 140px;">팔로우 취소</li>
+				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177); width: 140px;">구독 취소</li>
 			</ul>
 			
 			</div>  
@@ -103,7 +107,7 @@
 			<div id="head" class="all_2" >
 				<%for(int i=0; i<follow_list.size(); i++){%>
 				<ul class="board">
-					<li class="fl tc w500 list t_line lt_line">@<%=vo.getUser_nick() %></li>
+					<li class="fl tc w500 list t_line lt_line">@<%=userdao.findNick(follow_list.get(i).getFollow_email()) %></li>
 					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
 					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
 				</ul>

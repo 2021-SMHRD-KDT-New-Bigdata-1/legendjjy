@@ -29,6 +29,7 @@
 	diaryDAO dao = new diaryDAO();
 	int post_seq = Integer.parseInt(request.getParameter("post_seq"));
 	entireDiaryVO enVO = dao.select_diary(post_seq);
+	String hashtag = "";
 	%>
 	<div class="content">
 		<table class="post_table">
@@ -49,7 +50,8 @@
 								<td id="content_content" colspan='4'><%=enVO.getDiary_content()%></td>
 							</tr>
 							<tr>
-								<td id="content_tag" colspan='4'><%=enVO.getHash_tag()%></td>
+							<%if(enVO.getHash_tag()!=null){hashtag=enVO.getHash_tag();}%>
+								<td id="content_tag" colspan='4'><%=hashtag%></td>
 							</tr>
 							<tr>
 								<td id="content_hits">조회수 <%=enVO.getHits()%></td>
@@ -63,7 +65,7 @@
 									href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq()%>"><button
 											id="content_modify">수정하기</button></a></td>
 								<td><a onclick="return confirm('정말로 삭제하시겠습니까?')"
-									href="/Project1/src/main/java/comSERVLET/DeleteDiaryService.java?diary_seq=<%=enVO.getDiary_seq()%>"><button
+									href="../DeleteDiaryService?diary_seq=<%=enVO.getDiary_seq()%>"><button
 											id="content_modify">삭제하기</button></a></td>
 								<%
 								} else {
@@ -88,28 +90,39 @@
 		<%
 		if (enVO.getComment_yn().equals("y")) {
 		%>
-		<div id="featured" class="blurb" style="position: relative;">
-			<div style="text-align: right; margin-right: 10%;">
-				<button
-					style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;">
-					<img src="letters/write_icon2.png" alt=""
-						style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-				</button>
-			</div>
-
-			<div id="form-commentInfo">
-				<div id="comment-count">
-					댓글 <span id="count">0</span>
-				</div>
-				<input id="comment-input" placeholder="댓글 작성">
-				<button id="submit">OK</button>
-			</div>
-			<div id="comments" style="margin-top: 20px;"></div>
-		</div>
+		
 	</div>
 	<%
 	}
 	%>
+	
+	
+		
+		<div id="disqus_thread"></div>
+		<script>
+		    /** 
+		    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+		    /*
+		    var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		    };
+		    */
+		    (function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = 'https://legend-project.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		
+		
+		
+		
+	
 	<button id="close_button" onclick="history.back()">X</button>
 	<script
 		src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
@@ -134,7 +147,7 @@
 					alert('스크랩되었습니다');
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
-					alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+					alert("존재하지 않는 게시물입니다.");
 				}
 			})
 		}
@@ -152,20 +165,9 @@
 					
 				},
 				error : function(jqXHR, textStatus, errorThrown) {
-					alert("에러 발생~~ \n" + textStatus + " : " + errorThrown);
+					alert("존재하지 않는 게시물입니다.");
 				}
 			})
-		}
-	</script>
-	<script>
-		function del() {
-			const del = confirm("해당 게시글을 삭제하시겠습니까?");
-			if (del) {
-				location.href = 'DeleteDiaryService?diary_seq='
-						+
-	<%=enVO.getDiary_seq()%>
-		;
-			}
 		}
 	</script>
 </body>

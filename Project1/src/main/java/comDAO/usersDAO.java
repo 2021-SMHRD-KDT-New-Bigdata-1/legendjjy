@@ -269,7 +269,7 @@ public class usersDAO {
 	  }
 	
 	
-	public String findNick(entireDiaryVO vo) {
+	public String findNick(String email) {
 		conn();
 		
 		String sql = "SELECT USER_NICK FROM USERS WHERE USER_EMAIL = ?";
@@ -277,7 +277,7 @@ public class usersDAO {
 		String result = "";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getUser_email());
+			psmt.setString(1, email);
 			
 			rs = psmt.executeQuery();
 			
@@ -339,7 +339,11 @@ public class usersDAO {
 	public ArrayList<entireDiaryVO> loveit_list(int seq ){
 		conn();
 		
+<<<<<<< HEAD
 		String sql = "SELECT D.DIARY_SEQ, D.DIARY_TITLE, D.DIATY_IMAGE, D.DIARY_CONTENT, D.USER_EMAIL, D.HASH_TAG, D.OPEN_YN, D.NOMMENT_YN, D.HITS, D.AD_SEQ FROM DIARIES INNER JOIN MYSCAPS ON D.DIARY_SEQ = M.SCRAP_SEQ WHERE USER_EMAIL;" ;
+=======
+		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.DAIRY_SEQ WHERE USER_EMAIL = ?";
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 			
 		ArrayList<entireDiaryVO> loveit_list = new ArrayList<entireDiaryVO>();
 		try {
