@@ -88,7 +88,7 @@
     </nav>
     
 	<section style="padding-top: 140px; padding-bottom: 100px;">
-			<h3>@legendjjy 님의 구독 목록</h3>
+			<h3>@<%=vo.getUser_nick() %> 님의 구독 목록</h3>
 
 			<div class="all" style="position: fixed;">
 			
