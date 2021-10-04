@@ -96,10 +96,10 @@
 
 			<div class="all" style="position: fixed;">
 			
-			<ul id="head" style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray; width:750px">
+			<ul id="head" style="margin-top: 150px; padding-left:0px; width:750px">
 				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">닉네임</li>
 				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">이메일</li>
-				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177); width: 140px;">구독 취소</li>
+				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">구독 취소</li>
 			</ul>
 			
 			</div>  
@@ -109,7 +109,7 @@
 				<ul class="board">
 					<li class="fl tc w500 list t_line lt_line">@<%=userdao.findNick(follow_list.get(i).getFollow_email()) %></li>
 					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
-					<li id="delete" class="fl tc w120 list t_line lt_line"><a href="../../DeleteFollow?follow_seq=<%=follow_list.get(i).getFollow_seq() %>">취소</a></li>
+					<li class="fl tc w120 list t_line lt_line"><a href="../../DeleteFollow?follow_seq=<%=follow_list.get(i).getFollow_seq() %>">취소</a></li>
 					
 				</ul>
 				<%} %>
