@@ -1,3 +1,4 @@
+<%@page import="comVO.entireDiaryVO"%>
 <%@page import="comVO.loveitVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.usersDAO"%>
@@ -111,7 +112,7 @@ body {
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	usersDAO dao = new usersDAO();
-	ArrayList<loveitVO> loveit_list = dao.loveit_list(vo.getUser_email());
+	ArrayList<entireDiaryVO> loveit_list = dao.loveit_list();
 	%>
 
 
