@@ -30,7 +30,7 @@ public class Application extends HttpServlet {
       
       if(!user_email.equals(vo.getUser_email())) {
          out.print("<script>");
-         out.print("alert('ì‹ ì²­í•œ ì´ë©”ì¼ê³¼ ë¡œê·¸ì¸í•œ ì´ë©”ì¼ì´ ì¼ì¹˜í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤');");
+         out.print("alert('½ÅÃ» ÀÌ¸ŞÀÏÀÌ ·Î±×ÀÎ ÀÌ¸ŞÀÏ°ú ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.');");
          out.print("location.href = 'publish/book_made.jsp'");
          out.print("</script>");
       }
@@ -40,12 +40,12 @@ public class Application extends HttpServlet {
       
       if(cnt>0) {
          out.print("<script>");
-         out.print("alert('ì„±ê³µì ìœ¼ë¡œ ì‹ ì²­ì´ ë˜ì—ˆìŠµë‹ˆë‹¤');");
+         out.print("alert('½ÅÃ»ÀÌ¿Ï·áµÇ¾ú½À´Ï´Ù.');");
          out.print("location.href = 'publish/book_made.jsp'");
          out.print("</script>");
       }else {
          out.print("<script>");
-         out.print("alert('ì‹ ì²­ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤. ë‚´ìš©ì„ í™•ì¸í•´ì£¼ì„¸ìš”');");
+         out.print("alert('´Ù½Ã ½ÅÃ»ÇØÁÖ¼¼¿ä.');");
          out.print("location.href = 'publish/book_made.jsp'");
          out.print("</script>");
       }
