@@ -337,12 +337,21 @@ input[type="text"] {
    }
 </script>
 <body data-bs-spy="scroll" data-bs-target="#navbar">
+<<<<<<< HEAD
    <%
    usersVO vo = (usersVO) session.getAttribute("vo");
    diaryDAO dao = new diaryDAO();
    ArrayList<entireDiaryVO> today_list = dao.today_diary();
    %>
+=======
+	<%
+	usersVO vo = (usersVO) session.getAttribute("vo");
+	diaryDAO dao = new diaryDAO();
+	ArrayList<entireDiaryVO> today_list = dao.today_diary();
+	%>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
+<<<<<<< HEAD
    <!-- ===============================================-->
    <!--    Main Content-->
    <!-- ===============================================-->
@@ -440,6 +449,105 @@ input[type="text"] {
                </div>
             </div>
          </div>
+=======
+	<!-- ===============================================-->
+	<!--    Main Content-->
+	<!-- ===============================================-->
+	<main class="main" id="top">
+		<nav
+			class="navbar navbar-expand-lg navbar-light fixed-top py-3 d-block"
+			data-navbar-on-scroll="data-navbar-on-scroll">
+			<div class="container">
+				<a class="navbar-brand d-inline-flex" href="index.jsp"><img
+					class="card-img" src="assets/img/gallery/logo_small.png" alt="..." /><span
+					class="fs-2 fw-bold text-primary ms-2">LEGEN<span
+						class="text-warning">D</span></span></a>
+				<button class="navbar-toggler collapsed" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div
+					class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0"
+					id="navbarSupportedContent">
+					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							aria-current="page"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">일기
+								쓰러가기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
+							href="look.jsp">둘러보기</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">구독 목록</a></li>
+						<li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="../publish/book_made.jsp">출판</a></li>
+						<%
+						if (vo != null && vo.getAdmin_yn().equals("n")) {
+						%>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle fw-bold" href="#"
+							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
+						</a>
+							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
+								<li><a class="dropdown-item fw-bold" href="profile.jsp">내 프로필</a></li>
+								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">개인정보수정</a></li>
+								<li><a class="dropdown-item fw-bold" href="../LogoutService">로그아웃</a></li>
+							</ul></li>
+						<%
+						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
+						%><li class="nav-item px-2"><a class="nav-link fw-bold"
+							href="#faqs">유저관리</a></li>
+						<%
+						}
+						%>
+					</ul>
+					<%
+					if (vo == null) {
+					%>
+					<form class="ms-lg-5">
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">로그인</a>
+					</form>
+					<% } %>
+				</div>
+			</div>
+		</nav>
+		<section class="py-0" id="header">
+			<div class="container">
+				<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
+				<h1 style="padding-bottom: 70px">오늘의 일기</h1>
+				<div class="container-fluid" style="height: 500px;">
+					<div class="row gx-2" style="height: 500px;">
+						<div class="col-12" style="height: 500px;">
+							<div class="swiper-container pb-4 overflow-hidden"
+								data-pagination-target="pagination1" style="height: 500px;">
+								<div class="swiper-wrapper" style="height: 310px;">
+								
+								<%for(int i=0; i<10; i++){ %>
+								
+									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)" style="height: 310px;">
+										<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
+											<img class="w-100" id="modal_opne_btn"
+											src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
+											onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
+										</a>
+										<span>작성자 닉네임</span><br>
+										<span>글 제목</span>
+									</div>
+				
+									
+								<%} %>
+									
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 
       </section>
 
