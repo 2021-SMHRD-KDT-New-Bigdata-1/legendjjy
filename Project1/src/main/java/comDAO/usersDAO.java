@@ -7,8 +7,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import comVO.appVO;
+import comVO.diaryVO;
 import comVO.entireDiaryVO;
 import comVO.followVO;
+import comVO.loveitVO;
 import comVO.usersVO;
 
 public class usersDAO {
@@ -329,4 +331,38 @@ public class usersDAO {
 			close();
 		}
 	}
+	
+	public ArrayList<loveitVO> loveit_list(String users_email ){
+		conn();
+		
+		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.SCRAP_SEQ WHERE USER_EMAIL = ?";
+			
+		ArrayList<loveitVO> loveit_list = new ArrayList<loveitVO>();
+		try {
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, users_email);
+			
+			rs = psmt.executeQuery();
+			
+			loveitVO vo = null;
+			while (rs.next()){
+				String diary_image = rs.getString(1);
+				String user_email = rs.getString(2);;
+				String diary_content = rs.getString(3);
+				int hits = rs.getInt(4);
+				String diary_date = rs.getString(5);
+				
+				vo = new loveitVO(diary_image, users_email, diary_content, hits, diary_date);
+				
+				loveit_list.add(vo);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return loveit_list;		
+			
+		}
 }
