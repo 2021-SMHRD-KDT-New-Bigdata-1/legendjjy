@@ -417,18 +417,39 @@ input[type="text"] {
 						<div class="col-12" style="height: 500px;">
 							<div class="swiper-container pb-4 overflow-hidden"
 								data-pagination-target="pagination1" style="height: 500px;">
+<<<<<<< HEAD
 								<div class="swiper-wrapper" style="height: 500px;">
 <%-- 								<%for(int i=0; i<10; i++){ %>
+=======
+								<div class="swiper-wrapper" style="height: 310px;">
+								
+								<%for(int i=0; i<10; i++){ %>
+								
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)" style="height: 310px;">
 										<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
 											<img class="w-100" id="modal_opne_btn"
 											src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
 											onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
 										</a>
+										<span>작성자 닉네임</span><br>
+										<span>글 제목</span>
 									</div>
+<<<<<<< HEAD
 									<div style="width:100%; height: 60px;">작성자 닉네임</div>
 									<div style="width:100%; height: 60px;">글 제목</div>
 								<%} %> --%>
+=======
+				
+									
+								<%} %>
+								
+									<!-- <div </div>
+									
+									<div </div>
+									 -->
+									
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 								</div>
 							</div>
 						</div>
