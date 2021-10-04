@@ -87,7 +87,7 @@ input[type="text"] {
 {
   background-color: burlywood;
   padding:20px 0 12px;
-  font-size:15px;
+  font-size:20px;
   line-height:21px;
   color:#737373;
 }
@@ -474,29 +474,29 @@ input[type="text"] {
 								style="display: none;">
 								<button class="button" type="button"
 								onclick="document.all.file.click()"
-								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
+								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 30px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 						</td>
 						<td style=" border: 1px solid silver; border-radius: 20px;">
-							<div style="width: 640px; font-size: 20px;">
+							<div style="width: 640px; font-size: 32px;">
 								<div class="form-group">
-									<br> <input type="text" class="form-control" id="title"
+									<br> <input type="text" class="`" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 32px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
 								</div>
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
-										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 28px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 24px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
 								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
@@ -506,13 +506,13 @@ input[type="text"] {
 								if (vo == null) {
 								%>
 								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
-									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">등록</button>
 								<%
 								} else {
 								%>
 								<button type="submit" class="btn btn-default" id="btn_submit"
-									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">등록</button>
 								<%
 								}
