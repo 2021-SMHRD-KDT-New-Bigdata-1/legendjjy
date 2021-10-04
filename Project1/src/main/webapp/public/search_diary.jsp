@@ -273,7 +273,7 @@
 						<a href="post_view.jsp?post_seq=<%=diary_list.get(i).getDiary_seq() %>"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
-							<strong>@<%=userdao.findNick(diary_list.get(i)) %></strong>
+							<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email()) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
 							<span class="hits">Á¶È¸¼ö <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
 						</div></a>
