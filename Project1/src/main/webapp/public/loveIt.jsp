@@ -1,3 +1,5 @@
+<%@page import="comVO.entireDiaryVO"%>
+<%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.loveitVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.usersDAO"%>
@@ -110,8 +112,13 @@ body {
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
-	usersDAO dao = new usersDAO();
-	ArrayList<loveitVO> loveit_list = dao.loveit_list(vo.getUser_email());
+	diaryDAO dao = new diaryDAO();
+	usersDAO userdao = new usersDAO();
+	ArrayList<Integer> seq_list = dao.find_diary_seq(vo.getUser_email());
+	ArrayList<entireDiaryVO> list = new ArrayList<entireDiaryVO>();
+	for(int i =0; i<seq_list.size(); i++){
+		list.add(dao.select_diary(seq_list.get(i)));
+	}
 	%>
 
 
@@ -174,18 +181,20 @@ body {
 		
 
 		<div class="list_wrap">
-			<%for (int i=0; i<loveit_list.size(); i++){ %>
+			
 			<ul>
+				<%for (int i=0; i<list.size(); i++){ %>
 				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image"><%=loveit_list.get(i).getDiary_image() %></div>
+					<div class="image"><%=list.get(i).getDiary_image() %></div>
 					<div class="cont">
-						<strong><%=loveit_list.get(i).getUser_email() %></strong>
-						<p><%=loveit_list.get(i).getDiary_content() %></p>
-						<span class="hits"><%=loveit_list.get(i).getHits() %></span> <span class="date"><%=loveit_list.get(i).getDiary_date() %></span>
+						<strong>@<%=userdao.findNick(list.get(i)) %></strong>
+						<p><%=list.get(i).getDiary_title() %></p>
+						<span class="hits">Á¶È¸¼ö <%=list.get(i).getHits() %></span> <span class="date"><%=list.get(i).getDiary_date() %></span>
 					</div>
 				</li>
+				<%} %>
 			</ul>
-			<%} %>
+			
 		</div>
 </main>
 
