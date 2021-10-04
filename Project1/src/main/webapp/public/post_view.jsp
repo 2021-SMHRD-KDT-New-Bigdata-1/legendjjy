@@ -36,7 +36,7 @@
 			<tbody class="post_tbody">
 				<tr class="post_view">
 					<td id="img_view"><img src="<%=request.getContextPath() %>/upload/<%=enVO.getDiary_title()%>.<%=enVO.getUser_email() %>.png" alt=""
-						onerror="this.src='assets/img/basicIMG.png'" style="width: 100%; height: auto; object-fit:cover;"></td>
+						onerror="this.src='assets/img/basicIMG.png'" style="width: 100%; height: auto; object-fit:cover; margin-bottom: -13px;"></td>
 					<td id="writing_view">
 						<table>
 							<tr>
