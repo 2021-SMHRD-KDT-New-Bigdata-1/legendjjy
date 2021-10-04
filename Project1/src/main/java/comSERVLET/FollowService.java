@@ -19,7 +19,7 @@ public class FollowService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("EUC-KR");
 		String follow_email = request.getParameter("follow_email");
 
 		PrintWriter out = response.getWriter();

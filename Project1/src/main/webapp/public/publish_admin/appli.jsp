@@ -2,8 +2,8 @@
 <%@page import="comVO.appVO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -61,33 +61,33 @@
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../write.jsp<%}%>">ÀÏ±â ¾²·¯°¡±â</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="look.jsp">µÑ·¯º¸±â</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../index.jsp<%}%>">°ü½É</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">ÆÈ·Î¿ì</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">ÃâÆÇ</a></li>
-            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li><%}
-            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">À¯Àú°ü¸®</a></li><%} %>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../write.jsp<%}%>">ì¼ê¸° ì“°ëŸ¬ê°€ê¸°</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../index.jsp<%}%>">ê´€ì‹¬</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">íŒ”ë¡œìš°</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">ì¶œíŒ</a></li>
+            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="../Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li><%}
+            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">ìœ ì €ê´€ë¦¬</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">·Î±×ÀÎ</a></form>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">ë¡œê·¸ì¸</a></form>
           <%}else{ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">·Î±×¾Æ¿ô</a></form>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></form>
           <%} %>
         </div>
       </div>
     </nav>
 	<section style="width:100%; padding-top: 180px; padding-bottom: 100px; ">
-			<h3>ÃâÆÇ¿äÃ» ¸ñ·Ï</h3>
+			<h3>ì¶œíŒìš”ì²­ ëª©ë¡</h3>
 
 			<div class="all" style="position: fixed;">
 				
 			<ul style="margin-top: 150px; padding-left:0px; box-shadow: 5px 5px 5px gray;">
-				<li class="fl tc w60 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">¼ø¹ø</li>
-				<li class="fl tc w380 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ÀÌ¸ÞÀÏ</li>
-				<li class="fl tc w760 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">¿äÃ»»çÇ×</li>
-				<li class="fl tc w150 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">µðÀÚÀÎ</li>
-				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">¿äÃ»¿Ï·á</li>
+				<li class="fl tc w60 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ìˆœë²ˆ</li>
+				<li class="fl tc w380 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ì´ë©”ì¼</li>
+				<li class="fl tc w760 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ìš”ì²­ì‚¬í•­</li>
+				<li class="fl tc w150 t_line lt_line title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ë””ìžì¸</li>
+				<li class="fl tc t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ìš”ì²­ì™„ë£Œ</li>
 			</ul>
 			</div>  
 			
@@ -100,7 +100,7 @@
 					<li class="fl tc w380 t_line lt_line title1"><%=app_list.get(i).getUser_email() %></li>
 					<li class="fl tc w760 t_line lt_line title1" ><%=app_list.get(i).getRequire() %></li>
 					<li class="fl tc w150 t_line lt_line title1" ><%=app_list.get(i).getDesign() %></li>
-					<li id="delete" class="fl tc t_line lt_line delete title1" type="button" onclick="location.href='../../DeleteApplication?app_seq=<%=app_list.get(i).getApp_seq() %>'" >È®ÀÎ</li>
+					<li id="delete" class="fl tc t_line lt_line delete title1" type="button" onclick="location.href='../../DeleteApplication?app_seq=<%=app_list.get(i).getApp_seq() %>'" >í™•ì¸</li>
 				</ul>
 				<%}%>
 				

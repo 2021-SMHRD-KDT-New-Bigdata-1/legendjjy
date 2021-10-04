@@ -3,20 +3,20 @@
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>post_view</title>
 
-<!-- ╟т╫ц╠ш ╨╦╠Б css -->
+<!-- Й╡▄Л▀°Й╦─ КЁ╢Й╦╟ css -->
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/comment.css">
 <link rel="stylesheet" href="assets/css/popup.css">
 
-<!-- фЫф╝ -->
+<!-- М▐╟М┼╦ -->
 <link
 	href="https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
@@ -54,7 +54,7 @@
 								<td id="content_tag" colspan='4'><%=hashtag%></td>
 							</tr>
 							<tr>
-								<td id="content_hits">а╤х╦╪Ж <%=enVO.getHits()%></td>
+								<td id="content_hits">Л║╟М ▄Л┬≤ <%=enVO.getHits()%></td>
 								<%
 								if (vo == null) {
 								%>
@@ -63,17 +63,17 @@
 								%>
 								<td><a
 									href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq()%>"><button
-											id="content_modify">╪Жа╓го╠Б</button></a></td>
-								<td><a onclick="return confirm('а╓╦╩╥н ╩Ха╕го╫ц╟з╫ю╢о╠Н?')"
+											id="content_modify">Л┬≤Л═∙М∙≤Й╦╟</button></a></td>
+								<td><a onclick="return confirm('Л═∙К╖░К║° Л┌╜Л═°М∙≤Л▀°Й╡═Л┼╣К▀┬Й╧▄?')"
 									href="../DeleteDiaryService?diary_seq=<%=enVO.getDiary_seq()%>"><button
-											id="content_modify">╩Ха╕го╠Б</button></a></td>
+											id="content_modify">Л┌╜Л═°М∙≤Й╦╟</button></a></td>
 								<%
 								} else {
 								%>
 								<td id="<%=enVO.getDiary_seq()%>" onclick="scrap(this.id)"><button
-										id="content_scrap">╫╨е╘╥╕го╠Б</button></td>
+										id="content_scrap">Л┼╓М│╛К·╘М∙≤Й╦╟</button></td>
 								<td id="<%=enVO.getUser_email()%>" onclick="subscribe(this.id)"><button
-										id="content_subscribe">╠╦╣╤го╠Б</button></td>
+										id="content_subscribe">Й╣╛К▐┘М∙≤Й╦╟</button></td>
 								<%
 								}
 								%>
@@ -87,7 +87,7 @@
 				</tr>
 			</tbody>
 		</table>
-		<!-- ╢Я╠ш х╟╪╨х╜ ц╒ -->
+		<!-- К▄⌠Й╦─ М≥°Л└╠М≥■ Л╟╫ -->
 		<%
 		if (enVO.getComment_yn().equals("y")) {
 		%>
@@ -102,9 +102,9 @@
 
 			<div id="form-commentInfo">
 				<div id="comment-count">
-					╢Я╠ш <span id="count">0</span>
+					К▄⌠Й╦─ <span id="count">0</span>
 				</div>
-				<input id="comment-input" placeholder="╢Я╠ш юш╪╨">
+				<input id="comment-input" placeholder="К▄⌠Й╦─ Л·▒Л└╠">
 				<button id="submit">OK</button>
 			</div>
 			<div id="comments" style="margin-top: 20px;"></div>
@@ -113,7 +113,7 @@
 	<%
 	}
 	%>
-	<!-- ╢Я╠ш х╟╪╨х╜ ц╒ -->
+	<!-- К▄⌠Й╦─ М≥°Л└╠М≥■ Л╟╫ -->
 
 <!-- 		<div id="disqus_thread"></div>
 		<script>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,17 +48,17 @@
 			<div class="wrap-login100">
 				<form action="../../EditService?edit=pass" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
-						ºñ¹Ð¹øÈ£º¯°æ
+						ë¹„ë°€ë²ˆí˜¸ë³€ê²½
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä">
+					<div class="wrap-input100 validate-input" data-validate="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
 						<input class="input100" type="password" name="pass1">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
-					<div class="wrap-input100 validate-input" data-validate="ºñ¹Ð¹øÈ£¸¦ ÀçÀÔ·ÂÇØÁÖ¼¼¿ä">
+					<div class="wrap-input100 validate-input" data-validate="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž¬ìž…ë ¥í•´ì£¼ì„¸ìš”">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
@@ -71,7 +71,7 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" class="login100-form-btn">
-								ºñ¹Ð¹øÈ£ º¯°æÇÏ±â
+								ë¹„ë°€ë²ˆí˜¸ ë³€ê²½í•˜ê¸°
 							</button>
 						</div>
 					</div>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,12 +45,12 @@
 						Welcome
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="�̸����� Ȯ�����ּ���">
+					<div class="wrap-input100 validate-input" data-validate="이메일을 확인해주세요">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="��й�ȣ�� �Է����ּ���">
+					<div class="wrap-input100 validate-input" data-validate="비밀번호를 입력해주세요">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
@@ -58,7 +58,7 @@
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="�г����� 2~10�� ���� �Ǵ� �����̾�� �մϴ�">
+					<div class="wrap-input100 validate-input" data-validate="닉네임은 2~10자 문자 또는 숫자이어야 합니다">
 						<input class="input100" type="text" name="nickname">
 						<span class="focus-input100" data-placeholder="Nickname"></span>
 					</div>
@@ -74,18 +74,18 @@
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							���Ե� ������ �����Ű���?
+							가입된 계정이 있으신가요?
 						</span>
 
 						<strong><a class="txt2" href="login.jsp">
-								�α���
+								로그인
 							</a></strong><br>
 						<span class="txt1">
-							��й�ȣ�� �ؾ�����̳���?
+							비밀번호를 잊어버리셨나요?
 						</span>
 
 						<strong><a class="txt2" href="findpass.html">
-								��й�ȣ ã��
+								비밀번호 찾기
 							</a></strong>
 					</div>
 				</form>

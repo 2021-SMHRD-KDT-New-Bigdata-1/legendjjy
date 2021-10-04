@@ -19,8 +19,8 @@ public class EditService extends HttpServlet {
 
    protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-      request.setCharacterEncoding("euc-kr");
-      response.setCharacterEncoding("euc-kr");
+      request.setCharacterEncoding("UTF-8");
+      response.setCharacterEncoding("EUC-KR");
       HttpSession session = request.getSession();
       usersVO vo = (usersVO)session.getAttribute("vo");
       usersDAO dao = new usersDAO();

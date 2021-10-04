@@ -1,21 +1,21 @@
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="comDAO.diaryDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>post_view</title>
 
-<!-- °Ô½Ã±Û º¸±â css -->
+<!-- ê²Œì‹œê¸€ ë³´ê¸° css -->
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/comment.css">
 <link rel="stylesheet" href="assets/css/popup.css">
 
-<!-- ÆùÆ® -->
+<!-- í°íŠ¸ -->
 <link href="https://fonts.googleapis.com/css?family=Gamja+Flower&display=swap" rel="stylesheet">
 
 </head>
@@ -33,7 +33,7 @@
 				<div class="row">
 					<div class="col-12" id="write" data-aos="fade-up"
 						data-aos-duration="3000">
-						<h1 class="py-5 text-center">ÀÏ±â ¾²±â</h1>
+						<h1 class="py-5 text-center">ì¼ê¸° ì“°ê¸°</h1>
 					</div>
 				</div>
 			</div>
@@ -56,7 +56,7 @@
 							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
-										placeholder="Á¦¸ñ ÀÔ·Â(2-100)" name="title" maxlength="100" value="<%=enVO.getDiary_title() %>"
+										placeholder="ì œëª© ì…ë ¥(2-100)" name="title" maxlength="100" value="<%=enVO.getDiary_title() %>"
 										required="required" pattern=".{2,100}"
 										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
@@ -64,24 +64,24 @@
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
-										name="content" placeholder="³»¿ë ÀÛ¼º" 
+										name="content" placeholder="ë‚´ìš© ì‘ì„±" 
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										"><%= enVO.getDiary_content() %></textarea>
 								</div>
 								<div class="form-group">
 								<%if(enVO.getHash_tag()!=null){hashtag=enVO.getHash_tag();}%>
 									<br> <input type="text" class="form-control" id="writer"
-										placeholder="ÅÂ±×(2ÀÚ-10ÀÚ)" name="writer" value="<%=hashtag %>"
+										placeholder="íƒœê·¸(2ì-10ì)" name="writer" value="<%=hashtag %>"
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
 								</div>
-								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">´ñ±Û Çã¿ë
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">ëŒ“ê¸€ í—ˆìš©
 								<input type="checkbox" name="public_yn" value="y"
-									style="margin-left: 10px; margin-right: 5px;">³ª¸¸ º¸±â <br>
+									style="margin-left: 10px; margin-right: 5px;">ë‚˜ë§Œ ë³´ê¸° <br>
 								
 								<button type="submit" class="btn btn-default" id="btn_submit"
 									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-									border: none;">¼öÁ¤</button>
+									border: none;">ìˆ˜ì •</button>
 								</div>
 							</td>
 						</tr>

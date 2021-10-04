@@ -4,7 +4,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -17,7 +17,7 @@
 <!-- ===============================================-->
 <!--    Document Title-->
 <!-- ===============================================-->
-<title>ÇÁ·ÎÇÊ °Ô½Ã±Û</title>
+<title>í”„ë¡œí•„ ê²Œì‹œê¸€</title>
 
 
 <!-- ===============================================-->
@@ -53,7 +53,7 @@
 <link rel="stylesheet" href="profile/vendor/bootstrap/css/boostrap.css">
 <link rel="stylesheet" href="profile/css/shop-homepage.css">
 
-<!-- °Ô½Ã¹° ÆË¾÷, ´ñ±Û ±â´É css -->
+<!-- ê²Œì‹œë¬¼ íŒì—…, ëŒ“ê¸€ ê¸°ëŠ¥ css -->
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/comment.css">
@@ -63,7 +63,7 @@
 	integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
 	crossorigin="anonymous"></script>
 
-<!-- »õ·Î ¸¸µç »ó´Ü¹Ù css -->
+<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” css -->
 <link rel="stylesheet" href="assets/css/nav_bar.css" />
 
 </head>
@@ -81,7 +81,7 @@
 
 
 	<!-- -------------------------------------------------------------------- -->
-	<!-- »õ·Î ¸¸µç »ó´Ü¹Ù -->
+	<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” -->
 	<!-- -------------------------------------------------------------------- -->
 
 	<header class="nav_outer">
@@ -99,21 +99,21 @@
 
 			<ul class="navi_inner2">
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">ÀÏ±â
-						¾²·¯°¡±â</a></li>
-				<li><a href="look.jsp">µÑ·¯º¸±â</a></li>
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">ì¼ê¸°
+						ì“°ëŸ¬ê°€ê¸°</a></li>
+				<li><a href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">½ºÅ©·¦
-						¸ñ·Ï</a></li>
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>index.jsp<%}%>">ìŠ¤í¬ë©
+						ëª©ë¡</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">±¸µ¶
-						¸ñ·Ï</a></li>
-				<li><a href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">êµ¬ë…
+						ëª©ë¡</a></li>
+				<li><a href="../publish/book_made.jsp">ì¶œíŒ</a></li>
 				<%
 				if (vo == null) {
 				%>
 					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">·Î±×ÀÎ</a>
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">ë¡œê·¸ì¸</a>
 					</form>
 				<% 
 				}else if (vo != null && vo.getAdmin_yn().equals("n")) {
@@ -123,16 +123,16 @@
 					aria-expanded="false"> Hi, <%=vo.getUser_nick()%>
 				</a>
 					<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item fw-bold" href="profile.jsp">³»
-								ÇÁ·ÎÇÊ</a></li>
+						<li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´
+								í”„ë¡œí•„</a></li>
 						<li><a class="dropdown-item fw-bold"
-							href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-						<li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+							href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+						<li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 					</ul></li>
 				<%
 				} else if (vo != null && vo.getAdmin_yn().equals("y")) {
 				%><li class="nav-item px-2"><a class="nav-link fw-bold"
-					href="#faqs">À¯Àú°ü¸®</a></li>
+					href="#faqs">ìœ ì €ê´€ë¦¬</a></li>
 				<%
 				}
 				%>
@@ -142,7 +142,7 @@
 	</header>
 
 	<!-- -------------------------------------------------------------------- -->
-	<!-- »õ·Î ¸¸µç »ó´Ü¹Ù ³¡ -->
+	<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” ë -->
 	<!-- -------------------------------------------------------------------- -->
 
 	<main class="main" id="top">
@@ -160,7 +160,7 @@
 					</h3>
 					<%if(vo==null){ }else{%>
 					
-						<div id="<%=user_email%>" onclick="subscribe(this.id)"><button id="content_subscribe">±¸µ¶ÇÏ±â</button>
+						<div id="<%=user_email%>" onclick="subscribe(this.id)"><button id="content_subscribe">êµ¬ë…í•˜ê¸°</button>
 						</div>
 					
 						<%} %>
@@ -173,7 +173,7 @@
 					style="position: absolute; margin-top: 4px; margin: 100px 0 100px 0;">
 					<h2>
 						@<%=userdao.findNick(user_email)%>
-						´ÔÀÇ ÀÏ±âÀå
+						ë‹˜ì˜ ì¼ê¸°ì¥
 					</h2>
 				</div>
 
@@ -195,7 +195,7 @@
 							<div class="cont">
 								<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email())%></strong>
 								<p><%=diary_list.get(i).getDiary_title()%></p>
-								<span class="hits">Á¶È¸¼ö <%=diary_list.get(i).getHits()%></span><span
+								<span class="hits">ì¡°íšŒìˆ˜ <%=diary_list.get(i).getHits()%></span><span
 									class="date"><%=diary_list.get(i).getDiary_date()%></span>
 							</div></a></li>
 					<%
@@ -223,7 +223,7 @@
 	<script src="vendor/jquery/jquery.min.js"></script>
 	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<!-- °Ô½Ã¹° ÆË¾÷, ´ñ±Û ±â´É js -->
+	<!-- ê²Œì‹œë¬¼ íŒì—…, ëŒ“ê¸€ ê¸°ëŠ¥ js -->
 	<script
 		src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script>

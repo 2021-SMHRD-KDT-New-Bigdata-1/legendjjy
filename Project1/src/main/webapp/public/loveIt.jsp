@@ -4,13 +4,13 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>½ºÅ©·¦ ¸ñ·Ï</title>
+<title>ìŠ¤í¬ë© ëª©ë¡</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -52,13 +52,13 @@
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
 	
-	<!-- °Ô½Ã¹° ÆË¾÷, ´ñ±Û ±â´É css -->
+	<!-- ê²Œì‹œë¬¼ íŒì—…, ëŒ“ê¸€ ê¸°ëŠ¥ css -->
 	<link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/comment.css">
 	<link rel="stylesheet" href="assets/css/popup.css">
 	
-	<!-- »õ·Î ¸¸µç »ó´Ü¹Ù css -->
+	<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” css -->
 	<link rel="stylesheet" href="assets/css/nav_bar.css"/>
 
 <style>
@@ -130,7 +130,7 @@ body {
 
 
 	<!-- -------------------------------------------------------------------- -->
-    <!-- »õ·Î ¸¸µç »ó´Ü¹Ù -->
+    <!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” -->
     <!-- -------------------------------------------------------------------- -->
     
     <header class="nav_outer">
@@ -146,22 +146,22 @@ body {
 			    
    			
 	    	<ul class="navi_inner2" style="right:-60px; width:591px;">
-	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">ÀÏ±â ¾²·¯°¡±â</a></li>
-	            <li ><a href="look.jsp">µÑ·¯º¸±â</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">½ºÅ©·¦ ¸ñ·Ï</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">±¸µ¶ ¸ñ·Ï</a></li>
-	            <li ><a href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">ì¼ê¸° ì“°ëŸ¬ê°€ê¸°</a></li>
+	            <li ><a href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">ìŠ¤í¬ë© ëª©ë¡</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">êµ¬ë… ëª©ë¡</a></li>
+	            <li ><a href="../publish/book_made.jsp">ì¶œíŒ</a></li>
 	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle fw-bold" href="#"
 								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 								aria-expanded="false"> Hi, <%=vo.getUser_nick()%>
 							</a>
 								<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item fw-bold" href="profile.jsp">³» ÇÁ·ÎÇÊ</a></li>
-									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-									<li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+									<li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´ í”„ë¡œí•„</a></li>
+									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+									<li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 								</ul></li><%}
-	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">À¯Àú°ü¸®</a></li><%} %>
+	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">ìœ ì €ê´€ë¦¬</a></li><%} %>
 	    	</ul>
 
 	    </nav>
@@ -169,17 +169,17 @@ body {
     </header>
     
     <!-- -------------------------------------------------------------------- -->
-    <!-- »õ·Î ¸¸µç »ó´Ü¹Ù ³¡ -->
+    <!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” ë -->
     <!-- -------------------------------------------------------------------- -->
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-		<h2 class="py-5 text-center" id="searching">½ºÅ©·¦ ¸ñ·Ï</h2>
+		<h2 class="py-5 text-center" id="searching">ìŠ¤í¬ë© ëª©ë¡</h2>
 		
 	<main class="main" id="top">
 	
 		<div class="mx-auto mt-6 mb-7 search_bar" style="position: sticky; top: 120px; z-index: 2; ">
-			<input class="search" type="text" placeholder="°Ë»ö¾î ÀÔ·Â">
-			<button style="	border-radius: 20px;"class="search_button">°Ë»ö</button>
+			<input class="search" type="text" placeholder="ê²€ìƒ‰ì–´ ì…ë ¥">
+			<button style="	border-radius: 20px;"class="search_button">ê²€ìƒ‰</button>
 		</div>
 		
 
@@ -193,7 +193,7 @@ body {
 					<div class="cont">
 						<strong>@<%=userdao.findNick(list.get(i).getUser_email()) %></strong>
 						<p><%=list.get(i).getDiary_title() %></p>
-						<span class="hits">Á¶È¸¼ö <%=list.get(i).getHits() %></span> <span class="date"><%=list.get(i).getDiary_date() %></span>
+						<span class="hits">ì¡°íšŒìˆ˜ <%=list.get(i).getHits() %></span> <span class="date"><%=list.get(i).getDiary_date() %></span>
 					</div>
 				</li>
 				<%} %>
@@ -207,7 +207,7 @@ body {
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
-        <!-- Á¶È¸¼ö±â´É -->
+        <!-- ì¡°íšŒìˆ˜ê¸°ëŠ¥ -->
 	<script>
 		function hitsup(clicked_id){
 			var seq = clicked_id;

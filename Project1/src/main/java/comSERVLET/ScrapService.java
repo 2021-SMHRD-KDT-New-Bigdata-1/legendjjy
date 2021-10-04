@@ -19,7 +19,7 @@ public class ScrapService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.setCharacterEncoding("UTF-8");
+		response.setCharacterEncoding("EUC-KR");
 		int post_seq = Integer.parseInt(request.getParameter("post_seq"));
 		
 		PrintWriter out = response.getWriter();

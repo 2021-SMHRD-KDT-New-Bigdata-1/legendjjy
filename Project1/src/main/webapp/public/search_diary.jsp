@@ -5,12 +5,12 @@
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.diaryVO" %>
 <%@ page language="java" contentType="text/html; charset=utf-8"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ÀÏ±â µÑ·¯º¸±â</title>
+<title>ì¼ê¸° ë‘˜ëŸ¬ë³´ê¸°</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -52,13 +52,13 @@
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
 	
-	<!-- °Ô½Ã¹° ÆË¾÷, ´ñ±Û ±â´É css -->
+	<!-- ê²Œì‹œë¬¼ íŒì—…, ëŒ“ê¸€ ê¸°ëŠ¥ css -->
 	<link rel="stylesheet" href="assets/css/main.css">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/comment.css">
 	<link rel="stylesheet" href="assets/css/popup.css">
 	
-	<!-- »õ·Î ¸¸µç »ó´Ü¹Ù css -->
+	<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” css -->
 	<link rel="stylesheet" href="assets/css/nav_bar.css"/>
 
 <style>
@@ -140,7 +140,7 @@
 	%>
 	
 	<!-- ------------------------------------------------------------- -->
-	<!-- °Ô½Ã¹° ÆË¾÷ º¸±â -->
+	<!-- ê²Œì‹œë¬¼ íŒì—… ë³´ê¸° -->
 	<!-- ------------------------------------------------------------- -->
 	
 	<div id="popup" class="hide">
@@ -165,9 +165,9 @@
 	    				</tr>
 	    				<tr>
 	    					<td id="content_hits" >hits</td>
-	    					<td><button id="content_modify">¼öÁ¤ÇÏ±â</button></td>
-	    					<td><button id="content_scrap">½ºÅ©·¦ÇÏ±â</button></td>
-	    					<td><button id="content_subscribe">±¸µ¶ÇÏ±â</button></td>
+	    					<td><button id="content_modify">ìˆ˜ì •í•˜ê¸°</button></td>
+	    					<td><button id="content_scrap">ìŠ¤í¬ë©í•˜ê¸°</button></td>
+	    					<td><button id="content_subscribe">êµ¬ë…í•˜ê¸°</button></td>
 	    				</tr>
 	    			</table>
 	    		</td>
@@ -183,8 +183,8 @@
         			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
 	    		
 		    		<div id="form-commentInfo"> 
-			          <div id="comment-count" >´ñ±Û <span id="count">0</span></div>  
-			          <input id="comment-input" placeholder="´ñ±Û ÀÛ¼º" > 
+			          <div id="comment-count" >ëŒ“ê¸€ <span id="count">0</span></div>  
+			          <input id="comment-input" placeholder="ëŒ“ê¸€ ì‘ì„±" > 
 			          <button id="submit">OK</button>
 		        	</div> 
 		        		<div id=comments style="margin-top: 20px; "></div>
@@ -196,11 +196,11 @@
 	</div>
 	
 	<!-- ------------------------------------------------------------- -->
-	<!-- °Ô½Ã¹° ÆË¾÷ º¸±â ³¡ -->
+	<!-- ê²Œì‹œë¬¼ íŒì—… ë³´ê¸° ë -->
 	<!-- ------------------------------------------------------------- -->
 
 	<!-- -------------------------------------------------------------------- -->
-    <!-- »õ·Î ¸¸µç »ó´Ü¹Ù -->
+    <!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” -->
     <!-- -------------------------------------------------------------------- -->
     
     <header class="nav_outer" style="height:108px;" >
@@ -216,26 +216,26 @@
 			    
    			
 	    	<ul class="navi_inner2" style="width:606px; right:-50px;">
-	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">ÀÏ±â ¾²·¯°¡±â</a></li>
-	            <li ><a href="look.jsp">µÑ·¯º¸±â</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">½ºÅ©·¦ ¸ñ·Ï</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">±¸µ¶ ¸ñ·Ï</a></li>
-	            <li ><a href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">ì¼ê¸° ì“°ëŸ¬ê°€ê¸°</a></li>
+	            <li ><a href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">ìŠ¤í¬ë© ëª©ë¡</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">êµ¬ë… ëª©ë¡</a></li>
+	            <li ><a href="../publish/book_made.jsp">ì¶œíŒ</a></li>
 	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle fw-bold" href="#"
 								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 								aria-expanded="false"> Hi, <%=vo.getUser_nick()%>
 							</a>
 								<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item fw-bold" href="profile.jsp">³» ÇÁ·ÎÇÊ</a></li>
-									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-									<li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+									<li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´ í”„ë¡œí•„</a></li>
+									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+									<li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 								</ul></li><%}
-	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">À¯Àú°ü¸®</a></li><%} %>
+	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">ìœ ì €ê´€ë¦¬</a></li><%} %>
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button" style="right:-80px; top:36px;"><a class="log_button" href="Login_v2/login.jsp">·Î±×ÀÎ</a></form>
+	        <form class="login_button" style="right:-80px; top:36px;"><a class="log_button" href="Login_v2/login.jsp">ë¡œê·¸ì¸</a></form>
 	        <%}%>
 
 	    </nav>
@@ -243,17 +243,17 @@
     </header>
     
     <!-- -------------------------------------------------------------------- -->
-    <!-- »õ·Î ¸¸µç »ó´Ü¹Ù ³¡ -->
+    <!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” ë -->
     <!-- -------------------------------------------------------------------- -->
 
 		<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-		<h1 class="py-5 text-center" id="searching" style="font-size: 38px">ÀÏ±â µÑ·¯º¸±â</h1>
+		<h1 class="py-5 text-center" id="searching" style="font-size: 38px">ì¼ê¸° ë‘˜ëŸ¬ë³´ê¸°</h1>
 		
 	<main class="main" id="top">
 	
 		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
-			<input type="text" name="word" value="" placeholder="°Ë»ö¾î ÀÔ·Â" style="margin-left:864px;">
-			<input type="submit" value="°Ë»ö">
+			<input type="text" name="word" value="" placeholder="ê²€ìƒ‰ì–´ ì…ë ¥" style="margin-left:864px;">
+			<input type="submit" value="ê²€ìƒ‰">
 		</form>
 
     <form style="margin-left:274px; height:17px;">
@@ -275,7 +275,7 @@
 						<div class="cont"> 
 							<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email()) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
-							<span class="hits">Á¶È¸¼ö <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
+							<span class="hits">ì¡°íšŒìˆ˜ <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
 						</div></a>
 					</li>
 				<%}%>
@@ -283,7 +283,7 @@
 		</div>
 </main>
 
-	<!-- °Ô½Ã¹° ÆË¾÷, ´ñ±Û ±â´É js -->
+	<!-- ê²Œì‹œë¬¼ íŒì—…, ëŒ“ê¸€ ê¸°ëŠ¥ js -->
     <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
     <script src="assets/js/functions-min.js"></script>

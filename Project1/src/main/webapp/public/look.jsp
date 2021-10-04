@@ -4,13 +4,13 @@
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.diaryVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ÀÏ±â µÑ·¯º¸±â</title>
+<title>ì¼ê¸° ë‘˜ëŸ¬ë³´ê¸°</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -52,13 +52,13 @@
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
 
-<!-- °Ô½Ã¹° ÆË¾÷, ´ñ±Û ±â´É css -->
+<!-- ê²Œì‹œë¬¼ íŒì—…, ëŒ“ê¸€ ê¸°ëŠ¥ css -->
 <link rel="stylesheet" href="assets/css/main.css">
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/comment.css">
 <link rel="stylesheet" href="assets/css/popup.css">
 
-<!-- »õ·Î ¸¸µç »ó´Ü¹Ù css -->
+<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” css -->
 <link rel="stylesheet" href="assets/css/nav_bar.css" />
 
 <style>
@@ -141,7 +141,7 @@
 
 
 	<!-- -------------------------------------------------------------------- -->
-	<!-- »õ·Î ¸¸µç »ó´Ü¹Ù -->
+	<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” -->
 	<!-- -------------------------------------------------------------------- -->
 
 	<header class="nav_outer" style="height: 108px;">
@@ -161,16 +161,16 @@
 
 			<ul class="navi_inner2" style="width: 606px; right: -50px;">
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">ÀÏ±â
-						¾²·¯°¡±â</a></li>
-				<li><a href="look.jsp">µÑ·¯º¸±â</a></li>
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">ì¼ê¸°
+						ì“°ëŸ¬ê°€ê¸°</a></li>
+				<li><a href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">½ºÅ©·¦
-						¸ñ·Ï</a></li>
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">ìŠ¤í¬ë©
+						ëª©ë¡</a></li>
 				<li><a
-					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">±¸µ¶
-						¸ñ·Ï</a></li>
-				<li><a href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">êµ¬ë…
+						ëª©ë¡</a></li>
+				<li><a href="../publish/book_made.jsp">ì¶œíŒ</a></li>
 				<%
 				if (vo != null && vo.getAdmin_yn().equals("n")) {
 				%><li
@@ -180,16 +180,16 @@
 					aria-expanded="false"> Hi, <%=vo.getUser_nick()%>
 				</a>
 					<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-						<li><a class="dropdown-item fw-bold" href="profile.jsp">³»
-								ÇÁ·ÎÇÊ</a></li>
+						<li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´
+								í”„ë¡œí•„</a></li>
 						<li><a class="dropdown-item fw-bold"
-							href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-						<li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+							href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+						<li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 					</ul></li>
 				<%
 				} else if (vo != null && vo.getAdmin_yn().equals("y")) {
 				%><li
-					class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">À¯Àú°ü¸®</a></li>
+					class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">ìœ ì €ê´€ë¦¬</a></li>
 				<%
 				}
 				%>
@@ -199,7 +199,7 @@
 			if (vo == null) {
 			%>
 			<form class="login_button" style="right: -80px; top: 36px;">
-				<a class="log_button" href="Login_v2/login.jsp">·Î±×ÀÎ</a>
+				<a class="log_button" href="Login_v2/login.jsp">ë¡œê·¸ì¸</a>
 			</form>
 			<%}%>
 
@@ -208,17 +208,17 @@
 	</header>
 
 	<!-- -------------------------------------------------------------------- -->
-	<!-- »õ·Î ¸¸µç »ó´Ü¹Ù ³¡ -->
+	<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” ë -->
 	<!-- -------------------------------------------------------------------- -->
 
 	<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-	<h1 class="py-5 text-center" id="searching" style="font-size: 38px">ÀÏ±â
-		µÑ·¯º¸±â</h1>
+	<h1 class="py-5 text-center" id="searching" style="font-size: 38px">ì¼ê¸°
+		ë‘˜ëŸ¬ë³´ê¸°</h1>
 
 	<main class="main" id="top">
 		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
-			<input type="text" name="word"placeholder="°Ë»ö¾î ÀÔ·Â" style="margin-left:710px; border-radius: 26px; height: 46px; width: 482px; font-size: 20px;">
-			<input type="submit" value="°Ë»ö" style="width:80px; margin-left: -92px; border-radius: 23px; border:none; background-color: white; font-size:20px;">
+			<input type="text" name="word"placeholder="ê²€ìƒ‰ì–´ ì…ë ¥" style="margin-left:710px; border-radius: 26px; height: 46px; width: 482px; font-size: 20px;">
+			<input type="submit" value="ê²€ìƒ‰" style="width:80px; margin-left: -92px; border-radius: 23px; border:none; background-color: white; font-size:20px;">
 		</form>
 
 		<form style="margin-left: 274px; height: 17px;">
@@ -246,7 +246,7 @@
 						<div class="cont"> 
 							<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email()) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
-							<span class="hits">Á¶È¸¼ö <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
+							<span class="hits">ì¡°íšŒìˆ˜ <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
 						</div>
 					</li>
 				<%}%>
@@ -259,7 +259,7 @@
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
-    <!-- Á¶È¸¼ö±â´É -->
+    <!-- ì¡°íšŒìˆ˜ê¸°ëŠ¥ -->
 	<script>
 		function hitsup(clicked_id){
 			var seq = clicked_id;

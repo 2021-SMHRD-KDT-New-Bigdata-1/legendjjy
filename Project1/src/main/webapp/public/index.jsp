@@ -2,8 +2,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-   pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -49,9 +49,9 @@
    href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
    rel="stylesheet">
 <link rel="stylesheet" href="assets/css/modal.css" />
-<link rel="stylesheet" href="assets/css/´ñ±Û.css" />
+<link rel="stylesheet" href="assets/css/ëŒ“ê¸€.css" />
 
-<!-- ±Û¾²±âÅ×ÀÌºí fade up È¿°ú -->
+<!-- ê¸€ì“°ê¸°í…Œì´ë¸” fade up íš¨ê³¼ -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -254,20 +254,20 @@ input[type="text"] {
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>
 <script>
-   // input file ÀÌ¹ÌÁö ¹Ì¸®º¸±â ÇÔ¼ö
+   // input file ì´ë¯¸ì§€ ë¯¸ë¦¬ë³´ê¸° í•¨ìˆ˜
    function previewImage(targetObj, previewId) {
 
       var ext = $(targetObj).val().split('.').pop().toLowerCase();
 
       if ($.inArray(ext, [ 'gif', 'png', 'jpg', 'jpeg' ]) == -1) {
-         alert('gif, png, jpg, jpeg ÆÄÀÏ¸¸ ¾÷·Îµå ÇÒ¼ö ÀÖ½À´Ï´Ù.');
+         alert('gif, png, jpg, jpeg íŒŒì¼ë§Œ ì—…ë¡œë“œ í• ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
          return;
       }
 
-      var preview = document.getElementById(previewId); // ¹Ì¸®º¸±â div id   
+      var preview = document.getElementById(previewId); // ë¯¸ë¦¬ë³´ê¸° div id   
       var ua = window.navigator.userAgent;
 
-      if (ua.indexOf("MSIE") > -1) { //ieÀÏ¶§
+      if (ua.indexOf("MSIE") > -1) { //ieì¼ë•Œ
 
          targetObj.select();
 
@@ -277,13 +277,13 @@ input[type="text"] {
                   .getElementById("ie_preview_error_" + previewId);
 
             if (ie_preview_error) {
-               preview.removeChild(ie_preview_error); //error°¡ ÀÖÀ¸¸é delete
+               preview.removeChild(ie_preview_error); //errorê°€ ìˆìœ¼ë©´ delete
             }
 
-            var img = document.getElementById(previewId); //ÀÌ¹ÌÁö°¡ »Ñ·ÁÁú °÷ 
+            var img = document.getElementById(previewId); //ì´ë¯¸ì§€ê°€ ë¿Œë ¤ì§ˆ ê³³ 
 
             img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
-                  + src + "', sizingMethod='scale')"; //ÀÌ¹ÌÁö ·Îµù, sizingMethod´Â div¿¡ ¸ÂÃç¼­ »çÀÌÁî¸¦ ÀÚµ¿Á¶Àı ÇÏ´Â ¿ªÇÒ
+                  + src + "', sizingMethod='scale')"; //ì´ë¯¸ì§€ ë¡œë”©, sizingMethodëŠ” divì— ë§ì¶°ì„œ ì‚¬ì´ì¦ˆë¥¼ ìë™ì¡°ì ˆ í•˜ëŠ” ì—­í• 
          } catch (e) {
             if (!document.getElementById("ie_preview_error_" + previewId)) {
                var info = document.createElement("<p>");
@@ -292,29 +292,29 @@ input[type="text"] {
                preview.insertBefore(info, null);
             }
          }
-      } else { //ie°¡ ¾Æ´Ò¶§
+      } else { //ieê°€ ì•„ë‹ë•Œ
          var files = targetObj.files;
          for (var i = 0; i < files.length; i++) {
 
             var file = files[i];
 
-            var imageType = /image.*/; //ÀÌ¹ÌÁö ÆÄÀÏÀÏ °æ¿ì¸¸ »Ñ·ÁÁÜ.
+            var imageType = /image.*/; //ì´ë¯¸ì§€ íŒŒì¼ì¼ ê²½ìš°ë§Œ ë¿Œë ¤ì¤Œ.
             if (!file.type.match(imageType))
                continue;
 
-            var prevImg = document.getElementById("prev_" + previewId); // ÀÌÀü¿¡ ¹Ì¸®º¸±â°¡ ÀÖ´Ù¸é »èÁ¦
+            var prevImg = document.getElementById("prev_" + previewId); // ì´ì „ì— ë¯¸ë¦¬ë³´ê¸°ê°€ ìˆë‹¤ë©´ ì‚­ì œ
             if (prevImg) {
                preview.removeChild(prevImg);
             }
 
-            var img = document.createElement("img"); // Å©·ÒÀº div¿¡ ÀÌ¹ÌÁö°¡ »Ñ·ÁÁöÁö ¾Ê±â¶§¹®¿¡ ÀÚ½Ä Element¸¦ ¸¸µë.
+            var img = document.createElement("img"); // í¬ë¡¬ì€ divì— ì´ë¯¸ì§€ê°€ ë¿Œë ¤ì§€ì§€ ì•Šê¸°ë•Œë¬¸ì— ìì‹ Elementë¥¼ ë§Œë“¬.
             img.id = "prev_" + previewId;
             img.classList.add("obj");
             img.file = file;
 
             preview.appendChild(img);
 
-            if (window.FileReader) { // FireFox, Chrome, Opera È®ÀÎ.
+            if (window.FileReader) { // FireFox, Chrome, Opera í™•ì¸.
                var reader = new FileReader();
                reader.onloadend = (function(aImg) {
                   return function(e) {
@@ -368,16 +368,16 @@ input[type="text"] {
                <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
                   <li class="nav-item px-2"><a class="nav-link fw-bold"
                      aria-current="page"
-                     href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">ÀÏ±â
-                        ¾²·¯°¡±â</a></li>
+                     href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">ì¼ê¸°
+                        ì“°ëŸ¬ê°€ê¸°</a></li>
                   <li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-                     href="look.jsp">µÑ·¯º¸±â</a></li>
+                     href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
                   <li class="nav-item px-2"><a class="nav-link fw-bold"
-                     href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">½ºÅ©·¦ ¸ñ·Ï</a></li>
+                     href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">ìŠ¤í¬ë© ëª©ë¡</a></li>
                   <li class="nav-item px-2"><a class="nav-link fw-bold"
-                     href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">±¸µ¶ ¸ñ·Ï</a></li>
+                     href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">êµ¬ë… ëª©ë¡</a></li>
                   <li class="nav-item px-2"><a class="nav-link fw-bold"
-                     href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+                     href="../publish/book_made.jsp">ì¶œíŒ</a></li>
                   <%
                   if (vo != null && vo.getAdmin_yn().equals("n")) {
                   %>
@@ -387,14 +387,14 @@ input[type="text"] {
                      aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
                   </a>
                      <ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item fw-bold" href="profile.jsp">³» ÇÁ·ÎÇÊ</a></li>
-                        <li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-                        <li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+                        <li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´ í”„ë¡œí•„</a></li>
+                        <li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+                        <li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
                      </ul></li>
                   <%
                   } else if (vo != null && vo.getAdmin_yn().equals("y")) {
                   %><li class="nav-item px-2"><a class="nav-link fw-bold"
-                     href="#faqs">À¯Àú°ü¸®</a></li>
+                     href="#faqs">ìœ ì €ê´€ë¦¬</a></li>
                   <%
                   }
                   %>
@@ -403,7 +403,7 @@ input[type="text"] {
                if (vo == null) {
                %>
                <form class="ms-lg-5">
-                  <a class="btn btn-primary" href="../public/Login_v2/login.jsp">·Î±×ÀÎ</a>
+                  <a class="btn btn-primary" href="../public/Login_v2/login.jsp">ë¡œê·¸ì¸</a>
                </form>
                <% } %>
             </div>
@@ -412,7 +412,7 @@ input[type="text"] {
       <section class="py-0" id="header">
          <div class="container">
             <div class="row align-items-center min-vh-75 min-vh-md-50"></div>
-            <h1 style="padding-bottom: 70px">¿À´ÃÀÇ ÀÏ±â</h1>
+            <h1 style="padding-bottom: 70px">ì˜¤ëŠ˜ì˜ ì¼ê¸°</h1>
             <div class="container-fluid" style="height: 500px;">
                <div class="row gx-2" style="height: 500px;">
                   <div class="col-12" style="height: 500px;">
@@ -465,7 +465,7 @@ input[type="text"] {
             <div class="row">
                <div class="col-12" id="write" data-aos="fade-up"
                   data-aos-duration="3000">
-                  <h1 class="py-5 text-center">ÀÏ±â ¾²±â</h1>
+                  <h1 class="py-5 text-center">ì¼ê¸° ì“°ê¸°</h1>
                </div>
             </div>
          </div>
@@ -486,33 +486,33 @@ input[type="text"] {
                   <td>
                      <div style="width: 100%; font-size: 24px;">
                            <input type="text" class="`" id="title"
-                              placeholder="Á¦¸ñ ÀÔ·Â(2-15)" name="title" maxlength="15"
+                              placeholder="ì œëª© ì…ë ¥(2-15)" name="title" maxlength="15"
                               required="required" pattern=".{2,100}"
                               style="font-size: 28px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; margin-top: 30px;
                               ">
                            <textarea class="form-control" rows="15" id="content"
-                              name="content" placeholder="³»¿ë ÀÛ¼º" 
+                              name="content" placeholder="ë‚´ìš© ì‘ì„±" 
                               style="font-size: 28px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; height: 500px;
                               "></textarea>
                            <input type="text" class="form-control" id="writer"
-                              placeholder="ÅÂ±×(2ÀÚ-10ÀÚ)" name="writer"
+                              placeholder="íƒœê·¸(2ì-10ì)" name="writer"
                               style="font-size: 24px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
                               ">
-                        <input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">´ñ±Û Çã¿ë
+                        <input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">ëŒ“ê¸€ í—ˆìš©
                         <input type="checkbox" name="public_yn" value="y"
-                           style="margin-left: 10px; margin-right: 5px;">³ª¸¸ º¸±â <br>
+                           style="margin-left: 10px; margin-right: 5px;">ë‚˜ë§Œ ë³´ê¸° <br>
                         <%
                         if (vo == null) {
                         %>
-                        <button type="submit" class="btn btn-default" onclick="alert('·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù.')"
+                        <button type="submit" class="btn btn-default" onclick="alert('ë¡œê·¸ì¸ì´ í•„ìš”í•©ë‹ˆë‹¤.')"
                            style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-                           border: none;">µî·Ï</button>
+                           border: none;">ë“±ë¡</button>
                         <%
                         } else {
                         %>
                         <button type="submit" class="btn btn-default" id="btn_submit"
                            style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-                           border: none;">µî·Ï</button>
+                           border: none;">ë“±ë¡</button>
                         <%
                         }
                         %>
@@ -534,10 +534,10 @@ input[type="text"] {
                 
                  <div class="col-sm-12 col-md-6" style="color:white; width:598px; padding-left: 101px; padding-right: 46px;">
                   <h4>Legendjjy</h4>
-                  <p class="text-justify">±¤ÁÖ±¤¿ª½Ã ³²±¸ ¼Û¾Ï·Î 60 CGI¼¾ÅÍ 2Ãş</p>
-                  <p class="text-justify" style="word-spacing:10px;">ÃÑ°ı:Á¤¿µµ¿ 
-                  <p class="text-justify" style="word-spacing:10px;"> DB,CSS/HTML,JSP/Servlet:¹ÚÀçÈ«,¹ÚÁ¤Çö,Àü¼³¾Æ</p><br>
-                  <p class="text-justify" style="word-spacing:20px;">TEL:+82)123-4567   FAX:+82)234-5678   °í°´¼¾ÅÍ:1522-5000</p>
+                  <p class="text-justify">ê´‘ì£¼ê´‘ì—­ì‹œ ë‚¨êµ¬ ì†¡ì•”ë¡œ 60 CGIì„¼í„° 2ì¸µ</p>
+                  <p class="text-justify" style="word-spacing:10px;">ì´ê´„:ì •ì˜ë™ 
+                  <p class="text-justify" style="word-spacing:10px;"> DB,CSS/HTML,JSP/Servlet:ë°•ì¬í™,ë°•ì •í˜„,ì „ì„¤ì•„</p><br>
+                  <p class="text-justify" style="word-spacing:20px;">TEL:+82)123-4567   FAX:+82)234-5678   ê³ ê°ì„¼í„°:1522-5000</p>
                   
                    
                 </div>
@@ -545,12 +545,12 @@ input[type="text"] {
                  <div class="col-xs-6 col-md-3">
                   <h4>Quick Links</h4>
                   <ul class="footer-links" >
-                    <li style="word-spacing:20px; line-height:35px; color:white;"><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>profile.jsp"<%}%>">³»ÇÁ·ÎÇÊ</a>
-                    <a href="look.jsp">µÑ·¯º¸±â</a>
-                    <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">°ü½É</a>
-                    <a href="../publish/book_made.jsp">ÃâÆÇ</a><br>
-                    <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">ÀÏ±â¾²·¯°¡±â</a>
-                    <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">ÆÈ·Î¿ì</a>
+                    <li style="word-spacing:20px; line-height:35px; color:white;"><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>profile.jsp"<%}%>">ë‚´í”„ë¡œí•„</a>
+                    <a href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a>
+                    <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">ê´€ì‹¬</a>
+                    <a href="../publish/book_made.jsp">ì¶œíŒ</a><br>
+                    <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>#write<%}%>">ì¼ê¸°ì“°ëŸ¬ê°€ê¸°</a>
+                    <a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>follow/follow.jsp<%}%>">íŒ”ë¡œìš°</a>
                     
                     </li>
                     <p class="copyright-text" style="width:304px; color:white">Copyright &copy; 2021 All Rights Reserved by 
@@ -588,7 +588,7 @@ input[type="text"] {
    <script src="vendors/fontawesome/all.min.js"></script>
    <script src="assets/js/theme.js"></script>
    <script src="assets/js/jquery-3.6.0.min.js"></script>
-   <!-- 'ÀÏ±â¾²±â'¸Ş´º ÀÚµ¿ ½ºÅ©·Ñ -->
+   <!-- 'ì¼ê¸°ì“°ê¸°'ë©”ë‰´ ìë™ ìŠ¤í¬ë¡¤ -->
    <script>
       $(document).ready(function() {
          $(".nav-link fw-bold .scroll").click(function(event) {
@@ -608,7 +608,7 @@ input[type="text"] {
    </script>
    <!-- Modal -->
    <script src="assets/js/functions-min.js"></script>
-   <script src="assets/js/´ñ±Û.js"></script>
+   <script src="assets/js/ëŒ“ê¸€.js"></script>
    <script>
       $("#modal").hide();
       $("#modal_opne_btn").click(function() {
@@ -619,7 +619,7 @@ input[type="text"] {
          $("#modal").attr("style", "display:none");
       });
    </script>
-    <!-- Á¶È¸¼ö±â´É -->
+    <!-- ì¡°íšŒìˆ˜ê¸°ëŠ¥ -->
    <script>
       function hitsup(clicked_id){
          var seq = clicked_id;

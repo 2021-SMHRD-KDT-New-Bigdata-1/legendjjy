@@ -31,7 +31,7 @@ public class UploadService extends HttpServlet {
       HttpSession session = request.getSession();
       String path = session.getServletContext().getRealPath("upload");
       int sizeLimit = 10 * 1024 * 1024;
-      String encType = "EUC-KR";
+      String encType = "UTF-8";
       
       MultipartRequest multi = new MultipartRequest(request, path, sizeLimit, encType, new DefaultFileRenamePolicy());
       

@@ -1,6 +1,6 @@
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -49,7 +49,7 @@
 <link rel="stylesheet" href="book_css.css">
 
 
-<!-- fade up È¿°ú -->
+<!-- fade up íš¨ê³¼ -->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -97,18 +97,18 @@
 					<ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="main-menu">
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
 							aria-current="page"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">ÀÏ±â
-								¾²·¯°¡±â</a></li>
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/write.jsp<%}%>">ì¼ê¸°
+								ì“°ëŸ¬ê°€ê¸°</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold scroll"
-							href="../public/look.jsp">µÑ·¯º¸±â</a></li>
+							href="../public/look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/loveIt.jsp<%}%>">½ºÅ©·¦
-								¸ñ·Ï</a></li>
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/loveIt.jsp<%}%>">ìŠ¤í¬ë©
+								ëª©ë¡</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/follow/follow.jsp<%}%>">±¸µ¶
-								¸ñ·Ï</a></li>
+							href="<%if (vo == null) {%>../public/Login_v2/login.jsp<%} else {%>../public/follow/follow.jsp<%}%>">êµ¬ë…
+								ëª©ë¡</a></li>
 						<li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+							href="../publish/book_made.jsp">ì¶œíŒ</a></li>
 						<%
 						if (vo != null && vo.getAdmin_yn().equals("n")) {
 						%>
@@ -120,16 +120,16 @@
 							<ul class="dropdown-menu fw-bold"
 								aria-labelledby="navbarDropdown">
 								<li><a class="dropdown-item fw-bold"
-									href="../public/profile.jsp">³» ÇÁ·ÎÇÊ</a></li>
+									href="../public/profile.jsp">ë‚´ í”„ë¡œí•„</a></li>
 								<li><a class="dropdown-item fw-bold"
-									href="../public/Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
+									href="../public/Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
 								<li><a class="dropdown-item fw-bold"
-									href="../public/index.jsp">·Î±×¾Æ¿ô</a></li>
+									href="../public/index.jsp">ë¡œê·¸ì•„ì›ƒ</a></li>
 							</ul></li>
 						<%
 						} else if (vo != null && vo.getAdmin_yn().equals("y")) {
 						%><li class="nav-item px-2"><a class="nav-link fw-bold"
-							href="#faqs">À¯Àú°ü¸®</a></li>
+							href="#faqs">ìœ ì €ê´€ë¦¬</a></li>
 						<%
 						}
 						%>
@@ -138,7 +138,7 @@
 					if (vo == null) {
 					%>
 					<form class="ms-lg-5">
-						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">·Î±×ÀÎ</a>
+						<a class="btn btn-primary" href="../public/Login_v2/login.jsp">ë¡œê·¸ì¸</a>
 					</form>
 					<%
 					}
@@ -153,7 +153,7 @@
 				<div class="content" style="margin-top: 200px;">
 					<table>
 						<tr data-aos="fade-right" data-aos-duration="3000">
-							<td><h2>ÀÏ±âÀåÀ» Á¦ÀÛÇØ µå¸³´Ï´Ù</h2></td>
+							<td><h2>ì¼ê¸°ì¥ì„ ì œì‘í•´ ë“œë¦½ë‹ˆë‹¤</h2></td>
 							<td><img class="cont" src="imgs/book_01.png" alt=""
 								style="background-color: silver"></td>
 							<td></td>
@@ -166,7 +166,7 @@
 						<tr data-aos="fade-left" data-aos-duration="3000">
 							<td></td>
 							<td><img class="cont" src="imgs/book_02.jpeg" alt=""></td>
-							<td><h2>ÀÏ±â¸¦ ÀÛ¼ºÇÏ¼¼¿ä</h2></td>
+							<td><h2>ì¼ê¸°ë¥¼ ì‘ì„±í•˜ì„¸ìš”</h2></td>
 						</tr>
 						<tr data-aos="zoom-in" data-aos-duration="3000">
 							<td></td>
@@ -174,7 +174,7 @@
 							<td></td>
 						</tr>
 						<tr data-aos="fade-right" data-aos-duration="3000">
-							<td><h2>Á÷Á¢ Ç¥Áö µğÀÚÀÎÀ» °í¸¦ ¼ö ÀÖ¾î¿ä</h2></td>
+							<td><h2>ì§ì ‘ í‘œì§€ ë””ìì¸ì„ ê³ ë¥¼ ìˆ˜ ìˆì–´ìš”</h2></td>
 							<td><img class="cont" src="imgs/book_03.jpg" alt=""></td>
 							<td></td>
 						</tr>
@@ -186,7 +186,7 @@
 						<tr data-aos="fade-left" data-aos-duration="3000">
 							<td></td>
 							<td><img class="cont" src="imgs/book_04.jpg" alt=""></td>
-							<td><h2>pdfÆÄÀÏ·Î ¹ŞÀ» ¼ö ÀÖ¾î¿ä</h2></td>
+							<td><h2>pdfíŒŒì¼ë¡œ ë°›ì„ ìˆ˜ ìˆì–´ìš”</h2></td>
 						</tr>
 						<tr data-aos="zoom-in" data-aos-duration="3000">
 							<td></td>
@@ -194,7 +194,7 @@
 							<td></td>
 						</tr>
 						<tr data-aos="fade-right" data-aos-duration="3000">
-							<td><h2>³ª¸¸ÀÇ ÀÏ±âÀåÀ» °£Á÷ÇÏ¼¼¿ä</h2></td>
+							<td><h2>ë‚˜ë§Œì˜ ì¼ê¸°ì¥ì„ ê°„ì§í•˜ì„¸ìš”</h2></td>
 							<td><img class="cont" src="imgs/book_05.jpg" alt=""></td>
 							<td></td>
 						</tr>
@@ -208,13 +208,13 @@
 			<%
 			if (vo != null && vo.getAdmin_yn().equals("n")) {
 			%>
-			<a href="../public/appli.jsp"><input type="button" value="½ÅÃ»ÇÏ±â"
+			<a href="../public/appli.jsp"><input type="button" value="ì‹ ì²­í•˜ê¸°"
 				style="width: 150px; height: 60px; margin-top: 100px; font-size: 20px; color: cornsilk; background-color: rgb(69, 100, 177); border: 2"
 				data-aos="fade-up" data-aos-duration="2000"></a>
 			<%
 			} else if (vo != null && vo.getAdmin_yn().equals("y")) {
 			%>
-			<a href="../public/publish_admin/appli.jsp"><input type="button" value="Á¶È¸ÇÏ±â"
+			<a href="../public/publish_admin/appli.jsp"><input type="button" value="ì¡°íšŒí•˜ê¸°"
 				style="width: 150px; height: 60px; margin-top: 100px; font-size: 20px; color: cornsilk; background-color: rgb(69, 100, 177); border: 2"
 				data-aos="fade-up" data-aos-duration="2000"></a>
 			<%

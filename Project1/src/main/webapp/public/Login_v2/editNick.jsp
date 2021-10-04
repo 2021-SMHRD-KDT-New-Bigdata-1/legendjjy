@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -48,10 +48,10 @@
 			<div class="wrap-login100">
 				<form action="../../EditService?edit=nick" method="post" class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
-						´Ð³×ÀÓº¯°æ
+						ë‹‰ë„¤ìž„ë³€ê²½
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="´Ð³×ÀÓÀº 2~10ÀÚ ¹®ÀÚ ¶Ç´Â ¼ýÀÚÀÌ¾î¾ß ÇÕ´Ï´Ù">
+					<div class="wrap-input100 validate-input" data-validate="ë‹‰ë„¤ìž„ì€ 2~10ìž ë¬¸ìž ë˜ëŠ” ìˆ«ìžì´ì–´ì•¼ í•©ë‹ˆë‹¤">
 						<input class="input100" type="text" name="nickname">
 						<span class="focus-input100" data-placeholder="Nickname"></span>
 					</div>
@@ -60,7 +60,7 @@
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
 							<button type="submit" class="login100-form-btn">
-								´Ð³×ÀÓ º¯°æÇÏ±â
+								ë‹‰ë„¤ìž„ ë³€ê²½í•˜ê¸°
 							</button>
 						</div>
 					</div>

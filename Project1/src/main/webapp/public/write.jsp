@@ -1,13 +1,13 @@
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+	pageEncoding="utf-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>ÀÏ±â ¼öÁ¤ÇÏ±â</title>
+<title>ì¼ê¸° ìˆ˜ì •í•˜ê¸°</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -57,7 +57,7 @@
 	href="https://fonts.googleapis.com/css2?family=Gamja+Flower&display=swap"
 	rel="stylesheet">
 	
-<!-- »õ·Î ¸¸µç »ó´Ü¹Ù css -->
+<!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” css -->
 <link rel="stylesheet" href="assets/css/nav_bar.css"/>	
 	
 <style>
@@ -75,22 +75,22 @@ td {
 
 </head>
 <script src="//code.jquery.com/jquery.min.js"></script>
-<!-- Á¦ÀÌÄõ¸® 1.x ÃÖ½Å ¹öÀü ·Îµå -->
+<!-- ì œì´ì¿¼ë¦¬ 1.x ìµœì‹  ë²„ì „ ë¡œë“œ -->
 <script>
-	// input file ÀÌ¹ÌÁö ¹Ì¸®º¸±â ÇÔ¼ö
+	// input file ì´ë¯¸ì§€ ë¯¸ë¦¬ë³´ê¸° í•¨ìˆ˜
 	function previewImage(targetObj, previewId) {
 
 		var ext = $(targetObj).val().split('.').pop().toLowerCase();
 
 		if ($.inArray(ext, [ 'gif', 'png', 'jpg', 'jpeg' ]) == -1) {
-			alert('gif, png, jpg, jpeg ÆÄÀÏ¸¸ ¾÷·Îµå ÇÒ¼ö ÀÖ½À´Ï´Ù.');
+			alert('gif, png, jpg, jpeg íŒŒì¼ë§Œ ì—…ë¡œë“œ í• ìˆ˜ ìˆìŠµë‹ˆë‹¤.');
 			return;
 		}
 
-		var preview = document.getElementById(previewId); // ¹Ì¸®º¸±â div id   
+		var preview = document.getElementById(previewId); // ë¯¸ë¦¬ë³´ê¸° div id   
 		var ua = window.navigator.userAgent;
 
-		if (ua.indexOf("MSIE") > -1) { //ieÀÏ¶§
+		if (ua.indexOf("MSIE") > -1) { //ieì¼ë•Œ
 
 			targetObj.select();
 
@@ -100,13 +100,13 @@ td {
 						.getElementById("ie_preview_error_" + previewId);
 
 				if (ie_preview_error) {
-					preview.removeChild(ie_preview_error); //error°¡ ÀÖÀ¸¸é delete
+					preview.removeChild(ie_preview_error); //errorê°€ ìˆìœ¼ë©´ delete
 				}
 
-				var img = document.getElementById(previewId); //ÀÌ¹ÌÁö°¡ »Ñ·ÁÁú °÷ 
+				var img = document.getElementById(previewId); //ì´ë¯¸ì§€ê°€ ë¿Œë ¤ì§ˆ ê³³ 
 
 				img.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader(src='"
-						+ src + "', sizingMethod='scale')"; //ÀÌ¹ÌÁö ·Îµù, sizingMethod´Â div¿¡ ¸ÂÃç¼­ »çÀÌÁî¸¦ ÀÚµ¿Á¶Àı ÇÏ´Â ¿ªÇÒ
+						+ src + "', sizingMethod='scale')"; //ì´ë¯¸ì§€ ë¡œë”©, sizingMethodëŠ” divì— ë§ì¶°ì„œ ì‚¬ì´ì¦ˆë¥¼ ìë™ì¡°ì ˆ í•˜ëŠ” ì—­í• 
 			} catch (e) {
 				if (!document.getElementById("ie_preview_error_" + previewId)) {
 					var info = document.createElement("<p>");
@@ -115,29 +115,29 @@ td {
 					preview.insertBefore(info, null);
 				}
 			}
-		} else { //ie°¡ ¾Æ´Ò¶§
+		} else { //ieê°€ ì•„ë‹ë•Œ
 			var files = targetObj.files;
 			for (var i = 0; i < files.length; i++) {
 
 				var file = files[i];
 
-				var imageType = /image.*/; //ÀÌ¹ÌÁö ÆÄÀÏÀÏ °æ¿ì¸¸ »Ñ·ÁÁÜ.
+				var imageType = /image.*/; //ì´ë¯¸ì§€ íŒŒì¼ì¼ ê²½ìš°ë§Œ ë¿Œë ¤ì¤Œ.
 				if (!file.type.match(imageType))
 					continue;
 
-				var prevImg = document.getElementById("prev_" + previewId); // ÀÌÀü¿¡ ¹Ì¸®º¸±â°¡ ÀÖ´Ù¸é »èÁ¦
+				var prevImg = document.getElementById("prev_" + previewId); // ì´ì „ì— ë¯¸ë¦¬ë³´ê¸°ê°€ ìˆë‹¤ë©´ ì‚­ì œ
 				if (prevImg) {
 					preview.removeChild(prevImg);
 				}
 
-				var img = document.createElement("img"); // Å©·ÒÀº div¿¡ ÀÌ¹ÌÁö°¡ »Ñ·ÁÁöÁö ¾Ê±â¶§¹®¿¡ ÀÚ½Ä Element¸¦ ¸¸µë.
+				var img = document.createElement("img"); // í¬ë¡¬ì€ divì— ì´ë¯¸ì§€ê°€ ë¿Œë ¤ì§€ì§€ ì•Šê¸°ë•Œë¬¸ì— ìì‹ Elementë¥¼ ë§Œë“¬.
 				img.id = "prev_" + previewId;
 				img.classList.add("obj");
 				img.file = file;
 
 				preview.appendChild(img);
 
-				if (window.FileReader) { // FireFox, Chrome, Opera È®ÀÎ.
+				if (window.FileReader) { // FireFox, Chrome, Opera í™•ì¸.
 					var reader = new FileReader();
 					reader.onloadend = (function(aImg) {
 						return function(e) {
@@ -165,7 +165,7 @@ td {
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	entireDiaryVO divo = (entireDiaryVO) session.getAttribute("divo");
 	
-	// ÇöÀç ¼¼¼Ç »óÅÂ Ã¼Å©
+	// í˜„ì¬ ì„¸ì…˜ ìƒíƒœ ì²´í¬
 	String user_email = null;
 	if(session.getAttribute("user_email") !=null){
 		user_email = (String)session.getAttribute("user_email");
@@ -181,7 +181,7 @@ td {
 
 	 
     <!-- -------------------------------------------------------------------- -->
-    <!-- »õ·Î ¸¸µç »ó´Ü¹Ù -->
+    <!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” -->
     <!-- -------------------------------------------------------------------- -->
     
     <header class="nav_outer" style="height:107px;">
@@ -197,26 +197,26 @@ td {
 			    
    			
 	    	<ul class="navi_inner2" style="top: 21px; right: -36px; width: 591px;">
-	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">ÀÏ±â ¾²·¯°¡±â</a></li>
-	            <li ><a href="look.jsp">µÑ·¯º¸±â</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">½ºÅ©·¦ ¸ñ·Ï</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">±¸µ¶ ¸ñ·Ï</a></li>
-	            <li ><a href="../publish/book_made.jsp">ÃâÆÇ</a></li>
+	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">ì¼ê¸° ì“°ëŸ¬ê°€ê¸°</a></li>
+	            <li ><a href="look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>index.jsp<%}%>">ìŠ¤í¬ë© ëª©ë¡</a></li>
+	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">êµ¬ë… ëª©ë¡</a></li>
+	            <li ><a href="../publish/book_made.jsp">ì¶œíŒ</a></li>
 	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle fw-bold" href="#"
 								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 								aria-expanded="false"> Hi, <%=vo.getUser_nick()%>
 							</a>
 								<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item fw-bold" href="profile.jsp">³» ÇÁ·ÎÇÊ</a></li>
-									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-									<li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+									<li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´ í”„ë¡œí•„</a></li>
+									<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+									<li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 								</ul></li><%}
-	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">À¯Àú°ü¸®</a></li><%} %>
+	            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">ìœ ì €ê´€ë¦¬</a></li><%} %>
 	    	</ul>
 	    	
 	    	<%if(vo==null){ %>
-	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">·Î±×ÀÎ</a></form>
+	        <form class="login_button"><a class="log_button" href="Login_v2/login.jsp">ë¡œê·¸ì¸</a></form>
 	        <%}%>
 
 	    </nav>
@@ -224,7 +224,7 @@ td {
     </header>
     
     <!-- -------------------------------------------------------------------- -->
-    <!-- »õ·Î ¸¸µç »ó´Ü¹Ù ³¡ -->
+    <!-- ìƒˆë¡œ ë§Œë“  ìƒë‹¨ë°” ë -->
     <!-- -------------------------------------------------------------------- -->
     
 
@@ -236,7 +236,7 @@ td {
 				<div class="row">
 					<div class="col-12" id="write" data-aos="fade-up"
 						data-aos-duration="3000" style="margin-top: 150px; margin-bottom: 30px;">
-						<h1 class="py-5 text-center">ÀÏ±â ¾²±â</h1>
+						<h1 class="py-5 text-center">ì¼ê¸° ì“°ê¸°</h1>
 					</div>
 				</div>
 			</div>
@@ -259,7 +259,7 @@ td {
 							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
-										placeholder="Á¦¸ñ ÀÔ·Â(2-100)" name="title" maxlength="100"
+										placeholder="ì œëª© ì…ë ¥(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
 										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
@@ -267,31 +267,31 @@ td {
 								<div class="form-group">
 									<br>
 									<textarea class="form-control" rows="15" id="content"
-										name="content" placeholder="³»¿ë ÀÛ¼º" 
+										name="content" placeholder="ë‚´ìš© ì‘ì„±" 
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										"></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
-										placeholder="ÅÂ±×(2ÀÚ-10ÀÚ)" name="writer"
+										placeholder="íƒœê·¸(2ì-10ì)" name="writer"
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
 								</div>
-								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">´ñ±Û Çã¿ë
+								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">ëŒ“ê¸€ í—ˆìš©
 								<input type="checkbox" name="public_yn" value="y"
-									style="margin-left: 10px; margin-right: 5px;">³ª¸¸ º¸±â <br>
+									style="margin-left: 10px; margin-right: 5px;">ë‚˜ë§Œ ë³´ê¸° <br>
 								<%
 								if (vo == null) {
 								%>
-								<button type="submit" class="btn btn-default" onclick="alert('·Î±×ÀÎÀÌ ÇÊ¿äÇÕ´Ï´Ù.')"
+								<button type="submit" class="btn btn-default" onclick="alert('ë¡œê·¸ì¸ì´ í•„ìš”í•©ë‹ˆë‹¤.')"
 									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-									border: none;">µî·Ï</button>
+									border: none;">ë“±ë¡</button>
 								<%
 								} else {
 								%>
 								<button type="submit" class="btn btn-default" id="btn_submit"
 									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-									border: none;">µî·Ï</button>
+									border: none;">ë“±ë¡</button>
 								<%
 								}
 								%>

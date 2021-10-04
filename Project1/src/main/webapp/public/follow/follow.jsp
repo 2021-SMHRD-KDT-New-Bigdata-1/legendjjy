@@ -4,8 +4,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.usersVO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en-US" dir="ltr">
 
@@ -67,39 +67,39 @@
           aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse border-top border-lg-0 mt-4 mt-lg-0" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../write.jsp<%}%>">ÀÏ±â ¾²·¯°¡±â</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../look.jsp">µÑ·¯º¸±â</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../loveIt.jsp<%}%>">½ºÅ©·¦ ¸ñ·Ï</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">±¸µ¶ ¸ñ·Ï</a></li>
-            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">ÃâÆÇ</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" aria-current="page" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../write.jsp<%}%>">ì¼ê¸° ì“°ëŸ¬ê°€ê¸°</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold scroll" href="../look.jsp">ë‘˜ëŸ¬ë³´ê¸°</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>../loveIt.jsp<%}%>">ìŠ¤í¬ëž© ëª©ë¡</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="<%if(vo==null){%>../Login_v2/login.jsp<%}else{%>follow.jsp<%}%>">êµ¬ë… ëª©ë¡</a></li>
+            <li class="nav-item px-2"><a class="nav-link fw-bold" href="../../publish/book_made.jsp">ì¶œíŒ</a></li>
             <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle fw-bold" href="#"
 							id="navbarDropdown" role="button" data-bs-toggle="dropdown"
 							aria-expanded="false"> Hi,<%=vo.getUser_nick()%>
 						</a>
 							<ul class="dropdown-menu fw-bold" aria-labelledby="navbarDropdown">
-								<li><a class="dropdown-item fw-bold" href="profile.jsp">³» ÇÁ·ÎÇÊ</a></li>
-								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">°³ÀÎÁ¤º¸¼öÁ¤</a></li>
-								<li><a class="dropdown-item fw-bold" href="../LogoutService">·Î±×¾Æ¿ô</a></li>
+								<li><a class="dropdown-item fw-bold" href="profile.jsp">ë‚´ í”„ë¡œí•„</a></li>
+								<li><a class="dropdown-item fw-bold" href="Login_v2/edit.html">ê°œì¸ì •ë³´ìˆ˜ì •</a></li>
+								<li><a class="dropdown-item fw-bold" href="../LogoutService">ë¡œê·¸ì•„ì›ƒ</a></li>
 							</ul></li><%}
-            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">À¯Àú°ü¸®</a></li><%} %>
+            else if(vo!=null&& vo.getAdmin_yn().equals("y")){%><li class="nav-item px-2"><a class="nav-link fw-bold" href="#faqs">ìœ ì €ê´€ë¦¬</a></li><%} %>
           </ul>
           <%if(vo==null){ %>
-          <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">·Î±×ÀÎ</a></form>
+          <form class="ms-lg-5"><a class="btn btn-primary" href="../Login_v2/login.jsp">ë¡œê·¸ì¸</a></form>
           <%}%>
         </div>
       </div>
     </nav>
     
 	<section style="padding-top: 140px; padding-bottom: 100px;">
-			<h3>@<%=vo.getUser_nick() %> ´ÔÀÇ ±¸µ¶ ¸ñ·Ï</h3>
+			<h3>@<%=vo.getUser_nick() %> ë‹˜ì˜ êµ¬ë… ëª©ë¡</h3>
 
 			<div class="all" style="position: fixed;">
 			
 			<ul id="head" style="margin-top: 150px; padding-left:0px; width:750px">
-				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">´Ð³×ÀÓ</li>
-				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ÀÌ¸ÞÀÏ</li>
-				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">±¸µ¶ Ãë¼Ò</li>
+				<li class="fl tc w500 t_line lt_line nick title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ë‹‰ë„¤ìž„</li>
+				<li class="fl tc w500 t_line lt_line email title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">ì´ë©”ì¼</li>
+				<li class="fl tc w120 t_line lt_line delete title" style="border-radius: 8px; background-color: rgb(69, 100, 177);">êµ¬ë… ì·¨ì†Œ</li>
 			</ul>
 			
 			</div>  
@@ -109,7 +109,7 @@
 				<ul class="board">
 					<li class="fl tc w500 list t_line lt_line"><a href="../userprofile.jsp?user_email=<%=follow_list.get(i).getFollow_email()%>">@<%=userdao.findNick(follow_list.get(i).getFollow_email()) %></a></li>
 					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
-					<li class="fl tc w120 list t_line lt_line"><a href="../../DeleteFollow?follow_seq=<%=follow_list.get(i).getFollow_seq() %>">Ãë¼Ò</a></li>
+					<li class="fl tc w120 list t_line lt_line"><a href="../../DeleteFollow?follow_seq=<%=follow_list.get(i).getFollow_seq() %>">ì·¨ì†Œ</a></li>
 					
 				</ul>
 				<%} %>

@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,12 +68,12 @@
 						<a href="../index.jsp"><img src="images\logo_small.png"></a>
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="ÀÌ¸ÞÀÏÀ» È®ÀÎÇØÁÖ¼¼¿ä">
+					<div class="wrap-input100 validate-input" data-validate="ì´ë©”ì¼ì„ í™•ì¸í•´ì£¼ì„¸ìš”">
 						<input class="input100" type="text" name="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="ºñ¹Ð¹øÈ£¸¦ ÀÔ·ÂÇØÁÖ¼¼¿ä">
+					<div class="wrap-input100 validate-input" data-validate="ë¹„ë°€ë²ˆí˜¸ë¥¼ ìž…ë ¥í•´ì£¼ì„¸ìš”">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
@@ -96,18 +96,18 @@
 
 					<div class="text-center p-t-115">
 						<span class="txt1">
-							°èÁ¤ÀÌ ¾øÀ¸½Å°¡¿ä?
+							ê³„ì •ì´ ì—†ìœ¼ì‹ ê°€ìš”?
 						</span>
 
 						<strong><a class="txt2" href="join.jsp">
-								È¸¿ø°¡ÀÔ
+								íšŒì›ê°€ìž…
 							</a></strong><br>
 						<span class="txt1">
-							ºñ¹Ð¹øÈ£¸¦ ÀØÀ¸¼Ì³ª¿ä?
+							ë¹„ë°€ë²ˆí˜¸ë¥¼ ìžŠìœ¼ì…¨ë‚˜ìš”?
 						</span>
 
 						<strong><a class="txt2" href="findpass.html">
-								ºñ¹Ð¹øÈ£ Ã£±â
+								ë¹„ë°€ë²ˆí˜¸ ì°¾ê¸°
 							</a></strong>
 					</div>
 				</form>
