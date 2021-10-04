@@ -1,16 +1,14 @@
 package comVO;
 
-import oracle.sql.DATE;
-
 public class loveitVO {
 
-	public String diary_image;
-	public String user_email;
-	public String diary_content;
-	public int hits;
-	public DATE diary_date;
+	private String diary_image;
+	private String user_email;
+	private String diary_content;
+	private int hits;
+	private String diary_date;
 	
-	public loveitVO(String diary_image, String user_email, String diary_content, int hits, DATE diary_date) {
+	public loveitVO(String diary_image, String user_email, String diary_content, int hits, String diary_date) {
 		super();
 		this.diary_image = diary_image;
 		this.user_email = user_email;
@@ -51,12 +49,14 @@ public class loveitVO {
 		this.hits = hits;
 	}
 
-	public DATE getDiary_date() {
+	public String getDiary_date() {
 		return diary_date;
 	}
 
-	public void setDiary_date(DATE diary_date) {
+	public void setDiary_date(String diary_date) {
 		this.diary_date = diary_date;
 	}
-		
+
+	
+	
 }

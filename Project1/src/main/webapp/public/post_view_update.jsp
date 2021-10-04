@@ -1,7 +1,7 @@
 <%@page import="comVO.usersVO"%>
 <%@page import="comVO.entireDiaryVO"%>
 <%@page import="comDAO.diaryDAO"%>
-<%@ page language="java" contentType="text/html; charset=utf-8"
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 			</div>
-		<form class="upload" action="../UploadService" method="post" enctype="multipart/form-data">
+		<form class="upload" action="../UpdateDiaryService?diary_seq=<%=enVO.getDiary_seq() %>" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
 				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
@@ -55,7 +55,7 @@
 							<div style="width: 640px; font-size: 20px;">
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="title"
-										placeholder="제목 입력(2-100)" name="title" maxlength="100"
+										placeholder="제목 입력(2-100)" name="title" maxlength="100" value="<%=enVO.getDiary_title() %>"
 										required="required" pattern=".{2,100}"
 										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
@@ -65,11 +65,11 @@
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
-										"></textarea>
+										"><%= enVO.getDiary_content() %></textarea>
 								</div>
 								<div class="form-group">
 									<br> <input type="text" class="form-control" id="writer"
-										placeholder="태그(2자-10자)" name="writer"
+										placeholder="태그(2자-10자)" name="writer" value="<%= enVO.getHash_tag() %>"
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
 								</div>
@@ -79,7 +79,7 @@
 								
 								<button type="submit" class="btn btn-default" id="btn_submit"
 									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-									border: none;">등록</button>
+									border: none;">수정</button>
 								</div>
 							</td>
 						</tr>

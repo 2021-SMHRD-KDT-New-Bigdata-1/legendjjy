@@ -1,3 +1,6 @@
+<%@page import="comVO.loveitVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.usersDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="EUC-KR"%>
@@ -107,66 +110,10 @@ body {
 <body>
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	usersDAO dao = new usersDAO();
+	ArrayList<loveitVO> loveit_list = dao.loveit_list(vo.getUser_email());
 	%>
-	
-	<!-- ------------------------------------------------------------- -->
-	<!-- 게시물 팝업 보기 -->
-	<!-- ------------------------------------------------------------- -->
-	
-	<div id="popup" class="hide">
-	<div class="content">
-	    <table id="content_outer">
-	    	<tr class="post_view">
-	    		<td id="img_view"><img src="assets/img/2.jpg" alt="" style="width: 700px; height: 700px; object-fit: cover;"></td>
-	    		<td id="writing_view">
-	    			<table>
-	    				<tr>
-	    					<td id="content_nick" colspan='2'><span id="nick_inner">@legendjjy</span></td>
-	    					<td id="content_date" colspan='2'>2021-09-30</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_title" colspan='4'>제목</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_content" colspan='4'>내용 Content and contents are nouns.</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_tag" colspan='4'>#태그1 #태그2 #태그3</td>
-	    				</tr>
-	    				<tr>
-	    					<td id="content_hits" >조회수 1321</td>
-	    					<td><button id="content_modify">수정하기</button></td>
-	    					<td><button id="content_scrap">스크랩하기</button></td>
-	    					<td><button id="content_subscribe">구독하기</button></td>
-	    				</tr>
-	    			</table>
-	    		</td>
-	    	</tr>
-	    	<tr>
-	    		<td id="blank" ></td>
-	    		<td id="blank" ></td>
-	    	</tr>
-	    	
-	    </table>
-	    
-	    <div id="featured" class="blurb" style="position: relative;">
-        			<div style="text-align: right; margin-right: 10%;"><button style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;"><img src="letters/write_icon2.png" alt="" style="position:absolute; top:50%; left:50%; transform: translate(-50%, -50%);"></button></div>
-	    		
-		    		<div id="form-commentInfo"> 
-			          <div id="comment-count" >댓글 <span id="count">0</span></div>  
-			          <input id="comment-input" placeholder="댓글 작성" > 
-			          <button id="submit">OK</button>
-		        	</div> 
-		        		<div id=comments style="margin-top: 20px; "></div>
-     				 </div>
-	    
-    	<button id="close_button" onclick="closePopup()">X</button>
-	 	</div>
-	 	
-	</div>
-	<!-- ------------------------------------------------------------- -->
-	<!-- 게시물 팝업 보기 끝 -->
-	<!-- ------------------------------------------------------------- -->
+
 
 	<!-- -------------------------------------------------------------------- -->
     <!-- 새로 만든 상단바 -->
@@ -227,80 +174,18 @@ body {
 		
 
 		<div class="list_wrap">
+			<%for (int i=0; i<loveit_list.size(); i++){ %>
 			<ul>
 				<li class="item item1" style="background-color: rgb(245, 242, 235);"  onclick="showPopup()">
-					<div class="image">사진</div>
+					<div class="image"><%=loveit_list.get(i).getDiary_image() %></div>
 					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item2" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item3" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item4" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item5" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item6" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item7" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item8" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
-					</div>
-				</li>
-				<li class="item item9" style="background-color: rgb(245, 242, 235);">
-					<div class="image">사진</div>
-					<div class="cont">
-						<strong>작성자</strong>
-						<p>내용이 들어갑니다.</p>
-						<span class="hits">조회수</span> <span class="date">날짜</span>
+						<strong><%=loveit_list.get(i).getUser_email() %></strong>
+						<p><%=loveit_list.get(i).getDiary_content() %></p>
+						<span class="hits"><%=loveit_list.get(i).getHits() %></span> <span class="date"><%=loveit_list.get(i).getDiary_date() %></span>
 					</div>
 				</li>
 			</ul>
+			<%} %>
 		</div>
 </main>
 

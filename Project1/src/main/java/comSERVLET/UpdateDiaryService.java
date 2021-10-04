@@ -15,7 +15,9 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import comDAO.diaryDAO;
+import comVO.UpdateDiaryVO;
 import comVO.diaryVO;
+import comVO.entireDiaryVO;
 import comVO.usersVO;
 
 @WebServlet("/UpdateDiaryService")
@@ -24,19 +26,22 @@ public class UpdateDiaryService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-	      request.setCharacterEncoding("UTF-8");
+		int diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
+		
+	      request.setCharacterEncoding("EUC-KR");
 	      response.setCharacterEncoding("EUC-KR");
 	      HttpSession session = request.getSession();
 	      String path = session.getServletContext().getRealPath("upload");
 	      int sizeLimit = 10 * 1024 * 1024;
 	      String encType = "EUC-KR";
-	      
 	      MultipartRequest multi = new MultipartRequest(request, path, sizeLimit, encType, new DefaultFileRenamePolicy());
 	      
 	      String title = multi.getParameter("title");
 	      String content = multi.getParameter("content");
 	      String hashtag = multi.getParameter("writer");
 	      String comment_yn = multi.getParameter("comment_yn");
+	      String diary_image = multi.getParameter("file");
+	      
 	      if(comment_yn==null) {
 	         comment_yn = "n";
 	      }
@@ -62,21 +67,21 @@ public class UpdateDiaryService extends HttpServlet {
 
 
 
-	      diaryVO diary_vo = new diaryVO(title, content, imgName, hashtag, public_yn, comment_yn);
+	      UpdateDiaryVO diary_vo = new UpdateDiaryVO(diary_seq, title, diary_image, content, hashtag, public_yn, comment_yn);
 	      
 	      diaryDAO dao = new diaryDAO();
 	      
-	      int cnt = dao.upload_diary(diary_vo, user_vo);
+	      int cnt = dao.update_diary(diary_vo);
 	      
 	      PrintWriter out = response.getWriter();
 	      if(cnt>0) {
 	         out.print("<script>");
-	         out.print("alert('일기가 등록되었습니다.');");
+	         out.print("alert('일기가 수정되었습니다.');");
 	         out.print("location.href = 'public/index.jsp'");
 	         out.print("</script>");
 	      }else {
 	         out.print("<script>");
-	         out.print("alert('일기 등록에 실패했습니다.');");
+	         out.print("alert('일기 수정에 실패했습니다.');");
 	         out.print("location.href = 'public/index.jsp'");
 	         out.print("</script>");
 	      }
