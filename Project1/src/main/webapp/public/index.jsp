@@ -428,8 +428,8 @@ input[type="text"] {
                                  src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
                                  onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
                               </a>
-                              <span>작성자 닉네임</span><br>
-                              <span>글 제목</span>
+                              <div style="color: black; margin-bottom: -30px;"><span><%=today_list.get(i).getDiary_title()%></span></div>
+                              <div style="color: black;"><span><%=today_list.get(i).getUser_email() %></span></div>
                            </div>
             
                            
@@ -486,7 +486,7 @@ input[type="text"] {
                   <td>
                      <div style="width: 100%; font-size: 24px;">
                            <input type="text" class="`" id="title"
-                              placeholder="제목 입력(2-100)" name="title" maxlength="100"
+                              placeholder="제목 입력(2-15)" name="title" maxlength="15"
                               required="required" pattern=".{2,100}"
                               style="font-size: 28px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; margin-top: 30px;
                               ">
