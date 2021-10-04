@@ -412,20 +412,22 @@ input[type="text"] {
 			<div class="container">
 				<div class="row align-items-center min-vh-75 min-vh-md-50"></div>
 				<h1 style="padding-bottom: 70px">오늘의 일기</h1>
-				<div class="container-fluid">
-					<div class="row gx-2">
-						<div class="col-12">
+				<div class="container-fluid" style="height: 500px;">
+					<div class="row gx-2" style="height: 500px;">
+						<div class="col-12" style="height: 500px;">
 							<div class="swiper-container pb-4 overflow-hidden"
-								data-pagination-target="pagination1">
-								<div class="swiper-wrapper">
+								data-pagination-target="pagination1" style="height: 500px;">
+								<div class="swiper-wrapper" style="height: 500px;">
 								<%for(int i=0; i<10; i++){ %>
-									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)">
-									<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
-										<img class="w-100" id="modal_opne_btn"
+									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)" style="height: 310px;">
+										<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
+											<img class="w-100" id="modal_opne_btn"
 											src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
 											onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
-											</a>
+										</a>
 									</div>
+									<div style="width:100%; height: 60px;">작성자 닉네임</div>
+									<div style="width:100%; height: 60px;">글 제목</div>
 								<%} %>
 								</div>
 							</div>
