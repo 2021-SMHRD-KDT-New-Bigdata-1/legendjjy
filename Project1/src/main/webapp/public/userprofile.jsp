@@ -74,7 +74,7 @@
 	String user_email = request.getParameter("user_email");
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
-	ArrayList<entireDiaryVO> diary_list = dao.personal_diary(user_email);
+	ArrayList<entireDiaryVO> diary_list = dao.other_personal_diary(user_email);
 	usersDAO userdao = new usersDAO();
 	%>
 
@@ -158,7 +158,8 @@
 					<h3 class="my-4">
 						@<%=userdao.findNick(user_email)%>
 						<%if(vo==null){ }else{%>
-						<button id="follow" style="cursor: pointer" ><a id="<%=user_email%>" onclick="subscribe(this.id)">구독하기</a></button>
+						<td id="<%=user_email%>" onclick="subscribe(this.id)"><button
+										id="content_subscribe">구독하기</button></td>
 						<%} %>
 					</h3>
 
