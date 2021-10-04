@@ -249,7 +249,7 @@
 									style="width: 100%; height: 100%; object-fit: cover;">
 							</div>
 							<div class="cont">
-								<strong>@<%=userdao.findNick(diary_list.get(i))%></strong>
+								<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email())%></strong>
 								<p><%=diary_list.get(i).getDiary_title()%></p>
 								<span class="hits">Á¶È¸¼ö <%=diary_list.get(i).getHits()%></span><span
 									class="date"><%=diary_list.get(i).getDiary_date()%></span>
