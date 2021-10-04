@@ -312,7 +312,7 @@
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
-					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);">
+					<li class="item" id="<%=diary_list.get(i).getDiary_seq() %>" style="background-color: rgb(245, 242, 235);" onclick="hitsup(this.id)">
 						<a href="post_view.jsp?post_seq=<%=diary_list.get(i).getDiary_seq() %>"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div>
 						<div class="cont"> 
@@ -325,22 +325,23 @@
 			</ul>
 		</div>
 	</main>
-	<!-- 조회수기능 -->
-	<script>
-		var hits_count = 0;
-		$(document).ready(function() {
-			$('#more').click(function() {
-				hits_count = hits_count + 1;
-				$('.hits span').text(hits_count);
-			});
-		});
-	</script>
-	<!-- 게시물 팝업, 댓글 기능 js -->
+
     <script src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
     <script src="assets/js/functions-min.js"></script>
     <script src="assets/js/comment.js"></script>
     <script type="text/javascript" src="assets/js/popup.js"></script>
+    <!-- 조회수기능 -->
+	<script>
+		function hitsup(clicked_id){
+			var seq = clicked_id;
+			$.ajax({
+				type: "POST",
+				url: "../HitsCheckService",
+				data: {"post_seq":seq}
+			})
+		}
+	</script>
 
 </body>
 </html>
