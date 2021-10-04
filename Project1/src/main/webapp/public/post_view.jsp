@@ -88,28 +88,41 @@
 		<%
 		if (enVO.getComment_yn().equals("y")) {
 		%>
-		<div id="featured" class="blurb" style="position: relative;">
-			<div style="text-align: right; margin-right: 10%;">
-				<button
-					style="width: 30px; height: 30px; position: relative; background-color: transparent; border: none;">
-					<img src="letters/write_icon2.png" alt=""
-						style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);">
-				</button>
-			</div>
-
-			<div id="form-commentInfo">
-				<div id="comment-count">
-					´ñ±Û <span id="count">0</span>
-				</div>
-				<input id="comment-input" placeholder="´ñ±Û ÀÛ¼º">
-				<button id="submit">OK</button>
-			</div>
-			<div id="comments" style="margin-top: 20px;"></div>
-		</div>
+		
 	</div>
 	<%
 	}
 	%>
+	
+	
+		
+		
+		<div id="disqus_thread"></div>
+		<script>
+		    /**
+		    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+		    /*
+		    var disqus_config = function () {
+		    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		    };
+		    */
+		    (function() { // DON'T EDIT BELOW THIS LINE
+		    var d = document, s = d.createElement('script');
+		    s.src = 'https://legnedjjy.disqus.com/embed.js';
+		    s.setAttribute('data-timestamp', +new Date());
+		    (d.head || d.body).appendChild(s);
+		    })();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+		
+		
+		
+		
+		
+		
+	
 	<button id="close_button" onclick="history.back()">X</button>
 	<script
 		src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
