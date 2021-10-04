@@ -157,7 +157,9 @@
 
 					<h3 class="my-4">
 						@<%=userdao.findNick(user_email)%>
-						<a id="<%=user_email%>" onclick="subscribe(this.id)"><button id="follow" style="cursor: pointer" >구독하기</button></a>
+						<%if(vo==null){ }else{%>
+						<button id="follow" style="cursor: pointer" ><a id="<%=user_email%>" onclick="subscribe(this.id)">구독하기</a></button>
+						<%} %>
 					</h3>
 
 
@@ -236,13 +238,6 @@
 				url : "../FollowService",
 				data : {"follow_email" : post_email},
 				async : false,
-				success : function(data) {
-					alert("구독되었습니다.");
-					
-				},
-				error : function(jqXHR, textStatus, errorThrown) {
-					alert("존재하지 않는 게시물입니다.");
-				}
 			})
 		}
 	</script>

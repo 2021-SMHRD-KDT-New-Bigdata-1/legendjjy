@@ -19,6 +19,7 @@ public class FollowService extends HttpServlet {
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		response.setCharacterEncoding("UTF-8");
 		String follow_email = request.getParameter("follow_email");
 
 		PrintWriter out = response.getWriter();
@@ -29,9 +30,9 @@ public class FollowService extends HttpServlet {
 		int cnt = dao.add_follow(vo, follow_email);
 
 		if(cnt>0) {
-			out.print("y");
+			out.print("구독되었습니다.");
 		}else {
-			out.print("n");
+			out.print("이미 구독이 되어있습니다.");
 		}
 	}
 
