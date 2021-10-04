@@ -269,7 +269,7 @@ public class usersDAO {
 	  }
 	
 	
-	public String findNick(entireDiaryVO vo) {
+	public String findNick(String email) {
 		conn();
 		
 		String sql = "SELECT USER_NICK FROM USERS WHERE USER_EMAIL = ?";
@@ -277,7 +277,7 @@ public class usersDAO {
 		String result = "";
 		try {
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, vo.getUser_email());
+			psmt.setString(1, email);
 			
 			rs = psmt.executeQuery();
 			
