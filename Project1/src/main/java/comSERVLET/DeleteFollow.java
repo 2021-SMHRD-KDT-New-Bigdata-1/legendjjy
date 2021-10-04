@@ -27,8 +27,8 @@ public class DeleteFollow extends HttpServlet {
 	      
 	      if(cnt>0) {
 	    	  out.print("<script>");
-	    	  out.print("alert('삭제되었습니다.')");
-	    	  out.print("location.href='history.back()'");
+	    	  out.print("alert('삭제되었습니다.');");
+	    	  out.print("location.href='public/follow/follow.jsp';");
 	    	  out.print("</script>");
 	      };
 	      
