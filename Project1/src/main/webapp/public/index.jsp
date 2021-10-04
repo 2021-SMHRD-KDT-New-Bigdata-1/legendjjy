@@ -340,8 +340,8 @@ input[type="text"] {
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
 	diaryDAO dao = new diaryDAO();
-/* 	ArrayList<entireDiaryVO> today_list = dao.today_diary();
- */	%>
+	ArrayList<entireDiaryVO> today_list = dao.today_diary();
+	%>
 
 	<!-- ===============================================-->
 	<!--    Main Content-->
@@ -417,8 +417,8 @@ input[type="text"] {
 						<div class="col-12">
 							<div class="swiper-container pb-4 overflow-hidden"
 								data-pagination-target="pagination1">
-								<%-- <div class="swiper-wrapper">
-								<%for(int i=0; i<today_list.size(); i++){ %>
+								<div class="swiper-wrapper">
+								<%for(int i=0; i<10; i++){ %>
 									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)">
 									<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
 										<img class="w-100" id="modal_opne_btn"
@@ -427,7 +427,7 @@ input[type="text"] {
 											</a>
 									</div>
 								<%} %>
-								</div> --%>
+								</div>
 							</div>
 						</div>
 					</div>
