@@ -219,7 +219,7 @@ public class usersDAO {
 	public ArrayList<followVO> follow_list(usersVO vo){
 		conn();
 		
-		String sql = "SELECT FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ DESC";
+		String sql = "SELECT FOLLOW_SEQ, FOLLOW_EMAIL FROM FOLLOWINGS WHERE USER_EMAIL = ? ORDER BY FOLLOW_SEQ DESC";
 		
 		ArrayList<followVO> follow_list = new ArrayList<followVO>();
 		try {
@@ -231,9 +231,10 @@ public class usersDAO {
 			
 			while(rs.next()) {
 				
-				String follow_email = rs.getString(1);
-				
-				followVO vo2 = new followVO(follow_email);
+				int follow_seq = rs.getInt(1);
+				String follow_email = rs.getString(2);
+
+				followVO vo2 = new followVO(follow_seq, follow_email);
 				
 				follow_list.add(vo2);
 			 	}
@@ -267,6 +268,29 @@ public class usersDAO {
 		}
 		return cnt;
 	  }
+	
+	public int delete_follow(int follow_seq) {
+		
+		conn();
+		
+		String sql = "DELETE FROM FOLLOWINGS WHERE FOLLOW_SEQ = ?";
+		
+		int cnt = 0;
+		
+		try {
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setInt(1, follow_seq);
+			
+			cnt = psmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
 	
 	
 	public String findNick(String email) {

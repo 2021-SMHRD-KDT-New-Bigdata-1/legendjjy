@@ -109,7 +109,8 @@
 				<ul class="board">
 					<li class="fl tc w500 list t_line lt_line">@<%=userdao.findNick(follow_list.get(i).getFollow_email()) %></li>
 					<li class="fl tc w500 list t_line lt_line"><%=follow_list.get(i).getFollow_email() %></li>
-					<li class="fl tc w120 list lt_line"><button id="delete">취소</button></li>
+					<li id="delete" class="fl tc w120 list t_line lt_line" type="button" onclick="location.href="../../DeleteFollow?follow_seq=<%follow_list.get(i).getFollow_seq(); %>'">취소</li>
+					
 				</ul>
 				<%} %>
 			</div>
