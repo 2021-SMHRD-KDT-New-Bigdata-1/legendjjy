@@ -25,6 +25,7 @@
 	int diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
 	diaryDAO dao = new diaryDAO();
 	entireDiaryVO enVO = dao.select_diary(diary_seq);
+	String hashtag = "";
 	%>
 		<div class="main_bottom">
 
@@ -46,8 +47,8 @@
 								<input name="file" id="file" type="file"
 								onchange="previewImage(this, 'user_upload_img');"
 								style="display: none;">
-								<button class="button"
-								onclick="onclick=document.all.file.click()"
+								<button class="button" type="button"
+								onclick="document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 						</td>
@@ -68,8 +69,9 @@
 										"><%= enVO.getDiary_content() %></textarea>
 								</div>
 								<div class="form-group">
+								<%if(enVO.getHash_tag()!=null){hashtag=enVO.getHash_tag();}%>
 									<br> <input type="text" class="form-control" id="writer"
-										placeholder="태그(2자-10자)" name="writer" value="<%= enVO.getHash_tag() %>"
+										placeholder="태그(2자-10자)" name="writer" value="<%=hashtag %>"
 										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
 								</div>

@@ -137,19 +137,6 @@
 	diaryDAO dao = new diaryDAO();
 	usersDAO userdao = new usersDAO();
 	ArrayList<entireDiaryVO> diary_list = dao.look_diary();
-
-	// 조회수 증가
-	//dao.update_hits(int diary_seq);
-
-	// 본인이 쓴 글에서는 수정하기 버튼 보이게
-/* 	String user_email = null;
-	if(session.getAttribute("user_email") !=null){
-		user_email = (String)session.getAttribute("user_email");
-	}
-
-	if (user_email.equals(divo.getUser_email())) {
-		showModify();
-	} */
 	%>
 
 	<!-- ------------------------------------------------------------- -->
@@ -309,6 +296,7 @@
 
 		</form>
 
+
 		<div class="list_wrap">
 			<ul>
 				<%for(int i=0; i<diary_list.size(); i++){%>
@@ -338,7 +326,8 @@
 			$.ajax({
 				type: "POST",
 				url: "../HitsCheckService",
-				data: {"post_seq":seq}
+				data: {"post_seq":seq},
+				async: false
 			})
 		}
 	</script>

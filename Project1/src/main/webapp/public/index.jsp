@@ -541,8 +541,8 @@ input[type="text"] {
 								<input name="file" id="file" type="file"
 								onchange="previewImage(this, 'user_upload_img');"
 								style="display: none;">
-								<button class="button"
-								onclick="onclick=document.all.file.click()"
+								<button class="button" type="button"
+								onclick="document.all.file.click()"
 								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 						</td>
