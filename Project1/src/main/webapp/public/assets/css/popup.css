@@ -86,17 +86,15 @@ button {
 
 #content_nick{
 	font-weight: bold;
-	padding-left: 35px;
-	width: 350px;
+	padding-left: 20px;
 	height: 70px;
-	text-align: right;
 }
 
 #nick_inner{
-	border: 1px solid orange;
-	border-radius: 15px;
-	padding: 10px;
 	font-size: 30px;
+	color: gray;
+	background-color: white;
+	border-color: white;
 }
 
 #content_date{
