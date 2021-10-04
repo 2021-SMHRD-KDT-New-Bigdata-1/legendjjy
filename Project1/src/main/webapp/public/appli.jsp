@@ -22,12 +22,12 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #ffffff;
-	font-size: 15px;
+	font-size: 22px;
 }
 
 input, textarea, button {
 	color: #ffffff;
-	font-size: 15px;
+	font-size: 23px;
 }
 
 input:focus, textarea:focus, button:focus {
@@ -40,16 +40,19 @@ textarea {
 
 h3 {
 	margin: 0 0 12px 0;
-	font-size: 45px;
+	font-size: 68px;
 	text-align: center;
 	text-transform: uppercase;
 }
 
 p {
 	padding: 0 10px;
-	margin: 0 0 55px 0;
+	margin: 0 0 14px 0;
 	text-align: center;
-	line-height: 2.8;
+	line-height: 1.8;
+}
+a{
+	font-size: 35px;
 }
 
 .wrapper {
@@ -60,12 +63,14 @@ p {
 
 .form-container {
 	max-width: 767px;
-	width: 650px;
+	height: 820px;
+	width: 777px;
 	margin: auto;
 	padding: 70px 100px 80px;
-	border: 10px solid;
+	border: 7px solid;
 	background: #ffe1b9;
-	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+	box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);
+	border-radius : 20px;
 }
 
 .form-group {
@@ -79,7 +84,7 @@ p {
 	font-weight: bold;
 	top: 11px;
 	color: ivory;
-	font-size: 18px;
+	font-size: 35px;
 	cursor: text;
 	transition: all 0.2s ease;
 	transform-origin: 0 0;
@@ -99,12 +104,13 @@ p {
 
 .form-control {
 	width: 100%;
-	height: 43px;
+	height: 110px;
 	display: block;
 	font-size: 15px;
 	border: none;
 	border-bottom: 2px solid white;
 	background: none;
+	line-height:3.0rem;
 }
 
 .form-control:focus, .form-control:valid {
@@ -129,7 +135,7 @@ button[type="submit"] {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: 60px auto 0;
+	margin: -86px auto 0;
 	padding: 0;
 	color: #ffffff;
 	border: 2px solid #ffffff;
@@ -181,9 +187,9 @@ button[type="submit"]:hover {
 				</div>
 				<div class="form-group">
 					<span><a style="margin-right: 70px;">디자인 선택</a> <a>1</a><input
-						type="radio" name="choose" value="1" style="margin-right: 60px;"
+						type="radio" name="choose" value="1" style="margin-right: 80px; margin-left: 41px;"
 						required> <a>2</a><input type="radio" name="choose"
-						value="2"> </span> <span class="border"></span>
+						value="2" style="margin-left:41px;"> </span> <span class="border"></span>
 
 
 				</div>
