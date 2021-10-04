@@ -157,11 +157,14 @@
 
 					<h3 class="my-4">
 						@<%=userdao.findNick(user_email)%>
-						<%if(vo==null){ }else{%>
-						<td id="<%=user_email%>" onclick="subscribe(this.id)"><button
-										id="content_subscribe">구독하기</button></td>
-						<%} %>
 					</h3>
+					<%if(vo==null){ }else{%>
+					
+						<div id="<%=user_email%>" onclick="subscribe(this.id)"><button id="content_subscribe">구독하기</button>
+						</div>
+					
+						<%} %>
+					
 
 
 				</div>
@@ -231,7 +234,7 @@
 	<script src="assets/js/functions-min.js"></script>
 	<script src="assets/js/comment.js"></script>
 	<script type="text/javascript" src="assets/js/popup.js"></script>
-		<script>
+	<script>
 		function subscribe(clicked_id) {
 			var post_email = clicked_id;
 			$.ajax({
@@ -239,6 +242,9 @@
 				url : "../FollowService",
 				data : {"follow_email" : post_email},
 				async : false,
+				success: function(data){
+					alert(data);
+				}
 			})
 		}
 	</script>
