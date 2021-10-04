@@ -17,20 +17,21 @@ public class DeleteDiaryService extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		int diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
-
 		request.setCharacterEncoding("EUC-KR");
 		response.setCharacterEncoding("EUC-KR");
+		
+		int diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
+
 		PrintWriter out = response.getWriter();
 
 		diaryDAO dao = new diaryDAO();
 		int cnt = dao.delete_diary(diary_seq);
 
-		if (cnt > 0) {
+		if(cnt > 0) {
 			out.print("<script>");
 			out.print("alert('삭제되었습니다.')");
-			out.print("location.href='history.back()'");
+			out.print("location.href='public/look.jsp'");
 			out.print("</script>");
-		}
+		};
 	}
 }

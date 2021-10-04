@@ -339,7 +339,7 @@ public class usersDAO {
 	public ArrayList<loveitVO> loveit_list(String users_email ){
 		conn();
 		
-		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.SCRAP_SEQ WHERE USER_EMAIL = ?";
+		String sql = "SELECT * FROM DIARY D INNER JOIN MYSCAPS M ON D.DAIRY_SEQ = M.DAIRY_SEQ WHERE USER_EMAIL = ?";
 			
 		ArrayList<loveitVO> loveit_list = new ArrayList<loveitVO>();
 		try {
