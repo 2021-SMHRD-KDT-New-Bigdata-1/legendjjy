@@ -322,16 +322,33 @@ public class usersDAO {
 	public int add_scrap(int post_seq, String email) {
 		conn();
 		
-		String sql = "INSERT INTO MYSCRAPS VALUES(MYSCRAPS_SEQ.NEXTVAL, ?, SYSDATE, ?)";
+		String sql = "SELECT * FROM MYSCRAPS WHERE DIARY_SEQ = ? AND USER_EMAIL = ?";
 		
 		int cnt = 0;
+		
 		try {
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, post_seq);
 			psmt.setString(2, email);
 			
-			cnt = psmt.executeUpdate();
+			rs = psmt.executeQuery();
 			
+			if(rs.next()) {
+				cnt = 0;
+			}else {
+				String sql2 = "INSERT INTO MYSCRAPS VALUES(MYSCRAPS_SEQ.NEXTVAL, ?, SYSDATE, ?)";
+				
+				try {
+					psmt = conn.prepareStatement(sql2);
+					psmt.setInt(1, post_seq);
+					psmt.setString(2, email);
+					
+					cnt = psmt.executeUpdate();
+					
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -343,7 +360,7 @@ public class usersDAO {
 	public int add_follow(usersVO vo, String follow_email) {
 		conn();
 		
-		String sql = "INSERT INTO FOLLOWINGS VALUES (FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
+		String sql = "SELECT * FROM FOLLOWINGS WHERE USER_EMAIL = ? AND FOLLOW_EMAIL = ?";
 		
 		int cnt = 0;
 		try {
@@ -351,10 +368,26 @@ public class usersDAO {
 			psmt.setString(1, vo.getUser_email());
 			psmt.setString(2, follow_email);
 			
-			cnt = psmt.executeUpdate();
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				cnt = 0;
+			}else {
+				String sql2 = "INSERT INTO FOLLOWINGS VALUES (FOLLOWINGS_SEQ.NEXTVAL, ?, ?)";
+				
+				try {
+					psmt = conn.prepareStatement(sql2);
+					psmt.setString(1, vo.getUser_email());
+					psmt.setString(2, follow_email);
+					
+					cnt = psmt.executeUpdate();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+			}
 		}catch(Exception e) {
 			e.printStackTrace();
-		}finally {
+		}finally{
 			close();
 		}
 		return cnt;

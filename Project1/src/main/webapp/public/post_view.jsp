@@ -144,10 +144,7 @@
 				},
 				async : false,
 				success : function(data) {
-					alert('스크랩되었습니다');
-				},
-				error : function(jqXHR, textStatus, errorThrown) {
-					alert("존재하지 않는 게시물입니다.");
+					alert(data);
 				}
 			})
 		}
@@ -160,12 +157,8 @@
 				url : "../FollowService",
 				data : {"follow_email" : post_email},
 				async : false,
-				success : function(data) {
-					alert("구독되었습니다.");
-					
-				},
-				error : function(jqXHR, textStatus, errorThrown) {
-					alert("존재하지 않는 게시물입니다.");
+				success: function(data){
+					alert(data);
 				}
 			})
 		}
