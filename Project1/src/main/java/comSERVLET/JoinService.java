@@ -36,12 +36,12 @@ public class JoinService extends HttpServlet {
       PrintWriter out = response.getWriter();
       if(cnt>0) {
            out.print("<script>");
-           out.print("alert('ì„±ê³µì ìœ¼ë¡œ íšŒì›ê°€ì…ì´ ì™„ë£Œë˜ì—ˆìŠµë‹ˆë‹¤');");
+           out.print("alert('¼º°øÀûÀ¸·Î °¡ÀÔµÇ¾ú½À´Ï´Ù.');");
            out.print("location.href = 'public/Login_v2/login.jsp'");
            out.print("</script>");
       }else {
            out.print("<script>");
-           out.print("alert('íšŒì›ê°€ì…ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤');");
+           out.print("alert('³»¿ëÀ» ´Ù½Ã È®ÀÎÇØ ÁÖ¼¼¿ä.');");
            out.print("location.href = 'public/Login_v2/join.jsp'");
            out.print("</script>");
       }
