@@ -297,4 +297,27 @@ public class diaryDAO {
 			close();
 		}
 	}
+	
+	public ArrayList<Integer> find_diary_seq(String email) {
+		conn();
+		
+		String sql = "SELECT DIARY_SEQ FROM MYSCRAPS WHERE USER_EMAIL = ?";
+		
+		ArrayList<Integer> seq_list = new ArrayList<Integer>();
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+			
+			rs = psmt.executeQuery();
+			
+			while(rs.next()) {
+				seq_list.add(rs.getInt(1)); 
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return seq_list;
+	}
 }
