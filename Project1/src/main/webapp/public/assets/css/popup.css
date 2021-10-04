@@ -78,7 +78,7 @@ button {
 	width: 70px; 
 	height: 70px; 
 	color: black; 
-	font-size: 20px; 
+	font-size: 30px; 
 	font-weight: bold; 
 	background-color: orange; 
 	border: none;
@@ -96,6 +96,7 @@ button {
 	border: 1px solid orange;
 	border-radius: 15px;
 	padding: 10px;
+	font-size: 30px;
 }
 
 #content_date{
@@ -106,7 +107,7 @@ button {
 }
 
 #content_title{
-	font-size: 20px;
+	font-size: 40px;
 	font-weight: bold;
 	padding-left: 20px;
 	width: 700px;
@@ -114,7 +115,7 @@ button {
 }
 
 #content_content{
-	font-size: 16px;
+	font-size: 24px;
 	padding-left: 20px;
 	width: 700px;
 	height: 420px;
@@ -142,7 +143,7 @@ button {
     color: white;
     background-color: rgb(32, 85, 174);
     font-weight: bold;
-    font-size: 13px;
+    font-size: 30px;
     margin-left: 6px;
 }
 
@@ -155,7 +156,7 @@ button {
     color: white;
     background-color: rgb(32, 85, 174);
     font-weight: bold;
-    font-size: 13px;
+    font-size: 30px;
     margin-left: 6px;
 }
 
@@ -168,7 +169,7 @@ button {
     color: white;
     background-color: rgb(32, 85, 174);
     font-weight: bold;
-    font-size: 13px;
+    font-size: 30px;
 }
 
 #blank{

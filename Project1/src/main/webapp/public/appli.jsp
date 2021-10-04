@@ -22,12 +22,13 @@ body {
 	margin: 0;
 	padding: 0;
 	color: #ffffff;
-	font-size: 22px;
+
+	font-size: 30px;
 }
 
 input, textarea, button {
 	color: #ffffff;
-	font-size: 23px;
+	font-size: 30px;
 }
 
 input:focus, textarea:focus, button:focus {
@@ -84,7 +85,11 @@ a{
 	font-weight: bold;
 	top: 11px;
 	color: ivory;
+<<<<<<< HEAD
 	font-size: 35px;
+=======
+	font-size: 30px;
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 	cursor: text;
 	transition: all 0.2s ease;
 	transform-origin: 0 0;
@@ -106,7 +111,7 @@ a{
 	width: 100%;
 	height: 110px;
 	display: block;
-	font-size: 15px;
+	font-size: 30px;
 	border: none;
 	border-bottom: 2px solid white;
 	background: none;
@@ -156,7 +161,7 @@ button[type="submit"]:hover {
 	}
 	p {
 		padding: 0;
-		font-size: 14px;
+		font-size: 26px;
 	}
 	.wrapper {
 		background: #39459b;

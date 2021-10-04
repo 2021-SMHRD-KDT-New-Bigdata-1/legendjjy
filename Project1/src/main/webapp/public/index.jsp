@@ -1,3 +1,6 @@
+<%@page import="comVO.entireDiaryVO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="comDAO.diaryDAO"%>
 <%@page import="comVO.usersVO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
 	pageEncoding="EUC-KR"%>
@@ -84,7 +87,7 @@ input[type="text"] {
 {
   background-color: burlywood;
   padding:20px 0 12px;
-  font-size:15px;
+  font-size:20px;
   line-height:21px;
   color:#737373;
 }
@@ -336,51 +339,10 @@ input[type="text"] {
 <body data-bs-spy="scroll" data-bs-target="#navbar">
 	<%
 	usersVO vo = (usersVO) session.getAttribute("vo");
+	diaryDAO dao = new diaryDAO();
+	ArrayList<entireDiaryVO> today_list = dao.today_diary();
 	%>
-	<div class="container">
-		<div id="modal">
-			<div class="modal_header">
-				<section>
-					<strong><a href="#" style="display: inline margin: 20px">@legend</a></strong>
-					<div class="modal_content">
-						<div class="diaryIMG">
-							<img id="selectIMG" src="assets/img/camera.png">
-						</div>
-						<div class="diaryContent">
-							<h2 style="margin-bottom: 15px">title</h2>
-							<p style="direction: rtl">time</p>
-							<br>
-							<p>Duis aute irure dolor in reprehenderit in voluptate velit
-								esse cillum dolore eu fugiat nulla pariatur. Aspernatur aut odit
-								aut fugit, sed quia consequuntur magni dolores eos qui ratione
-								voluptatem sequi nesciunt.</p>
-							<section class="list"></section>
-						</div>
-					</div>
-				</section>
-			</div>
-			<div class="modal_header">
-				<section>
-					<div style="width: 100%;">
-						<div id="form-commentInfo">
-							<div id="comment-count">
-								댓글 <span id="count">0</span>
-							</div>
-							<input id="comment-input" onkeyup="enterkey();" type="text"
-								value="" placeholder="댓글을 달아주세요.">
-							<button id="submit">OK</button>
-						</div>
-						<div id="comments"></div>
-					</div>
-				</section>
-			</div>
-			<div class="modal_layer">
-				<button type="button" class="btm_image" id="modal_close_btn">
-					<img src="assets/img/closeicon.png" alt="">
-				</button>
-			</div>
-		</div>
-	</div>
+
 	<!-- ===============================================-->
 	<!--    Main Content-->
 	<!-- ===============================================-->
@@ -456,46 +418,15 @@ input[type="text"] {
 							<div class="swiper-container pb-4 overflow-hidden"
 								data-pagination-target="pagination1">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide h-auto">
+								<%for(int i=0; i<today_list.size(); i++){ %>
+									<div class="swiper-slide h-auto" id="<%=today_list.get(i).getDiary_seq()%>" onclick="hitsup(this.id)">
+									<a href="post_view.jsp?post_seq=<%=today_list.get(i).getDiary_seq() %>">
 										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-1.png" alt="products" />
+											src="<%=request.getContextPath() %>/upload/<%=today_list.get(i).getDiary_title()%>.<%=today_list.get(i).getUser_email() %>.png"
+											onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
+											</a>
 									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-2.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-3.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-4.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-5.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-1.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-2.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-3.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn" id="modal_opne_btn"
-											src="assets/img/gallery/product-4.png" alt="products" />
-									</div>
-									<div class="swiper-slide h-auto">
-										<img class="w-100" id="modal_opne_btn"
-											src="assets/img/gallery/product-5.png" alt="products" />
-									</div>
+								<%} %>
 								</div>
 							</div>
 						</div>
@@ -533,41 +464,33 @@ input[type="text"] {
 			</div>
 		<form class="upload" action="../UploadService" method="post" enctype="multipart/form-data">
 			<div class="container" style="margin-bottom: 100px;">
-				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray;" data-aos="fade-up" data-aos-duration="3000">
+				<table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray; width: 100%;" data-aos="fade-up" data-aos-duration="3000">
 					<tr>
-						<td style=" border: 1px solid silver;">
-						
+						<td style="width: 30%">
 							<div id="user_upload_img"></div> 
 								<input name="file" id="file" type="file"
 								onchange="previewImage(this, 'user_upload_img');"
 								style="display: none;">
 								<button class="button" type="button"
 								onclick="document.all.file.click()"
-								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 20px; padding-bottom: 60px; 
+								style="margin: auto; width: 50px; height: 50px; display: block; font-size: 30px; padding-bottom: 60px; 
 								background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
 						</td>
-						<td style=" border: 1px solid silver; border-radius: 20px;">
-							<div style="width: 640px; font-size: 20px;">
-								<div class="form-group">
-									<br> <input type="text" class="form-control" id="title"
+						<td>
+							<div style="width: 100%; font-size: 24px;">
+									<input type="text" class="`" id="title"
 										placeholder="제목 입력(2-100)" name="title" maxlength="100"
 										required="required" pattern=".{2,100}"
-										style="font-size: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 28px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; margin-top: 30px;
 										">
-								</div>
-								<div class="form-group">
-									<br>
 									<textarea class="form-control" rows="15" id="content"
 										name="content" placeholder="내용 작성" 
-										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 28px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; height: 500px;
 										"></textarea>
-								</div>
-								<div class="form-group">
-									<br> <input type="text" class="form-control" id="writer"
+									<input type="text" class="form-control" id="writer"
 										placeholder="태그(2자-10자)" name="writer"
-										style="font-size: 17px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+										style="font-size: 24px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
 										">
-								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
 								<input type="checkbox" name="public_yn" value="y"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
@@ -575,13 +498,13 @@ input[type="text"] {
 								if (vo == null) {
 								%>
 								<button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
-									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">등록</button>
 								<%
 								} else {
 								%>
 								<button type="submit" class="btn btn-default" id="btn_submit"
-									style="border: 1px solid gray; font-size: 20px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
+									style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
 									border: none;">등록</button>
 								<%
 								}
@@ -689,7 +612,18 @@ input[type="text"] {
 			$("#modal").attr("style", "display:none");
 		});
 	</script>
-	<!-- image upload -->
+    <!-- 조회수기능 -->
+	<script>
+		function hitsup(clicked_id){
+			var seq = clicked_id;
+			$.ajax({
+				type: "POST",
+				url: "../HitsCheckService",
+				data: {"post_seq":seq},
+				async: false
+			})
+		}
+	</script>
 
 </body>
 </html>
