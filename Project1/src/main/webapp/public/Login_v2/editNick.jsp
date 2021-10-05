@@ -55,6 +55,8 @@
 						<input class="input100" type="text" name="nickname">
 						<span class="focus-input100" data-placeholder="Nickname"></span>
 					</div>
+					<div style="text-align: right; margin-bottom: 30px"><button type="button" value="닉네임 중복 확인" style="width: 110px; height: 30px; border: none; 
+						color: white; background: #1b5ac2; box-shadow:3px 3px 3px silver;" onclick="checknick()">닉네임 중복 확인</button></div>
 					<span class="txt1" style="color:red"><%=errNickMsg %></span>
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
@@ -89,6 +91,25 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+		<script>
+		function checknick(){
+			var nick = $('input#input_nick').val();
+			if(nick==""){
+				alert("닉네임을 입력해주세요");
+			}else{
+				$.ajax({
+					type: "POST",
+					url: "../../CheckNickService",
+					data: {"input_nick": nick},
+					async: false,
+					success: function(data){
+						alert(data)
+					}
+				})
+			}
+		}
+	</script>
 
 </body>
 

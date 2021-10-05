@@ -159,7 +159,7 @@
 			</div>
 
 
-			<ul class="navi_inner2" style="width: 606px; right: -50px;">
+			<ul class="navi_inner2">
 				<li><a
 					href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>write.jsp<%}%>">일기
 						쓰러가기</a></li>
@@ -217,7 +217,7 @@
 
 	<main class="main" id="top">
 		<form method="post" name="search_form" action="search_diary.jsp" style="position: sticky; top: 120px; z-index: 1; ">
-			<input type="text" name="word"placeholder="검색어 입력" style="margin-left:710px; border-radius: 26px; height: 46px; width: 482px; font-size: 20px;">
+			<input type="text" name="word"placeholder="검색어 입력" style="margin-left:710px; border-radius: 26px; height: 46px; width: 482px; font-size: 20px; padding-left: 20px; border: solid 1px #1b5ac2;">
 			<input type="submit" value="검색" style="width:80px; margin-left: -92px; border-radius: 23px; border:none; background-color: white; font-size:20px;">
 		</form>
 
@@ -244,7 +244,7 @@
 						<a href="post_view.jsp?post_seq=<%=diary_list.get(i).getDiary_seq() %>"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=diary_list.get(i).getDiary_title()%>.<%=diary_list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div></a>
 						<div class="cont"> 
-							<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email()) %></strong>
+							<strong style="letter-spacing: 0.5px;">@<%=userdao.findNick(diary_list.get(i).getUser_email()) %></strong>
 							<p><%=diary_list.get(i).getDiary_title() %></p>
 							<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span class="date"><%=diary_list.get(i).getDiary_date() %></span>
 						</div>

@@ -52,8 +52,8 @@
 	font-size: 20px;
 	position: absolute;
 	top: 30px;
-	right: 30px;
-	width: 650px;
+	right: -50px;
+	width: 660px;
 	font-weight: bold;
 	color: black;
 }

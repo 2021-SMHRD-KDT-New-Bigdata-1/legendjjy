@@ -64,7 +64,7 @@
 								<td><a
 									href="post_view_update.jsp?diary_seq=<%=enVO.getDiary_seq()%>"><button
 											id="content_modify">수정하기</button></a></td>
-								<td><a onclick="return confirm('정말로 삭제하시겠습니까?')"
+								<td onclick="return confirm('정말로 삭제하시겠습니까?')"><a 
 									href="../DeleteDiaryService?diary_seq=<%=enVO.getDiary_seq()%>"><button
 											id="content_modify">삭제하기</button></a></td>
 								<%
@@ -141,8 +141,7 @@
 		
 	
 	<button id="close_button" onclick="history.back()">X</button>
-	<script
-		src="https://ajaax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
 	<script>
 		window.jQuery
 				|| document

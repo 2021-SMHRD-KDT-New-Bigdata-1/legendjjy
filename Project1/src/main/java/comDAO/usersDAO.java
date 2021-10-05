@@ -71,6 +71,58 @@ public class usersDAO {
 		return cnt;
 	}
 	
+	public int check_email(String email) {
+		conn();
+		
+		String sql = "SELECT USER_EMAIL FROM USERS WHERE USER_EMAIL = ?";
+		
+		int cnt = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				cnt = 0;
+			}else {
+				cnt = 1;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
+	public int check_nick(String nick) {
+		conn();
+		
+		String sql = "SELECT USER_NICK FROM USERS WHERE USER_NICK = ?";
+		
+		int cnt = 0;
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, nick);
+			
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				cnt = 0;
+			}else {
+				cnt = 1;
+			}
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}finally {
+			close();
+		}
+		return cnt;
+	}
+	
 	public usersVO login(String email, String pw) {
 		conn();
 		

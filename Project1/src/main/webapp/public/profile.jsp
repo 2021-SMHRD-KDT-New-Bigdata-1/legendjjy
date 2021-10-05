@@ -178,10 +178,10 @@
 									style="width: 100%; height: 100%; object-fit: cover;">
 							</div>
 							<div class="cont">
-								<strong>@<%=userdao.findNick(diary_list.get(i).getUser_email())%></strong>
-								<p><%=diary_list.get(i).getDiary_title()%></p>
-								<span class="hits">조회수 <%=diary_list.get(i).getHits()%></span><span
-									class="date"><%=diary_list.get(i).getDiary_date()%></span>
+								<strong style="letter-spacing: 0.5px; font-size: 24px;">@<%=userdao.findNick(diary_list.get(i).getUser_email())%></strong>
+								<p style="font-size: 16px;"><%=diary_list.get(i).getDiary_title()%></p>
+								<span class="hits" style="font-size: 16px;">조회수 <%=diary_list.get(i).getHits()%></span><span
+									class="date" style="font-size: 16px;"><%=diary_list.get(i).getDiary_date()%></span>
 							</div></a></li>
 					<%
 					}

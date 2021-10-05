@@ -67,7 +67,7 @@ body {
 }
 .search_bar {
 	height: 40px;
-	width: 20%;
+	width: 480px;
 	border: 1px solid #1b5ac2;
 	background: #ffffff;
 	margin-left: 20%;
@@ -145,7 +145,7 @@ body {
 		    </div>
 			    
    			
-	    	<ul class="navi_inner2" style="right:-60px; width:591px;">
+	    	<ul class="navi_inner2" >
 	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
 	            <li ><a href="look.jsp">둘러보기</a></li>
 	            <li ><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>
@@ -191,7 +191,7 @@ body {
 					<a href="post_view.jsp?post_seq=<%=list.get(i).getDiary_seq() %>"><div class="image"><img src="<%=request.getContextPath() %>/upload/<%=list.get(i).getDiary_title()%>.<%=list.get(i).getUser_email() %>.png"
 						alt="" onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;"></div></a>
 					<div class="cont">
-						<strong>@<%=userdao.findNick(list.get(i).getUser_email()) %></strong>
+						<strong style="letter-spacing: 0.5px;">@<%=userdao.findNick(list.get(i).getUser_email()) %></strong>
 						<p><%=list.get(i).getDiary_title() %></p>
 						<span class="hits">조회수 <%=list.get(i).getHits() %></span> <span class="date"><%=list.get(i).getDiary_date() %></span>
 					</div>

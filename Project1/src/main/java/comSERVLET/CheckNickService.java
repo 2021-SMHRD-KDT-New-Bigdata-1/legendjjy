@@ -9,29 +9,27 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import comDAO.diaryDAO;
+import comDAO.usersDAO;
 
-@WebServlet("/DeleteDiaryService")
-public class DeleteDiaryService extends HttpServlet {
+@WebServlet("/CheckNickService")
+public class CheckNickService extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		request.setCharacterEncoding("UTF-8");
-		int diary_seq = Integer.parseInt(request.getParameter("diary_seq"));
+		String input_nick = request.getParameter("input_nick");
+		response.setCharacterEncoding("UTF-8");
 		
-		diaryDAO dao = new diaryDAO();
+		usersDAO dao = new usersDAO();
 		
-		int cnt = dao.delete_diary(diary_seq);
+		int cnt = dao.check_nick(input_nick);
 		
 		PrintWriter out = response.getWriter();
 		if(cnt>0) {
-			out.print("<script>");
-			out.print("history.go(-2);");
-			out.print("location.reload();");
-			out.print("</script>");
+			out.print("사용가능한 닉네임입니다.");
+		}else {
+			out.print("이미 사용중인 닉네임입니다.");
 		}
-		
 	}
 
 }

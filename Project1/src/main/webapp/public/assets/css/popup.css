@@ -91,9 +91,13 @@ button {
 
 #nick_inner{
 	font-size: 30px;
-	color: gray;
-	background-color: white;
-	border-color: white;
+	height: 50px;
+	color: darkblue;
+/* 	background-color: orange; */
+	border: none;
+	border-radius: 20px;
+	box-shadow: 3px 3px 3px silver;
+	padding: 0 10px;
 }
 
 #content_date{
@@ -115,7 +119,9 @@ button {
 	font-size: 25px;
 	padding-left: 20px;
 	width: 700px;
-	height: 420px;
+	height: 380px;
+    vertical-align: text-top;
+    padding-top: 30px;
 }
 
 #content_tag{
@@ -134,39 +140,39 @@ button {
 #content_modify{
 	padding-right: 18px;
 	text-align: right;
-	width: 80px;
+	width: 100px;
     height: 40px;
     border: none;
     color: white;
     background-color: rgb(32, 85, 174);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 6px;
 }
 
 #content_scrap{
 	padding-right: 15px;
 	text-align: right;
-	width: 80px;
+	width: 110px;
     height: 40px;
     border: none;
     color: white;
     background-color: rgb(32, 85, 174);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
     margin-left: 6px;
 }
 
 #content_subscribe{
 	padding-right: 20px;
 	text-align: right;
-	width: 80px;
+	width: 100px;
     height: 40px;
     border: none;
     color: white;
     background-color: rgb(32, 85, 174);
     font-weight: bold;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 #blank{

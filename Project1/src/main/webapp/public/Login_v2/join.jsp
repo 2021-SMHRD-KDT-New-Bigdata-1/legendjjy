@@ -45,12 +45,14 @@
 						Welcome
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="이메일을 확인해주세요">
-						<input class="input100" type="text" name="email">
+					<div class="wrap-input100 validate-input" data-validate="이메일을 확인해주세요" style="margin-bottom: 15px; margin-top: 35px;">
+						<input class="input100" id="input_email" type="text" name="email">
 						<span class="focus-input100" data-placeholder="Email"></span>
 					</div>
-
-					<div class="wrap-input100 validate-input" data-validate="비밀번호를 입력해주세요">
+						<div style="text-align: right"><button type="button" value="이메일 중복 확인" style="width: 110px; height: 30px; border: none; 
+						color: white; background: #1b5ac2; box-shadow:3px 3px 3px silver;" onclick="checkemail()">이메일 중복 확인</button></div>
+					
+					<div class="wrap-input100 validate-input" data-validate="비밀번호를 입력해주세요" style="margin-bottom: 40px;">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
@@ -58,10 +60,12 @@
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="닉네임은 2~10자 문자 또는 숫자이어야 합니다">
-						<input class="input100" type="text" name="nickname">
+					<div class="wrap-input100 validate-input" data-validate="닉네임은 2~10자 문자 또는 숫자이어야 합니다" style="margin-bottom: 15px; margin-top: 35px;">
+						<input class="input100" id="input_nick" type="text" name="nickname">
 						<span class="focus-input100" data-placeholder="Nickname"></span>
 					</div>
+						<div style="text-align: right; margin-bottom: 30px"><button type="button" value="닉네임 중복 확인" style="width: 110px; height: 30px; border: none; 
+						color: white; background: #1b5ac2; box-shadow:3px 3px 3px silver;" onclick="checknick()">닉네임 중복 확인</button></div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
@@ -112,6 +116,46 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 	<!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="assets/js/jquery-3.6.0.min.js"></script>
+	<script>
+		function checkemail(){
+			var email = $('input#input_email').val();
+			var regExp = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+			if(email==""){
+				alert("이메일을 입력해주세요.");
+			}else if(email.match(regExp)==null) {
+                alert("이메일 형식이 아닙니다.");
+			}else{
+				$.ajax({
+					type: "POST",
+					url: "../../CheckEmailService",
+					data: {"input_email": email},
+					async: false,
+					success: function(data){
+						alert(data)
+					}
+				})
+			}
+		}
+	</script>
+	<script>
+		function checknick(){
+			var nick = $('input#input_nick').val();
+			if(nick==""){
+				alert("닉네임을 입력해주세요");
+			}else{
+				$.ajax({
+					type: "POST",
+					url: "../../CheckNickService",
+					data: {"input_nick": nick},
+					async: false,
+					success: function(data){
+						alert(data)
+					}
+				})
+			}
+		}
+	</script>
 
 </body>
 

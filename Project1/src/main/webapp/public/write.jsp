@@ -196,7 +196,7 @@ td {
 		    </div>
 			    
    			
-	    	<ul class="navi_inner2" style="top: 21px; right: -36px; width: 591px;">
+	    	<ul class="navi_inner2">
 	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
 	            <li ><a href="look.jsp">둘러보기</a></li>
 	            <li ><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>

@@ -437,7 +437,7 @@ input[type="text"] {
                                  onerror="this.src='assets/img/basicIMG.png'" style="width:100%; height:100%; object-fit:cover;" />
                               </a>
                               <div class="cont" style="color: black; margin-bottom: -30px;"><p><%=today_list.get(i).getDiary_title()%></p></div>
-                              <div style="color: black;"><span>@<%=userdao.findNick(today_list.get(i).getUser_email())  %></span></div>
+                              <div style="color: black;"><span>@ <%=userdao.findNick(today_list.get(i).getUser_email())  %></span></div>
                            </div>
             
                            
@@ -481,7 +481,7 @@ input[type="text"] {
          <div class="container" style="margin-bottom: 100px;">
             <table style="background-color: #fdfdfd; box-shadow: 5px 5px 5px gray; width: 100%;" data-aos="fade-up" data-aos-duration="3000">
                <tr>
-                  <td style="width: 30%">
+                  <td style="border: 1px solid silver; width: 640px;">
                      <div id="user_upload_img"></div> 
                         <input name="file" id="file" type="file"
                         onchange="previewImage(this, 'user_upload_img');"
@@ -489,24 +489,27 @@ input[type="text"] {
                         <button class="button" type="button"
                         onclick="document.all.file.click()"
                         style="margin: auto; width: 50px; height: 50px; display: block; font-size: 30px; padding-bottom: 60px; 
-                        background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black;">+</button>
+                        background: rgb(249, 208, 35); border: none; box-shadow: 3px 3px 3px silver; color: black; line-height:65px;">+</button>
                   </td>
-                  <td>
-                     <div style="width: 100%; font-size: 24px;">
+                  <td style=" border: 1px solid silver; border-radius: 20px;">
+                     <div style="width: 640px; font-size: 24px;">
                            <input type="text" class="`" id="title"
                               placeholder="제목 입력(2-15)" name="title" maxlength="15"
                               required="required" pattern=".{2,100}"
-                              style="font-size: 28px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; margin-top: 30px;
+                              style="font-size: 28px; width: 580px; padding-left: 20px;
+    							margin-left: 20px; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; margin-top: 30px;
                               ">
                            <textarea class="form-control" rows="15" id="content"
                               name="content" placeholder="내용 작성" 
-                              style="font-size: 28px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; height: 500px;
+                              style="font-size: 28px; width: 580px;
+    							margin-left: 20px;; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; height: 500px;
                               "></textarea>
                            <input type="text" class="form-control" id="writer"
                               placeholder="태그(2자-10자)" name="writer"
-                              style="font-size: 24px;  border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
+                              style="font-size: 24px; width: 580px;
+    							margin-left: 20px;; border-top: 1px solid rgb(255, 160, 0); border-left: none; border-right: none; 
                               ">
-                        <input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
+                        <input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px; margin-left: 20px;">댓글 허용
                         <input type="checkbox" name="public_yn" value="n"
                            style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
                         <%
@@ -514,13 +517,13 @@ input[type="text"] {
                         %>
                         <button type="submit" class="btn btn-default" onclick="alert('로그인이 필요합니다.')"
                            style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-                           border: none;">등록</button>
+                           border: none; margin-left: 15px;">등록</button>
                         <%
                         } else {
                         %>
                         <button type="submit" class="btn btn-default" id="btn_submit"
                            style="border: 1px solid gray; font-size: 28px; color: black; background: rgb(249, 208, 35); box-shadow: 3px 3px 3px silver;
-                           border: none;">등록</button>
+                           border: none; margin-left: 15px;">등록</button>
                         <%
                         }
                         %>

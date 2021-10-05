@@ -51,6 +51,7 @@ p {
 	margin: 0 0 14px 0;
 	text-align: center;
 	line-height: 1.8;
+	color: gray;
 }
 a{
 	font-size: 35px;
@@ -64,7 +65,7 @@ a{
 
 .form-container {
 	max-width: 767px;
-	height: 820px;
+	height: 730px;
 	width: 777px;
 	margin: auto;
 	padding: 70px 100px 80px;
@@ -84,12 +85,9 @@ a{
 	position: absolute;
 	font-weight: bold;
 	top: 11px;
-	color: ivory;
-<<<<<<< HEAD
-	font-size: 35px;
-=======
+	padding-left: 30px;
+    color: black;
 	font-size: 30px;
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-KDT-New-Bigdata-1/legendjjy.git
 	cursor: text;
 	transition: all 0.2s ease;
 	transform-origin: 0 0;
@@ -116,6 +114,8 @@ a{
 	border-bottom: 2px solid white;
 	background: none;
 	line-height:3.0rem;
+	color: black;
+	padding-top: 50px;
 }
 
 .form-control:focus, .form-control:valid {
@@ -140,7 +140,7 @@ button[type="submit"] {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin: -86px auto 0;
+	margin: -130px auto 0;
 	padding: 0;
 	color: #ffffff;
 	border: 2px solid #ffffff;
