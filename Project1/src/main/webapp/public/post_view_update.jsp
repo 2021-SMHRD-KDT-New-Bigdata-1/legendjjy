@@ -76,7 +76,7 @@
 										">
 								</div>
 								<input type="checkbox" name="comment_yn" value="y" style="margin-right: 5px;">댓글 허용
-								<input type="checkbox" name="public_yn" value="y"
+								<input type="checkbox" name="public_yn" value="n"
 									style="margin-left: 10px; margin-right: 5px;">나만 보기 <br>
 								
 								<button type="submit" class="btn btn-default" id="btn_submit"
