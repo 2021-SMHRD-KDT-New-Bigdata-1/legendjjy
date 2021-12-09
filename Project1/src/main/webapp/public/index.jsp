@@ -599,7 +599,9 @@ input[type="text"] {
    <script src="vendors/fontawesome/all.min.js"></script>
    <script src="assets/js/theme.js"></script>
    <script src="assets/js/jquery-3.6.0.min.js"></script>
-   <!-- '일기쓰기'메뉴 자동 스크롤 -->
+			    
+   <!-- by정현, '일기쓰기'메뉴 스크롤 -->
+			    
    <script>
       $(document).ready(function() {
          $(".nav-link fw-bold .scroll").click(function(event) {
