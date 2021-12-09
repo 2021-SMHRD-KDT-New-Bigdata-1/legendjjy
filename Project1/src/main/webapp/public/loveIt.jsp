@@ -129,28 +129,42 @@ body {
 	%>
 
 
-	<!-- -------------------------------------------------------------------- -->
-    <!-- 새로 만든 상단바 -->
-    <!-- -------------------------------------------------------------------- -->
-    
+
+    <!-- by정현, 새로 만든 상단바. 모든 페이지에 공통으로 적용 -->
+
     <header class="nav_outer">
     	<nav class="navi">
-    	
 		    <div class="navi_inner">
 		    	<div class="LOGO">
-			    	<a class="navbar-brand d-inline-flex" href="index.jsp"><img class="logo-img" src="assets/img/gallery/logo_small.png" alt="..." 
-			    	style="width: 70px; height: 70px;"/></a>
-				    <a style="padding-top: 19px;"><span style="color: #005DFF !important">LEGEN<span style="color: #FF6A00 !important;">D</span></span></a>
-   				</div>
+			    <a class="navbar-brand d-inline-flex" href="index.jsp">
+				<img class="logo-img" src="assets/img/gallery/logo_small.png" alt="..." style="width: 70px; height: 70px;"/>
+			    </a>
+				<a style="padding-top: 19px;">
+					<span style="color: #005DFF">LEGEN
+					    	<span style="color: #FF6A00">D
+						</span>
+					</span>
+				</a>
+   			</div>
 		    </div>
-			    
-   			
+			    		
 	    	<ul class="navi_inner2" >
-	    		<li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a></li>
-	            <li ><a href="look.jsp">둘러보기</a></li>
-	            <li ><a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a></li>
-	            <li ><a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">구독 목록</a></li>
-	            <li ><a href="../publish/book_made.jsp">출판</a></li>
+	    		
+		<li >
+			<a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>write.jsp<%}%>">일기 쓰러가기</a>
+		</li>
+	        <li >
+			<a href="look.jsp">둘러보기</a>
+		</li>
+	        <li >
+			<a href="<%if (vo == null) {%>Login_v2/login.jsp<%} else {%>loveIt.jsp<%}%>">스크랩 목록</a>
+		</li>
+	        <li >
+			<a href="<%if(vo==null){%>Login_v2/login.jsp<%}else{%>follow/follow.jsp<%}%>">구독 목록</a>
+		</li>
+	        <li >
+			<a href="../publish/book_made.jsp">출판</a>
+		</li>
 	            <%if(vo!=null&& vo.getAdmin_yn().equals("n")){%><li class="nav-item dropdown"><a
 								class="nav-link dropdown-toggle fw-bold" href="#"
 								id="navbarDropdown" role="button" data-bs-toggle="dropdown"
